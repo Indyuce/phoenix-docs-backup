@@ -1,0 +1,6 @@
+mappings = "yarn"
+message = "version {}"
+tag = true
+
+[experimental]
+undo_renamed_vars = false
