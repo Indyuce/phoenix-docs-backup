@@ -1,0 +1,99 @@
+To get used to these mechanics which can get really complex but are really fun to configurate use a simple tick script to see what shape the mechanic draws!
+```
+simple_tick:
+    mechanics:
+        display_particle:
+            type: particle
+            particle: FLAME
+```
+
+### Helix
+The script indicated by the `end` config option is called when the helix is fully drawn.
+```
+example_mechanic:
+    type: helix
+    source: # Optional. Location targeter required
+        type: source
+    direction: # Optional. Location targeter required
+        type: custom
+        x: 1
+        y: 0
+        z: 0
+    tick: simple_tick
+    end: another_script
+
+    # More options
+    yaw: 360 # Amount of degrees 
+    height: 3 # Height of helix
+    radius: '2 + <caster.health> / 100'
+
+    points: 40 # Amount of points displayed in one spiral
+    time_interval: 1 # Interval of time (ticks) between two points
+    points_per_tick: 1 # Amount of points displayed every interval
+    helixes: 4 # Amount of spirals, 1 by default
+```
+
+### Parabola
+A parabola displayed between two locations. You can configure the height of the parabola and the speed at which it is displayed.
+
+```
+example_mechanic:
+    type: parabola
+    source: # Location targeter required. Starting point of parabola
+        type: caster
+        position: BODY
+    target: # Location targeter required. End point of parabola
+        type: target
+        position: BODY
+
+    tick: simple_tick
+    end: another_script # Called when reaching the end
+    height: 10 # Height of parabola
+    speed: 3 # Horizontal speed
+```
+
+### Projectile
+A projectile that stops onto the first hit block/entity. You have to specify the type of interaction that your projectile corresponds to (offensive skill, support skill etc. - learn more about it [here](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Conditions#if-script-caster-can-damagetarget-entity)).
+
+```
+example_mechanic:
+    type: projectile
+    
+    source: # Optional. Location targeter required
+        type: caster
+        position: EYES
+    direction: # Optional. Location targeter required
+
+    tick: simple_tick
+    hit_entity: some_script # Called when hitting an entity
+    hit_block: some_other_script # Called when hitting a block
+    stop_on_block: true
+
+    offense: true
+    hits: 1 # Maximum amount of hit entities. Will disappear on last entity hit
+    ignore_passable: false # It it should ignore passable blocks
+    speed: 1 # 1 by default
+    size: 0.2
+    step: 0.2 # Distance between two calls of the tick script
+    life_span: 60 # In ticks
+```
+
+### Slash
+Performs what looks like a weapon slash in front of the script caster
+
+```
+example_mechanic:
+    type: slash
+
+    tick: simple_tick
+    end: some_other_script
+
+    length: 4 # Slash length
+    angle: -30 # Angle of the slash
+    distance: 3 # Distance to the player
+
+    # Same options as in the Helix mechanic
+    points: 20
+    time_interval: 1
+    points_per_tick: 3
+```

@@ -86,6 +86,16 @@ export default defineConfig(
   withSidebar(vitePressConfigs, [
     {
       documentRootPath: "/",
+      scanStartPath: "mythiclib",
+      basePath: "/mythiclib/",
+      resolvePath: "/mythiclib/",
+      sortMenusByFrontmatterOrder: true,
+      useTitleFromFileHeading: true,
+      useFolderTitleFromIndexFile: true,
+      includeRootIndexFile: true,
+    },
+    {
+      documentRootPath: "/",
       scanStartPath: "mmoprofiles",
       basePath: "/mmoprofiles/",
       resolvePath: "/mmoprofiles/",

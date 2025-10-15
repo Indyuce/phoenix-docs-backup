@@ -3,6 +3,7 @@ order: 3
 ---
 
 # 🤔 FAQ
+
 More frequent bugs and issues are documented on **[this MythicLib wiki page](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Frequent%20Issues)**, please consider checking it as well.
 
 ### Is there an installation guide
