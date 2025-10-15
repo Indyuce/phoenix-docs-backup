@@ -1,5 +1,10 @@
-## A Sword Slash Skill
-```
+---
+order: 13
+---
+
+# Sword Slash
+
+```yml
 sword_slash:
     public: true
     mechanics:
@@ -36,8 +41,8 @@ slash_particle:
             amount: 5
 ```
 
-### Triple Sword Slash
-```
+## Triple Sword Slash
+```yml
 triple_sword_style:
     public: true
     mechanics:
@@ -177,6 +182,3 @@ slash_particle_blue:
                 green: 86
                 blue: 196            
 ```
-
-### A video representation of what this script will do. 
-Soon.

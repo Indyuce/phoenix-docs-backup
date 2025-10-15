@@ -14,7 +14,7 @@ Do not use Gitlab tickets for support requests. Your ticket will be closed and y
 
 Unless staff specifically told you to temporarily downgrade to a lower plugin version, always make sure you are using the latest version available for MythicLib, MMOItems, MMOCore **AND** MythicMobs. MythicLib is a hard dependency for any MMO plugin and also needs to be kept up-to-date. Due to plugin code dependencies and frequent code updates, you might have to simultaneously update all of the MMO plugins. These plugin requirements are **ALWAYS** indicated in the plugin changelogs.
 
-![](https://i.imgur.com/xeSH7DV.png)
+![](uploads/spigot_changelog.png)
 
 When using development builds (available on the official website), keep in mind there might be several weeks/months worth of work between the latest dev build and spigot release. Therefore, **when using a dev build for any of the MMO plugins, you have to use dev builds for all the plugins simultaneously**. More information [here](Frequent%20Issues#keep-mythiclib-up-to-date).
 

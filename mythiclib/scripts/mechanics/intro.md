@@ -1,3 +1,9 @@
+---
+order: -1
+---
+
+# Introduction
+
 A script is a list of mechanics and conditions. If all of the script conditions are met, then its mechanics are ran in order, from first to last. A mechanic is a specific action, it can be sending a projectile, sending a message to a player, playing a sound to multiple entities, etc.
 
 | Mechanic Type | Description |

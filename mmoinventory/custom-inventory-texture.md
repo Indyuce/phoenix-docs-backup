@@ -3,7 +3,7 @@ order: 21
 ---
 
 
-# 🎨 Custom Inventory Textures
+# 🎨 Inventory Textures
 
 This page explains how to apply a custom texture to any player inventory in MMOInventory.
 
@@ -13,7 +13,7 @@ Below is a screenshot that shows a very barebones setup of a custom inventory. A
 
 ![](uploads/vanilla_grid_pattern.png)
 
-### Using a custom font
+## Using a custom font
 
 Custom fonts are now part of the default MMOInventory config files. For this tutorial, we will consider the inventory located at `.\inventory\default_mmoinventory.yml`.
 
@@ -43,15 +43,12 @@ MMOInventory comes with **four ready-to-use inventory textures**. Choose the one
 
 In 1.20.x and below, there used to be a workaround using the _display.gui.scale_ parameter of item models. When using a gray uniform texture as a "filler" texture, you could set the _scale_ parameter to something like 1.1 (110% apparent texture size), which would cause the item texture to overflow and cover up the vanilla inventory grid pattern.
 
-<details>
 
-<summary>
-Old model file
-</summary>
+::: details Old Model File
 
 For reference, this is the model file that was used for the filler texture. Note that the `item/fill` texture is a gray uniform texture with color code `#C6C6C6` (vanilla inventory background color, as of 1.21.8).
 
-```json title="fill.json"
+```json 
 {
   "parent": "item/handheld",
   "textures": {
@@ -65,9 +62,7 @@ For reference, this is the model file that was used for the filler texture. Note
     }
   }
 }
-```
-</details>
 
-<br></br>
+:::
 
 This no longer works in recent versions (1.21 and above). While the scale parameter still exists, the texture overflow mecanism was patched. In recent versions, we recommend using a custom font to completely override the vanilla inventory texture. Good news, this is super easy to do, and you can also use this to fully 

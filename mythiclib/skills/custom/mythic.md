@@ -1,3 +1,9 @@
+---
+order: 1
+---
+
+# Using MythicMobs
+
 This page will help you register custom skills in MythicLib/MMOItems/MMOCore using the Mythic/MythicMobs scripting language. Here are the main steps:
 
 1. Code a Mythic script

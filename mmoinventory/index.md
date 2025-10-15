@@ -4,7 +4,7 @@ order: 1
 
 # 🏠 Home
 
-![](https://i.imgur.com/8hpIwCb.png)
+![](uploads/banner.png)
 
 ***
 **Welcome to the MMOInventory Wiki!**

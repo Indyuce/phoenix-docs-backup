@@ -1,5 +1,8 @@
+---
+order: 12
+---
 
-# Healing skill using helix mechanic
+# Healing, Helix Particles
 
 ```yml
 healing_aura:

@@ -206,6 +206,6 @@ ARTIFACT:
         - '{tier}&8- &7Item Tier: #prefix##tier#'
 ```
 
-### Important Note
+## Important Note
 
 Make sure the corresponding item type from `MMOItems/item-types.yml` has its subtype/parent set to `ACCESSORY`, which is **MANDATORY** to have MMOItems register stats of items placed inside the custom inventory GUI!! In other words, you can equip an item using the MMOInventory GUI and not get any stats from it. To avoid that, you need to make sure that the MI item types have their parent type set to the Accessory item type, otherwise MMOItems will just ignore these items.

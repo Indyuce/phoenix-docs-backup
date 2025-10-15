@@ -1,3 +1,9 @@
+---
+order: 4
+---
+
+# 📚 Variables 
+
 When provided mechanics do not provide enough configurability you can always use variables to recode some more complex script. Variables can be used to store temporary data or even do complex numeric or vector computations for advanced particle effects for instance.
 
 ## Internal & Custom Variables

@@ -11,7 +11,7 @@ This page is subject to change in the future as MMOInventory 2 introduced multip
 ## Using a GUI
 Leave the `no-custom-inventory` config option to `false`. When using `/mmoinventory` players can open their custom inventory where they can interact with their armor and custom inventory slots. Shift clicks are 100% supported.
 
-![](https://cdn.discordapp.com/attachments/618627090253611048/640247768245600256/image0.png)
+![](uploads/hover_inventory.gif)
 
 ## Slot Restrictions
 Slot restrictions are conditions you can add to any custom slot which players must meet in order to use the slot.
@@ -32,10 +32,11 @@ Toggle on the `no-custom-inventory` config option (requires a server reload). Al
 
 Using this option, any slot you configure in the `items.yml` config file will appear in the player's inventory instead. It works just like with the inventory GUI: players can drag & drop items onto custom slots to equip items. Slot items (the ones displayed "Bracelet Slot" or "Ring Slot") appear on player login, so **restarting your server after changing this option is highly recommended.**
 
-![](https://i.imgur.com/AA6RxOo.png)
+![](uploads/vanilla_inventory.png)
 
 When using no inventory GUI the `save-on-leave` and `drop-on-death` MMOInventory config options become 100% useless. You also don't need the item slots like `Chestplate Slot`, `Offhand Slot` or `Filler` that are configured by default in `items.yml`. In fact your `items.yml` config should only contain custom slots, here is an example:
-```
+
+```yml
 RING:
     type: accessory
     material: DIAMOND_HOE

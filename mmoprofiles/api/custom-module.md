@@ -8,7 +8,7 @@ A profile data module corresponds to a plugin that owns profile-dependant data. 
 
 If you have a plugin that owns profile-dependant data (quest progress, custom inventories, player leveling, professions, etc...) you will have to implement your own `ProfileDataModule` and register it in MMOProfiles.
 
-### Implement `ProfileDataModule`
+## Implement `ProfileDataModule`
 
 The `ProfileDataModule` interface has two methods:
 
@@ -48,7 +48,7 @@ public void onProfileUnload(ProfileUnloadEvent event) {
 }
 ```
 
-### Register your instance of `ProfileDataModule`
+## Register your instance of `ProfileDataModule`
 
 Run this code **in the #onEnable() of your plugin** to register your instance of `ProfileDataModule`. If your module is an instance of `Listener`, MMOProfiles will register its events for you.
 

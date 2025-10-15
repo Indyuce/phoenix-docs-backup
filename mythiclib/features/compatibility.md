@@ -27,7 +27,8 @@ Here is the full list of all the available flags for both MMOCore and MMOItems.
 - ~~[RealDualWield](https://www.spigotmc.org/resources/%E2%9C%85-real-dualwield-attack-with-both-hands-with-real-animation-without-mods.30816/)~~
 
 ## Hologram plugins
-The following plugins are compatible with MythicLib and are used to display damage and regen indicators for example.
+The following plugins are compatible with MythicLib and are used to display damage and regen indicators for example. Note that with the addition of text displays in 1.20.6, MythicLib now provides a stable and lag-free basic implementation of holograms.
+
 - HolographicDisplays
 - DecentHolograms
 - CMI

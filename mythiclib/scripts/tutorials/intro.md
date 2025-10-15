@@ -1,3 +1,9 @@
+---
+order: 1
+---
+
+# Introduction
+
 Welcome to this **small tutorial on making custom scripts using MythicLib**. In this tutorial, we will be going over some basic mechanic usage so you can create some decent looking skills for yourself. Before you go through this page it's advised that you read the [custom scripts](Custom Scripts) page.
 
 The other tabs in the sidebar will explain everything more in depth, this is just so you can get a general understanding of how this scripting language works.

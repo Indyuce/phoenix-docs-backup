@@ -8,7 +8,7 @@ Plugins like MMOCore implement custom profile placeholders like profile class, l
 
 ![image](uploads/placeholders.png)
 
-### Implement `PlaceholderProcessor`
+## Implement `PlaceholderProcessor`
 
 The `PlaceholderProcessor` interface has two methods:
 
@@ -39,7 +39,7 @@ Here is how your `#processPlaceholderRequest(PlaceholderRequest)` should look li
 - Once data is loaded, register as many placeholders as needed using `phRequest.addPlaceholder(String, String)`. The first argument should be the placeholder key, like `class` or `level`, the second argument should be the placeholder string value. If your profile data module identifier is `mmocore`, and the placeholder key is `class` then the final placeholder would be `mmocore_class`,
 - Inform MMOProfiles you are done registering placeholders using `phRequest.validate()`.
 
-### Register your instance of `PlaceholderProcessor`
+## Register your instance of `PlaceholderProcessor`
 
 Use the following code snippet to register your placeholder processor, this must be done when registering your profile data module.
 

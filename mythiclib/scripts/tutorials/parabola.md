@@ -1,5 +1,10 @@
-## A rainbow skill
-```
+---
+order: 11
+---
+
+# Rainbow Skill
+
+```yml
 rainbow:
     public: true
     mechanics:
@@ -185,11 +190,11 @@ Rainbow_tick:
                 source: false
                 relative: true
 ```
-### A video representation of what this script will do. 
-Soon.
+
+
 
 ## A potion splash using parabolas
-```
+```yml
 potion_throw:
     public: true
     mechanics:
@@ -279,7 +284,7 @@ throw_tick:
                 green: 94
                 blue: 12
 ```
-### A video representation of what this script will do. 
-Soon.
+
+
 
 Now we know how to use use the right script lay out and how to colour certain particles, so we'll move on to the next shape mechanic. In this next example we will be covering how to set up the helix mechanic and how to use the healing mechanic.

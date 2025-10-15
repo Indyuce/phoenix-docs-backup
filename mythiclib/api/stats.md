@@ -6,7 +6,7 @@ order: 1
 
 MythicLib stats API design is similar to the Spigot attribute modifiers API. Stat data from every numeric MMOItems/MMOCore stat is stored in a `StatMap` accessible using the following method.
 
-```plaintext
+```java
 MMOPlayerData playerData = MMOPlayerData.get(playerOrUUID);
 StatMap statMap = playerData.getStatMap();
 ```
@@ -22,7 +22,7 @@ Just like Spigot's attribute instances, stat instances feature a map that **stor
 
 The advantage of using attributes is that any plugin can add its own attributes, and MythicLib can easily gather all of them and calculate the final stat value based on these attributes. For instance, MMOCore uses attributes to handle experience party buffs:
 
-```plaintext
+```java
 // +10% experience gained modifier
 StatModifier experienceModifier = new StatModifier("myCustomPluginKey", "ADDITIONAL_EXPERIENCE", 10, ModifierType.FLAT); // +10% experience
 
@@ -39,7 +39,7 @@ Notice how any plugin can access all the modifiers created by all the plugins. T
 
 There are multiple ways of generating a stat modifier. The most exhaustive constructor is the following
 
-```plaintext
+```java
 StatModifier(UUID, String, String, double, ModifierType, ModifierSource, EquipmentSlot)
 ```
 
@@ -47,7 +47,7 @@ The first parameter is the UUID. When not provided, a random UUID gets assigned 
 
 Using this key, you can do things like the following code snippet which clears all modifiers which key start with the `mmoitems` keyword.
 
-```plaintext
+```java
 statInstance.removeIf(key -> key.startsWith("mmoitems"));
 statInstance.removeIf("MyAwesomePlugin"::equals);
 ```
@@ -60,28 +60,28 @@ The **modifier source** was implemented to differenciate stat modifiers given by
 
 You most likely don't need to use the `EquipmentSlot`/`ModifierSource` parameters so you might just need to use the following, simpler constructor.
 
-```plaintext
-StatModifier(String, String, double, ModifierType)
+```java
+StatModifier modifier = new StatModifier(String, String, double, ModifierType);
 ```
 
 In order to register your stat modifier, you can use the following method. Make sure you use a wisely chosen modifier key as explained above (if there already exists one modifier with the same key, it will be erased).
 
-```plaintext
-modifier.register(MMOPlayerdata);
-// Where you'd get the player data using MMOPlayerData#get(Player)
+```java
+MMOPlayerData playerData = MMOPlayerData.get(/* player UUID */);
+modifier.register();
 ```
 
 You may also use this method which does exactly the same thing:
 
-```plaintext
-StatModifier modifier = ...;
+```java
+StatModifier modifier = /* TODO */;
 StatInstance instance = statMap.getInstance(modifier.getStat());
 instance.addModifier(modifier);
 ```
 
 Note that you can also add **temporary stat modifiers** using the following method. The long parameter corresponds to the duration of the modifier in ticks.
 
-```plaintext
+```java
 new TemporaryStatModifier(String, String, double, ModifierType, EquipmentSlot, ModifierSource).register(MMOPlayerData, long);
 ```
 
@@ -89,25 +89,25 @@ new TemporaryStatModifier(String, String, double, ModifierType, EquipmentSlot, M
 
 For most stats, it is quite easy to calculate the final stat value. Just take the base stat value, apply all the currently registered stat modifiers and return the final value, no?
 
-```plaintext
+```java
 // calculate the player's crit strike chance
 double critChance = statMap.getInstance("CRITICAL_STRIKE_CHANCE").getTotal();
 ```
 
 This does work for **MOST** stats. For _attack speed_ and _attack damage_, things get a little more complicated with 1.9 dual wielding: take a player attack for instance. If the player is using his mainhand weapon, MythicLib must not consider the Atk Damage and Speed from his offhand weapon, and the same applies if the player is, say, shooting an arrow using his offhand bow. Using the `StatInstance#getFilteredTotal(...)` method we can filter out the modifiers that come from the off hand item using
 
-```plaintext
+```java
 statMap.getInstance("CRITICAL_STRIKE_CHANCE").getFilteredTotal(Predicate<StatModifier>)
 ```
 
-The default predicate used as parameter is then
+The default predicate used as parameter then becomes the following. A stat modifier is taken into account if that filter returns false, so if the modifier either 1/ does not come from a weapon, or 2/ comes from the main hand.
 
-```plaintext
-Predicate<StatModifier> DEFAULT_MODIFIER_FILTER = mod -> !mod.getSource().isWeapon() || mod.getSlot() != EquipmentSlot.OFF_HAND
+```java
+Predicate<StatModifier> DEFAULT_MODIFIER_FILTER = mod -> !mod.getSource().isWeapon() || mod.getSlot() != EquipmentSlot.OFF_HAND;
 ```
 
-If you want to apply a modification to some modifiers (while not actually modifying them in the stat map) and then calculate the stat value, you can use
+If you want to apply a modification to some modifiers (while not actually modifying them in the stat map) and then calculate the stat value, you can use:
 
-```plaintext
+```java
 statMap.getInstance("CRITICAL_STRIKE_CHANCE").getTotal(Function<StatModifier, StatModifier>)
 ```

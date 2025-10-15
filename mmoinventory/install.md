@@ -9,7 +9,7 @@ order: 2
 - We recommend reading [this wiki page](compatibility/mmoitems.md) if you are running MMOItems on your server.
 - Download the default MMOInventory server resource pack and install it (or merge it with your existing server pack).
 
-### Resource pack versions
+## Resource pack versions
 
 | Version | Link |
 |---------|------|

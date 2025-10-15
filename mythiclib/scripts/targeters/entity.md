@@ -1,4 +1,7 @@
-### Caster
+
+# Entity Targeters
+
+## Caster
 
 Use this targeter to target the skill caster.
 
@@ -7,7 +10,7 @@ example_use:
     type: caster
 ```
 
-### Cone
+## Cone
 
 Targets entities in a cone, given a cone `angle` and `radius` which are numeric parameters. You can use math formulas for these parameters. The angle is given in degrees. The `source` parameter is optional, you may provide the starting point of the cone using a location targeter. It is set by default to the caster's position.
 
@@ -28,7 +31,7 @@ example_use:
         z: 1
 ```
 
-### Nearby entities
+## Nearby entities
 
 Use this to target entities around a specific location given a radius and height. This basically takes all entities in a **cylinder** around a center location.
 
@@ -44,7 +47,7 @@ example_use:
     ignore_caster: true
 ```
 
-### Nearest Entity
+## Nearest Entity
 
 Takes the entity closest to the script target location.
 
@@ -57,7 +60,7 @@ example_use:
     source: false
 ```
 
-### Target entity
+## Target entity
 
 One of the simplest targeter, used to target the script target.
 
@@ -66,7 +69,7 @@ example_use:
     type: target
 ```
 
-### Looking at
+## Looking at
 
 Targets the entity the caster is looking at. It is possible that no entity is found. There is an equivalent targeter for blocks instead.
 
@@ -78,7 +81,7 @@ example_use:
     ignore_passable: true # Should it ignore or stop on semi-transparent blocks like fences
 ```
 
-### Variable target
+## Variable target
 
 If an entity happens to be stored as a variable in a script, you can access it using this targeter. This has no use yet.
 

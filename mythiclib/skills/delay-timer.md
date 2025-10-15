@@ -1,13 +1,18 @@
-# Delay and Timer
+---
+order: 3
+---
 
-### Skills that run every X ticks (timers)
+# ⌚ Delays and Timers
+
+## Skills that run every X ticks (timers)
+
 `TIMER` is a special trigger type that casts a skill every X ticks. To setup timed skills, simply define the timer period in ticks using the `timer` skill modifier. This is a default skill modifier for **ANY** skill, just like `cooldown` or `mana`. If the skill trigger is not set to `TIMER`, this skill modifier becomes 100% useless and you can just ignore it.
 
-### Adding delays to skills
+## Adding delays to skills
 Since MythicLib 1.5, any skill can have a **casting delay**. When casting such skill, the player is temporarily slowed down and must wait a small period of time before the skill is actually cast. This makes for a great RPG feature for skills like teleports or other super powerful skills.
 
 You can configure specific options for the casting delay in the MythicLib config file:
-```
+```yml
 # What happens when the player is waiting for his skill to cast
 # Does not apply if skill delay (it is a skill modifier) is set to 0
 casting-delay:

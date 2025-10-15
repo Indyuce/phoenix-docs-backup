@@ -12,7 +12,7 @@ You can fully customize this GUI by modifying the file `gui/profile-list.yml`. B
 
 ![image](uploads/profile_indiv.png)
 
-### Creating a new profile
+## Creating a new profile
 If the player has enough profile slots, they can create a new profile by clicking the emerald. MMOProfiles will ask the profile name, and then the new profile will pop up in the list.
 
 ![image](uploads/profile_new_char.png)

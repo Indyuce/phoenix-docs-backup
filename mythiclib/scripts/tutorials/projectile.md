@@ -1,5 +1,9 @@
-## A simple projectile
-```
+---
+order: 14
+---
+
+# Basic Projectile
+```yml
 Bullet: # This is a script name, this can be whatever you'd like. This is also the skill ID and can be cast with the command */ml cast BULLET*
     public: true # This allows for the script to be used by MMOCore and casted with /ml cast
     mechanics: 
@@ -51,13 +55,11 @@ bullet_hit:
             
 
 ```
-### A video representation of what this script will do. 
-Soon.
 
 Now that we have a general understanding of the projectile mechanic and its features we can move on to using more mechanics that get triggered by the projectile hitting an entity. In this next example we will be covering how to put delay in script execution, how to make a script execute another script and the teleportation mechanic.
 
 ## A more advanced projectile
-```
+```yml
 bullet_hell:
     public: true
     mechanics:
@@ -288,7 +290,3 @@ bullethitthree:
                 source: false
                 relative: true
 ```
-### A video representation of what this script will do. 
-Soon.
-
-Now that we know how to implement a good deal of mechanics like damage and particles it's time to move on to the next shape mechanic. In this next example we will be covering how to set up the parabola mechanic and how to use colored particles.

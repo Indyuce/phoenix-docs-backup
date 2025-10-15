@@ -57,12 +57,11 @@ In order to register that damage info in MythicLib, you need to create an instan
 `MythicLib.plugin.getDamage().registerHandler(damageHandler);`\
 A damage handler can be registered at any time **after MythicLib has loaded**.
 
-## Damage Mitigation
-### Blocking
+## Blocking
 Whenever a player blocks an attack, a `PlayerBlockEvent` is called. Like any other mitigation event, it can be cancelled. You may change the amount of damage blocked using `event.setPower(double)`. The specified double parameter must be between 0 and 1, 0 being no damage blocked and 1 being the attack fully blocked.\
 You can calculate the amount of damage blocked during the attack using `event.getDamageBlocked()`. All it does is multiply the block power by the event damage.
 
-### Dodging and parrying
+## Dodging and parrying
 Dodging and parrying are really similar. When dodging an attack, the player dashes backwards whereas when parrying an attack, the player deals knockback to the attacker. The entire attack damage is nulled. These actions fire `PlayerDodgeEvent` and `PlayerParryEvent` which can be cancelled.
 
 Blocking/parrying/dodging emit nice particle effects and send a configurable message to the player. Mitigation bukkit events also include the EntityDamageEvent that you can access and manipulate using the `event.getEvent()` getter.

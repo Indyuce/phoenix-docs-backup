@@ -16,9 +16,7 @@ The _key_ is something that you can use to remove your stat modifier later on (i
 /mythiclib tempstat remove <player> <STAT> (key)
 ```
 
-## Balancing stats
-
-### Min and max stat values
+## Min/Max Stat Values
 
 Minimum and maximum values for the stat values. This means using '0 = 100' for CRITICAL_STRIKE_CHANCE means that you cannot have less than 0% and cannot have more than 100% critical strike chance. This is an important tool for server balance. You can balance stats like block rating, defense, max health, damage reduction etc.
 
@@ -28,7 +26,7 @@ Minimum and maximum values for the stat values. This means using '0 = 100' for C
 - By default there are no upper or lower bounds for most stats. Some of the following are just examples.
 - **The minimum value IS NOT A BASE STAT VALUE**. It just means that you cannot have less than X in that stat (it just clamps your stat value up if needed).
 
-```
+```yml
 min-max-values:
 
   # Crits
@@ -55,7 +53,7 @@ min-max-values:
   # Add as many as you want.
 ```
 
-### Base stat values
+## Base Stat Values
 
 This is where you can edit the base value of any stat. This has the exact same effect as a PERMANENT stat buff. If a MMOCore class gives you 20 base HP, and if the base value in this config section is set to 10, it will result in 20 + 10 = 30 HP. It also works like that with MMOItems items as well.
 
@@ -65,7 +63,7 @@ Default Minecraft stats like Health, Armor, Attack damage.... add up their vanil
 
 **Also, these values are completely overwritten by MMOCore base class values. This option only works for stats are not set in MMOCore base stats.**
 
-```
+```yml
 base-stat-value:
 
   # Crits. By default, crits deal 2x damage
@@ -84,7 +82,7 @@ Change the amount of damage dealt on specific damage sources. This tool comes ha
 
 Using `{event_damage}` will return the initial event damage.
 
-```
+```yml
 vanilla-damage-modifiers:
   enabled: false
   source:

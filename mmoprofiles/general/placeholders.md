@@ -4,7 +4,7 @@ All placeholders automatically register on plugin load, also requiring **Placeho
 
 Note: You can access the PAPI placeholders from MVdWPlaceholderAPI using `{placeholderapi_mmoprofiles_...}`
 
-### Main Placeholders
+## Main Placeholders
 
 | **Placeholder** | **Description** |
 |-----------------|-----------------|

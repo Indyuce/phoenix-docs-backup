@@ -12,9 +12,12 @@ Enable this option by toggling on the `enabled` option and input the value you w
 ## Health Scale
 Health scaling is a small sized RPG feature which makes the player health bar always display the same amount of hearts (while still having extra max. health). When scaling your health to 40 (default value), the player health bar will always display 2 rows (`2 * 20`) of hearts.
 
-![](https://i.imgur.com/2wl2fpg.png)
+With health scale disabled:
+![](uploads/health_scale_off.png)
 
-![](https://i.imgur.com/BNrYOoG.png)
+
+With health scale enabled:
+![](uploads/health_scale_on.png)
 
 You can configurate the health scale feature in the **MythicLib** main config file. It is pretty self explanatory:
 ```yml
