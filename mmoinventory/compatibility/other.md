@@ -1,3 +1,7 @@
+---
+order: 4
+---
+
 # 🔌 Other Plugins
 
 MMOInventory features native support for other item plugins. It can detect specific item from other plugins like _LoreAttributesRecoded_, _Oraxen_ or _Nexo_, but **only using the item lore** by detecting specific patterns inside of it. For instance, if your Sword items all have `&cSword` in their item lore, MMOInventory is able to detect it and consequently apply slot restrictions to these items.

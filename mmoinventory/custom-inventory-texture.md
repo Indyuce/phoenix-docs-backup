@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+order: 21
 ---
 
 
@@ -34,10 +34,10 @@ MMOInventory comes with **four ready-to-use inventory textures**. Choose the one
 
 | Texture | Row Count | Code | Screenshot |
 |---------|------|------------|---------|
-| Classic | 4 | `\u40E0` | <img src="uploads/classic_inv_texture.png" width="200"/> |
-| Classic | 6 | `\u40E0` | <img src="uploads/classic_6_inv_texture.png" width="200"/> |
-| Enhanced | 6 | `\u40E0` | <img src="uploads/enhanced_inv_texture.png" width="200"/> |
-| Oraxen-like | 5 | `\u40E3` | <img src="uploads/oraxen_inv_texture.png" width="200"/> |
+| Classic | 4 | `\u40E0` | ![](uploads/classic_inv_texture.png) |
+| Classic | 6 | `\u40E0` | ![](uploads/classic_6_inv_texture.png) |
+| Enhanced | 6 | `\u40E0` | ![](uploads/enhanced_inv_texture.png) |
+| Oraxen-like | 5 | `\u40E3` | ![](uploads/oraxen_inv_texture.png) |
 
 ## 1.20.x and below
 

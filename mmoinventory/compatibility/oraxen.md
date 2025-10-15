@@ -1,8 +1,10 @@
 ---
-sidebar_position: 2
+order: 2
 ---
 
 # 💎 Oraxen
+
+This pages describes the built-in compatibility features between MMOInventory and [Oraxen](https://oraxen.com/). Note that it does not mean that other item plugins are not supported, it just means that Oraxen has some exclusive features.
 
 ## Custom Textures
 

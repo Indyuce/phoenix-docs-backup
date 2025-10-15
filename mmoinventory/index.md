@@ -1,9 +1,8 @@
 ---
-sidebar_position: 1
-sidebar_label: 🏠 Home
+order: 1
 ---
 
-# 
+# 🏠 Home
 
 ![](https://i.imgur.com/8hpIwCb.png)
 

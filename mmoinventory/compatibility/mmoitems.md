@@ -1,12 +1,12 @@
 ---
-sidebar_position: 1
+order: 1
 ---
 
 # ⚔️ MMOItems
 
-<Warning title="Important">
+::: warning
 This page is subject to change in the future as MMOInventory 2 introduced multiple custom inventories (as well as an option to simultaneously use the vanilla player inventory). This page will be updated when MMOInventory 2 is released.
-</Warning>
+:::
 
 ## Configurating MMOInventory
 

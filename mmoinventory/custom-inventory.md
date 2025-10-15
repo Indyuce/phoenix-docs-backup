@@ -1,12 +1,12 @@
 ---
-sidebar_position: 11
+order: 20
 ---
 
 # 🎒 Custom Inventory
 
-<Warning title="Important">
+::: warning
 This page is subject to change in the future as MMOInventory 2 introduced multiple custom inventories (as well as an option to simultaneously use the vanilla player inventory). This page will be updated when MMOInventory 2 is released.
-</Warning>
+:::
 
 ## Using a GUI
 Leave the `no-custom-inventory` config option to `false`. When using `/mmoinventory` players can open their custom inventory where they can interact with their armor and custom inventory slots. Shift clicks are 100% supported.

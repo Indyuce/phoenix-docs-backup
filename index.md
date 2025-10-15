@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: alt
       text: Browse Wiki
-      link: /mmoinventory
+      link: /mmoinventory/
 
 features:
   - title: Feature A
