@@ -52,6 +52,11 @@ const vitePressConfigs = {
     // Logo of navbar
     logo: "/favicon.ico",
 
+    footer: {
+      message: 'Powered by <a href="https://vitepress.dev/" target="_blank" rel="noopener noreferrer">VitePress</a>',
+      copyright: `Copyright © ${new Date().getFullYear()} Phoenix Development`,
+    },
+
     // navigator bar links
     nav: [
       // { text: "Home", link: "/" },
