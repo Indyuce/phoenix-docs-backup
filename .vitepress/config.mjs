@@ -52,9 +52,15 @@ const vitePressConfigs = {
     // Logo of navbar
     logo: "/favicon.ico",
 
+    // footer
     footer: {
       message: 'Powered by <a href="https://vitepress.dev/" target="_blank" rel="noopener noreferrer">VitePress</a>',
       copyright: `Copyright © ${new Date().getFullYear()} Phoenix Development`,
+    },
+
+    // edit link
+    editLink: {
+      pattern: 'https://gitlab.com/phoenix-dvpmt/phoenix-docs/-/tree/master/:path'
     },
 
     // navigator bar links
@@ -65,6 +71,13 @@ const vitePressConfigs = {
       { text: "MMOInventory", link: "/mmoinventory/" },
       { text: "MMOProfiles", link: "/mmoprofiles/" },
       { text: "MythicLib", link: "/mythiclib/" },
+      {
+        text: 'Other Plugins',
+        items: [
+          { text: 'Bounty Hunters', link: '/bounty-hunters/' },
+          { text: 'Contracts', link: '/contracts/' },
+        ]
+      }
     ],
   },
 };

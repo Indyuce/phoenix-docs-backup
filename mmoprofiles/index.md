@@ -9,7 +9,7 @@ order: 1
 ***
 **Welcome to the MMOProfiles Wiki!**
 ***
-# Get MMOProfiles from [Polymart](https://polymart.org/product/4121/mmoprofiles), [Spigot](https://www.spigotmc.org/resources/mmoprofiles.109942/).
+# Get MMOProfiles on [Polymart](https://polymart.org/product/4121/mmoprofiles) or [SpigotMC](https://www.spigotmc.org/resources/mmoprofiles.109942/)
 
 MMOProfiles is a modern plugin that enables players to have multiple character slots/user profiles, each having its own progress. MMOProfiles supports health and food, inventory, location, bed spawn point, permissions, ender-chest and much more. It was also designed to function seamlessly with other plugins including MMOCore, MMOInventory and MMOItems by supporting data storage for multiple profiles. 
 

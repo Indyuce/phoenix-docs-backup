@@ -7,9 +7,9 @@ hero:
   text: 'Official Plugin Documentation'
   tagline: 'Let us know if something is outdated or missing and we will update it ASAP'
 
-  image:
-    src: /favicon.png
-    alt: VitePress
+  #image:
+  #  src: /favicon.png
+  #  alt: VitePress
 
   actions:
     - theme: brand
