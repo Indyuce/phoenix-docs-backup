@@ -106,8 +106,8 @@ const config = {
           },
 
           {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
+            href: "https://phoenixdevt.fr",
+            label: "Website",
             position: "right",
           },
         ],
@@ -115,7 +115,7 @@ const config = {
       footer: {
         style: "dark",
         links: [
-          {
+          /*{
             title: "Docs",
             items: [
               {
@@ -123,21 +123,29 @@ const config = {
                 to: "/docs/intro",
               },
             ],
-          },
+          },*/
           {
-            title: "Community",
+            title: "Plugins",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: "MMOItems",
+                href: "https://www.spigotmc.org/resources/39267",
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                label: "MMOCore",
+                href: "https://www.spigotmc.org/resources/70575",
               },
               {
-                label: "X",
-                href: "https://x.com/docusaurus",
+                label: "MMOInventory",
+                href: "https://www.spigotmc.org/resources/99445",
+              },
+              {
+                label: "MMOProfiles",
+                href: "https://www.spigotmc.org/resources/109942",
+              },
+              {
+                label: "MythicLib",
+                href: "https://www.spigotmc.org/resources/90306",
               },
             ],
           },
@@ -145,17 +153,25 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: "Website",
+                href: "https://phoenixdevt.fr/",
               },
               {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                label: "Discord",
+                href: "https://phoenixdevt.fr/discord",
+              },
+              {
+                label: "SpigotMC",
+                href: "https://phoenixdevt.fr/spigot",
+              },
+              {
+                label: "Polymart",
+                href: "https://phoenixdevt.fr/polymart",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Phoenix Development. Built with <a href="https://docusaurus.io" target="_blank" rel="noopener">Docusaurus</a>`,
+        copyright: `Copyright © ${new Date().getFullYear()} Phoenix Development. Built with <a href="https://docusaurus.io" target="_blank" rel="noopener">Docusaurus</a> 🦖`,
       },
       prism: {
         theme: prismThemes.github,
@@ -174,6 +190,7 @@ config.plugins = [
       routeBasePath: "mmoitems",
       sidebarPath: require.resolve("./sidebars.js"),
       editUrl: "https://github.com/facebook/.......",
+      sidebarCollapsed: false,
     },
   ],
   [
@@ -184,6 +201,7 @@ config.plugins = [
       routeBasePath: "mmocore",
       sidebarPath: require.resolve("./sidebars.js"),
       editUrl: "https://github.com/facebook/.......",
+      sidebarCollapsed: false,
     },
   ],
   [
@@ -194,6 +212,7 @@ config.plugins = [
       routeBasePath: "mmoinventory",
       sidebarPath: require.resolve("./sidebars.js"),
       editUrl: "https://github.com/facebook/.......",
+      sidebarCollapsed: false,
     },
   ],
   [
@@ -204,6 +223,7 @@ config.plugins = [
       routeBasePath: "mmoprofiles",
       sidebarPath: require.resolve("./sidebars.js"),
       editUrl: "https://github.com/facebook/.......",
+      sidebarCollapsed: false,
     },
   ],
   [
@@ -214,6 +234,7 @@ config.plugins = [
       routeBasePath: "mmolib",
       sidebarPath: require.resolve("./sidebars.js"),
       editUrl: "https://github.com/facebook/.......",
+      sidebarCollapsed: false,
     },
   ],
 ];

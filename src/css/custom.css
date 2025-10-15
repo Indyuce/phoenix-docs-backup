@@ -28,3 +28,35 @@
   --ifm-color-primary-lightest: #ffcfa3;
   --docusaurus-highlighted-code-line-bg: rgba(255, 138, 51, 0.12);
 }
+
+/* Stylish prominent tip block */
+.big-tip {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  /* saturated red background for Warning in light theme */
+  background: linear-gradient(135deg, rgba(255, 36, 24, 0.26), rgba(255, 94, 79, 0.247));
+  border: 1px solid rgba(255,59,48,0.18);
+  padding: 18px 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 28px rgba(255,59,48,0.06);
+
+}
+
+.big-tip h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.08rem;
+}
+
+.big-tip p, .big-tip div {
+  margin: 0;
+  color: inherit;
+}
+
+[data-theme='dark'] .big-tip {
+  /* keep a more subtle reddish accent in dark mode for readability */
+  background: linear-gradient(135deg, rgba(255,59,48,0.06), rgba(255, 86, 70, 0.048));
+  border: 1px solid rgba(255,59,48,0.10);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  color: #f7f7f7;
+}
