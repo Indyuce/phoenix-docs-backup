@@ -266,7 +266,7 @@ The process is exactly the same for paths with 4 possible state for each path:
 
 The neighborhood also impacts the display of a path. For instance, if a path has a branch that goes up and ones that goes right, it will take the item associated with "up," followed by "down-right," and finally "right." This is a symmetrical process, so if a path goes left and then down, it will look identical.
 
-For example this ![](https://i.imgur.com/ZTv2m8C.gif) path has 1 skill tree node at its left and one that is below him so it is a down-left path.
+<!-- For example this path has 1 skill tree node at its left and one that is below him so it is a down-left path. -->
 
 The same rule applies for nodes. For example, if a node is surrounded by four paths, it will display the "up-right-down-left" configuration. Alternatively, if a node has only three paths (up, left, and right), it will automatically select the "up-right-left" display.
 

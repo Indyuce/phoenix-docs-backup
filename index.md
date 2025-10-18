@@ -31,12 +31,12 @@ hero:
       text: MythicLib
       link: /mythiclib/
 
-#features:
-#  - title: Official Documentation
-#    details: This is the official documentation for all Phoenix plugins
-#  - title: Up to date
-#    details: Let us know if something is outdated or missing and we will update it ASAP
-#  - title: Feature C
-#    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+features:
+  - title: Official Documentation
+    details: This is the official documentation for all Phoenix plugins
+  - title: Up to date
+    details: Let us know if something is outdated or missing and we will update it ASAP
+  - title: Feature C
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 

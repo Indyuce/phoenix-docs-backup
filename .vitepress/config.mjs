@@ -58,6 +58,22 @@ const vitePressConfigs = {
       copyright: `Copyright © ${new Date().getFullYear()} Phoenix Development`,
     },
 
+    // social links
+    socialLinks: [
+      // You can add any icon from simple-icons (https://simpleicons.org/):
+      { icon: 'discord', link: 'https://phoenixdevt.fr/discord' },
+      { icon: 'spigotmc', link: 'https://phoenixdevt.fr/spigot' },
+      // You can also add custom icons by passing SVG as string:
+      {
+        icon: {
+          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="polymary.png"><title>Dribbble</title><path d="M12...6.38z"/></svg>'
+        },
+        link: '...',
+        // You can include a custom label for accessibility too (optional but recommended):
+        ariaLabel: 'cool link'
+      }
+    ],
+
     // edit link
     editLink: {
       pattern: 'https://gitlab.com/phoenix-dvpmt/phoenix-docs/-/tree/master/:path'
@@ -72,9 +88,9 @@ const vitePressConfigs = {
       { text: "MMOProfiles", link: "/mmoprofiles/" },
       { text: "MythicLib", link: "/mythiclib/" },
       {
-        text: 'Other Plugins',
+        text: 'Other',
         items: [
-          { text: 'Bounty Hunters', link: '/bounty-hunters/' },
+          { text: 'BountyHunters', link: '/bounty-hunters/' },
           { text: 'Contracts', link: '/contracts/' },
         ]
       }
@@ -117,6 +133,15 @@ export default defineConfig(
       documentRootPath: "/",
       scanStartPath: "mmocore",
       resolvePath: "/mmocore/",
+      sortMenusByFrontmatterOrder: true,
+      useTitleFromFileHeading: true,
+      useFolderTitleFromIndexFile: true,
+      includeRootIndexFile: true,
+    },
+    {
+      documentRootPath: "/",
+      scanStartPath: "bounty-hunters",
+      resolvePath: "/bounty-hunters/",
       sortMenusByFrontmatterOrder: true,
       useTitleFromFileHeading: true,
       useFolderTitleFromIndexFile: true,
