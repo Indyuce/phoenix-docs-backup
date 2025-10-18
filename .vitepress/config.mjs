@@ -113,5 +113,14 @@ export default defineConfig(
       useFolderTitleFromIndexFile: true,
       includeRootIndexFile: true,
     },
+    {
+      documentRootPath: "/",
+      scanStartPath: "mmocore",
+      resolvePath: "/mmocore/",
+      sortMenusByFrontmatterOrder: true,
+      useTitleFromFileHeading: true,
+      useFolderTitleFromIndexFile: true,
+      includeRootIndexFile: true,
+    },
   ])
 );

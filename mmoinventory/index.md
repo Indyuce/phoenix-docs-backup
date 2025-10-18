@@ -6,12 +6,14 @@ order: 1
 
 ![](uploads/banner.png)
 
-***
-**Welcome to the MMOInventory Wiki!**
-***
+MMOInventory is a powerful plugin that allows server administrators to create and manage custom inventories for players, while being 100% compatible with the rest of the MMO suite.
 
-# Get MMOInventory on [Polymart](https://polymart.org/resource/mmoinventory.3414) or [SpigotMC](https://www.spigotmc.org/resources/mmoinventory.99445/)
 
-When buying it you also get access to the support [Discord](https://phoenixdevt.fr/discord). Take some time to read through this wiki as it contains almost all the information you need to use MMOInventory.
+::: tip
+Get MMOInventory on [Polymart](https://polymart.org/resource/mmoinventory.3414) or [SpigotMC](https://www.spigotmc.org/resources/mmoinventory.99445/)!
 
-Navigate to the next page to start installing MMOInventory!
+:::
+
+If something is not quite clear, please join our [Discord](https://phoenixdevt.fr/discord) server to get help from staff or community! We do our best to keep this wiki up to date. Let us know if you see a typo or anything outdated!
+
+Navigate to the next page when you are ready to install MMOInventory!
