@@ -8,8 +8,6 @@ MMOInventory allows you to create an unlimited number of custom inventories with
 
 ![](uploads/hover_inventory.gif)
 
-Leave the `no-custom-inventory` config option to `false`. When using `/mmoinventory` players can open their custom inventory where they can interact with their armor and custom inventory slots. Shift clicks are 100% supported.
-
 ## Introduction
 
 Inside these inventories, players can drag and drop their items inside the corresponding slots. If the item is a ring, it should be placed inside one of the the _Ring_ slots. **Any item from MMOItems placed in a custom inventory will provide its stats to the player.**
