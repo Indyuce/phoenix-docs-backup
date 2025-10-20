@@ -10,7 +10,7 @@ MMOInventory allows you to create an unlimited number of custom inventories with
 
 ## Introduction
 
-Inside these inventories, players can drag and drop their items inside the corresponding slots. If the item is a ring, it should be placed inside one of the the _Ring_ slots. **Any item from MMOItems placed in a custom inventory will provide its stats to the player.**
+Inside these inventories, players can drag and drop their items to the corresponding slots. If the item is a ring, it should be placed inside one of the the _Ring_ slots. **Any item from MMOItems placed in a custom inventory will provide its stats to the player.**
 
 Notice how these custom inventories also have armor slots. These slots are directly connected to the player armor slots, so placing a new chestplate there for instance will instantly have the player equip that chestplate.
 
