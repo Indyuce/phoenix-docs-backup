@@ -4,7 +4,7 @@ order: 21
 
 # 🎒 Custom Inventories
 
-MMOInventory allows you to create unlimited amount of custom inventories with specific item slots.
+MMOInventory allows you to create an unlimited number of custom inventories with specific item slots.
 
 ![](uploads/hover_inventory.gif)
 
