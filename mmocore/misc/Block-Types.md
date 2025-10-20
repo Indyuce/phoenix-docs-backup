@@ -1,9 +1,27 @@
+# 📦 Block Types
+
 Block types are helpful to determine what happens (item drops, block
-regen..) when you [break a block](Mining and Block Regen).
-
-
+regen..) when you [break a block](../features/mining.md).
 
 By distinguishing these block types MMOCore can apply different behaviours to them. Using player skulls with custom texture, you can setup small ore blocks which are a great addition for building. Using MI custom blocks you can have blocks with new textures, breaking speed and fully configurable drop tables.
+
+## Available Block Types
+
+The following table provides all block types that are supported by the MMOCore custom mining system.
+
+| Block Type | Description | Example |
+|------------|-------------|---------|
+| MMOItems Custom Block | When mining a MMOItems custom block.       | `mmoitems{id=6}`                   |
+| Player Head     | When mining a player head with a custom texture. | `skull{value="aZd9fE8...48dfQX="}` |
+| Noteblock       | When mining a noteblock.                         | `note{note=1;instrument=PIANO}`        |
+| Mushroom Block  | When mining a mushroom block.                    | `mushroom{type=MUSHROOM_STEM,faces="NORTH,EAST"}`        |
+| Vanilla Block   | When mining any other block. Fallback.           | `vanilla{type=DIAMOND_ORE}`        |
+
+Notes:
+- For player heads/skulls with textures, you need to provide the Base64 texture value of the skull, not the texture URL.
+- For noteblocks, the note is from 1 to 24. The list of intruments can be found in the [Spigot javadocs](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Instrument.html).
+- For mushroom blocks, possible types are `MUSHROOM_STEM`, `RED_MUSHROOM_BLOCK` and `BROWN_MUSHROOM_BLOCK`. Available faces are `UP`, `DOWN`, `NORTH`, `SOUTH`, `EAST`, `WEST`.
+
 
 Example config
 --------------

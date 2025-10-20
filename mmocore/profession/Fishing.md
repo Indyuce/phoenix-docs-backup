@@ -2,21 +2,22 @@
 order: 3
 ---
 
-# Alchemy
+# 🎣 Fishing
 
 MMOCore may be used to override/rewrite default fishing drop tables.
 
 ## Fishing Experience
 
-Using the `fishitem` [experience source](level/exp), you can make players earn a certain amount of EXP when fishing specific items, like fishes, enchanted books, saddles, etc. The rarer the item, the more experience players should earn.
+Using the `fishitem` [experience source](../level/sources.md), you can make players earn a certain amount of EXP when fishing specific items, like fishes, enchanted books, saddles, etc. The rarer the item, the more experience players should earn.
 
 Currently, the `fishitem` experience source only supports item materials, which means a player will not get extra EXP from looting a mending enchanted book over a Power I enchanted book. The only way to bind specific experience amounts to amounts is to hook onto MMOItems items using the fishing drop tables which can be edited in the fishing.yml profession config file.
 
 **If you don't want to utilize professions in general**, just ignore the fishing experience sources and use the fishing drop tables without specifying any experience. **If you don't want to utilize the MMOCore fishing drop tables**, just use the fishing experience sources, and delete any default fishing drop tables.
 
----
+## Configuration
 
-## Config example: /professions/fishing.yml
+The main config file is `professions/fishing.yml`.
+
 ```yml
 name: Fishing
 experience:

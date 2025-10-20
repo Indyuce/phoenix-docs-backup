@@ -2,7 +2,7 @@
 order: 3
 ---
 
-# Alchemy
+# 🍹 Alchemy
 
 The default alchemy profession allows players to earn experience when brewing any type of potions: splash, lingering, upgraded vanilla potions. Here is the most important part of the alchemy profession config file.
 
@@ -48,7 +48,8 @@ alchemy-experience:
         FIRE_RESISTANCE: 10
         SPEED: 10
         SLOWNESS: 10
-        ....
+    
+        #....
 ```
 
 As you can see, the only alchemy experience source is brewing (brewing stand). You may also specify what type of potions the player must brew in order to get experience in that specific profession using the `brewitem` **experience source**. If you want the player to earn EXP when only brewing speed and regen potions, use `'brewpotion{effect=SPEED,REGEN}'` (separate potion types using a comma).
@@ -56,10 +57,12 @@ As you can see, the only alchemy experience source is brewing (brewing stand). Y
 The `alchemy-experience` config section dictates how much experience the player will get from brewing any potion. The experience a player gets from brewing **directly depends on the potion effect type**: rarer potions i.e potions which require rarer ingredients like ghast tears (over glistering melons) should grant more alchemy experience.\
 On the other hand, mundane, thick and awkward potions should give less experience since players must brew them before brewing any other potion.
 
-### Base EXP
+## Base EXP
+
 Every potion type has a base EXP which the player earns when brewing 1, 2 or 3 potions (at the same time) of this type in a brewing stand, for example the player will earn 15EXP from brewing a fire resistance potion and 20EXP from brewing a jump potion _(with the default setup)_.
 
-### Alchemy EXP modifiers
+## Alchemy EXP Modifiers
+
 When using **redstone to extend the effect duration**, the player will earn X% of the potion effect base experience e.g when extending a jump potion, the player will earn `40% * 20 = 5EXP`. This percentage can be setup with the `special.extend` option. When using **glowstone to upgrade the effect**, the player will also earn X% of the potion effect base experience. This percentage can be setup with the `special.upgrade` option.
 
 When using **gunpowder to brew a splash potion** or **dragon breath to brew a lingering potion**, the player will earn X% of the potion effect base experience (percentages are configurable using `special.splash` and `special.lingering`).

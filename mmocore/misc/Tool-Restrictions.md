@@ -1,31 +1,13 @@
-`restrictions.yml` is where you setup what tools can mine what type of blocks.
+# ⚒️ Tool Restrictions
 
-This is a very useful feature when utilizing the MMOCore [Mining & Block Regen system](/phoenix-dvpmt/mmocore/-/wikis/Mining%20and%20Block%20Regen) to<span dir=""> </span>further customize and balance your tools.
+This feature allows you to define what blocks every type of tool can mine. It can be very useful to further customize and balance your tools, when used alongside with the MMOCore [mining & block regen](../features/mining.md) feature. The config file for this feature is `restrictions.yml`.
 
-## Breakdown
+## Configuration
 
 By default, the config is setup only for mining and has all of the pickaxes included. You **CAN** add axes, shovels, and even other materials (not just tools) to this list and give them their own restrictions.
 
-The options are very simple as well. You start by choosing the tool, then specify the list of all the [block types](Mining-and-Block-Regen#target-block) this tool can break. This feature works like a whitelist: any block that is not in the list, cannot be broken by the given tool. For extra compatibility, we have broken blocks into block types, like vanilla blocks, blocks from MMOItems, and even custom skulls!
-
-### Default permission set
-
-The `default` option can be used to setup default break permissions. If a player happens to hold an item which has NO setup in this config file, this permission set will be used by default. It makes sense to just use `AIR` as default because it's what any player can mine when not holding a special tool.
-
-### Inheritance
-
-The `parent` option is used when your tools are tiering up, and you want the stronger tools to automatically inherit all of the blocks from the tools under it. This is a very handy organizational feature. If you leave it empty, it will automatically take the `default` permission set as parent.
-
-```yaml
-TOOL?DIAMOND_PICKAXE:
-    parent: DIAMOND_PICKAXE
-    can-mine:
-    - ...
-```
-
-## Default configuration
-
-```yaml
+::: details Default Config
+```yml
 # The corresponding tool. It's CASE_SENSITIVE!
 WOODEN_PICKAXE:
     parent: AIR
@@ -79,3 +61,40 @@ AIR:
     - vanilla{type=OAK_LOG}
     - vanilla{type=SPRUCE_LOG}
 ```
+:::
+
+The options are very simple as well. You start by choosing the tool, then specify the list of all the [block types](../features/mining.md#target-block) this tool can break. This feature works like a whitelist: any block that is not in the list, cannot be broken by the given tool. For extra compatibility, we have broken blocks into block types, like vanilla blocks, blocks from MMOItems, and even custom skulls!
+
+```yml
+IRON_AXE:
+    default: true
+    can-mine:
+    - vanilla{type=OAK_LOG}
+    - vanilla{type=SPRUCE_LOG}
+```
+
+## Default permission set
+
+The `default` option can be used to setup default break permissions. If a player happens to hold an item which has NO setup in this config file, this permission set will be used by default. It makes sense to just use `AIR` as default because it's what any player can mine when not holding a special tool.
+
+## MMOItems
+
+To give block mining permissions to MMOItems tools, use the `ITEM_TYPE?ITEM_ID` syntax. Here is an example with the item with type `TOOL` and ID `STEEL_PICKAXE`.
+```yaml
+'TOOL?STEEL_PICKAXE':
+    parent: IRON_PICKAXE
+    can-mine:
+    - 'vanilla{type=EMERALD_ORE}'
+```
+
+## Inheritance
+
+The `parent` option is used when your tools are tiering up, and you want the stronger tools to automatically inherit all of the blocks from the tools under it. This is a very handy organizational feature. If you leave it empty, it will automatically take the `default` permission set as parent.
+
+```yaml
+TOOL?DIAMOND_PICKAXE:
+    parent: DIAMOND_PICKAXE
+    can-mine:
+    - ...
+```
+

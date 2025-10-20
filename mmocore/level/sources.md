@@ -1,3 +1,5 @@
+# 🪴 Experience Sources
+
 An experience source gives you experience for certain professions when certain events occur. Each experience source has its own specific parameters that you can specify in the config with `exp_source_name{param1=P1;param2=p2..}`. You must specify the parameter `amount=min-max` corresponding to the bounds between which the amount of experience will be randomly chosen each time.
 
 You can also use experience sources for your main classes.

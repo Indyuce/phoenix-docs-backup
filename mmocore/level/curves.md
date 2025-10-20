@@ -1,3 +1,5 @@
+# 📈 Experience Curves
+
 **This is a very technical feature, you will not learn anything by reading this page on its own (out of context). It should only be read if other wiki pages redirect you to this page.**
 
 Experience curves allow you to define how much experience a player needs in order to level up either a profession or a class. All exp curves can be found under the `/MMOCore/expcurves` folder. You can setup an exp curve by creating a **.txt** file with the following format:

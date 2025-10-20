@@ -1,3 +1,5 @@
+# ⭐ Experience Boosters
+
 Admins can use a [command](Commands) in order to create EXP boosters which apply for every online player in the server! Using the `/rpg booster create` command, you can specify how much extra % EXP players will earn, and even **which profession** the booster applies for.
 
 ## Compatibility Options

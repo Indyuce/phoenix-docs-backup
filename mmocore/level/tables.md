@@ -1,3 +1,5 @@
+# 📋 Experience Tables
+
 This feature was introduced in MMOCore 1.8.3 and was designed to let players claim more complex rewards when leveling up their professions. Its primary function is to give players leveling rewards every N profession levels. You can also configure a claim chance for every "experience drop" to have extra randomness. Here is the default `exp-tables.yml` config file
 
 ```plaintext

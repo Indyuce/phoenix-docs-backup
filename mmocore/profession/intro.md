@@ -4,14 +4,15 @@ order: -1
 
 # Introduction
 
-Although MMOCore features at the moment 7 default professions, you can create as many professions as you want to make your leveling system more interesting. Professions can have specific **[experience sources](Experience Sources)** i.e actions players can perform in order to get X exp in a specific profession.
+Although MMOCore features at the moment 7 default professions, you can create as many professions as you want to make your leveling system more interesting. Professions can have specific [experience sources](../level/sources.md), i.e actions that players can perform in order to obtain exp in a specific profession.
 
-Once players have earned enough experience in their profession, they not only level up their profession but also receive some class EXP which can level up their main level and give them skill points.
+Once players have earned enough experience in their profession, their profession levels up, grant some rewards, such as main class exp, skill points, access to skills...
 
-![TBz9e5B](uploads/51810e957ab276b52b39fda03789e2d0/TBz9e5B.gif)
+![TBz9e5B](uploads/main_gui.gif)
 
 ## Example: Farming Profession
-```
+
+```yml
 # Display options
 name: Farming
 
@@ -40,9 +41,13 @@ experience:
 All profession config files are saved in the `/MMOCore/profession` plugin folder. You may configure the profession display name, as well as the **main class experience** the player will earn whenever leveling this specific profession.
 
 ## Experience Curve
-This determines how much EXP the player needs to reach the next profession level. More info on experience curves [over here](Experience Curves).
+
+This determines how much EXP the player needs to reach the next profession level. More info on experience curves on [this wiki page](../level/curves.md).
 
 ## Experience Tables
-More about experiences tables [here](Experience tables)
+
+More about experiences tables on this [wiki page](../level/tables.md).
+
 ## Experience sources
-Experience sources define what actions the player have to do in order to earn exp in your profession. More info over that [wiki page](Experience Sources).
+
+Experience sources define what actions the player have to do in order to earn exp in your profession. More info over [this wiki page](../level/sources.md).

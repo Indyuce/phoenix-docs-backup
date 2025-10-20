@@ -2,15 +2,16 @@
 order: 3
 ---
 
-# Alchemy
+# 🧙‍♂️ Enchanting
 
 Enchanting is a specific type of profession in MMOCore. It allows players to get experience and level up their enchant profession by enchanting items at the vanilla enchantment tables. The experience gained when enchanting an items depends directly on the new enchants your item obtains, and on the levels of the new enchants.
 
 ## Enchanting Experience
+
 Some enchants are harder to obtain that others and therefore should give more exp than others. Every enchant has a set amount of EXP **per enchant level** that will be given to the player whenever he rolls that enchant. Therefore, the experience earned is the weighted sum of all the exp earned by every single enchant, weighted by the enchant level.
 
-## enchanting.yml
-```
+## Configuration
+```yml
 base-enchant-exp:
     fire_protection: 10
     sharpness: 10
@@ -52,5 +53,13 @@ base-enchant-exp:
 ```
 
 ## Example
-A player enchants a diamond sword with _Efficiency IV_, _Unbreaking III_ and _Silk Touch_. Therefore the experience given to the player is: `total = sum of all (<enchant exp> * <enchant level>)` i.e
-`total = 4 * 40 + 3 * 10 + 1 * 50 = 160 + 30 + 50 = 240 Enchanting EXP`
+
+A player enchants a diamond sword with _Efficiency IV_, _Unbreaking III_ and _Silk Touch_. Therefore the experience given to the player is:
+```plaintext
+efficiency exp = 4 * 40 = 160
+unbreaking exp = 3 * 10 = 30
+silk touch exp = 1 * 50 = 50
+
+total exp      = sum of exp from all enchants
+               = 240 exp
+```

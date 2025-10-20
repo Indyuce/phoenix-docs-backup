@@ -1,8 +1,10 @@
+# 🔨 Smithing
+
 Smithing is a specific type of profession where players can earn EXP when repairing items using the vanilla anvil. The experience earned by the player depends on the item the player is repairing, and on the amount of durability the player is repairing.
 
 The config file is pretty self explanatory: you can setup how much smithing experience you want the player to earn when repairing 100 durability points of a specific item using the vanilla anvil.
 
-## smithing.yml
+## Configuration
 ```
 # Experience given by repairing 100
 # durability points from a specific material.
