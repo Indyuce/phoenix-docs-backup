@@ -1,3 +1,5 @@
+# 🔧 Miscellaneous
+
 ### Apply cooldown
 First read the mechanic above.
 In MMOItems/MMOCore, any object that has a cooldown (an item, parrying, dodging, a skill etc.) has a cooldown key associated to it (see [here](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Variables#cooldownmap)). As long as it's not being used in MMOItems/MMOCore, you can claim any string key for your plugin and use it for anything.
