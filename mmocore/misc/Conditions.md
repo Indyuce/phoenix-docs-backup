@@ -33,6 +33,3 @@ test-condition-2:
 | Current Biome | `biome{name=BIOMES}` |
 | Current World | `world{name=WORLD_NAME}` |
 | Permission | `permission{node=PERMISSION_NODE}` |
-
-```
-```

@@ -1,3 +1,5 @@
+# 💸 Economy
+
 MMOCore comes along with a RPG styled physical currency system which consists in two types of items: **bank notes** and **gold coins**. Gold coins are always worth 1 gold however bank notes can be worth anything. This currency system not only add some RPGs atmosphere to your server because they can be used to trade, but they can also be added to mob drop tables e.g using MythicMobs to make dropping gold easier.
 
 ## Deposit 
