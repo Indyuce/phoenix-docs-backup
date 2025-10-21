@@ -1,7 +1,9 @@
+# 🌱 Skill Trees
+
 Skill trees are a combination of nodes which can be unlocked/levelled-up using skill tree points. Levelling up a skill tree node can give stats or can run some triggers for the player. You can also reset the progress for a skill tree and gain the skill tree points spent for it by using a skill tree reallocation point.
 
-<details>
-<summary>Skill Tree Basic Config Example</summary>
+
+::: details Skill Tree Basic Config Example
 
 ```yaml
 id: 'custom_combat'    # Unique Identifier for the Skill Tree
@@ -43,7 +45,7 @@ nodes:
         - "&eMana regen in pts/sec +1"
 
 ```
-</details>
+:::
 
 ## Linking a skill tree to a class
 

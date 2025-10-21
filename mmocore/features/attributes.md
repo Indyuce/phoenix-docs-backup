@@ -1,8 +1,8 @@
-Player attributes are a well known RPG feature which adds more complexity (theory crafting) to the player leveling process.
+# 💪 Attributes
 
-## Overview
+Attributes are super classic RPG "stats" which players can level up to unlock new perks. These perks includes additional stats (max health, damage, cooldown reduction...) and the ability to use certain items. This very classic RPG feature adds more theory crafting material to your server.
 
-Attributes are super classic RPG "stats" which players can level up to unlock new perks. These perks includes additional stats (max health, damage, cooldown reduction...) and the ability to use certain items.
+![](uploads/attribute_ui.gif)
 
 MMOCore’s attributes are fully integrated with **MMOItems**, allowing you to set **attribute requirements** for items. This means you can configure an MMOItem so that a player can only equip or use it if they have at least a certain number of points in a specific MMOCore attribute. For example, you could make a legendary sword require **15 Strength** before it can be wielded, or a mystical staff require **20 Intelligence** before it can be used. This creates a natural progression system where players need to invest in the right attributes to unlock access to more powerful gear.
 
@@ -14,11 +14,9 @@ Use `/attributes` to open up the attribute menu. Players can see the current val
 
 You will need one _attribute point_ to level up once one single attribute.
 
-To reallocate your attribute points, click the _Reallocate Skill Points_ icon. You will need one _attribute reallocation point_, that you can give to players using an [admin command](Commands).
+To reallocate your attribute points, click the _Reallocate Skill Points_ button. You will need one _attribute reallocation point_, that you can give to players using an [admin command](../general/commands.md).
 
-![8p9ckkU](uploads/92fc8837be3847d47d7258c588af11db/8p9ckkU.gif)
-
-<details>
+::: details Other Looks for the Menu
 
 Check out [this wiki page](Oraxen%20Support) to learn about custom GUI textures.
 

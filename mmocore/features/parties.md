@@ -1,3 +1,5 @@
+# 👯 Parties
+
 Parties are a basic system built into MMOCore where you and up to 7 friends can party up for extra boosts and information! This system is a great groundwork for party integration into other plugins such as DungeonsXL.
 
 ## How to use

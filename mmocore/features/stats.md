@@ -1,3 +1,5 @@
+# 💪 Player Stats
+
 Player statistics are essential in MMOCore. They can be granted by classes, attributes, party buffs, temporary skills, items... For better compatibility, MMOItems shares its stat system with MMOCore, so any stat that can be found in MMOItems can be used inside of MMOCore.
 
 ## Stats handled with vanilla attribute modifiers
@@ -52,17 +54,17 @@ The default player movement speed is set to 0.1 which is 4.317m/s according to t
 
 | Stat name | Description |
 |-----------|-------------|
-| max_mana | Maximum mana the player may have. |
-| max_stamina | Maximum stamina the player may have. |
-| max_stellium | Stellium is a resource used to travel using waypoints. |
-| health_regeneration | Health [regeneration](Combat%20Log) in pts/sec. |
-| mana_regeneration | Mana regen in pts/sec |
-| stamina_regeneration | Stamina regen in pts/sec |
-| stellium_regeneration | Stellium regen in pts/sec |
-| max_health_regeneration | Health regen in % of max health/sec |
-| max_mana_regeneration | Mana regen in % of max mana/sec |
-| max_stamina_regeneration | Stamina regen in % of max stamina/sec |
-| max_stellium_regeneration | Stellium regen in % of max stellium/sec |
+| `max_mana` | Maximum mana the player may have. |
+| `max_stamina` | Maximum stamina the player may have. |
+| `max_stellium` | Stellium is a resource used to travel using waypoints. |
+| `health_regeneration` | Health [regeneration](Combat%20Log) in pts/sec. |
+| `mana_regeneration` | Mana regen in pts/sec |
+| `stamina_regeneration` | Stamina regen in pts/sec |
+| `stellium_regeneration` | Stellium regen in pts/sec |
+| `max_health_regeneration` | Health regen in % of max health/sec |
+| `max_mana_regeneration` | Mana regen in % of max mana/sec |
+| `max_stamina_regeneration` | Stamina regen in % of max stamina/sec |
+| `max_stellium_regeneration` | Stellium regen in % of max stellium/sec |
 
 ## Utility
 

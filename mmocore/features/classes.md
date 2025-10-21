@@ -1,3 +1,5 @@
+# 🧙‍♂️ Classes
+
 Due to popular demand, one of MMOCores trademark features is its customizable class system! This paragraph goes over the important features of classes as well as how to configure them.
 
 Our class system aims to provide a completely user determined class creation system that looks good and works good. We have picked up where other plugins have been abandoned!
@@ -117,10 +119,10 @@ options:
 
 ## Class stats
 
-Class stats are the statistics given to the player when he levels up. It's one of the most essential RPG gameplay feature. (Watch out, the config section is called `attributes` and not `stats` for historical reasons).
+Class stats are the statistics given to the player when he levels up. It's one of the most essential RPG gameplay feature.
 
 ```yaml
-attributes:
+stats:
     max-health:
         base: 18
         per-level: 0
@@ -388,7 +390,7 @@ Triggerable events, for the most part, should be self-explanatory; For the `mult
 
 A full list of available triggers that can be used in conjunction with these events can be found [here](Triggers).
 
-# Disabling MMOCore Classes
+## Disabling MMOCore classes
 
 In some cases you might want to fully disable classes and/or leveling within MMOCore. This is rather simple to do:
 

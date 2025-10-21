@@ -1,3 +1,5 @@
+# 💰 Drop Tables
+
 The **/drop-tables** folder is where you setup all of your custom drop tables for **block and loot chest drops**. Since their use is not limited to block drops, we decided to give them a separate folder so that you can setup them there and only use their reference in other configs to make them lighter/easier to read and setup.
 
 Drop tables can be used to drop vanilla items, mmoitems or the content of another MMOCore drop table. You can encapsulate drop tables inside of other drop tables to create complex drop tables.

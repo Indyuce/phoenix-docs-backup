@@ -1,3 +1,5 @@
+# ⚔️ Combat
+
 ## Combat Logging
 Combat logging is a useful feature which lets players know when they enter or quit combat. Combat log is handled via chat messages. It is a very bare-bones feature in itself, but **it ties in so nicely with other mechanics like skills**: for instance there is a skill that makes players deal significantly increased damage when performing a melee attack that gets him into combat. You may also imagine a skill where the player gets increased damage for each second they spend in combat.
 

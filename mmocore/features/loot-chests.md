@@ -1,4 +1,4 @@
-# Loot Chests
+# 🎁 Loot Chests
 
 Lootable chests are a great way to reward RPG players for exploring your world. They spawn around players in specific regions with randomly generated loot. Loot chests can have tiers; the higher the tier, the better the loot.
 
