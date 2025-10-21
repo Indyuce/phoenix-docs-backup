@@ -182,111 +182,13 @@ Since you most likely want your players to access these subclasses only by level
 
 ## Skills
 
-```yaml
-skills:
-    FIRE_STORM:
-        level: 1
-        max-level: 30
-        unlocked-by-default: true
-        #Doesn't have any impact as this is an active skill
-        #needs-bound: true
-        damage:
-            base: 5.0
-            per-level: 3.0
-        cooldown:
-            base: 5.0
-            per-level: -0.1
-            max: 5.0
-            min: 1.0
-    POWER_MARK:
-        level: 3
-        max-level: 30
-        unlocked-by-default: true
-        needs-bound: true
-```
+Each class has its own set of skills. Learn more about class skills on [this wiki page](../skills/config.md).
 
-This is the place where you define the skills that your class has. You will need to setup the level at which the player will \*\* that skill\*\*, the **maximum level** of that skill (i.e the max amount of skill points a player may spend on that skill).
+## Skill Slots
 
-Since MMOCore 1.12 dev builds, you may also toggle off the `unlocked-by-default` option (which is toggled on by default) if you don't want that skill to be unlocked by default. When toggled off, this skill has to be unlocked through the use of a command, quest trigger, or whatever you want. This means that you can have an item, an attribute, a class level up table, or even a skill tree unlock that skill.
+Each class has its own set of skill slots. Learn more about skill slots on [this wiki page](../skills/binding.md#skill-slots).
 
-Another option is `needs-bound` that is used ONLY for passive skills. If set to false the passive skill will directly be usable even if it is not bound to any slot. If this option is not filled it will take the default value defined in config.yml with th e field `passive-skill-need-bound`.
-
-You might also want to change the skill characteristics, so that a fireball cast by a mage deals more damage than a fireball cast by a Paladin. What you can do is add **skill modifiers** which edit specific numeric values of that skill using the same formula as if you wanted to setup class stats:
-
-```yaml
-FIRE_STORM:
-    level: 1
-    max-level: 30
-
-    # There
-    damage:
-        base: 5.0
-        per-level: 3.0
-        min: 5
-        max: 20
-```
-
-That means that the fire storm spell will deal 5 base damage, plus 3 damage for every skill point the player spent in that skill. Keep in mind skill values do not scale on the player's level directly, but rather on the **skill level**, which you can upgrade by 1 for 1 skill point.
-
-## Skill Slots (MMOCore 1.12+)
-
-Skill slots enable to bind skills and are thus necessary in order to cast a skill. You can define a name, lore and a material/custom model data to change the apparence it has when no skill is bound to the slot.
-
-Each slot can also use a formula which will determine the skills that can be bound to it. This formula uses [Skill Categories](Player%20Skills) and can enable you to make all the restrictions you could think of for each slot. If no formula is specified, all the skills will be boundable to this slot. Each skill category will need to be surrounded by \<\> for the formula to work. For example `formula: "<FIREBALL>"`means only the FIREBALL skill can be bound to this slot, `formula: "<PASSIVE>"` means only passive skills can be bound to the slot. You can use the !(negation), ||(or) and &&(and) operators to make more complex formulas.
-
-Skill buff triggers (More about triggers [here](Triggers).) can also be linked to each slot. Those will only apply to the skill that is bound to the slot and will check that the given skill matches the formula. If it doesn't match it then no buffs will be given to it. You can then for example make slots that give -10% cooldown or give 20 additional damage to any skills bound to it.
-
-Slots can be locked or unlocked using the associated [command](Commands) & [triggers](Triggers). They will be visible in the GUI and usable only if they are unlocked. The option `unlocked-by-default` enables you to precise if you want your slot to be locked or unlocked by default and will be set to true if don't fill it. If a slot that hasn't been defined in the config is unlocked through a command or a trigger it will just be a default slot without custom properties on it.
-
-Finally, skills can now be bound to slots using the command /mmocore admin slot bind . This command will work even if the designated skill is not considered "unlocked". However, doing so will only bind the skill to the slot without unlocking it. You can force a certain slot to be bound only through the command by forbidding manual binding with the option can-manually-bind, set to true by default.
-
-```yaml
-skill-slots:
-    1:
-        name: "Skill Slot I"
-        lore:
-            - "&eReduces by &610% &ethe cooldown of"
-            - "&ethe skill bound to it."
-        #Can only be bound to active skills.
-        formula: "<ACTIVE>"
-        skill-buffs:
-            - 'skill_buff{modifier="cooldown";amount=-10;type="RELATIVE"}'
-    2:
-        name: "Skill Slot II"
-        lore: 
-            - "&eGives &640 &eadditional damage to"
-            - "&ethe skill bound to it!"
-            - "&eThis slot is for AQUA & FIRE skills."
-        formula: "(<AQUA>&&<ACTIVE>)||(<FIRE>&&<ACTIVE>)"
-        skill-buffs:
-            - 'skill_buff{modifier="damage";amount=+40;type="FLAT"}'
-```
-
-If you are updating from old version this is what you have to add to your class configs to see default skill slots
-
-```yaml
-skill-slots:
-    1:
-        name: "&aSkill Slot I"
-        unlocked-by-default: true
-    2:
-        name: "&aSkill Slot II"
-        unlocked-by-default: true
-    3:
-        name: "&aSkill Slot III"
-        unlocked-by-default: true
-    4:
-        name: "&aSkill Slot IV"
-        unlocked-by-default: true
-    5:
-        name: "&aSkill Slot V"
-        unlocked-by-default: true
-    6:
-        name: "&aSkill Slot VI"
-        unlocked-by-default: true
-```
-
-### Linking a skill tree to a class
+## Linking a skill tree to a class
 
 Skill trees are class based which means that the [skill trees](Skill%20Trees) you can see and your progress for them depends on your current class. Each player can only progress in the skill trees linked to its current class. You can link skill trees to a class like this:
 

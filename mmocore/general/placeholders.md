@@ -12,20 +12,20 @@ If you're looking for a placeholder and you can't see it here, remember MythicLi
 
 | **Placeholder** | **Description** |
 |-----------------|-----------------|
-| `%mmocore_attribute_<attribute>%` | Current value of a [player attribute](Player%20Attributes). |
+| `%mmocore_attribute_<attribute>%` | Current value of a [player attribute](../features/attributes.md). |
 | `%mmocore_<health/mana/stamina/stellium>%` | Nicely formatted current resource value |
 | `%mmocore_<health/mana/stamina/stellium>_bar%` | Nicely formatted current resource value AS A BAR! |
 | `%mmocore_max_health%` | Nicely formatted shorthand for `%mythiclib_stat_max_mana%` |
-| `%mmocore_stat_<stat_name>%` | Returns the formatted player [stat](Player%20Statistics) value |
+| `%mmocore_stat_<stat_name>%` | Returns the formatted player [stat](../features/stats.md) value |
 
 ### Points
 
 | **Placeholder** | **Description** |
 |-----------------|-----------------|
-| `%mmocore_skill_points%` | More info on [skill points](Player%20Skills). |
-| `%mmocore_class_points%` | More info on [class points](Player%20Classes). |
-| `%mmocore_attribute_points%` | More info on [attribute points](Player%20Attributes). |
-| `%mmocore_attribute_reallocation_points%` | More info on [attribute points](Player%20Attributes). |
+| `%mmocore_skill_points%` | More info on [skill points](../skills/intro.md#upgrading-a-skill). |
+| `%mmocore_class_points%` | More info on [class points](../features/classes.md#class-points). |
+| `%mmocore_attribute_points%` | More info on [attribute points](../features/attributes.md). |
+| `%mmocore_attribute_reallocation_points%` | More info on [attribute points](../features/attributes.md). |
 | `%mmocore_attribute_points_spent_<attribute_id>%` | The points spent on a specific attribute. |
 | `%mmocore_skill_tree_points_<tree>%` | Unspent skill tree points, for a specific tree. Use `global` for global skill tree points. |
 
@@ -37,7 +37,7 @@ If you're looking for a placeholder and you can't see it here, remember MythicLi
 | `%mmocore_level_percent%` | Progression to next level in %. |
 | `%mmocore_experience%` | Returns player experience. |
 | `%mmocore_next_level%` | Returns player experience needed for next level. Works well beside %mmocore_experience%. |
-| `%mmocore_profession_<profession>%` | [Profession](Custom%20Professions) player level. |
+| `%mmocore_profession_<profession>%` | [Profession](../profession/intro.md) player level. |
 | `%mmocore_profession_experience_<profession>%` | Returns player experience for the specific profession. |
 | `%mmocore_profession_next_level_<profession>%` | Returns player experience needed for next level for the specific profession. Works well beside %mmocore_experience\_% |
 | `%mmocore_profession_percent_<profession>%` | Current progression to next profession level in %. |
@@ -52,7 +52,7 @@ If you're looking for a placeholder and you can't see it here, remember MythicLi
 
 | **Placeholder** | **Description** |
 |-----------------|-----------------|
-| `%mmocore_quest%` | Ongoing [quest](Quests), or "None". |
+| `%mmocore_quest%` | Ongoing [quest](../features/quests.md), or "None". |
 | `%mmocore_quest_progress%` | Progress of current quest, or "0" if no quest. |
 | `%mmocore_quest_objective%` | Current quest objective, or "None" if no quest. |
 

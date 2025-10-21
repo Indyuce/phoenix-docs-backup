@@ -1,19 +1,30 @@
+---
+order: 4
+---
+
+# 😈 Anticheat Support
+
 MMOCore will automatically hook into anti-cheat plugins and can be configured to disable certain checks when casting skills.<br>
-(Note: Only skills made using MythicMobs are supported)<br>
+
+::: info
+Only skills made using MythicMobs are supported
+:::
+
 The way it works, is by specifying different Anti-Cheat types and disable them for a certain amount of ticks.
 
 ## Adding Anti-Cheat to MythicMob skills
 (In order to set up MythicMob skills, [go here](Player Skills#binding-mythicmobs-skills-to-mmocore-skills))
 To add Anti-Cheat support to your MythicMob skills, simply add `disabled-anti-cheats:` to your skill YML file. (The one in MMOCore)
-You can then add 'flags' with a tick value depending on which Anti-Cheat systems you need to disable.<br>
+You can then add 'flags' with a tick value depending on which Anti-Cheat systems you need to disable.
+
 An example of disabling Flying and Clipping for 20 ticks:
-```
+```yml
 disabled-anti-cheats:
   flying: 20
   clipping: 20
 ```
 An example of disabling Fast Heal for 5 ticks and Critical Hits for 30 ticks.
-```
+```yml
 disabled-anti-cheats:
   fast_heal: 5
   critical_hits: 30
@@ -56,4 +67,4 @@ The flag is what needs to be put first, the function is what the cheat is suppos
 | `killaura`          | Locked on target                                   |
 
 ## Compatible Anti-Cheat Plugins
-- **Spartan** ([link](https://www.spigotmc.org/resources/spartan-advanced-anti-cheat-hack-blocker.25638/))
+- [Spartan](https://www.spigotmc.org/resources/spartan-advanced-anti-cheat-hack-blocker.25638/)

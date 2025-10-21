@@ -1,4 +1,8 @@
-# MythicMobs
+---
+order: 2
+---
+
+# 🧌 MythicMobs
 
 Most of our mob features and custom drops tie into MythicMobs, the best mob creation plugin. Also **one of the most important features**, in order to create your own skills through MMOCore, you will utilize MythicMobs to make any skill you want. More info [here](Player%20Skills#binding-mythicmobs-skills-to-mmocore-skills).
 

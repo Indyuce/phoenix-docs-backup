@@ -14,7 +14,7 @@ Below is a list of all available commands in MMOCore. You can also explore these
 ### Currency
 | Command | Usage |
 |--|--|
-| ``/mmocore note`` | Gives players a note worth $X. Can be [deposited](Currency%20System) into banks. |
+| ``/mmocore note`` | Gives players a note worth $X. Can be [deposited](../misc/economy.md) into banks. |
 | ``/mmocore coins`` | Gives players gold coins based on the amount input. Can be deposited into banks. |
 
 ### Quests
@@ -40,7 +40,7 @@ Below is a list of all available commands in MMOCore. You can also explore these
 | `/mmocore admin attribute <give/take>` | Increases a player's attribute |
 | `/mmocore admin class` | Sets a player's class |
 | `/mmocore admin force-class` | Sets a player's class by force. This means their level, skills, etc. won't update as well. Make sure your classes have the same skills/skill-trees if you plan on using this command. |
-| `/mmocore admin class-points` | Gives [class points](Player%20Classes) to a player. |
+| `/mmocore admin class-points` | Gives [class points](../features/classes.md#class-points) to a player. |
 | `/mmocore admin exp <profession/main>` | Manually gives experience to a player. |
 | `/mmocore admin hideab` | Hides the action bar for a player for X time. |
 | `/mmocore admin info` | See summary of levels for a player. |
@@ -51,18 +51,18 @@ Below is a list of all available commands in MMOCore. You can also explore these
 | ``/mmocore admin resource-mana <give/set/take>`` | Modify a player's mana. |
 | ``/mmocore admin resource-stamina <give/set/take>`` | Modify a player's stamina. |
 | ``/mmocore admin resource-stellium <give/set/take>`` | Modify a player's stellium. |
-| ``/mmocore admin skill-points <give/set>`` | Gives [skill points](Player%20Skills) to a player so they can upgrade their skills. |
+| ``/mmocore admin skill-points <give/set>`` | Gives [skill points](../skills/intro.md#upgrading-a-skill) to a player so they can upgrade their skills. |
 | ``/mmocore admin skill-realloc-points <give/set>`` | Gives skill reallocation points to a player. |
 | ``/mmocore admin skill <give/set>`` | Gives points directly to a skill for a player. |
-| ``/mmocore admin skill <lock/unlock>`` | Locks/unlocks a [skill](Player%20Skills#skill-unlocking) for a certain player. |
-| ``/mmocore admin slot <lock/unlock>`` | Locks/unlock a [slot](Player%20Classes#skill-slots-since-1120) for a player. |
+| ``/mmocore admin skill <lock/unlock>`` | Locks/unlocks a [skill](../skills/intro.md#unlocking-skills) for a certain player. |
+| ``/mmocore admin slot <lock/unlock>`` | Locks/unlock a [slot](../features/classes.md#skill-slots) for a player. |
 | ``/mmocore admin slot bind <slot> <skill>`` | Binds a skill to a certain slot. This will work even if the designated skill is not unlocked for the player but won't unlock it.  |
 | ``/mmocore admin slot unbind <slot>``  | Unbinds a skill from a certain slot. |
 
 ### EXP Boosts
 | Command | Usage |
 |--|--|
-| ``/mmocore booster create <profession/main> (player)`` | Creates an [EXP booster](EXP%20Boosters) with specified power and length. |
+| ``/mmocore booster create <profession/main> (player)`` | Creates an [EXP booster](../level/boosters.md) with specified power and length. |
 | ``/mmocore booster list`` | Displays active EXP boosters. |
 | ``/mmocore booster remove`` | Removes a booster with specified ID. |
 

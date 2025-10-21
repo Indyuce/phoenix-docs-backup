@@ -1,3 +1,11 @@
+# 🔧 Triggers
+
+::: warning
+
+This feature will be merged in a near future with MythicLib [script mechanics](../../mythiclib/scripts/mechanics/intro.md) (this update will be backwards compatible). This page will be deleted and moved over to the MythicLib wiki.
+
+:::
+
 **This is a very technical feature, you will not learn anything by reading this page on its own (out of context). It should only be read if other wiki pages redirect you to this page.**
 
 Triggers are used by MMOCore to execute actions when certain conditions are met. They are used for both quests and professions, and each has a set of actions or objectives that can "trigger" them.

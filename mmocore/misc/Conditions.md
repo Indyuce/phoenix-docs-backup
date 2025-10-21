@@ -1,3 +1,11 @@
+# 🔧 Conditions
+
+::: warning
+
+This feature will be merged in a near future with MythicLib [script conditions](../../mythiclib/scripts/conditions/intro.md) (this update will be backwards compatible). This page will be deleted and moved over to the MythicLib wiki.
+
+:::
+
 Every drop table has the ability to be restricted with various conditions. This means that only players that meet all the requirements on a drop table will actually access it when performing an action. Here is a list of available conditions.
 
 ### Conditions tables (Since 1.9.5)

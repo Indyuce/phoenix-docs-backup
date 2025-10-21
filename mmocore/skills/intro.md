@@ -4,67 +4,45 @@ order: 1
 
 # 🔥 Skills
 
-Skills are amazing and unique abilities that players can use to defeat their enemies or buff their party mates fighting and surviving. Skills are either passive or active. Active skills are delibetarely cast by the player, and all require to be bound to a skill slot beforehand. Passive skills do not necessarily need to be bound to a skill slot, they are passively triggered by the player based on their interactions (attacks, other skills), movements...
+Skills are amazing and unique abilities that players can use to defeat their enemies or buff their party mates fighting and surviving.
 
-Skills are class-specific. When changing class, a player will _lose_ their previous skills and gain new ones. Old skills from previous classes can still be covered when switching classes again.
+Skills are either **active or passive**. Active skills refer to skills proactively [cast by the player](casting.md). Passive skills cannot be cast - instead, they automatically trigger on specific events (attacks, clicks, movements, other skills...).
 
-## Binding active skills
+Skills are class-specific. When changing class, the player will "lose" the progress they made on their skills and unlock new ones. Previous progress is recovered when switching classes again.
 
-Active skills all require to be bound to a skill slot before being cast.
+## Custom Skills
 
-Every player has multiple skill slots which they can use to bind active skills to certain keybinds. You cannot cast any active skill unless it is bound. The number of skill slots a player has is determined by the player's class, and is configurable : for example, magic-oriented classes like Mages and Wizards can have more skill slots (and therefore skill casting opportunities) than physical-oriented classes like Warriors or Brutes. You may find more information about skill slots under the [player classes](../features/classes.md) wiki page.
+While MMOCore comes with more than 90 built-in skills, you can create as many custom skills as you want using the most popular skill/scripting languages available, including MythicMobs, MythicLib or SkillAPI.
 
-You may bind skills using the skill GUI (type `/skills` to open it up). You may see your current bound skills on the right side of the GUI. After selecting a skill by clicking on it, you can click any of the books on the right side to bind the selected skill. The book item will then update and show the bound skill. Some skill slots (see [Player Classes](../features/classes.md#skill-slots-since-1120) can have the `can-manually-bind` field toggled off, in which case the only way to bind a skill to this slot is to use the `/mmocore admin skill bind <skill> <player>` command.
+Note that skills are registered in MythicLib. Any skill you register in MythicLib will be usable in both MMOCore and MMOItems. Please read [this wiki page](../../mythiclib/skills/intro.md) to learn how to create and register custom skills.
 
-![skillgui](uploads/ee836a64bbb6db9ab9e2f7d1f4208ca7/skillgui.gif)
+## Overview
 
-**Once your skills are upgraded and bound, you may** [**cast**](Skill%20Casting) **them.**
+In order to use a skill, players need to:
+1) Choose a [class](../features/classes.md) <Badge type="info" text="optional" />
+2) [Unlock]() that skill <Badge type="info" text="optional" />
+3) [Bind](binding.md) that skill to a compatible skill slot <Badge type="info" text="optional" />
+4) [Cast](casting.md) that skill.
 
-## Binding passive skills
+Fortunately, the MMOCore skill system is really permissive:
+1) The default class can also have skills, so technically players do not need to choose a class to be able to cast skills. If you don't plan on using the class system, you can still use MMOCore skills.
+2) Skills can be unlocked when reaching a certain level, finishing a quest, unlocking a node in a skill tree or virtually anything else. Skills can also be made unlocked by default.
+3) Skills can be automatically bound to skill slots if you don't like the MMOCore skill binding feature.
+4) Obviously skill casting is a mandatory step, this is the step you really can't avoid!
 
-Since MMOCore 1.11, you can now choose whether or not some passive skills require binding. In your class skill configuration, set the `needs-bound` field to `false` to make your skill **permanent**. Permanent skills always take effect as soon as they are unlocked by the player. Only passive skills can be permanent.
+## Skill GUI
 
-In the following example, the passive skill _Power Mark_ for the _Mage_ class does not require to be bound to a skill slot in order to take effect. In other words, if the player has not bound this skill, they will still benefit from its effects. The following code snippet is taken from the `classes/mage/mage.yml` config file.
-
-```yml
-# classes/mage/mage.yml
-
-# Other class options......
-
-skills:
-  # Other skills.....
-  POWER_MARK:
-    level: 5
-    max-level: 30
-    # .......
-    needs-bound: false # Does not need to be bound to apply its effects
-```
-
-In the main MMOCore configuration file, you can also toggle off the option `passive-skill-need-bound`. By default, this option is set to true; this means that, unless specified otherwise, passive skills need to be bound to a skill slot in order to take effect.
+Players can open up the skills GUI by using `skills`. This UI allows players to visualize their available skills and their effects, upgrade their available skills, and bind their skills to skill slots.
 
 ## Upgrading a skill
 
-Upgrading a skill **increases its power**. Players can choose the skill they would like to upgrade based on their play style and skill path they decided to follow. Upgrading a skill takes **one skill point** which are earned when leveling up. You can upgrade your skills in the skill GUI (`/skills`).
+Upgrading a skill **increases its power**. Players can choose the skill they would like to upgrade based on their play style and skill path they want to follow. Upgrading a skill takes **one skill point**.
 
-Select the skill you'd like to upgrade by clicking on it, once it's selected it will change the GUI name. You can then upgrade the selected skill by clicking on the corresponding item. On the upgrade item column, you can see how powerful the spell would be with a higher level.
+Skill points are a currency which players can use to upgrade their skills. One upgrade costs one skill point. Skill points can be granted using an [admin command](../general/commands.md).
 
-![upgrade1](uploads/c4ab699df0b716956084647484ae40de/upgrade1.gif)
+![upgrade1](uploads/upgrade1.gif)
 
-![upgrade2](uploads/402ce7c38f6b934b02783e69f5eab004/upgrade2.gif)
-
-## Unlocking Skills
-
-Each skill can be locked, unlocked but not usable, or usable. Locking a skill means that it cannot be seen in the player's skills UI, and the player is unaware of its existence. When a skill is unlocked, it becomes visible to the player UI but can only be bound to a slot if the player meets the level requirements associated with the skill. A skill can be unlocked or locked through [triggers](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Triggers)(recommended) or [commands](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Commands).
-
-If you unlock a skill for which information is not filled in the class folder, it will be considered directly usable(at level 1) and won't be upgradable.
-
-## Skill categories & formula
-
-Each skill can be assigned to a list of categories through the field `categories`. By default, each skill is associated to two categories:
-
-* its skill ID which name is the skill ID and to the categorie PASSIVE/ACTIVE depending on if it is an passive/active skill. These categories can be used to parse formulas and target a specific subset of skills.\
-  \
-  Formulas enable the user to check if a condition on the skill categories is met. You can use all the classic operators for the such as !(negation), ||(or) and &&(and). They can be used to filter which skills can be bound to a specific [skill slot](/phoenix-dvpmt/mmocore/-/wikis/20Classes#skill-slots-since-1120) or to apply [skill buffs ](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Player%20Skills#skill-buffs)to a subset of skills.
+In the GUI, select the skill you'd like to upgrade by clicking it (the UI name should update). You can then upgrade the selected skill by clicking the _Upgrade Skill_ button. Items next to the _Upgrade Skill_ button let the user visualize how strong the skill would be with a higher level.
 
 
 
@@ -99,12 +77,12 @@ triggers:
 #Will target all the skills who have MY_OWN_CATEGORY in their categories list.
 ```
 
-## Skill Folder
 
+## Editing the skill GUI
 
-## Editing the skill menu
+The skill GUI can be edited by modifying the `gui/skill-view.yml` config file.
 
-```
+```yml
 # GUI display name
 name: 'Selected Skill: &6{skill}'
 
@@ -203,7 +181,7 @@ items:
 
 First of all you can edit the general GUI settings like its name and slots.
 
-```
+```yml
 name: Your Skills
 slots: 45
 ```
@@ -214,17 +192,17 @@ Notice how the config sections that fall under the `items` section share very si
 
 If you want to have your item displayed on multiple slots, use something like
 
-```
+```yml
 slots: [1, 2, 3, 4]
 ```
 
-The following formats won't work
+The following syntaxes do NOT work
 
-```
+```yml
 slots: 1
 ```
 
-```
+```yml
 slot: 1
 ```
 
@@ -239,9 +217,7 @@ slot: 1
 - The line starting with {unlocked} only displays if the player has unlocked the skill
 - The line starting with {locked} only displays if the player has NOT unlocked the skill yet
 - The line starting with {max_level} displays when the player has reached the max skill level
-- {lore} pastes the entire skill description (see [this](Player%20Skills#example-skill))
-
-
+- `{lore}` pastes the entire skill description
 
 ![image](uploads/2bfb6008eff5bb8e0f4d9222a18fd22d/image.png)
 
@@ -255,4 +231,4 @@ slot: 1
 ![image](uploads/67597295b40adbcabb65c83386178082/image.png)
 
 `upgrade` is the item clicked when you want to upgrade the selected skill\
-![image](uploads/83bf45b898f68a89e5f9fa4a3d47ac49/image.png)\*\*\*\*
+![image](uploads/83bf45b898f68a89e5f9fa4a3d47ac49/image.png)

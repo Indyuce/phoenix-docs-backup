@@ -18,25 +18,15 @@ To reallocate your attribute points, click the _Reallocate Skill Points_ button.
 
 ::: details Other Looks for the Menu
 
-Check out [this wiki page](Oraxen%20Support) to learn about custom GUI textures.
+Check out [this wiki page](../compatibility/rp-plugins.md) to learn about custom GUI textures. Here is a better looking version of the same GUI.
 
-![O0ISYkr](uploads/8bb3c8ee0472550bee705c8f42ec44a5/O0ISYkr.gif)
+![O0ISYkr](../compatibility/uploads/oraxen_ui.gif)
 
-<summary>
-Here is a better looking version of the same GUI.
-</summary>
-</details>
-
-
-
-<details>
-
-![image](uploads/063af91e41a66127ef5d079412aeca7b/image.png)
-
-<summary>
 Here is another look for the same GUI using another custom texture.
-</summary>
-</details>
+
+![image](uploads/attribuite_ui_2.png)
+
+:::
 
 ## Default Attributes & Ideas
 

@@ -1,12 +1,12 @@
 ---
-order: 2
+order: 4
 ---
 
 # 💫 Skill Casting
 
-Make sure you first learn about [skills](skills.md) and [skill slots](). MMOCore offers multiple ways of casting skills:
+Make sure you first learn about [skills](skills.md) and [skill slots](binding.md#skill-slots). MMOCore offers multiple ways of casting skills:
 
-- using key combos **(the most popular!)**
+- using key combos <Badge type="info" text="most popular!" />
 - using the [1] to [9] keys (_skill bar_)
 - using the mouse scroller
 - using a command
@@ -297,14 +297,16 @@ For example, let's say a player has four skill slots and the corresponding skill
 
 ## Disable skill casting
 
-If you are not using class skills or if you are not planning on adding active skills, you can just disable skill casting by using the following config section snippet.
-
-This will disable skill casting altogether. We generally recommend using this if you plan on either not using skill casting at all, or if you only want to cast skills through commands.
+If you are not using class skills or if you are not planning on adding active skills, you can just disable skill casting by using the following config syntax snippet inside `config.yml`.
 
 ```yaml
 skill-casting:
   mode: NONE
 ```
+
+This will disable skill casting altogether. We generally recommend using this if you plan on either not using skill casting at all, or if you only want to cast skills through commands.
+
+
 
 ## Editing the skill casting particle effect
 

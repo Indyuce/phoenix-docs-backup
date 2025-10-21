@@ -1,8 +1,8 @@
 ---
-order: -1
+order: 1
 ---
 
-# MMOItems
+# 🏹 MMOItems
 
 MMOCore is built to be used with MMOItems ([Polymart](https://polymart.org/product/3413/mmoitems) / [Spigot](https://www.spigotmc.org/resources/mmoitems-premium.39267)) although
 it is not a dependency. MMOCore features a lot of compatibility options

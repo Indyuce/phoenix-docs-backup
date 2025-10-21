@@ -1,14 +1,63 @@
 ---
-order: 3
+order: 5
 ---
 
-# 🗃️ Skill Configs
+# 🗃️ Configuration
 
-The `/skills` folder houses all of the skills that come with the plugin. Most skills are hardcoded into the plugin jar. If you do not want to use a skill, simply do not assign it to a class. Each skill has its **own YAML configuration file**, where you can edit its lore, , how it looks in the /skills menu, and the default parameter values for that skill.
+## Class Config
 
-MMOCore comes with 90+ default skills which it shares with MythicLib and MMOItems. MMOCore also enables you to create your own skills, either using the MythicMobs, MythicLib/MMOLib or even SkillAPI scripting language. More information below.
+Skills are class-specific, which means you need to choose what skills to give to each [class](../features/classes.md).
 
-## Example Skill
+In order to choose what skills each class can use, open up the class config file and look for/create the `skills` config section. Each entry of this config section corresponding to a single class skill.
+
+```yaml
+skills:
+
+  # First skill
+  FIRE_STORM:
+    level: 1
+    max-level: 30
+    unlocked-by-default: true
+
+    # Skill modifeirs
+    damage:
+      base: 5.0
+      per-level: 3.0
+    cooldown:
+      base: 5.0
+      per-level: -0.1
+      max: 5.0
+      min: 1.0
+    #....
+  
+  # Second skill
+  POWER_MARK:
+    level: 3
+    max-level: 30
+    unlocked-by-default: true
+    needs-bound: true
+    #.....
+  
+  #..........
+```
+
+### Skill Level
+
+`level` indicates the level at which the class naturally unlocks this skill. `max-level` is the maximum level for that class skill. Once reached, the player can no longer [upgrade](intro.md#upgrading-a-skill) this skill.
+
+`unlocked-by-default` indicates if this skill should be unlocked by default. It is set to `true` by default. When toggled off, this skill has to be [unlocked](unlocking.md) through the use of a command, quest trigger, skill book, exp table...
+
+### Needs Binding
+
+Another option is `needs-bound`. This option is only relevant for passive skills, as active skills must all be bound. When set to `false`, the passive skill takes effect even if not bound (and therefore can no longer be bound to any skill slot).
+
+### Skill Parameters
+
+You might also want to change the skill numerical parameters, so that a fireball cast by the _Mage_ class deals more damage than a fireball cast by the _Paladin_ class. Each parameter of each skill can be edited by adding the corresponding entry to the class skill config. For instance (see above), the `damage` parameter for the _Fire Storm_ skill is set to equal 5 Dmg, plus 3 Dmg per skill level. These skill parameters do not scale with the player's level but rather with the skill level. The skill level increases when a skill is [upgraded](intro.md#upgrading-a-skill).
+
+## Skill Folder
+
+The `/skills` folder houses all of the skills that come with the plugin. Most skills are hardcoded into the plugin jar. If you do not want to use a skill, simply do not assign it to any class. Each skill has its **own YAML configuration file**, where you can edit its lore, name, looks... and the default parameter values for that skill.
 
 ```yml
 name: Fire Storm
@@ -39,9 +88,9 @@ cooldown:
   min: 1.0
 ```
 
-This is an example skill showing the name option, lore, and several attribute modifiers.
+This is an example skill showing the name option, lore, and several skill parameters.
 
-For each skill you can edit the display name, how it looks in the /skills, and then all of its modifiers. The base option is how much damage/value it will have by default, and then per-level is what it will change by each time you level up the skill using skill points. There is a max and minimum for these values as well, that way you can't have a -2sec cooldown. You can also set a specific \`decimal-format \` for each parameter that will be used when parsing the corresponding placeholder, if it is not specified the default mythiclib decimal format will be used.
+For each skill you can edit the display name, how it looks in the skill GUI, and all of its modifiers. The `base` option is how much damage/value it will have by default, and then per-level is what it will change by each time you level up the skill using skill points. There is a max and minimum for these values as well, that way you can't have a -2sec cooldown. You can also set a specific \`decimal-format \` for each parameter that will be used when parsing the corresponding placeholder, if it is not specified the default mythiclib decimal format will be used.
 
 The `material` option determines what icon will display in the player's skill list. Using `<MATERIAL_NAME>:<integer>` will apply a custom model data to your skill icon, where the integer input is the custom model data being used.
 
@@ -49,10 +98,17 @@ Finally the `unlocked-by-default` option enables to say if a skill is unlocked o
 
 ![PhIpbOr](uploads/c663353b0893fc7e635bac6007069f77/PhIpbOr.png)
 
-## Binding MythicMobs skills to MMOCore skills
+## Skill Categories
 
-Since MMOCore 1.9 custom skills are handled within MythicLib, please refer to [this wiki page](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Skills).
+Each skill can be assigned to a list of categories through the field `categories`. By default, each skill is associated to two categories: its skill ID (`FIREBALL` for instance, not to be mistaken with the skill name), and either `ACTIVE` or `PASSIVE` depending on if it is an active or passive skill. These categories can be used inside [skill slot formulas](binding.md#skill-slots).
 
-### Making a passive skill
+For instance, this code snippet can be placed in the `skills/firebolt.yml` config file to provide a few categories to the _Firebolt_ skill:
+```yml
+categories:
+- fire
+- projectile
+```
+
+## Making a passive skill
 
 If you want to make a passive skill (using MythicMobs or SkillAPI) all you have to do is add `passive-type: TYPE` to your skill YML file in the '/skills' folder. Adding a passive type to your skill will prevent it from being bound and will automatically cast during specific events, depending on the passive type specified. You can see all Trigger Types on [this](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Trigger%20Types) page.

@@ -1,3 +1,7 @@
+---
+order: 3
+---
+
 # 💎 Resource Pack Plugins
 
 By resource pack plugins we refer to plugins which automate the creation and deployment of a resource pack for your server, the most popular being:
