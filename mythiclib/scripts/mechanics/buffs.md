@@ -1,20 +1,24 @@
 # 💖 Buffs & Stats
 
-## Add temporary stats
+## Add Temporary Stats
 
-This adds a stat to the player. You can use all the stats within MMOCore and MMOItems. It will be removed when the server restarts. The `lifetime` option is optional (in ticks), it's used to add temporary buffs. Set `relative` to true and this will grant 10% Atk damage instead of a flat +10 Atk damage.
+This adds a stat to the player. You can use all the stats within MMOCore and MMOItems. It will be removed when the server restarts.
 
-The `key` option is very necessary. It's the key you need to provide to remove your modifier later on if you need. There can't be two stat modifiers with the same `stat` and `key` option pair.
+For temporary stat buffs/debuffs, you can add a duration using the `lifetime` parameter (in ticks). Set `relative` to ``true`` and the buff will grant 10% Atk Damage instead of a flat +10 Atk Damage.
+
+The `key` parameter is optional. It's the key you need to provide to remove your modifier later on if you need. There can be multiple stats using the same key, and using the `remove_stat` mechanic with that key will remove all of them.
+
+Set `unique` to `true` if you want only one modifier with the same key to be active at a time. **If a new modifier is added with the same key, it will replace the previous one.** This is useful for buffs that you want to refresh periodically.
 
 ```yml
 script_give_stat:
   mechanics:
-  - 'add_stat{amount="10 + <modifier.extra>";time="20 + <modifier.extra_time> * 20";stat=ATTACK_DAMAGE;key=my_custom_skill;relative=false;target=caster}'
+  - 'add_stat{amount="10 + <modifier.extra>";time="20 *  (1 + <modifier.extra_time> )";stat=ATTACK_DAMAGE;key=my_custom_skill;relative=false;target=caster;unique=false}'
 ```
 
-## Remove temporary stats
+## Remove Temporary Stats
 
-The following mechanic removes the stat modifier registered above, whether or not it's temporary.
+The following mechanic removes all stat modifiers with the associated `key`. It does not matter if the stat modifiers are temporary or permanent.
 ```yml
 script_rem_stat:
   mechanics:
