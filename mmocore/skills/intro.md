@@ -219,16 +219,20 @@ slot: 1
 - The line starting with {max_level} displays when the player has reached the max skill level
 - `{lore}` pastes the entire skill description
 
-![image](uploads/2bfb6008eff5bb8e0f4d9222a18fd22d/image.png)
+![image](uploads/ui/item_skill.png)
 
-`switch` is the item that you'd click when switching from binding to upgrading mode\
-![image](uploads/aa179808ecdfa336ecb45d1b55112b7a/image.png)
+`switch` is the item that you'd click when switching from binding to upgrading mode
 
-`skill-slot` is the item used in the binding mode\
-![image](uploads/be06c771527a08258052ddfe00175cc1/image.png)
+![image](uploads/ui/item_switch.png)
 
-`skill-level` are the items used to tell the player how the selected skill would behave if it had a higher level\
-![image](uploads/67597295b40adbcabb65c83386178082/image.png)
+`skill-slot` is the item used in the binding mode
 
-`upgrade` is the item clicked when you want to upgrade the selected skill\
-![image](uploads/83bf45b898f68a89e5f9fa4a3d47ac49/image.png)
+![image](uploads/ui/item_slot.png)
+
+`skill-level` are the items used to tell the player how the selected skill would behave if it had a higher level
+
+![image](uploads/ui/item_level.png)
+
+`upgrade` is the item clicked when you want to upgrade the selected skill
+
+![image](uploads/ui/item_upgrade.png)

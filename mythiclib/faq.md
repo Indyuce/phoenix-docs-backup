@@ -103,13 +103,13 @@ You may also use `<color:#FFFFFF>` or `<color:black>` for colors, while the `§`
 
 To create a **horizontal** gradient of colors: `<gradient:[color1]:[color...]:[phase]>......</gradient>` where `[color]` is a hex color or simply something like `green`. To create a **vertical** gradient of colors: `<transition:[color1]:[color2]:[phase]>......</transition>`
 
-![image](uploads/eb620cb1422e38055ce4da6d5dd111f9/image.png)
+![image](uploads/color_grad_vertical.png)
 
 | Example Color Code | Picture |
 |--------------------|---------|
-| `<gradient:#FBEB19:#FD8C30><bold>MMOITEMS</gradient>` | ![image](uploads/8357bd0e65cc55856b078edceced9afb/image.png) |
-| `<color:#FF0000><bold>MMOITEMS or <#FF0000><bold>MMOITEMS` | ![image](uploads/bea01328d479292343efdc6e93bf257e/image.png) |
-| `<transition:white:black:red:0.0><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.1><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.2><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.3><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.4><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.5><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.6><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.7><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.8><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.9><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:1.0><bold>MMOITEMS</transition>` | ![image](uploads/8c2d880dedde1ae324521ef89c7bd5e6/image.png) |
+| `<gradient:#FBEB19:#FD8C30><bold>MMOITEMS</gradient>` | ![image](uploads/color_grad_horizontal.png) |
+| `<color:#FF0000><bold>MMOITEMS or <#FF0000><bold>MMOITEMS` | ![image](uploads/bold_red.png) |
+| `<transition:white:black:red:0.0><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.1><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.2><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.3><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.4><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.5><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.6><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.7><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.8><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:0.9><bold>MMOITEMS</transition>`<br>`<transition:white:black:red:1.0><bold>MMOITEMS</transition>` | ![image](uploads/color_grad_vertical.png) |
 
 ## Issue with FactionsBridge not loading
 

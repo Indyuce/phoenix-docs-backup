@@ -162,7 +162,7 @@ nodes:
     coordinates: 0,0
 ```
 
-![Coordinates](uploads/d142d83dc3237858959ea87b2262b633/GGlEXK2.jpeg)
+![Coordinates](uploads/skill_tree_ui_grid.jpeg)
 ### Lore
 
 The `lore` is displayed in the skill-tree GUI through the `{node-lore}` placeholder in `gui/skill-tree.yml`. If you want to fully customize the lore each node has, you can include in it all the placeholders that are used for the node item lore in `gui/skill-tree.yml` (`{current-level}`, `{current-state}`, `{max-level}`...).
@@ -206,7 +206,7 @@ With soft parent instead of strong parent the wisdom node could be unlockable if
 
 ### Experience Tables
 
-Each node has an experience table associated with it. More about Experience Tables [here](Experience%20Tables)
+Each node has an experience table associated with it. More about Experience Tables [here](../level/tables.md)
 
 ### Paths
 
@@ -276,7 +276,7 @@ Here is a full example to show what the display enables you to do:
 
 <div>
 
-![Skilltree](uploads/87cc7edc2f5af55cf0a3d642c8c82869/Skilltree_display-01.png)
+![Skilltree](uploads/skill_tree_ui_scheme.png)
 
 </div>Here the nodes 1,3,5,7,9 are unlocked. This makes the display for paths 2,4,6,8 be unlocked as the 2 nodes each path is linking are unlocked. The node 11 is unlockable making the path 10 unlockable also. Finally 22,24,25 are fully locked making the corresponding path have the fully locked display. The rest corresponds to the locked state. Now regarding the direction, here is an extensive list of the directions and state of each node/path:
 

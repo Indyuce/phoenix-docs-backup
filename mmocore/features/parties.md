@@ -6,16 +6,19 @@ Parties are a basic system built into MMOCore where you and up to 7 friends can 
 To begin, you can type the /party command. If you are not already in a party, it will ask you if you want to create one.\
 After that, you will be brought into the main party GUI. Inside the GUI is where you will invite your friends, and see the information on the party. By default, parties give a slight regeneration and experience boost. The more players in your party, the greater the buff (see below).
 
-![7Vx1Ld2](uploads/4115203f28cf342ec245efbe6c3b4196/7Vx1Ld2.png)
+![7Vx1Ld2](uploads/party_ui.png)
 
 ## Party Chat
 Players can talk via party chat using @ at the beginning of their message:
 
-![3zFCOei](uploads/cf8a7b13172530d88f4b4a3ef278e9d5/3zFCOei.png)
+![3zFCOei](uploads/party_chat.png)
 
 ## Party Buffs
-Party buffs are extra statistics that everyone in a party will get as long as they are more than 2. These buffs are configurable in the main config.yml file. Here is the `party` config section in the config.yml file.
-```
+
+Party buffs are extra statistics that everyone in a party will get as long, as they are more than 2 members in the party. A party with one solo player will not get any buffs. The buffs increase proportionally to the number of players in the party. For example, a party of 4 players will get 3 times the buff amount configured (as the first player does not count towards buffs).
+
+These buffs are configurable in the main MMOCore ``config.yml`` config file.
+```yml
 party:
 
     # Edit party buffs here. You may
@@ -31,7 +34,7 @@ party:
 
 These buffs are displayed on a cake icon when opening the player stats menu, that you can configure under the `/gui/player-stats.yml` config file:
 
-![CX0lIKA](uploads/1af871d02b5bb9971653ac9d5185515b/CX0lIKA.png)
+![CX0lIKA](uploads/party_morale.png)
 ```
     party:
         slots: [16]

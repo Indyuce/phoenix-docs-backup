@@ -8,11 +8,11 @@ This simple RPG option lets you display the player's current main class level on
 # Requires a SERVER reload when changed.
 override-vanilla-exp: true
 ```
-![SbErxxz](uploads/09288c4a1e92ee2aaf65b475599bc312/SbErxxz.png)
+![SbErxxz](uploads/vanilla_exp.png)
 
-It matches the experience and level displayed in the ``/p`` menu.
+It matches the experience progress and level displayed in the ``/p`` menu.
 
-![5f1IZ9F](uploads/6cb344e5b9dcd3fcccae489f9e1edc4d/5f1IZ9F.png)
+![](uploads/exp_progress.png)
 
 ## Vanilla EXP redirection
 

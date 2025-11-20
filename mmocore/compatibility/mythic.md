@@ -23,4 +23,5 @@ MMOCore adds new drop item types to MythicMobs drop tables, here is the list:
 ## Gold Pouches
 
 Gold pouches are leather pieces you can right click in order to open a 2-rows GUI which contains randomly generated gold coins and notes. Players cannot place any item in there, they may only take items from it if they have some space left in their inventory. Pouches **are taken off the player inventory** when fully emptied.
-![pp](uploads/e5fa3197fe924597eb61ad457c1f57ca/pp.gif)
+
+![pp](uploads/gold_pouch.gif)

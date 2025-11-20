@@ -169,14 +169,14 @@ Make sure that all servers are connected to the same MySQL server.
 
 * Set true `kick_if_no_profile` (If the player is teleported to this server without selecting a profile due to an error, it will not allow entry.)
 * Set false `unselect_profile_on_login` (It should remain false to not change the player's UUID to the official UUID.)
-* Set target servers to your lobby in all other servers. ![mmoprofile_proxy_setup-04](uploads/8c6d606c24f72ebd968148f263993a41/mmoprofile_proxy_setup-04.png)
+* Set target servers to your lobby in all other servers. ![mmoprofile_proxy_setup-04](uploads/proxy_setup_a1.png)
 
 **B)** Force profile all or selected servers. `back_to_initial_server` set to `true` for every profile except lobby.
 
 * `No need to install MMOProfiles on Profile Select Server.`
 * To control Vault money and SharedPermissions in profiles, it is recommended to install MMOProfiles in the lobby and turn off forced profile selection. `no-gui-on-login` to `true`
 
-![mmoprofile_proxy_setup-01](uploads/7e3ac7230f0ba24424d787cb7a1297d2/mmoprofile_proxy_setup-01.png)
+![mmoprofile_proxy_setup-01](uploads/proxy_setup_b1.png)
 
 **C)** Forcing a profile on a particular server with profile selection before join.
 
@@ -184,11 +184,11 @@ Make sure that all servers are connected to the same MySQL server.
 * No need to install MMOProfiles on other servers.
 * To control Vault money and SharedPermissions in profiles, it is recommended to install MMOProfiles in the lobby and turn off forced profile selection. `no-gui-on-login` to `true`
 
-![mmoprofile_proxy_setup-02](uploads/1a8c8b263eb240b09b9a6493be8ad9ae/mmoprofile_proxy_setup-02.png)
+![mmoprofile_proxy_setup-02](uploads/proxy_setup_c1.png)
 
 **D)** Forcing a profile on the whole network when player enter the server.
 
 * `kick_if_no_profile` set to `true` make sure player have profile all the time.
 * It is mandatory to install MMOProfiles on all servers.
 
-![mmoprofile_proxy_setup-03](uploads/06d7190baac5205ee73ca1cc0cdfa7f4/mmoprofile_proxy_setup-03.png)
+![mmoprofile_proxy_setup-03](uploads/proxy_setup_d1.png)

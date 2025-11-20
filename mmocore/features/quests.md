@@ -28,12 +28,15 @@ Quests may require that the player has completed some other quest beforehand, th
 Quests have a specific set of actions (these are called _triggers_), like messages or commands, performed when the player completes an objective. These may be used to explain specific things to the player, or to give them quest items or rewards.
 
 ## Progression
-Whenever a player starts a quest, he can keep track of the quest progression, both in the quest GUI and on the bossbar where he can see what his current quest objective is. The bossbar also tells him how close he is from finishing the quest.\
-![SOPzchl](uploads/c4f88d7d7602bd6a86d8c1745442219f/SOPzchl.png)
+
+Whenever a player starts a quest, he can keep track of the quest progression, both in the quest GUI and on the bossbar where he can see what his current quest objective is. The bossbar also tells him how close he is from finishing the quest.
+
+![SOPzchl](uploads/quest_start.png)
 
 ## Quest Menu
-Players can see available and unlocked quests in the quest menu, which they can access using `/quests`.\
-![If0S5w6](uploads/434e55311c283aca523d7bca630d50f2/If0S5w6.gif)
+Players can see available and unlocked quests in the quest menu, which they can access using `/quests`.
+
+![If0S5w6](uploads/quest_ui.gif)
 
 ## Setting up quests
 The following paragraphs go over setting up a new quest. All quest config files are located under the `/quest` folder.

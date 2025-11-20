@@ -8,13 +8,13 @@ Our class system aims to provide a completely user determined class creation sys
 
 In order to bring up the class selection menu, type `/class`.
 
-![Profess Menu](uploads/f457713783a736d2bf17221fd45cab25/xoM064u.gif)
+![Profess Menu](uploads/class_select.gif)
 
 ## Class Points
 
 In order to pick a class/change your current class you **will need one class point**. You get these via admin command. With this versatile command, the server administrators can hand out class points however they choose, either when leveling up or using a special item with a command bound onto it..
 
-![Class Points](uploads/a7a5553a1221e43d6d44a58510a1e74a/23FPfq6.png)
+![Class Points](uploads/class_pts.png)
 
 ## Default Class
 

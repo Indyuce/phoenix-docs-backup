@@ -3,7 +3,7 @@
 ## Combat Logging
 Combat logging is a useful feature which lets players know when they enter or quit combat. Combat log is handled via chat messages. It is a very bare-bones feature in itself, but **it ties in so nicely with other mechanics like skills**: for instance there is a skill that makes players deal significantly increased damage when performing a melee attack that gets him into combat. You may also imagine a skill where the player gets increased damage for each second they spend in combat.
 
-![image](uploads/0d9fba444da20e6dccca654bb16de446/image.png)
+![image](uploads/combat_enter.png)
 
 ## Resource Regeneration
 Combat log also dictates when the player should be able to regen their resources i.e health, mana and stamina. For instance, you can setup a Warrior class which has a base flat health regeneration rate, and which additionally regens 10% of his missing health every second **when out of combat**. This can be applied to any class, any resource, the off combat option can be disabled, the % can scale on the player's level, and you can make it so the regenerated amount also scales on the player's **missing** health instead. More information [over this page](Player Resources).

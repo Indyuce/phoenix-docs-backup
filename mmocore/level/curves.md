@@ -17,17 +17,21 @@ Experience curves allow you to define how much experience a player needs in orde
 2200
 2400
 2600
-...
+[...]
 ```
-The first line says how much exp a player needs in order to reach level 2, second line for level 3 and so on. Exp curves are not cumulative, which means that a player reaching a 200-exp level will lose these 200 exp points and will have to "start all over".
+
+The first line says how much exp a player needs in order to reach level 2, second line for level 3 and so on. Exp curves are not cumulative - when a player reaches a level with 200 exp, they lose these 200 exp points and have to start all over again. If a player gains more exp than needed to reach the next level, the remaining exp is kept and applied towards the next level. A player can level up multiple times in one go if they gain enough exp.
 
 ## Generating an EXP curve using Excel
+
 Using Excel (you can use it for free online on the Microsoft website) you can easily generate a MMOCore exp curve **if you have a formula of needed exp as a function of the player level**.
 
-![x3lXKwi](uploads/477b8c9c17ef4e24f3f3ca7bc0fd3da2/x3lXKwi.png)
+![](uploads/curve_excel_0.png)
+
 On Excel, you can use the `ROW(CELL_NAME)` function to retrieve the cell line number. You can therefore, for instance, use this formula: `= 100 + ROW(A1) * 30` and duplicate the cell all the way down to generate a list of numbers which correspond to the amount of experience needed to reach the n-th level.
 
 Once you have this setup, save your file **as a .txt** file using the **Text (tab separator)** file type. Make sure there is only one column so that there is no tab separator. Using this file format has the effect of losing all the cell formulas and directly saving the calculated values.
-![3TIdlsd](uploads/9046a25b1df2b06516d936fed4674a12/3TIdlsd.png)
+
+![](uploads/curve_excel_1.png)
 
 You should have generated a text file which has the same format as the MMOCore exp curves.

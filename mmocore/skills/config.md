@@ -96,7 +96,7 @@ The `material` option determines what icon will display in the player's skill li
 
 Finally the `unlocked-by-default` option enables to say if a skill is unlocked or not by default. If this option is not filled the skill will be considered as unlocked-by-default.
 
-![PhIpbOr](uploads/c663353b0893fc7e635bac6007069f77/PhIpbOr.png)
+![PhIpbOr](uploads/skill_ui_item.png)
 
 ## Skill Categories
 
