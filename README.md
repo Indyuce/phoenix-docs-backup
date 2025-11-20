@@ -11,7 +11,7 @@ Install dependencies
 npm install
 ```
 
-Run the development server, it will be running at http://localhost:5173
+Run the development server
 ```sh
 npm run docs:dev
 ```
