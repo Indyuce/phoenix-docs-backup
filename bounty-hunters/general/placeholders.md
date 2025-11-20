@@ -5,8 +5,8 @@ order: 3
 # 🏷️ Placeholders
 
 | Format | Usage | 
-|--------|----------------|------------|
-| `%bountyhunters_top_name_<rank>%` | Rank must be between 1 and 16. Returns the Xth player on the hunter leaderboard |
+|--------|----------------|
+| `%bountyhunters_top_name_<rank>%` | Rank must be between 1 and 16. Returns the n-th player on the hunter leaderboard |
 | `%bountyhunters_top_bounties_<rank>%` | Claimed bounties of some player in the leaderboard |
 | `%bountyhunters_top_heads_<rank>%` | Amount of successful bounties of some player in the leaderboard |
 | `%bountyhunters_top_level_<rank>%` | Player level from the leaderboard |
