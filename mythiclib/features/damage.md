@@ -47,7 +47,7 @@ defense-application:
   elemental: '#damage# * (1 - (#defense# / (5 * #damage# + #defense#)))'
 ```
 
-Here's a table indicating how much damage is dealt given an amount of elemental defense and initial attack points, using the default elemental defense formula which is the one used in Path of Exile. ![poe_armor](uploads/poe_armor.PNG)
+Here's a table indicating how much damage is dealt given an amount of elemental defense and initial attack points, using the default elemental defense formula which is the one used in Path of Exile. ![poe_armor](uploads/poe_armor.png)
 
 This formula was changed in MythicLib 1.4 if you'd like to use the previous one, here it is. It has the downside of not taking into account the incoming amount of damage, making adjusting this formula for both high and low levels harder.
 
@@ -260,4 +260,4 @@ They share most of their options with damage indicators. These appear when regen
 ```
 :::
 
-![regen_indic](uploads/regen_indicator.PNG)
+![regen_indic](uploads/regen_indicator.png)

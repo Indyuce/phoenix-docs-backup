@@ -99,4 +99,4 @@ By default, elemental on-hit attack effects are implemented using MythicLib scri
 
 Elemental damage dealt is displayed when damaging entities. Learn more about damage indicators on [this wiki page](../features/damage.md#damage-indicators). On the following screenshot, on can see two holograms of `15 Fire Damage` dealt to the mob, along with the flame particles of the on-hit attack effect.
 
-![image](uploads/damage_indicators_element.PNG)
+![image](uploads/damage_indicators_element.png)
