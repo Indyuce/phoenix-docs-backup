@@ -12,7 +12,7 @@ You'll find example uses for the most commonly used mechanics like damage, sound
 
 | Tutorials | Description         |
 |-----------|---------------------|
-| [Projectiles](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Tutorial:-How-to-create-projectiles) | You'll learn how to have a player fire a damaging projectile |
-| [Parabolas](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Tutorial:-How-to-use-parabolas) | Parabolas make up for nicely looking unique scripts like rainbows or potion splashes |
-| [Helixes](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Tutorial:-how-to-spawn-helixes) | Helixes are great to indicate heals or buff based skills |
-| [Slashes](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Tutorial:-how-to-create-slash-skills) | These are very classical skills as well for warrior or melee classes. You'll learn how to create sword slash effects |
+| [Projectiles](projectile.md) | You'll learn how to have a player fire a damaging projectile |
+| [Parabolas](parabola.md) | Parabolas make up for nicely looking unique scripts like rainbows or potion splashes |
+| [Helixes](helix.md) | Helixes are great to indicate heals or buff based skills |
+| [Slashes](slash-skill.md) | These are very classical skills as well for warrior or melee classes. You'll learn how to create sword slash effects |

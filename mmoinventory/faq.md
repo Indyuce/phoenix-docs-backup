@@ -4,7 +4,7 @@ order: 3
 
 # 🤔 FAQ
 
-More frequent bugs and issues are documented on **[this MythicLib wiki page](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Frequent%20Issues)**, please consider checking it as well.
+More frequent bugs and issues are documented on **[this MythicLib wiki page](../mythiclib/faq.md)**, please consider checking it as well.
 
 ## Is there an installation guide
 
@@ -82,6 +82,4 @@ Using the `scale` json section you can change it to something higher to hide tha
 
 ## Is it compatible with Oraxen, ItemsAdder, Nexo?
 
-MMOInventory is compatible with, and [natively supports](https://gitlab.com/phoenix-dvpmt/mmoinventory/-/wikis/Item%20Plugins#oraxen) Oraxen.
-
-It is **fully compatible with ItemsAdder and Nexo** but does not feature native/built-in support. There is slightly more work to be done with IA to have it work with MMOInventory, namely manually registering fictive items to your custom resource pack in order to register the custom textures used by MMOInv. This process is done automatically when using Oraxen.
+**MMOInventory is fully compatible with Oraxen, ItemsAdder and Nexo.** MMOInventory features a few additional built-in compatibility features [with Oraxen](compatibility/oraxen.md).

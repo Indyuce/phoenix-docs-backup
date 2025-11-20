@@ -99,8 +99,7 @@ Vault has to be installed in order to support most economy plugins. We tested Co
 - `synced-data.balance` have to set `false` If you want all profiles to have only one shared balance, `true` to does nothing.
 
 #### Settings for [CoreTools](https://gitlab.com/Tanerx/CoreTools/-/wikis/features/economy)
-CoreTools does not require any special configuration and supports **MMOProfiles natively**. 
-`CoreTools recommended plugin for handling economy`
+CoreTools does not require any special configuration and supports **MMOProfiles natively**.
 
 #### Settings for [PlayerPoints](https://www.spigotmc.org/resources/playerpoints.80745/)
 
@@ -121,7 +120,7 @@ CoreTools does not require any special configuration and supports **MMOProfiles 
 
 ### Quest
 
-Below you can see the list of quest plugins that we have tested and confirmed to work smoothly. You need to activate MySql and connect all your servers to the same database.
+Below you can see the list of quest plugins that we have tested and confirmed to work smoothly. You need to activate MySQL and connect all your servers to the same database.
 
 - [QuestCreator](https://www.spigotmc.org/resources/questcreator-new-sqlite-support-and-data-conversion.38734/)
 - [BetonQuest](https://www.spigotmc.org/resources/betonquest-all-your-adventure-supplies-versatile-quests-in-depth-conversations.2117/)
@@ -130,10 +129,9 @@ Below you can see the list of quest plugins that we have tested and confirmed to
 
 ### Storing Items
 
-Make sure that all servers are connected to the same MySql server.
+Make sure that all servers are connected to the same MySQL server.
 
-- [CoreTools PlayerVaults](https://gitlab.com/Tanerx/CoreTools/-/wikis/features/playervaults) CoreTools does not require any special configuration and supports **MMOProfiles natively**. 
-`CoreTools recommended plugin PlayerVaults`
+- [CoreTools PlayerVaults](https://gitlab.com/Tanerx/CoreTools/-/wikis/features/playervaults) CoreTools does not require any special configuration and supports **MMOProfiles natively**.
 - [Minepacks](https://www.spigotmc.org/resources/minepacks-backpack-plugin-mc-1-7-1-20.19286/)
 - [EPIC BackPacks](https://www.spigotmc.org/resources/%E2%9C%85-epic-backpacks.28981/)
 - [Bank](https://www.spigotmc.org/resources/bank-1-20-sale-20-off.3556/)

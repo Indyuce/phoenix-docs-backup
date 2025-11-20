@@ -53,7 +53,7 @@ example_mechanic:
 ```
 
 ### Projectile
-A projectile that stops onto the first hit block/entity. You have to specify the type of interaction that your projectile corresponds to (offensive skill, support skill etc. - learn more about it [here](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Conditions#if-script-caster-can-damagetarget-entity)).
+A projectile that stops onto the first hit block/entity. You have to specify the type of interaction that your projectile corresponds to (offensive skill, support skill etc. - learn more about it [here](../conditions/misc.md#if-script-caster-can-damagetarget-entity)).
 
 ```
 example_mechanic:

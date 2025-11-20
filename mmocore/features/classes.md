@@ -233,7 +233,7 @@ In order to disable casting particles you will need to delete the cast-particle 
 
 Class scripts are a replacement for event triggers (see below). You can define scripts which will apply to players with the corresponding class. These scripts can be used to code complex custom skill behaviours, class passive skills, or literally anything.
 
-Like most skills and scripts, class scripts have a trigger type associated to them, determining when this script will activate. You can find the list of all available trigger types on [this MMOLib wiki page](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Trigger%20Types). You can also learn how to write MMOLib custom scripts on [this MMOLib wiki page](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Custom%20Scripts).
+Like most skills and scripts, class scripts have a trigger type associated to them, determining when this script will activate. You can find the list of all available trigger types on [this MythicLib wiki page](../../mythiclib/skills/triggers.md). You can also learn how to write MMOLib custom scripts on [this MythicLib wiki page](../../mythiclib/scripts/intro.md).
 
 Here is an example of a script for the _Warrior_ class, that converts 10% of physical damage dealt into Rage points, up to a maximum of 10 Rage pts simultaneously.
 

@@ -111,4 +111,4 @@ categories:
 
 ## Making a passive skill
 
-If you want to make a passive skill (using MythicMobs or SkillAPI) all you have to do is add `passive-type: TYPE` to your skill YML file in the '/skills' folder. Adding a passive type to your skill will prevent it from being bound and will automatically cast during specific events, depending on the passive type specified. You can see all Trigger Types on [this](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Trigger%20Types) page.
+If you want to make a passive skill (using MythicMobs or SkillAPI) all you have to do is add `passive-type: TYPE` to your skill YML file in the '/skills' folder. Adding a passive type to your skill will prevent it from being bound and will automatically cast during specific events, depending on the passive type specified. You can see all Trigger Types on [this](../../mythiclib/skills/triggers.md) page.

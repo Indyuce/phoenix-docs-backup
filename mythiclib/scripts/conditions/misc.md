@@ -48,7 +48,7 @@ slash_subskill:
 ## Check for a player cooldown
 This checks if a player has something on cooldown. You have to select some string identifier, called cooldown paths, for MythicLib to save your cooldown information.
 
-If you'd like to check for cooldowns from MMOItems or MMOCore i.e item or skill cooldowns, please refer to [this wiki section](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Variables#cooldownmap) which provides which cooldown path you need to use for which object.
+If you'd like to check for cooldowns from MMOItems or MMOCore i.e item or skill cooldowns, please refer to [this wiki section](../variables.md#cooldownmap) which provides which cooldown path you need to use for which object.
 
 MythicLib fully lets you setup cooldowns. Paired with cooldown mechanics (learn more in the _Mechanics_ wiki section) you can fully check, compute and apply cooldowns inside of your scripts.
 

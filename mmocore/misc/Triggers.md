@@ -32,9 +32,9 @@ test-trigger-2:
 | Trigger | Description | Format/Example |
 |---------|-------------|----------------|
 | stat | Gives a permanent stat to the player. FLAT type just adds the amount to the stat. Relative makes it have a % increase for the stat. | `stat{stat=<STAT_NAME>;amount=<amount>;type=FLAT/RELATIVE}` |
-| skill_buff | Gives a permanent buff for all the skills matching the formula by changing the value of a certain modifier (cooldown, damage, mana...). More info on skill buffs [here](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Player%20Skills#skill-buffs). | `skill_buff{formula="<FORMULA>";modifier=<MODIFIER>;amount=<amount>;type=FLAT/RELATIVE}` |
-| unlock_skill | Unlocks a skill for the player. More about skill unlocking [here](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Player%20Skills#skill-unlocking). | `unlock_skill{skill=FIREBALL}` |
-| unlock_slot | Unlocks a specific [skill slot](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Player%20Classes#skill-slots-since-1120) for the player. | `unlock_slot{slot="<SLOT>"}` |
+| skill_buff | Gives a permanent buff for all the skills matching the formula by changing the value of a certain modifier (cooldown, damage, mana...). More info on skill buffs [here](../skills/intro.md#skill-buffs). | `skill_buff{formula="<FORMULA>";modifier=<MODIFIER>;amount=<amount>;type=FLAT/RELATIVE}` |
+| unlock_skill | Unlocks a skill for the player. More about skill unlocking [here](../skills/unlocking.md). | `unlock_skill{skill=FIREBALL}` |
+| unlock_slot | Unlocks a specific [skill slot](../skills/binding.md#skill-slots) for the player. | `unlock_slot{slot="<SLOT>"}` |
 | bind_skill | Binds a skill to a specific slot. | `bind_skill{skill=FIREBALL;slot=10}` |
 | levelup_skill | Increases the player's skill level. | `levelup_skill{skill=<NAME>;amount=1}` |
 | message | Sends a message to the player. | `message{format="&aYour message here... "}` |

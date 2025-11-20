@@ -212,7 +212,7 @@ Each node has an experience table associated with it. More about Experience Tabl
 
 The purpose of displaying paths and nodes in the GUI is solely for visual representation, allowing for the connection of two nodes. To connect the current node to a child node using a path, you must specify the ID of the node you wish to connect to and list all of the necessary paths to reach it.
 
-A path can exist in three different states, which will modify its appearance. More information about these icons can be found [here](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Skill%20Trees#icons). A path is considered "unlocked" if both of the nodes it connects are also unlocked. If one of the two nodes is fully locked, the path is considered "fully-locked." Otherwise, the path is simply "locked."
+A path can exist in three different states, which will modify its appearance. More information about these icons can be found [here](#icons). A path is considered "unlocked" if both of the nodes it connects are also unlocked. If one of the two nodes is fully locked, the path is considered "fully-locked." Otherwise, the path is simply "locked."
 
 ```yaml
 #Example

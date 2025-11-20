@@ -82,7 +82,7 @@ interaction_rules:
 The `support_skills_on_mobs` determines if you can cast support skills/heals/buffs onto monsters. Only for default skills.
 
 ## Custom skills from MythicMobs
-Interaction rules can be used in custom skills added from MythicMobs. The user manual is available [here](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Using%20MythicMobs#checking-if-the-skill-caster-can-target-another-entity).
+Interaction rules can be used in custom skills added from MythicMobs. The user manual is available [here](../../mythiclib/skills/custom/mythic.md#checking-if-the-skill-caster-can-target-another-entity).
 
 ## PvP Mode
 This feature is specially designed for PvE servers which still want to leave some options for players to fight. In specific WorldGuard regions where PvP is disabled by default, players can use `/pvpmode` to toggle on PvP back and fight other players! **Only players with PvP enabled can fight and attack each other.** Furthermore, this feature is fully compatible with the PvP interaction rules defined above.

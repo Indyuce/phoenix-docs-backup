@@ -81,7 +81,7 @@ last_example:
 
 An experience table is broken down into multiple _items_ (there is one config section for every item inside an exp. table). An _item_ is a set of rewards that has a X% chance of being claimed every Y profession levels. The `period` option (in levelups) indicates how frequently the item should be given to the player. The `chance` option determines the chance for the player to be given that item.
 
-You can edit the rewards of an item by adding or removing triggers to the list identified by `triggers`. You can find [here](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Triggers) the list of all of the available triggers that you can use inside of exp tables.
+You can edit the rewards of an item by adding or removing triggers to the list identified by `triggers`. You can find [here](../misc/triggers.md) the list of all of the available triggers that you can use inside of exp tables.
 
 ### First & Last Trigger
 

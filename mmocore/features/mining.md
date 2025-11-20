@@ -31,7 +31,7 @@ custom-mining:
   - 'region{name="example_region,example_region2,__global__"}'
 
   # Enable tool restrictions. See the following wiki page for more info
-  # https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Tool%20Restrictions
+  # https://docs.phoenixdevt.fr/mmocore/misc/tool-restrictions.html
   # Players need specific tools to break specific blocks
   enable-tool-restrictions: false
 

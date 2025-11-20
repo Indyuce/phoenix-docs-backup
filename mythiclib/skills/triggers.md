@@ -4,15 +4,11 @@ order: 2
 
 # 💥 Triggers
 
-When using custom scripts in MMOItems and MMOCore you might sometimes specify when a specific script should be executed: when damaging an entity, when being damaged, when crouching etc. This is done using trigger types.
-
-
+When using MMOItems or MMOCore, you will need to specify when a specific skill should be executed: when damaging an entity, when being damaged, when crouching etc. This is done using triggers. MMOItems used to call them _casting modes_.
 
 ## Available Triggers
 
-These are the trigger types (they used to be called _casting modes_ in MMOItems) that you will be able to use in MMO plugins to define when some skill is supposed to run.
-
-Some triggers are only available when MMOCore is installed. As long as MMOCore is installed, you can freely use them in any of the MMO plugins.
+These are the trigger types that you can use in MMO plugins to define when some skill is supposed to run. Some triggers are only available if MMOCore is installed, like combat- or level-related triggers.
 
 | Skill Trigger | Description | Trigger Target | Trigger Target Block |
 |---------------|-------------|----------------|----------------------|
@@ -57,14 +53,14 @@ Some triggers are only available when MMOCore is installed. As long as MMOCore i
 | TIMER | Casts the skill every X ticks | \- | \- |
 
 
-## When a script is triggered
+## When a skill/script is triggered
 
-Some trigger types provide special properties to the script they trigger. For instance, when using the `ATTACK` trigger type, the `<target>` variable can be accessed to work with the attack target. `<attack.damage>` returns the attack damage. More precisely, some internal variables only exist when specific trigger types are used.
+Some trigger types pass on special properties to the script they trigger. For instance, when using the `ATTACK` trigger type, the `<target>` variable can be used to access the entity being damaged. `<attack.damage>` returns the attack damage.
 
-Trigger types featuring entities/projectiles like `ATTACK`, `DAMAGED`, `DAMAGED_BY_ENTITY`, `KILL_ENTITY`, `SHOOT_TRIDENT`, `ARROW_TICK` etc. allow the user to use the `<target>` internal variable to access the target entity. This also unlocks the `target` entity targeter as well as the `target_location` location targeter for instance.
+Trigger types featuring entities/projectiles like `ATTACK`, `DAMAGED`, `DAMAGED_BY_ENTITY`, `KILL_ENTITY`, `SHOOT_TRIDENT`, `ARROW_TICK` etc. allow the user to use the `<target>` internal variable to access the target projectile entity. These triggers also unlock the `target` entity targeter as well as the `target_location` location targeter.
 
-Trigger types featuring positions like `TRIDENT_LAND` or `ARROW_HIT` unlock the `target_location` location targeter as well as the `<target_location>` internal variable for example.
+Trigger types featuring world locations like `TRIDENT_LAND` or `ARROW_HIT` unlock the `target_location` location targeter as well as the `<target_location>` internal variable for example.
 
-Some triggers like `TIMER` or `RIGHT_CLICK` don't unlock any internal variable.
+Some triggers like `TIMER` or `RIGHT_CLICK` do not unlock any additional internal variable.
 
 `ATTACK` is the only trigger type which unlocks the `<attack>` internal variable as well as special mechanics (`multiply_damage`) or conditions (`has_damage_type`).

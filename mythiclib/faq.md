@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 ---
 
 # 🪲 Frequent Issues
@@ -67,7 +67,7 @@ ALTER TABLE mmocore_playerdata ADD COLUMN times_claimed LONGTEXT;
 
 ## Cannot break any block (MMOCore)
 
-Please carefully read the following [wiki page](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Mining%20and%20Block%20Regen) as you might not have configured your tool permission sets.
+Please carefully read the following [wiki page](../mmocore/features/mining.md) as you might not have configured your tool permission sets.
 
 
 ## Health bar is stuck to 10 hearts

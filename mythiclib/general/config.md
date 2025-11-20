@@ -27,3 +27,20 @@ health-scale:
     enabled: true
     scale: 40
 ```
+
+## Vanilla Damage Modifiers
+
+Change the amount of damage dealt on specific damage sources. This tool comes handy when needing to balance your vanilla damage sources. You can use any math formula for any damage source possible. Available damage sources can be found in [spigot docs](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html).
+
+Using `{event_damage}` will return the initial event damage.
+
+```yml
+vanilla-damage-modifiers:
+  enabled: false
+  source:
+    VOID: '%mythiclib_stat_max_health% * .05' # Deals 5% of player's max health
+    FIRE: '{event_damage} * 2' # Multiplies by 2 fire damage
+    WITHER: '%mythiclib_stat_max_health% * .05'
+    LAVA: '%mythiclib_stat_max_health% * .2'
+    DROWNING: '%mythiclib_stat_max_health% * .1'
+```

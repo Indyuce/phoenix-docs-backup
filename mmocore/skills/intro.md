@@ -46,7 +46,7 @@ In the GUI, select the skill you'd like to upgrade by clicking it (the UI name s
 
 
 
-**Examples slot config for class file.** For more details check [Skill Slots](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Player%20Classes#skill-slots-since-1120)
+**Examples slot config for class file.** For more details check [Skill Slots](binding.md#skill-slots)
 
 ```
 # The valid format for 
@@ -65,7 +65,7 @@ categories:
 
 ## Skill Buffs
 
-A skill buff modifies the value of a certain skill modifier. It can target one or multiple skills using [category formulas]() and can only target 1 modifier. Skill Buffs can only be created through [skill slots](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Player%20Classes#skill-slots-since-1120) and [triggers](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Triggers#available-trigger-types).
+A skill buff modifies the value of a certain skill modifier. It can target one or multiple skills using [category formulas]() and can only target 1 modifier. Skill Buffs can only be created through [skill slots](binding.md#skill-slots) and [triggers](../misc/triggers.md).
 
 ```
 #Example

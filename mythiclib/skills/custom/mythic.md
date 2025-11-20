@@ -82,7 +82,7 @@ The second option you need to input is the list of your **skill modifiers**. We 
 
 Your skill is now registered in MythicLib. Since both MMOItems and MMOCore use the MythicLib skill registry, it is now also registered in MMOItems and MMOCore, but it is not fully configured, which is what we're going to do now.
 
-**MMOCORE:** Use `/mmocore reload`. A configuration file named `fire-bolt.yml` should appear inside the `MMOCore/skills` folder. Open and edit it to your liking before using `/mmocore reload` again which will load the edited config file into the MMOCore registry. You now have a fully working skill which you can bind to your player class. Since this part is specific to MMOCore, check the [MMOCore wiki](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Player-Skills#skill-folder) to learn how to edit a MMOCore skill config file.
+**MMOCORE:** Use `/mmocore reload`. A configuration file named `fire-bolt.yml` should appear inside the `MMOCore/skills` folder. Open and edit it to your liking before using `/mmocore reload` again which will load the edited config file into the MMOCore registry. You now have a fully working skill which you can bind to your player class. Since this part is specific to MMOCore, check the [MMOCore wiki](../../../mmocore/skills/config.md) to learn how to edit a MMOCore skill config file.
 
 **MMOITEMS:** Use `/mi reload skills`. A config file named `fire-bolt.yml` should appear inside the `MMOItems/skills` folder. Open and edit it to your liking before using `/mi reload skills` again which will load the edited config file into the MMOCore registry. You now have a fully working skill which you can add to your MI items. This part is specific to MMOItems, so check the [MI wiki](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Abilities#editing-an-ability) to learn how to edit a MI skill config file.
 
@@ -94,7 +94,9 @@ Custom MM skills also support skill conditions. If any of the skill conditions i
 
 ### Using skill modifiers inside MM custom skills
 
-**Placeholders will not work with free version of MythicMobs.**
+::: warning
+Some of the features described below are not available in the free version of MythicMobs.
+:::
 
 Let's consider the `Fire-Bolt` skill again.
 
@@ -169,7 +171,7 @@ Using the `mmoCanTarget{..}` MythicMobs condition you can check if any player ca
   - mmoCanTarget{interaction=OFFENSE_ACTION}
 ```
 
-There are two different interaction types: `OFFENSE_ACTION`, `SUPPORT_ACTION`. For instance, a player will be able to target another player when using a buffing skill (like a heal or a speed boost) but the same target won't be valid if that skill becomes offensive (deals damage or inflicts debuffs). It is therefore very important to specify what type of interaction you are talking about. The PvP/PvE Interaction Rules user guide is available [here](https://gitlab.com/phoenix-dvpmt/mmocore/-/wikis/Combat).
+There are two different interaction types: `OFFENSE_ACTION`, `SUPPORT_ACTION`. For instance, a player will be able to target another player when using a buffing skill (like a heal or a speed boost) but the same target won't be valid if that skill becomes offensive (deals damage or inflicts debuffs). It is therefore very important to specify what type of interaction you are talking about. The PvP/PvE Interaction Rules user guide is available [here](../../../mmocore/features/combat.md).
 
 Here are some examples:
 

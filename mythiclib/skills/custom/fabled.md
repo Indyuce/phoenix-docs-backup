@@ -8,7 +8,7 @@ Fabled, formerly known as ProSkillAPI, or SkillAPI, is a powerful skill creation
 
 ## Custom Skill Registration
 
-Similarly to MythicMobs, you can register custom skills into MythicLib using the Fabled skill editor. The process is the exact same as in [this tutorial](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Using-MythicMobs#custom-skill-registration) apart from the format of the MythicLib skill configuration file.
+Similarly to MythicMobs, you can register custom skills into MythicLib using the Fabled skill editor. The process is the exact same as in [this tutorial](mythic.md#custom-skill-registration) apart from the format of the MythicLib skill configuration file.
 
 First, code your skill using the Fabled skill editor. Let's assume the skill you coded has ID `Firebolt`. Open up a YML config file within the `MythicLib/skill` folder and paste the following:
 ```yml
