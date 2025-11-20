@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DEST_DIR="/home/buildagent/phoenix_docs_repo"
-BUILD_DIR="docs/.vitepress/dist"
+BUILD_DIR=".vitepress/dist"
 
 # Install deps and build
 npm ci
