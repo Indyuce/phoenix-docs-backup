@@ -4,19 +4,28 @@ order: 3
 
 # 🪲 Frequent Issues
 
-Use this list of common issues with MythicLib/MMOItems/MMOCore to diagnose your issue whenever you feel like something isn't right. It is recommended to read [this page](report.md) first.
+Use this list of common issues with MythicLib/MMOItems/MMOCore to self-diagnose your issue whenever you feel like something isn't right.
 
 Sometimes support over the Discord server is pretty slow given the amount of tickets and staff availability. Before reporting a bug using a Discord ticket, please make sure your issue is not one of the following. If you can fix it yourself using the following instructions, you will both gain time (that you'd have lost waiting for an answer) and make staff gain time so that they can work on fixing more complex bugs.
 
 Issues specific to one of the MMO plugins are marked with brackets, like `Cannot cast abilities (MMOItems)`.
 
-Always check your full server logs for plugin error logs because more than half the issues come with logs associated to them. Issues that often come with error logs are indicated in that list.
+Always check your full server logs for plugin error logs because more than half the issues come with logs associated to them. Frequent issues that spawn with error logs are presented in the following list.
 
 ## Keep MythicLib up-to-date
 
-Keep in mind MythicLib is necessary to run MMOItems/MMOCore and that it is a plugin too. A MI issue with MMOItems might entirely be caused by a anterior MythicLib startup issue. Always make sure it's not an issue with ML first.
+Keep in mind MythicLib is necessary to run MMOItems/MMOCore and that it is a plugin too. A MMOItems might be caused by a anterior MythicLib startup issue. Always make sure it's not a bug with MythicLib first.
 
-Error logs which include a `NoClassDefFoundError` or `NoSuchMethodError`, like `Could not load ... in folder 'plugins' org.bukkit.plugin.InvalidPluginException: java.lang.NoClassDefFoundError: ...` can be due to either an outdated plugin or some plugin not loaded properly (check for startup errors).
+## Outdated Plugins
+
+Error logs indicating a `NoClassDefFoundError` or `NoSuchMethodError` indicate that a plugin cannot find a class or method it was compiled with.
+```
+Could not load [...] in folder 'plugins' org.bukkit.plugin.InvalidPluginException: java.lang.NoClassDefFoundError: ...
+```
+
+90% of the time, these errors are due to an outdated version of one of the MMO plugins or MythicLib. Download the latest releases/dev builds of all MMO plugins and try again.
+
+Sometimes, these errors are due to a compatibility issue with external plugins, for instance if an external developer has changed something in their plugin API.
 
 ## Plugin loading order issue
 
