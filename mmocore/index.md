@@ -4,7 +4,7 @@ order: 1
 
 # 🏠 Home
 
-![Vyor7Op](uploads/984b34ab2f1488f3a2d57326d2478439/Vyor7Op.png "MMOCore Logo")
+![Vyor7Op](uploads/banner.png)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
