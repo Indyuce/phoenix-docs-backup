@@ -6,6 +6,6 @@
   },
   "devDependencies": {
     "vitepress": "^2.0.0-alpha.13",
-    "vitepress-sidebar": "^1.33.0"
+    "vitepress-sidebar": "^1.32.0"
   }
 }
