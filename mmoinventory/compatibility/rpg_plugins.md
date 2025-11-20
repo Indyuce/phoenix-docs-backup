@@ -16,7 +16,7 @@ All these RPG plugins are supported by the `class{..}` or `level{..}` slot restr
 - MMOCore
 - RacesAndClasses
 - RPGPlayerLeveling (level only)
-- SkillAPI and ProSkillAPI
+- Fabled, SkillAPI, ProSkillAPI
 - Skills and SkillsPro
 
 You can edit what plugin MMOInventory should hook onto in the main plugin config file

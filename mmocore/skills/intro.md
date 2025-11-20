@@ -12,7 +12,7 @@ Skills are class-specific. When changing class, the player will "lose" the progr
 
 ## Custom Skills
 
-While MMOCore comes with more than 90 built-in skills, you can create as many custom skills as you want using the most popular skill/scripting languages available, including MythicMobs, MythicLib or SkillAPI.
+While MMOCore comes with more than 90 built-in skills, you can create as many custom skills as you want using the most popular skill/scripting languages available, including MythicMobs, MythicLib or Fabled.
 
 Note that skills are registered in MythicLib. Any skill you register in MythicLib will be usable in both MMOCore and MMOItems. Please read [this wiki page](../../mythiclib/skills/intro.md) to learn how to create and register custom skills.
 

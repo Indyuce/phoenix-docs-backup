@@ -49,7 +49,7 @@ MythicLib.plugin.getDamage().damage(damage, target, knockback); // Finally deal 
 ```
 
 ## Compatibility with other plugins which have a damage system
-Take any other plugin which implement magic skills like SkillAPI or Heroes. MMOCore needs a way to detect when a player damages an entity using a skill, so that it can apply the `Skill Damage` stat for instance. It's what the `DamageManager` class is all about: monitoring all damage dealt by players.
+Take any other plugin which implement magic skills like Fabled or Heroes. MMOCore needs a way to detect when a player damages an entity using a skill, so that it can apply the `Skill Damage` stat for instance. It's what the `DamageManager` class is all about: monitoring all damage dealt by players.
 
 Other plugins with have a damage system need to register their damage info in MythicLib whenever an entity is damaged by a player, so that MythicLib knows that some custom damage is being applied. If MythicLib detects player damage but cannot find the source plugin, it is considered a melee weapon attack.
 

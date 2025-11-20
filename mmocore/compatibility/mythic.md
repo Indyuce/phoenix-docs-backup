@@ -4,11 +4,11 @@ order: 2
 
 # 🧌 MythicMobs
 
-Most of our mob features and custom drops tie into MythicMobs, the best mob creation plugin. Also **one of the most important features**, in order to create your own skills through MMOCore, you will utilize MythicMobs to make any skill you want. More info [here](Player%20Skills#binding-mythicmobs-skills-to-mmocore-skills).
+Most of our mob features and custom drops tie into MythicMobs, the best mob creation plugin. Also **one of the most important features**, in order to create your own skills through MMOCore, you will utilize MythicMobs to make any skill you want. More info [here](../skills/intro.md#custom-skills).
 
-MythicMobs also adds more options to the quest system: you can setup quests where players must kill X mobs from MythicMobs, more info [here](Quests).
+MythicMobs also adds more options to the quest system: you can setup quests where players must kill X mobs from MythicMobs, more info [here](../features/quests.md).
 
-Players may also earn main-class experience when killing mobs from MythicMobs, more info on that [wiki page](Custom%20Professions).
+Players may also earn main-class experience when killing mobs from MythicMobs, more info on that [wiki page](../profession/intro.md).
 
 ## MythicMobs drop items
 

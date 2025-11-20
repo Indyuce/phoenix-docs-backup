@@ -64,10 +64,10 @@ FIRE:
 
 There's one config section per element and you are free to add, edit and remove any config section. Once you're done editing you can use `/ml reload` which will reload the new config into MythicLib. Then hit `/mi reload` or `/mmocore reload` to have the changes propagate to MMOItems and MMOCore.
 
-The `name`, `icon`, `lore-icon` and `color` options are all cosmetic. The most importants are `regular-attack` which is the skill that is cast by the attacker when performing an elemental attack, and `crit-strike` which is the skill cast when performing an elemental critical strike. By default, MythicLib uses custom scripts to handle these attack skills yet you can use other plugins like MythicMobs or SkillAPI
+The `name`, `icon`, `lore-icon` and `color` options are all cosmetic. The most importants are `regular-attack` which is the skill that is cast by the attacker when performing an elemental attack, and `crit-strike` which is the skill cast when performing an elemental critical strike. By default, MythicLib uses custom scripts to handle these attack skills yet you can use other plugins like MythicMobs or Fabled.
 
 ### Using other skill plugins
-Just change `mythiclib-skill-id` to `mythicmobs-skill-id` (and indicate the right MM skill identifier) if you'd like to use a MythicMobs skill. You can also use `skillapi-skill-id` if you're using SkillAPI or ProSkillAPI. This is the same config section but with that small config key change:
+Just change `mythiclib-skill-id` to `mythicmobs-skill-id` (and indicate the right MM skill identifier) if you'd like to use a MythicMobs skill. You can also use `fabled-skill-id` if you're using Fabled. This is the same config section but with that small config key change:
 ```
 FIRE:
     name: Fire

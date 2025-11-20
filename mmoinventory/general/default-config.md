@@ -62,6 +62,7 @@ drop-on-death: true
 # - racesandclasses
 # - rpgplayerleveling (level only)
 # - skillapi
+# - fabled
 # - skills
 # - skillspro
 level-module: default

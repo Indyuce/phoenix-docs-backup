@@ -18,7 +18,7 @@ MythicMobs adds new quest objectives and allows you to create an infinite amount
 
 ## Fabled, ProSkillAPI, SkillAPI
 
-Since MythicLib 1.3 you can also register custom skills in MythicLib, MMOCore and MMOItems using the SkillAPI skill creation system. More info on [this wiki page](../../mythiclib/skills/custom/fabled.md).
+Since MythicLib 1.3 you can also register custom skills in MythicLib, MMOCore and MMOItems using the Fabled skill creation system. More info on [this wiki page](../../mythiclib/skills/custom/fabled.md).
 
 ## Hologram Plugins
 

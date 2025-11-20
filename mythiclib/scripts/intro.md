@@ -18,7 +18,7 @@ MythicLib scripts can also be turned into MMOCore class skills or MMOItems item 
 **Scripts are not skills!** You can turn scripts into skills, but not the other way around. MythicLib scripts are a way to implement skills which will then be used in MMOCore or MMOItems. Fabled and MythicMobs also provide their script/skill systems. Overall, the MythicLib scripting language is less capable but great for handling basic tasks and too-not-complex skills. You don't need to install anything else to use MythicLib scripts, they are built-in and ready to use.
 :::
 
-The primary goal of the MythicLib custom skill system is the ability to register skills with the plugin which you like to program the most with. If MMOItems or MMOCore asks you to use ML scripts you can always use MythicMobs or SkillAPI instead to have custom scripts executed.
+The primary goal of the MythicLib custom skill system is the ability to register skills with the plugin which you like to program the most with. If MMOItems or MMOCore asks you to use ML scripts you can always use MythicMobs or Fabled instead to have custom scripts executed.
 
 Since scripts are used in MMOCore and MMOItems, they are heavily oriented towards creating custom abilities, skills or attack effects. Therefore, they feature premade tools like shaped mechanics which let you easily display cool particle effects, raycasts, projectiles etc.
 
@@ -89,7 +89,7 @@ tellmsg:
 
 ## JSON/YAML Syntaxes
 
-The two following formats for a skill are totally equivalent and both will work just fine, so you might just use the one you like the best. If you are more familiar with MythicMobs, use the second one. If you are more familiar with pure YAML or even SkillAPI, use the first one. The second JSON-ish format is only available starting with MythicLib 1.6.2+ development builds.
+The two following formats for a skill are totally equivalent and both will work just fine, so you might just use the one you like the best. If you are more familiar with MythicMobs, use the second one. If you are more familiar with pure YAML or even Fabled, use the first one. The second JSON-ish format is only available starting with MythicLib 1.6.2+ development builds.
 
 ```yml
 staff_attack:
