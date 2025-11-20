@@ -101,4 +101,4 @@ If the player is unlucky and doesn't claim one of the items, the last option (`f
 
 _For those of you familiar with mathematics the successive chances of failing describe a geometrical sequence_
 
-The `triggers` option is where you define what happens when that item is claimed. For maximum configurability, this is a list of [triggers](Triggers)... The triggers you will most often use are the `experience` and `command` triggers, exp to give experience to your main class, and commands to give rewards from other plugins (if required).
+The `triggers` option is where you define what happens when that item is claimed. For maximum configurability, this is a list of [triggers](../misc/triggers.md)... The triggers you will most often use are the `experience` and `command` triggers, exp to give experience to your main class, and commands to give rewards from other plugins (if required).

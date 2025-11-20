@@ -68,7 +68,7 @@ example_condition:
 ```
 
 ## Check if attack which triggered the script has some damage type
-Please first learn about [triggers](Triggers). When using the `ATTACK` trigger type, sine the script was triggered by an attack you can actually access information about this attack using the `<attack>` internal variable.
+Please first learn about [triggers](../../skills/triggers.md). When using the `ATTACK` trigger type, sine the script was triggered by an attack you can actually access information about this attack using the `<attack>` internal variable.
 
 This condition can be used to check if the attack which triggered the script contains some type of damage. This is very useful for player skills which should for instance only apply on weapon attacks: you just have to check if the attack contains some `WEAPON` damage.
 

@@ -4,7 +4,7 @@ order: 4
 
 # 💫 Skill Casting
 
-Make sure you first learn about [skills](skills.md) and [skill slots](binding.md#skill-slots). MMOCore offers multiple ways of casting skills:
+Make sure you first learn about [skills](intro.md) and [skill slots](binding.md#skill-slots). MMOCore offers multiple ways of casting skills:
 
 - using key combos <Badge type="info" text="most popular!" />
 - using the [1] to [9] keys (_skill bar_)

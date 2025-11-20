@@ -25,13 +25,13 @@ automatically enable and will be added to the MMOItems item edition GUI.
 *Resource stands for either health, mana, stamina or stellium.
 
 ### Quest Objectives & Triggers
-MMOItems add new quest [objectives](Quests) to MMOCore quests, where players
+MMOItems add new quest [objectives](../features/quests.md) to MMOCore quests, where players
 have to get an item and give it to a specific Citizen NPC. You can also
-setup quest [triggers](Quests) which give an MMOItem when a specific
+setup quest [triggers](../features/quests.md) which give an MMOItem when a specific
 quest objective is completed.
 
 ### MMOCore Drop Tables
-You may add items from MI to MMOCore [drop tables](Drop Tables).
+You may add items from MI to MMOCore [drop tables](../features/drop-tables.md).
 
 ### Item Restrictions, Mana
 MMOItems features item restrictions, including level and class

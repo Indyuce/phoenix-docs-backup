@@ -29,7 +29,7 @@ other-drop-table:
 
 This default file is pretty self explanatory. The first drop table example showcases all the drop items you can use inside of any drop table. In order to create a drop table, just add a new section to any file in the `/drop-tables` folder. Then find an ID for your drop table (this identifier must be unique and will be used as a reference later).
 
-The `diamond-drop-table` example is the drop table used in the [Mining profession](Mining%20and%20Block%20Regen) when mining diamond ore. The items it may drop are vanilla diamonds, a rare diamond from MMOItems, and all the content from the table called `other-drop-table` (a stone block).
+The `diamond-drop-table` example is the drop table used in the [Mining profession](../features/mining.md) when mining diamond ore. The items it may drop are vanilla diamonds, a rare diamond from MMOItems, and all the content from the table called `other-drop-table` (a stone block).
 
 The numbers after the item mean the chance, and then the amount (can be an integer range). The format for every drop item is the following:
 
@@ -76,7 +76,7 @@ When a drop table is called, drop items are read in the order given by the confi
 
 ### Where to configure the loot table capacity
 
-If you are using drop tables inside of loot chests, please refer to [this page](Loot%20Chests#loot-chest-tiers) to configure the chest loot table capacity.
+If you are using drop tables inside of loot chests, please refer to [this page](loot-chests.md#loot-chest-tiers) to configure the chest loot table capacity.
 
 Otherwise, you can specify the default capacity for any loot table using the `capacity` option:
 
@@ -93,7 +93,7 @@ If absolutely no capacity is specified, MMOCore will use a default capacity of 1
 
 ## Drop Table Conditions
 
-Conditions are added to the drop table using the following syntax. Learn more about the conditions system [here](Conditions).
+Conditions are added to the drop table using the following syntax. Learn more about the conditions system [here](../misc/conditions.md).
 
 ```yaml
 diamond-drop-table:

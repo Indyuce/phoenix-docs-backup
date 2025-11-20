@@ -143,4 +143,4 @@ Triggers can be either used to give information to the player about the RPG stor
 
 ### Trigger Types
 A full list of available triggers to be used in conjunction with these
-objectives can be found [here](Triggers).
+objectives can be found [here](../misc/triggers.md).

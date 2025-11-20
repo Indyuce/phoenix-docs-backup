@@ -149,7 +149,7 @@ on-mine:
 
 ## Drop Table
 
-This determines what drop table to call when the defined block is broken. It can either be a totally new drop table or a reference to an existing drop table from the `/drop-tables` folder. Please refer to [this wiki page](Drop%20Tables) to learn about the syntax of drop tables.
+This determines what drop table to call when the defined block is broken. It can either be a totally new drop table or a reference to an existing drop table from the `/drop-tables` folder. Please refer to [this wiki page](../features/drop-tables.md) to learn about the syntax of drop tables.
 ```yml
 on-mine:
     diamond_ore:

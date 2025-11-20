@@ -8,7 +8,7 @@ You can also use experience sources for your main classes.
 
 Let's have a look at an example. These are the default experience sources for the _Woodcutting_ profession. It basically gives the player anywhere from 1 to 3 experience points whenever he cuts a log.
 
-```
+```yml
 exp-sources:
 - 'mineblock{type=OAK_LOG;amount=1-3}'
 - 'mineblock{type=SPRUCE_LOG;amount=1-3}'
@@ -21,7 +21,7 @@ exp-sources:
 
 These are the default experience sources for the farming profession, which grants some experience points whenever the player harvest any type of crops.
 
-```
+```yml
 exp-sources:
 - 'mineblock{type=CARROTS;amount=1-3;crop=true;player-placed=true}'
 - 'mineblock{type=POTATOES;amount=1-3;crop=true;player-placed=true}'
@@ -34,7 +34,7 @@ exp-sources:
 
 You can create experiences-sources tables in `exp-sources.yml`. It links an id to a list of experiences sources that you will all be to reference at once.
 
-```
+```yml
 #Example
 test-exp-source: 
   - 'damagedealt{type=physical;amount=250}'
@@ -46,19 +46,20 @@ test2:
 ```
 
 ## Every experience source
+
 | Source | Usage | Description |
 |--------|-------|-------------|
 | From | `from{source=exp-source-id}` | Loads all the experience source in `exp-sources.yml` matching  to `exp-source-id`. |
-| Mine Block | `mineblock{type=BLOCK_MATERIAL}` | More info on [Mining](Mining%20and%20Block%20Regen). |
+| Mine Block | `mineblock{type=BLOCK_MATERIAL}` | More info on [Mining](../features/mining.md). |
 | Kill Mob | `killmob{type=MOB_ENTITY_TYPE;amount=1-3}` | Killing a mob grants exp |
 | Kill Mythic Mob | `killmythicmob{type=MobInternalName;amount=1-3}` | Killing a MythicMob grants exp |
 | Fish Item | `fishitem{type=ITEM_MATERIAL}` | Fishing an item of the specified type grants exp. |
 | Smelt Item | `smeltitem{type=ITEM_MATERIAL}` | When an item is smelted (furnaces) |
 | Craft Item | `craftitem{type=ITEM_MATERIAL}` | When an item is crafted |
-| Brew potion | `brewpotion{effect=SPEED,REGEN,...}` | [More info on Alchemy](Alchemy) |
+| Brew potion | `brewpotion{effect=SPEED,REGEN,...}` | [More info on Alchemy](../profession/alchemy.md) |
 | Place Block | `placeblock{type=BLOCK_MATERIAL}` | Placing a block of the specified type grants xp. |
-| Repair Item | `repairitem{type=ITEM_MATERIAL}` | You can define on sithing.yml the amount of xp for each material. Check [here](Smithing) the info about smithing.. |
-| Enchant Item | `enchantitem{type=...}` | [More info on Enchanting](Enchanting) |
+| Repair Item | `repairitem{type=ITEM_MATERIAL}` | You can define on sithing.yml the amount of xp for each material. Check [here](../profession/smithing.md) the info about smithing.. |
+| Enchant Item | `enchantitem{type=...}` | [More info on Enchanting](../profession/enchanting.md) |
 | Climb | `climb{type=CLIMB_TYPE}` | When you climb one block. The type can be ladder, vines, weeping-vines, twisting-vines. If you don't specify any type it will trigger for all types. |
 | Eat | `eat{type=ITEM_MATERIAL}` | Give experience when some specific food is eaten. If you don't specify a material for the type it will give exp disregarding what you eat. |
 | Move | `move{type=MOVING_TYPE}` | Give experience for each block travelled the type can be sneak, fly, swim, sprint or walk.If it is not specified will trigger all the time. |

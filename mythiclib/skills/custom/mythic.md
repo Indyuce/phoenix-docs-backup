@@ -145,7 +145,7 @@ Use the following damaging mechanic:
   - mmodamage{amount="<modifier.damage> + 10";types=SKILL,MAGIC,PROJECTILE;element=FIRE}
 ```
 
-You can specify the ability damage using "amount" or "a" as well as the damage types using "types" or "t". The list of available damage types can be found [here](Damage%20System).
+You can specify the ability damage using "amount" or "a" as well as the damage types using "types" or "t". The list of available damage types can be found [here](../../features/damage.md).
 
 It works just like the default damage mechanic, except that it completely supports the MythicLib damage system, which means that it will apply damage buff stats (additional skill damage, etc), damage reduction stats, on-hit effects (on-hit abilities from MMOItems when using the WEAPON damage type), skills from MMOCore that trigger when dealing damage to entities....
 

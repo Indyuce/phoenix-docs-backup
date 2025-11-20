@@ -57,7 +57,7 @@ The default player movement speed is set to 0.1 which is 4.317m/s according to t
 | `max_mana` | Maximum mana the player may have. |
 | `max_stamina` | Maximum stamina the player may have. |
 | `max_stellium` | Stellium is a resource used to travel using waypoints. |
-| `health_regeneration` | Health [regeneration](Combat%20Log) in pts/sec. |
+| `health_regeneration` | Health [regeneration](../features/combat.md) in pts/sec. |
 | `mana_regeneration` | Mana regen in pts/sec |
 | `stamina_regeneration` | Stamina regen in pts/sec |
 | `stellium_regeneration` | Stellium regen in pts/sec |

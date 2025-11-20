@@ -16,9 +16,9 @@ Unless staff specifically told you to temporarily downgrade to a lower plugin ve
 
 ![](uploads/spigot_changelog.png)
 
-When using development builds (available on the official website), keep in mind there might be several weeks/months worth of work between the latest dev build and spigot release. Therefore, **when using a dev build for any of the MMO plugins, you have to use dev builds for all the plugins simultaneously**. More information [here](Frequent%20Issues#keep-mythiclib-up-to-date).
+When using development builds (available on the official website), keep in mind there might be several weeks/months worth of work between the latest dev build and spigot release. Therefore, **when using a dev build for any of the MMO plugins, you have to use dev builds for all the plugins simultaneously**. More information [here](faq.md#keep-mythiclib-up-to-date).
 
-## Look for your issue in the [Frequent Issues](Frequent%20Issues) wiki page
+## Look for your issue in the [Frequent Issues](faq.md) wiki page
 
 There are bugs due to your specific server or plugin configuration which you can fix on your own. This will not only save you some time waiting for an answer on the Discord server, but this will also save us some time.
 

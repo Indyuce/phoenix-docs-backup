@@ -76,7 +76,7 @@ display:
 
 ## Experience Curve and Max Level
 
-More information [here](Experience%20Curves). This is your main class' experience curve ie it defines how much experience a player with this class needs to reach the next level.
+More information [here](../level/curves.md). This is your main class' experience curve ie it defines how much experience a player with this class needs to reach the next level.
 
 ```yaml
 # Must match an existing exp curve filename from the 'expcurves' folder
@@ -94,7 +94,7 @@ max-level: 100
 
 Just like professions, player classes have experience tables too. Experience tables are not to be mistaken with experience curves. Experience tables determine what happens when a player levels up his main class.
 
-Learn more about experience tables [here](Experience%20tables).
+Learn more about experience tables [here](../level/tables.md).
 
 ## Additional Options
 
@@ -190,7 +190,7 @@ Each class has its own set of skill slots. Learn more about skill slots on [this
 
 ## Linking a skill tree to a class
 
-Skill trees are class based which means that the [skill trees](Skill%20Trees) you can see and your progress for them depends on your current class. Each player can only progress in the skill trees linked to its current class. You can link skill trees to a class like this:
+Skill trees are class based which means that the [skill trees](skill-trees.md) you can see and your progress for them depends on your current class. Each player can only progress in the skill trees linked to its current class. You can link skill trees to a class like this:
 
 ```yaml
 #For the mage class
@@ -201,7 +201,7 @@ skill-trees:
 
 ## Casting Mode Particles
 
-This option determines the particles displayed when the player is in [casting mode](Skill%20Casting). At the moment, the particle effect pattern cannot be edited (elegant particle helix rotating around the player): you may only change the particle used to draw that helix.
+This option determines the particles displayed when the player is in [casting mode](../skills/casting.md). At the moment, the particle effect pattern cannot be edited (elegant particle helix rotating around the player): you may only change the particle used to draw that helix.
 
 ```yaml
 cast-particle:
@@ -290,7 +290,7 @@ triggers:
 
 Triggerable events, for the most part, should be self-explanatory; For the `multiple` level up triggers, if you were to specify a `2` for the trigger, that would fire the trigger at every interval of the number 2 - `2, 4, 6, 8` and so on.
 
-A full list of available triggers that can be used in conjunction with these events can be found [here](Triggers).
+A full list of available triggers that can be used in conjunction with these events can be found [here](../misc/triggers.md).
 
 ## Disabling MMOCore classes
 

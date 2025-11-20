@@ -1,4 +1,4 @@
-**Please first learn about variables** [**here**](Variables). Since variables have scopes, everytime you are editing or initializing a variable, you must provide the variable scope using the `scope` option. By default it's always set to `SKILL`.
+**Please first learn about variables** [**here**](../variables.md). Since variables have scopes, everytime you are editing or initializing a variable, you must provide the variable scope using the `scope` option. By default it's always set to `SKILL`.
 
 ## Other variables
 

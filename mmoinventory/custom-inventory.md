@@ -180,7 +180,7 @@ The most important slot restriction is `mitype`, as it is the one you should use
 
 ## Inventory Items
 
-This new features allows to add items which call [MythicLib scripts](../../mythiclib/scripts/intro.md) when clicked. These items do not correspond to any slot, players can't drag and drop any item onto them.
+This new features allows to add items which call [MythicLib scripts](../mythiclib/scripts/intro.md) when clicked. These items do not correspond to any slot, players can't drag and drop any item onto them.
 
 ### Player Info Item
 

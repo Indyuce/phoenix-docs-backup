@@ -49,7 +49,7 @@ nodes:
 
 ## Linking a skill tree to a class
 
-Skill trees are class based which means that the skill trees you can see and your progress for them depends on your current [class](Player%20Classes). Each player can only progress in the skill trees linked to its current class. You can link skill trees to a class like this:
+Skill trees are class based which means that the skill trees you can see and your progress for them depends on your current [class](../features/classes.md). Each player can only progress in the skill trees linked to its current class. You can link skill trees to a class like this:
 
 ```yaml
 # In the class config

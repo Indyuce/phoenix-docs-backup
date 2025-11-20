@@ -15,6 +15,6 @@ A script is a list of mechanics and conditions. If all of the script conditions 
 | [Raytraces](raytraces.md)     | Cast invisible rays that stop on blocks and/or entities |
 | [Shapes](shapes.md)        | Helixes, slashes, parabolas... |
 | [Variables](variables.md)     | Edit/create numbers, vectors etc. |
-| [Visual](isual.md) |  Messages, sounds and particles |
+| [Visual](visual.md) |  Messages, sounds and particles |
 | [Inventory/UI](inventory.md) | Inventory/GUI related mechanics |
 | [External](external.md) |  Mechanics implemented by other plugins |

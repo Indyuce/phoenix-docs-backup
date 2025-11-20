@@ -20,7 +20,7 @@ There are two types of variables. First, **internal variables** or **reserved va
 | `target` | entity | The skill target **if it exists** |
 | `random` | random | An extra module to generate random numbers. See below |
 
-On the other hand, **custom variables** are initialized and can be manipulated by the user. You can access them using `<var.your_variable_name>`, use them in numeric formulas or just like PAPI placeholders in any mechanic or condition. MythicLib comes with many mechanics that let you initialize and edit your custom variables. The full list is available [here](Mechanics).
+On the other hand, **custom variables** are initialized and can be manipulated by the user. You can access them using `<var.your_variable_name>`, use them in numeric formulas or just like PAPI placeholders in any mechanic or condition. MythicLib comes with many mechanics that let you initialize and edit your custom variables. The full list is available [here](mechanics/intro.md).
 
 You cannot use a 
 

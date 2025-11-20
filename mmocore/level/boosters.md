@@ -1,6 +1,6 @@
 # ⭐ Experience Boosters
 
-Admins can use a [command](Commands) in order to create EXP boosters which apply for every online player in the server! Using the `/rpg booster create` command, you can specify how much extra % EXP players will earn, and even **which profession** the booster applies for.
+Admins can use a [command](../general/commands.md) in order to create EXP boosters which apply for every online player in the server! Using the `/rpg booster create` command, you can specify how much extra % EXP players will earn, and even **which profession** the booster applies for.
 
 ## Compatibility Options
 This type of EXP Boosters 100% EULA compliant. **The best way to utilize these boosters is to have plugins like MMOItems or MythicMobs create items which perform that booster admin command when right clicked, applying an EXP booster for every online player!**\

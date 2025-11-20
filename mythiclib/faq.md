@@ -4,7 +4,7 @@ order: 3
 
 # 🪲 Frequent Issues
 
-Use this list of common issues with MythicLib/MMOItems/MMOCore to diagnose your issue whenever you feel like something isn't right. It is recommended to read [this page](Reporting%20an%20issue) first.
+Use this list of common issues with MythicLib/MMOItems/MMOCore to diagnose your issue whenever you feel like something isn't right. It is recommended to read [this page](report.md) first.
 
 Sometimes support over the Discord server is pretty slow given the amount of tickets and staff availability. Before reporting a bug using a Discord ticket, please make sure your issue is not one of the following. If you can fix it yourself using the following instructions, you will both gain time (that you'd have lost waiting for an answer) and make staff gain time so that they can work on fixing more complex bugs.
 
