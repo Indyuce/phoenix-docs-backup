@@ -1,7 +1,13 @@
+---
+order: 7
+---
+
+# ✅ Conditions
+
 Just like ingredients, conditions must be met in order to use a recipe. Unlike ingredients, conditions do not take anything from the player inventory when using a crafting recipe. There are several types of recipes conditions, the main being **level** conditions and **permission** conditions. Just like ingredients, conditions are stored in a list inside the recipe config section.
 
-```
-...
+```yml
+# ...
 recipes:
     steel-sword:
         output: 'mmoitems{type=SWORD,id=STEEL_SWORD}'
@@ -11,6 +17,8 @@ recipes:
         - 'permission{list="mmoitems.recipe.steel-sword,mmoitems.recipe.station.steel"}'
         - 'placeholder{placeholder="%ac_Stat_Weight%~>~1"}'
 ```
+
+## Available Conditions
 
 | Condition | Usage | Description |
 |-----------|-------|-------------|
@@ -24,5 +32,6 @@ recipes:
 | Money | `money{amount=<amount>,format="0.#"}` | The recipe costs (and requires) X Vault currency. |
 | Min Profession Lvl. | `profession{profession=<profession>,level=<min>}` | Players must be Lvl X in a profession or higher (MMOCore). |
 
-The `hide-when-locked` recipe option only triggers when at least one of the conditions is/are not met. The recipe will still display in the GUI if the player does not have all the required ingredients. Recipe conditions display at the beginning of the GUI recipe item lore:\
-![](https://i.imgur.com/xPwlm5B.png)
+The `hide-when-locked` recipe option only triggers when at least one of the conditions is/are not met. The recipe will still display in the GUI if the player does not have all the required ingredients. Recipe conditions display at the beginning of the GUI recipe item lore:
+
+![](uploads/conditions.png)

@@ -1,3 +1,9 @@
+---
+order: 10
+---
+
+# 🥘 Crafting Recipes
+
 ![javaw_1vPf59c1Ob](uploads/ba7ef6268a5ebe6019c1f79c4af69c4e/javaw_1vPf59c1Ob.gif)
 
 MMOItems allows you to register custom recipes where you can use blocks such as crafting tables, furnaces and even campfires to craft MMOItems. Items can have multiple recipes both in the same crafting type or in different crafting types entirely. For example, if you wanted the player to be able to cook a Gourmet Steak you can register that item's recipe under either a furnace, a smoker, a campfire or all three. You would simply have to create a recipe for all three crafting types. Recipes support both vanilla items and MMOItems. In addition, any recipe you create that would have a vanilla equivalent such as crafting a stone block into a stone button will be overridden by the custom recipe. Remember that everytime you create a new recipe or edit an existing one, you must do /mi reload recipes

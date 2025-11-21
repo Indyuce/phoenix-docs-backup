@@ -1,3 +1,9 @@
+---
+order: 5
+---
+
+# 🪵 Ingredients 
+
 The most important part about crafting recipes is the recipe ingredients (physical items any player must have to use the recipe). Recipes each have a list of ingredients the player must have in their inventory in order to use the recipe. There are multiple types of incredients, including:
 
 - items generated using MMOItems
@@ -5,20 +11,21 @@ The most important part about crafting recipes is the recipe ingredients (physic
 - items from MythicMobs/Crucibles
 - items from Oraxen, Nexo or ItemsAdder
 
-![](https://i.imgur.com/jECX7PW.png)
+![](uploads/ingredients.png)
 
 ## Example
 
 For instance, let's say we want to create a recipe for the _Steel Sword_ item. We want to use both vanill and items from MMOItems: 2 vanilla sticks and 4 ingots (custom items from MMOItems):
-```
-...
+```yml
+# crafting-stations/cs_example.yml
+
 recipes:
-    steel-sword:
-        output: 'mmoitems{type=SWORD,id=STEEL_SWORD}'
-        ...
-        ingredients:
-        - 'mmoitem{type=MATERIAL,id=STEEL_INGOT,amount=4}'
-        - 'vanilla{type=STICK,amount=2}'
+  steel-sword:
+    output: 'mmoitems{type=SWORD,id=STEEL_SWORD}'
+    #...
+    ingredients:
+    - 'mmoitem{type=MATERIAL,id=STEEL_INGOT,amount=4}'
+    - 'vanilla{type=STICK,amount=2}'
 ```
 
 ## Available Ingredients
@@ -33,11 +40,19 @@ recipes:
 | MythicMobs/Crucible | `mythic{id=KingsCrown}` |
 
 For any item, there is a `display=...` option to change how the ingredient looks in the item lore. In the following example, whatever the name of the item is, say _Baseball bat_, it will display as _Very Large Baseball Bat_ in the recipe lore.
-```
-nexo{id=baseball_bat,display="Very Large Baseball Bat"}
+```yml
+recipes:
+  steel-sword:
+    #...
+    ingredients:
+    - nexo{id=baseball_bat,display="Very Large Baseball Bat"}
 ```
 
 You can also change the amount of any ingredient using `amount=...`. **Make sure your recipes do not have TWO identical ingredients! This is a tiny limitation due to how crafting stations are designed - you cannot have the recipe require, say 10 Iron Ingots + 10 Iron Ingots. These ingredients need to be merged into one, larger, ingredient that is 20 Iron Ingots.** If needed, you can use amounts larger than 64 for one ingredient, it will work just fine.
-```
-vanilla{type=STICK,amount=60}
+```yml
+recipes:
+  steel-sword:
+    #...
+    ingredients:
+    - vanilla{type=STICK,amount=60}
 ```

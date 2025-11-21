@@ -1,13 +1,19 @@
-MMOItems features native compatibility for EcoEnchants, MythicEnchants and AdvancedEnchants (not fully, orbs as not supported for instance). You have no guarantee that other 
+---
+order: 3
+---
+
+# 🔮 Enchant Plugins
+
+MMOItems features native compatibility for [EcoEnchants](https://www.spigotmc.org/resources/ecoenchants-⭕-250-enchantments-✅-create-custom-enchants-✨-essentials-cmi-support.79573), [MythicEnchants](https://mythiccraft.io/index.php?resources/mythicenchantments-early-access.397) and [AdvancedEnchants](https://www.spigotmc.org/resources/43058) partially. Most modern enchant plugins that feature a reasonable implementation of enchants (aka that use the Bukkit enchantment registry) should work fine with MMOItems.
 
 ## Implementing compatibility with your custom enchant plugin
 Your plugin has to be using the default Bukkit enchantment registry if you want to be compatible with MMOItems. Create and register an instance of `EnchantPlugin` and register it in MMOItems using the following code (run this **BEFORE** MMOItems enables):
-```
+```java
 MMOItems.plugin.registerEnchantPlugin(...);
 ```
 
 Here is the interface you must implement:
-```
+```java
 /**
  * There are three types of enchant plugins.
  * - enchants saved using the Bukkit Enchantment interface (EcoEnchants, MythicEnchants)
@@ -43,7 +49,7 @@ public interface EnchantPlugin<T extends Enchantment> {
 ```
 
 Here is, for instance, the implementation for the MythicEnchants plugin. The `MythicEnchant` class is a class that extends the default `Enchantment` Bukkit class. `getNamespacedKey(String)` should return a namespaced key with your plugin as namespace. `handleEnchant(...)` is ran everytime an item is (re)generated and basically adds one line to the lore to indicate that an enchant is applied onto the item. the `ItemStackBuilder` class can be used to access the `LoreBuilder` class which contains all the methods required to edit the item lore. `LoreBuilder#insert(int, String)` can be used to insert at 1st position any string.
-```
+```java
 public class MythicEnchantsSupport implements EnchantPlugin<MythicEnchant> {
 
     @Override
@@ -70,11 +76,16 @@ public class MythicEnchantsSupport implements EnchantPlugin<MythicEnchant> {
 Enchant plugins like EcoEnchants do NOT need you to register that `EnchantPlugin` implementation because the lore display is handled using packets which is another possibility.
 
 ## If your enchant plugin doesn't use the Bukkit enchant registry
+
+::: warning
+This is getting changed in MI7
+:::
+
 It's a little harder because you need to register a new item stat that will recognize the NBT tags that you use to save the enchant data. Plugins like AdvancedEnchants do save enchants using NBT tags like `ae_enchant:thorns` (and the enchant level is the tag value). It really is recommended to use the Bukkit registry.
 
 You can check the `ItemStat` implementation for AdvancedEnchants at `net.Indyuce.mmoitems.comp.enchants.advanced_enchants` (check source code).
 
 Register your stat **BEFORE** MMOItems enables using:
-```
+```java
 MMOItems.plugin.getStats().register(...);
 ```

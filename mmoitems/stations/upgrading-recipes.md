@@ -1,12 +1,20 @@
+---
+order: 3
+---
+
+# 🛠️ Upgrading Recipes
+
 Upgrading recipes are a specific type of station recipes. They allow any player to upgrade a specific items, using ingredients. These recipes do also support recipe conditions and other recipe options like `hide-when-locked`. You should consider learning about [crafting stations](Crafting-Stations) before reading how to setup upgrading recipes.
 
 Upgrading recipes cannot have a crafting time yet.
 
-![](https://i.imgur.com/F1ugbnJ.png)
+![](uploads/upgrade_recipe_example.png)
 
 ## Recipe Example
 
-```
+```yml
+# crafting-stations/cs_example.yml
+
 recipes:
     steel-sword-upgrade:
         item: # Use 'item' instead of 'output' to switch to an upgrading recipe
