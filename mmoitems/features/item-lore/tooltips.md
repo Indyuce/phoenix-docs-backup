@@ -1,5 +1,5 @@
 
-# Item Tooltips
+# 🖼️ Item Tooltips
 
 Tooltips are what players see when hovering an item inside any inventory. While vanilla Minecraft does feature an option to modify the tooltip texture of any item, this functionality is very limited (color only). Although it is also possible to manually setup custom tooltips without using the dedicated MMOItems feature, MMOItems makes it more systematic and very much easier.
 

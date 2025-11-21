@@ -1,4 +1,4 @@
-# Lore Format
+# 📜 Lore Format
 
 Lore Formats determine how the lore of your items look. You can find the default lore-format.yml file in the languages folder. Additional formats can be added to the lore-formats folder inside languages. Your formats will load whenever you start the server or when you reload the plugin.
 

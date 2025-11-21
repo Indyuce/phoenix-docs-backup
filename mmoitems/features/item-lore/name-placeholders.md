@@ -1,4 +1,4 @@
-# Display Name Placeholders
+# 🏷️ Name Placeholders
 
 ::: info
 In the future these will be extended to the full item lore, and not only its item name

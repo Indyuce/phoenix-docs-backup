@@ -28,13 +28,7 @@ TEST_ITEM:
         name: '&fSteel Sword'
 ```
 
-Display name placeholders are designed to make item creation consistent by making item names uniform and dynamic. Whenever defining the item display name, simply put the usage placeholder somewhere and it will be automatically parsed by MMOItems.
-
-| Placeholder | Usage | Description |
-|-------------|-------|-------------|
-| Tier Name | `<tier-name>` | Displays the unformatted name of the item tier. |
-| Tier Color | `<tier-color>` | Fetches the color code of the item tier name. |
-| Colorless Tier Name | `<tier-color-cleaned>` | Tier name without color codes. |
+Placeholders are available for the item display name. For more information, please refer to [this wiki page](../item-lore/name-placeholders.md).
 
 ## Custom Lore
 
