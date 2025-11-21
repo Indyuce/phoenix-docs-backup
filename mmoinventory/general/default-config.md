@@ -1,3 +1,7 @@
+---
+order: 5
+---
+
 # 🗒️ Default Configuration
 
 ```yml title="config.yml"

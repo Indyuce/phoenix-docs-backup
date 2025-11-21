@@ -10,7 +10,7 @@ MMOInventory is a powerful plugin that allows server administrators to create an
 
 
 ::: tip
-Get MMOInventory on [Polymart](https://polymart.org/resource/mmoinventory.3414) or [SpigotMC](https://www.spigotmc.org/resources/mmoinventory.99445/)!
+Get MMOInventory on [Polymart](https://polymart.org/resource/mmoinventory.3414) or [SpigotMC](https://www.spigotmc.org/resources/mmoinventory.99445/)
 
 :::
 

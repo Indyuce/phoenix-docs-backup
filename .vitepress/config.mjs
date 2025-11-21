@@ -147,5 +147,14 @@ export default defineConfig(
       useFolderTitleFromIndexFile: true,
       includeRootIndexFile: true,
     },
+    {
+      documentRootPath: "/",
+      scanStartPath: "mmoitems",
+      resolvePath: "/mmoitems/",
+      sortMenusByFrontmatterOrder: true,
+      useTitleFromFileHeading: true,
+      useFolderTitleFromIndexFile: true,
+      includeRootIndexFile: true,
+    },
   ])
 );
