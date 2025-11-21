@@ -1,3 +1,9 @@
+---
+order: 1
+---
+
+# Introduction
+
 Crafting stations are UIs players can open to easily craft items through recipes which require ingredients and conditions. Ingredients are physical requirements (items which players must have in their inventory in order to proceed with the craft) whereas conditions are virtual (money, class, level...) requirements.
 
 # Opening a crafting station to a player

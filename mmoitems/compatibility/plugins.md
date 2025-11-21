@@ -1,3 +1,9 @@
+---
+order: 1
+---
+
+# 🦾 Built-in Compatibility
+
 This section lists all **BUILT-IN** compatibilities implemented into MMOItems.
 
 ## WorldGuard Flags

@@ -1,6 +1,12 @@
+# 💗 New Stats
+
+::: warning
+Subject to big changes in MI7
+:::
+
 Using MMOItems API you may register custom stats as complex as abilities or item restrictions. The first thing you will need to do is define a class which extends `ItemStat` which is an abstract class with many functions, we will go over what each does, but first let's deal with the ItemStat constructor you need to call.
 
-## ItemStat constructor
+## ItemStat Constructor
 ```public ItemStat(String id, Material material, String name, String[] lore, String[] types, Material... materials)```
 
 The `id` String corresponds to your internal stat ID. You may only use upper case letters and _ dashes. This stat is used to calculate player stats in MMOLib, used to saved stat data in MMOItems config files, literally anywhere in the plugin. Do never change it once your stat is setup otherwise you might "lose" previously created item data.
@@ -13,8 +19,10 @@ The `material` parameter corresponds to the icon your stat has in the item editi
 `materials` are the item materials supported. This is specific to some stats like `Dye Color` or `Shield Pattern` which depend on the ItemMeta instance and which are type-specific. If the given array is empty, the stat is obviously available for any type by default.
 
 ## Methods to override
+
 This is the class for numeric stats.
-```
+
+```java
 @Override
 public StatData whenInitialized(Object object) {
 	return new DoubleData(object);
@@ -106,34 +114,42 @@ public void whenDisplayed(List<String> lore, FileConfiguration config, String id
 }
 ```
 
-### whenInitialized(Object)
-`whenInitialized(Object)` is called when MMOItems is requesting to read stat data from the config file. `obj` could be anything, it's the object obtained using `ConfigurationSection#get(#yourStatPath#)`. Here, users can either use a double to have a set stat value, or a config section and in that case MMOItems reads a numeric stat formula from that config section.
+### ``whenInitialized(Object)``
 
-This method must return a class which extends the `StatData` interface. It's a **purely cosmetic** interface because it has no function to override but I might need to add some functions to it in a later update. **You can see a StatData class example under the _Mergeable Stats_ section**.
+`whenInitialized(Object)` is called when MMOItems is requesting to read stat data from the config file. `obj` could be anything, it's the object obtained using `ConfigurationSection#get(yourStatPath)`. Here, users can either use a double to have a set stat value, or a config section and in that case MMOItems reads a numeric stat formula from that config section.
 
-### whenInitializedGeneration(Object)
-`whenInitializedGeneration(Object)` is almost the same thing, except that should return a `RandomStatData` instance. The `RandomStatData` interface is used to store data about stat data from an item generation template. For further info, see the RandomStatData paragraph below.
+This method must return a class which extends the `StatData` interface. It's a **purely cosmetic** interface because it has no function to override but I might need to add some functions to it in a later update. **You can see a StatData class example under the Mergeable Stats section**.
 
-### whenApplied(MMOItemBuilder, StatData)
+### ``whenInitializedGeneration(Object)``
+
+`whenInitializedGeneration(Object)` is almost the same thing, except that it should return a `RandomStatData` instance. The `RandomStatData` interface is used to store data about stat data from an item generation template. For further info, see the RandomStatData paragraph below.
+
+### ``whenApplied(MMOItemBuilder, StatData)``
+
 This function is used by MMOItems when generating an `ItemStack` instance based on a list of `StatData` instances. You can access the item meta, item lore using the `MMOItemBuilder` instance. You will need to cast the `StatData` instance given as input to whatever your stat is compatible with. MMOItems only gives you as input what you gave it as output in the `whenInitialized(Generation)` methods.
 
-### whenClicked(EditionInventory, InventoryClickEvent)
+### ``whenClicked(EditionInventory, InventoryClickEvent)``
+
 This is the function used to do stuff when a player just clicked the stat icon in the item edition GUI.
 
-### whenInput(EditionInventory, ConfigFile config, String message, Object...)
+### ``whenInput(EditionInventory, ConfigFile config, String message, Object...)``
+
 Used to do stuff when a player just inputs some message in the chat. You can request for a player chat input using the following method:
 ```new StatEdition(inv, this, objectArray).enable("Write in the chat the numeric value you want.", "Or write [MIN-VALUE]=[MAX-VALUE] to make the stat random.");```
 That function would typically be called when the player clicks the stat icon in the edition GUI. The `objectArray` parameter in the `StatEdition` class constructor can be replaced by **any object at all**, it's a way for more complex stats like elements or abilities what the player is editing (is it the ability casting mode, what ability, etc??). That array is kept intact and given as input in the `whenInput` method.
 
-### whenLoaded(MMOItem, NBTItem)
+### ``whenLoaded(MMOItem, NBTItem)``
+
 Used to load stat data from a random ItemStack.
 
-### whenDisplayed(List<String>, ConfigurationSection, String)
+### ``whenDisplayed(List<String>, ConfigurationSection, String)``
+
 It's a really old method which will be updated soon. It's the function used to display the current item stat data in the edition GUI. It is still using config sections as input, it will be soon replaced by StatDatas for cleaner functionality.
 
-## RandomStatDatas
-They are the equivalent of StatData's but with a random factor needed for random item generation. A good example is the NumericStatFormula which is used for any numeric stats.
-```
+## `RandomStatData`'s
+
+They are the equivalent of ``StatData``'s but with a random factor needed for random item generation. A good example is the ``NumericStatFormula`` class, which is used for any numeric stats.
+```java
 public class NumericStatFormula implements RandomStatData {
 	private final double base, scale, spread, maxSpread;
 
@@ -204,13 +220,14 @@ public class NumericStatFormula implements RandomStatData {
 	}
 }
 ```
-The `randomize` function is the key here. This takes as input a GeneratedItemBuilder which contains info about the item level, tier etc. and outputs a randomized `RandomStatData`, i.e a `StatData` instance which will be later used to build the item!
+The `#randomize(..)` function is the key here. This takes as input a GeneratedItemBuilder which contains info about the item level, tier etc. and outputs a randomized `RandomStatData`, i.e a `StatData` instance which will be later used to build the item!
 
 The `GeneratedItemBuilder` class can be seen as the equivalent of the `MMOItemBuilder` for random stat generation. When a random item is being generated from an item template, MMOItems first creates a `GeneratedItemBuilder`, rolls the item modifiers and gather the randomized `StatData` when generates the item using a `MMOItemBuilder`.
 
-## Mergeable stats
+## Mergeable Stats
+
 Mergeable stats are stats which can be stacked with each others, for instance when a player tries to apply a gem stone onto another item, where MMOItems needs to "merge" the two stat datas together. A good example is the `DoubleData` class.
-```
+```java
 public class DoubleData implements StatData, Mergeable {
 	private static final Random random = new Random();
 
@@ -292,7 +309,7 @@ This registers the stat in MMOItems, so by default your stat will appear in the 
 2) Edit your `stats.yml` configuration section and add the required translations here; for instance you'd add `attack-damage: '&3 &7➸ Attack Damage: &f{value}'` for the Attack Damage stat.
 
 ## Item Restrictions
-```
+```java
 public class RequiredLevel extends DoubleStat implements ItemRestriction {
 
 	/*
@@ -305,7 +322,7 @@ public class RequiredLevel extends DoubleStat implements ItemRestriction {
 				new String[] { "The level your item needs", "in order to be used." }, new String[] { "all" });
 	}
 
-..........
+// ..........
 
 	@Override
 	public boolean canUse(RPGPlayer player, NBTItem item, boolean message) {
@@ -330,4 +347,5 @@ Examples: custom model data, shield patterns, custom sounds...
 Let your stat class implement the `ProperStat` interface if you don't want gems to apply the potential gem stone stat data onto the target item.
 
 ## Upgradable
-More on this later when API is reworked. It's used to make stats upgradable using item upgrade templates.
+
+More on this later during the MI7 update.

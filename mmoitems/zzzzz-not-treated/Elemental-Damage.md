@@ -1,1 +1,0 @@
-Moved to the [MythicLib wiki](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Custom%20Elements)

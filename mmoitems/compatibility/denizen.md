@@ -1,4 +1,13 @@
-**This feature was experimental and is not available on recent builds.** It was added in 6.6.1 MI dev buildsand and might be subject to future changes.
+---
+order: 10
+---
+
+# 📝 Denizen
+
+::: warning
+This feature was experimental and is no longer available.
+
+:::
 
 ## Getting a MI item
 First you will have to retrieve the item template using `<mmoitem_template[type=SWORD>;id=KATANA]>`, which returns an MMOItemTemplateTag. Then you will have to generate the item using the `<templateTag.generate[]>` subtag.
