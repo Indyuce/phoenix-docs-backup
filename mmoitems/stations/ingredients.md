@@ -2,7 +2,7 @@
 order: 5
 ---
 
-# 🪵 Ingredients 
+# 🪵 Ingredients
 
 The most important part about crafting recipes is the recipe ingredients (physical items any player must have to use the recipe). Recipes each have a list of ingredients the player must have in their inventory in order to use the recipe. There are multiple types of incredients, including:
 

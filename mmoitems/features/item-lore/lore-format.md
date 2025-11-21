@@ -1,11 +1,16 @@
+# Lore Format
+
 Lore Formats determine how the lore of your items look. You can find the default lore-format.yml file in the languages folder. Additional formats can be added to the lore-formats folder inside languages. Your formats will load whenever you start the server or when you reload the plugin.
 
 Besides, MMOItems supports [MiniMessage](https://docs.adventure.kyori.net/minimessage/format.html)! You can now use MiniMessage color codes and text decorations inside of your item lore!
 
 ## Creating and Using a Lore Format
+
 To create a new lore format, simply copy-paste the default lore-format.yml file into the folder and start editing. Your new lore format will be assigned an id which is equal to the filename inside the folder. Use this ID to assign your new lore-format to an item.
+
 ## Default Lore Format
-```
+
+```yml
 lore-format:
   # - '{bar}&8&m--------&f&l &nGeneral&8 &m--------------'
   - '#item-type#'

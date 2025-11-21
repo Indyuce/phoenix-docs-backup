@@ -2,9 +2,10 @@
 order: 6
 ---
 
-# ⚙️ Recipe Triggers
+# ⚙️ Triggers
 
 Recipe triggers are recipe options which do not display in the recipe GUI item. They dictate actions which are performed when the recipe is used by a player.
+
 ```yml
 recipes:
     steel-sword:

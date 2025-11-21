@@ -1,7 +1,10 @@
-**ADDED IN 6.0.1**
+# Display Name Placeholders
 
-Display name placeholders are designed to make item creation consistent by making item names uniform and dynamic. Whenever defining the item's display name simply put the usage placeholder somewhere and it will auto replace. 
+::: info
+In the future these will be extended to the full item lore, and not only its item name
+:::
 
+Display name placeholders are designed to make item creation consistent by making item names uniform and dynamic. Whenever defining the item's display name simply put the usage placeholder somewhere and it will auto replace.
 
 | Placeholder | Usage          | Description                                       |
 |-------------|----------------|---------------------------------------------------|
