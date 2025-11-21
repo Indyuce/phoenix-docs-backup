@@ -12,7 +12,7 @@ This feature was experimental and is no longer available.
 ## Getting a MI item
 First you will have to retrieve the item template using `<mmoitem_template[type=SWORD>;id=KATANA]>`, which returns an MMOItemTemplateTag. Then you will have to generate the item using the `<templateTag.generate[]>` subtag.
 
-The following example will generate an item with a random level and tier. If you don't specify any tier, it will be chosen randomly, based on the chances you chose when setting up the tier [item generator options](Item Tiers#modifier-capacity-item-generation).\
+The following example will generate an item with a random level and tier. If you don't specify any tier, it will be chosen randomly, based on the chances you chose when setting up the tier [item generator options](../features/tiers.md#modifier-capacity-item-generation).\
 `<mmoitemTemplateTag.generate[]>`
 
 The following example will generate an item with a specific level, and tier.\

@@ -7,12 +7,12 @@ order: 1
 This section lists all **BUILT-IN** compatibilities implemented into MMOItems.
 
 ## WorldGuard Flags
-MythicLib implements new flags that work for both MMOCore and MMOItems. See the [full list here](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Plugin-Compatibility#worldguard).
+MythicLib implements new flags that work for both MMOCore and MMOItems. See the [full list here](../../mythiclib/features/compatibility.md#flag-plugins).
 
 Like any other plugin, [**WorldGuard**](http://www.enginehub.org/worldguard) should be detected automatically by MMOItems when the server is booting. You can check the console when the plugin is loading to make sure it was detected.
 
 ## Custom Enchantments plugins
-MMOItems is compatible with EcoEnchants, MythicEnchants and AdvancedEnchants(Not recommended). This means it is MOST LIKELY not natively compatible with other enchantment plugins tho well designed enchantment plugins should have no issues (e.g EcoEnchants). More information over [this wiki page](Enchant Plugins).
+MMOItems is compatible with EcoEnchants, MythicEnchants and AdvancedEnchants(Not recommended). This means it is MOST LIKELY not natively compatible with other enchantment plugins tho well designed enchantment plugins should have no issues (e.g EcoEnchants). More information over [this wiki page](enchant-plugins.md).
 
 ## RPG Core Plugins
 MMOItems will automatically hook onto any detected RPG plugin. MMOItems can read the player level in order to apply the item level restriction, the player class for the class restriction, and the player mana & stamina/power for ability & item resource costs.\
@@ -93,7 +93,7 @@ MMOItems lets your mythic mobs drop items from MI. Please refer to [this wiki pa
 
 ## PlaceholderAPI
 PAPI placeholders let you retrieve player statistics. To get some stat value, use `%mmoitems_stat_[stat_name]%` e.g `%mmoitems_stat_critical_strike_chance%` or `%mmoitems_stat_defense_percent%`.\
-You may also use PlaceholderAPI to retrieve the durability of item held by the player: more info on [this wiki page](Custom%20Durability#durability-placeholders).
+You may also use PlaceholderAPI to retrieve the durability of item held by the player: more info on [this wiki page](../features/custom-durability.md#durability-placeholders).
 
 ## RPGInventory
 MMOItems supports [**RPGInventory**](https://www.spigotmc.org/resources/12498/): players can equip items from MMOItems in their custom inventory and benefit from their stats. However since RPGInventory does not support item attribute modifiers, stats based on vanilla attribute modifiers like attack speed, max health & movement speed won't apply on non-armor/hand item slots (i.e extra slots like accessory slots). Any other item effect will work fine.
@@ -111,4 +111,4 @@ Reward:
 ```
 
 ## MythicMobs
-You can add items from MI to MythicMobs drop tables: more info on [this page](Item%20Drop%20Tables#adding-mmoitems-to-mythicmobs-drop-tables).
+You can add items from MI to MythicMobs drop tables: more info on [this page](../items/drop-tables.md#adding-mmoitems-to-mythicmobs-drop-tables).

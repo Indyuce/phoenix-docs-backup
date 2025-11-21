@@ -4,7 +4,7 @@ order: 3
 
 # 🛠️ Upgrading Recipes
 
-Upgrading recipes are a specific type of station recipes. They allow any player to upgrade a specific items, using ingredients. These recipes do also support recipe conditions and other recipe options like `hide-when-locked`. You should consider learning about [crafting stations](Crafting-Stations) before reading how to setup upgrading recipes.
+Upgrading recipes are a specific type of station recipes. They allow any player to upgrade a specific items, using ingredients. These recipes do also support recipe conditions and other recipe options like `hide-when-locked`. You should consider learning about [crafting stations](intro.md) before reading how to setup upgrading recipes.
 
 Upgrading recipes cannot have a crafting time yet.
 

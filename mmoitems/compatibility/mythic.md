@@ -138,4 +138,4 @@ ExampleSkill2:
 
 ## Drop Tables
 
-You can add items from MI to MythicMobs drop tables: more info on [this page](Item%20Drop%20Tables#adding-mmoitems-to-mythicmobs-drop-tables).
+You can add items from MI to MythicMobs drop tables: more info on [this page](../items/drop-tables.md#adding-mmoitems-to-mythicmobs-drop-tables).
