@@ -1,6 +1,14 @@
-**Make sure you read **[**this paragraph**](Item%20Creation#how-items-work-very-important)** first. The MMOItems item generation system is pretty complex and needs some time to be fully understood.**
+---
+order: 3
+---
 
-# Overview
+# 🏷️ Item Modifiers
+
+::: tip
+Make sure you read [this page](templates.md) first. The MMOItems item generation system is pretty complex and needs some time to be fully understood.
+:::
+
+## Example
 
 Item modifiers are the **MVP's of the MMOItems random loot generation system**. Conceptually, an item always comes with its standard set of item stats. Take the following item for example - a Long Sword - it has 10 Atk damage and 1.6 Atk speed. These are its default stats, meaning if the item has no modifier, tier or anything attached to it, it will only have these stats.
 
@@ -30,7 +38,7 @@ sharp_modifier:
 
 This means that there can be multiple versions of the same item, with different rarities, more or less powerful stats added to them.
 
-# Adding item modifiers to items
+## Adding item modifiers to items
 
 For this tutorial, we will consider a sample item _Long Sword_ with two potential item modifiers, _Sharp_ (adds +5 Atk damage) and _Fiery_ (adds an on-hit burning ability).
 
@@ -89,7 +97,7 @@ LONG_SWORD:
 
 ## List of item stats
 
-These are the stats that will be added to the item if the modifier is applied. The format used here is the exact same as the one used to define base item stats in an [item template](Item-Templates). You can add ANY stat, item option, ability... to the modifier `stats` section.
+These are the stats that will be added to the item if the modifier is applied. The format used here is the exact same as the one used to define base item stats in an [item template](templates.md). You can add ANY stat, item option, ability... to the modifier `stats` section.
 
 ```yml
 LONG_SWORD:
@@ -151,7 +159,7 @@ LONG_SWORD:
 
 The problem with the roll chance system is that it does not allow to you control how many modifiers an item can have. An item with 10 modifiers with 50% roll chance can still have (although unlikely) up to 10 modifiers applied to it, which is not very suitable for gameplay balancing.
 
-To solve this problem, MMOItems uses a **modifier capacity** system. Each item has a modifier capacity which is determined by its item tier (see [this wiki section](Item-Tiers#modifier-capacity-item-generation) to learn how to setup modifier capacity for your items).
+To solve this problem, MMOItems uses a **modifier capacity** system. Each item has a modifier capacity which is determined by its item tier (see [this wiki section](../features/tiers.md#modifier-capacity-item-generation) to learn how to setup modifier capacity for your items).
 
 - Each modifier has a weight, which is the amount of capacity that the modifier will use up if it is applied to the item.
 - An item can only receive modifiers whose total weight is less than or equal to its modifier capacity.
@@ -192,9 +200,7 @@ During item generation, MMOItems iterates through the whole modifier list, and f
 
 Weights only limit the number of modifiers an item can have, they do not guarantee that the item will have a certain number of modifiers. Therefore, you can use weights to balance items with a lot of modifiers and make sure they cannot have too many over-powered modifiers at the same time.
 
----
-
-# Public Modifiers
+## Public Modifiers
 
 Public modifiers are modifiers which you can use as shortcuts in order to spend less time in your item config files redefining the same modifiers over and over again. For instance, if you have multiple Swords in your game, and you want all of them to be able to roll the _Sharp_ modifier, you can define this modifier once as a public modifier, and then reference it in all your sword item configs.
 
@@ -254,21 +260,21 @@ KATANA:
 
 As you can see, you can still edit the roll chance and modifier weight to have it fine-tuned to the item you are working on, but you **no longer need to redefine the stats, prefix and suffix**.
 
----
+## Modifier Groups (MI 6.9.5+)
 
-# Modifier Groups (MI 6.9.5+)
-
-> We recommend getting familiar with the modifier system logic before continuing to this section as it starts getting a bit technical!
+::: tip
+We recommend getting familiar with the modifier system logic before continuing to this section as it starts getting a bit technical!
+:::
 
 Modifier groups greatly increase the flexibility of the modifier system. They allow you to get much finer control over how many modifiers an item should have. Once you understand how modifier groups work, the possibilities for random loot are endless!
 
-## Overview
+### Overview
 
 Modifier groups are collections of modifiers (public or private) which can be used as a single modifier. When a modifier group is rolled (applied onto an item), it will roll all modifiers from its collection.
 
 Beside making configuring multiple modifiers easier, modifier groups also allow you to **set a minimum and maximum number of modifiers that will be applied from the group**.
 
-## Configuration
+### Configuration
 
 The following syntax snippet defines a public modifier group and can be pasted inside any YML config file located in the `/modifiers` folder.
 
@@ -320,9 +326,7 @@ Note that when using modifier weights, the group is not guaranteed to reach the 
  This modifier allocation problem is actually a very complex combinatorial optimization problem, and finding a working/optimal solution is not trivial at all. The algorithm used by MMOItems is a greedy heuristic but it's still quite good in practice!
 </details>
 
----
-
-# Item stats which scale with the tier
+## Item stats which scale with the tier
 
 The following example shows a very nice use case for modifier groups. In classic MMOItems, item stat values usually scale with the item level. However, you may want to have stats which scale rather with the item tier. For instance, you may want a _Rare_ item to always have +10% Critical Strike Chance, and a _Legendary_ item to always have +20% Critical Strike Chance.
 
@@ -356,13 +360,13 @@ Every modifier corresponds to one tier. Unlike regular item generation (where th
 
 Following this structure, you can choose to add more stats to each modifier and therefore have stats which scale with the item tier.
 
----
+## Modifiers as "nodes"
 
-# Modifiers as "nodes"
+::: tip
+Again, we recommend getting familiar with the modifier group logic before continuing to this section.
+:::
 
-> We recommend again getting familiar with the group logic before continuing to this section.
-
-Modifiers are similar to nodes in a tree structure. Anywhere you are asked for a modifier, you can interchangably provide either a simple modifier, or a modifier group. You can use modifier groups inside of other modifier groups.Modifier groups have their own roll change and weight, just like simple modifiers.
+Modifiers are similar to nodes in a tree-like structure. Anywhere you are asked for a modifier, you can interchangably provide either a simple modifier, or a modifier group. You can use modifier groups inside of other modifier groups. Modifier groups have their own roll change and weight, just like simple modifiers.
 
 All modifiers or modifier groups are simply nodes, and a modifier node has BOTH a `stats` section (modifier part) AND a `modifiers` section (group part). This means that you can have a modifier which provides stats AND rolls multiple sub-modifiers at the same time. Modifier groups have their own roll chance and weight, just like simple modifiers.
 

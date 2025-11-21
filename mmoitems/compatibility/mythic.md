@@ -5,6 +5,10 @@ order: 2
 
 # 🧟 MythicMobs
 
+## Custom Abilities
+
+You can create custom skills/abilities and add them to your items. More information on the [MythicLib wiki](../../mythiclib/skills/custom/mythic.md).
+
 ## Arrow Volley Mechanic
 
 Similar to the mythicmobs' arrow volley mechanic, this mechanic fires forth a bunch of arrows at desired spread, from the desired offset. However, **this scales the arrows with stats of the player** such that the arrows fired have the same effect of firing it manually with a bow.
