@@ -136,3 +136,15 @@ on_tick_script:
   mechanics:
   - 'particle{effect=FLAME}'
 ```
+
+### Cancel event
+
+If the script was triggered by an event (like EntityDamageByEntityEvent, PlayerInteractEvent, etc.), this mechanic will cancel that event. Otherwise, it will print out an error.
+
+This can be used to prevent damage during an entity damage event, for instance.
+
+```yml
+example_script:
+  mechanics:
+  - 'cancel_event{}'
+```

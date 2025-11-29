@@ -62,3 +62,13 @@ example_mechanic:
     target:
         type: target
 ```
+
+### Set no damage ticks
+
+Makes the target entity invulnerable for the provided amount of time (in ticks).
+
+```yml
+example_script:
+  mechanics:
+  - 'set_no_damage_ticks{target=caster;ticks="40 + 20 * <modifier.extra>"}'
+```

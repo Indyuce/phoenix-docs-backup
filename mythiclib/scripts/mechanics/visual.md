@@ -94,3 +94,13 @@ example_mechanic:
     z: 0
     block: PACKED_ICE
 ```
+
+### Send an action bar message
+
+This supports PAPI placeholders and color codes. For message priority and duration, please refer to the [Messages](../../features/player-messages.md#send-to-action-bar) wiki page.
+
+```yml
+example_script:
+  mechanics:
+    - 'action_bar{target=caster;format="&aYou have been hit for &c<damage> &adamage!";priority=30;duration=30}'
+```
