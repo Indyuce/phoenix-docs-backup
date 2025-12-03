@@ -40,7 +40,7 @@ Last but not least, a higher level does not always mean more modifiers - the mod
 
 ### Example 3
 
-![](uploads/example3.png)
+![](uploads/example_3.png)
 
 The default item is a bow with some attack damage and crit chance. The first `Heavy` modifier makes it two-handed, adds a few attack points and some critical strike power. The second modifier which has a suffix adds an on-hit ability.
 
