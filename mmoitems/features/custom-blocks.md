@@ -1,3 +1,9 @@
+---
+
+---
+
+
+# 📦 Custom Blocks
 Using MMOItems 5+ you may implement blocks with a custom texture. You can even them spawn and define how rare they are using [world generation templates](World Generation Templates), configure with what tool it should be broken by players, decide what it loots using MMOItems drop tables and bind a random amount of exp to it.
 
 **[DOWNLOAD REQUIRED RESOURCE PACK HERE](https://www.dropbox.com/s/90w9pvdbfeyxu94/MICustomBlockPack.zip?dl=1)**

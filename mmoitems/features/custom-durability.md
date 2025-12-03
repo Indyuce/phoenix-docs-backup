@@ -1,4 +1,11 @@
-Custom durability is a really powerful system that allows you to create items with a set amount of uses, unlike the \<1.20.5 vanilla durability system which forces you to always have the same max amount of uses for a type of item.\
+# 🔨 Custom Durability
+
+::: tip
+Since 1.20.6 Minecraft has introduced a tag to edit the maximum vanilla durability of items. We recommend users to use this over custom durability!
+:::
+
+Custom durability is a really powerful system that allows you to create items with a set amount of uses, unlike the \<1.20.5 vanilla durability system which forces you to always have the same max amount of uses for a type of item.
+
 All items feature the _Max Custom Durability_ stat, which defines how many times an item can be used before either **breaking** or **becoming unusable**. The _Lost when Broken_ item option defines whether or not the item should be lost when reaching 0 durability.
 
 Durability is displayed on the item vanilla durability bar, however you may also display the player's held item durability using PAPI placeholders. Items can be repaired only using repairing consumables.
@@ -31,13 +38,14 @@ This cannot be used in the item lore! These are placeholders that can be used in
 
 You can also display the item durability in the item lore. First, add the following line to your `lore-format.yml` config file if it's not already there:
 
-```
-- '#durability#'
+```yml
+lore-format:
+  # ...
+  - '#durability#'
 ```
 
-Then add this to your `stats.yml` if it's not already there.
-
-```
+The following line in `stats.yml` can be edited to change how custom durability is displayed in the item lore. Add it to the file if it's not already there:
+```yml
 durability: '&7Durability: {current} / {max}'
 ```
 
