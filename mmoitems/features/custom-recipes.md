@@ -4,7 +4,7 @@ order: 10
 
 # 🥘 Crafting Recipes
 
-![javaw_1vPf59c1Ob](uploads/ba7ef6268a5ebe6019c1f79c4af69c4e/javaw_1vPf59c1Ob.gif)
+<!-- ![javaw_1vPf59c1Ob](uploads/ba7ef6268a5ebe6019c1f79c4af69c4e/javaw_1vPf59c1Ob.gif) -->
 
 MMOItems allows you to register custom recipes where you can use blocks such as crafting tables, furnaces and even campfires to craft MMOItems. Items can have multiple recipes both in the same crafting type or in different crafting types entirely. For example, if you wanted the player to be able to cook a Gourmet Steak you can register that item's recipe under either a furnace, a smoker, a campfire or all three. You would simply have to create a recipe for all three crafting types. Recipes support both vanilla items and MMOItems. In addition, any recipe you create that would have a vanilla equivalent such as crafting a stone block into a stone button will be overridden by the custom recipe. Remember that everytime you create a new recipe or edit an existing one, you must do /mi reload recipes
 
@@ -14,7 +14,7 @@ The initial set-up for creating a craftable item is the same as any other MMOIte
 
 **The use of the GUI Item Editor is HIGHLY RECOMMENDED as it makes visualizing these recipes a lot easier.**
 
-```
+```yml
 #This is an unfinished item that doesn't have an actual recipe linked to it, just a crafting type.
 SMOKERRECIPE:
   base:
@@ -26,7 +26,7 @@ SMOKERRECIPE:
 
 If you want to assign multiple recipes to a single crafting type, you do so like this:
 
-```
+```yml
 SMOKERMULTIPLERECIPES:
   base:
     name: Smoker
@@ -41,7 +41,7 @@ SMOKERMULTIPLERECIPES:
 
 If you want to assign multiple recipes to different crafting types, you just add another crafting type on the level beneath crafting.
 
-```
+```yml
 SMOKERANDFURNACERECIPE:
   base:
     name: Smoker
@@ -63,7 +63,7 @@ Smithing table recipes are the way you would want to upgrade your items. To set 
 
 input are what items the player must **"input"** or insert into the slots. You can define these items as either MMOItems or Vanilla items. At its base, it looks like this.
 
-```
+```yml
 SMITHINGTABLERECIPE:
   base:
     name: Smithing Table
@@ -88,7 +88,7 @@ input also determines which slot the items go into. The slot on the left corresp
 
 This is what a full config should look like.
 
-```
+```yml
 SMITHINGTABLERECIPE:
   base:
     name: Smithing Table
@@ -111,7 +111,7 @@ These four crafting types have the same options and the same general idea. You i
 
 At its base, these crafting types will look like this:
 
-```
+```yml
 COOKINGRECIPE:
   base:
     name: COOKING RECIPES
@@ -135,7 +135,7 @@ These are the options available to these crafting recipes.
 
 A complete config would look like this:
 
-```
+```yml
 COOKINGRECIPE:
   base:
     name: Cooking Recipe
@@ -152,7 +152,9 @@ COOKINGRECIPE:
 In this example, cooking one stone brick in a smoker will return 10 exp and take 10 ticks to smelt.
 
 ## Shaped/Super Shaped/Mega Shaped/Shapeless Recipes
-![Crafting](uploads/5a2b56120739a8764bd4226a75cdbbff/Crafting.png)
+
+![](uploads/custom_workbenches.png)
+
 Shaped, Super Shaped and Mega Shaped recipes all share the same options. However, Shaped recipes can be hidden from the recipe book. Shaped simply means that the ingredients must be in a specific layout in order for the item to be craftable, a bit like how you can only craft a stone pickaxe one way. Super Shaped and Mega Shaped are the same thing but bigger. You access these crafting tables by doing /superworkbench or /swb and /megaworkbench or /mwb respectively. Super Shaped is a 5x5 grid and Mega Shaped is a 6x6 grid.
 
 All shaped recipes have these options:
@@ -161,7 +163,7 @@ input: dictates what ingredients must be placed in what slot in order to craft t
 
 This is what a normal shaped recipe would look like:
 
-```
+```yml
 SHAPEDRECIPE:
   base:
     name: Shaped
@@ -177,7 +179,7 @@ SHAPEDRECIPE:
 
 Another way to view it is like this:
 
-```
+```yml
 SHAPEDRECIPE:
   base:
     name: Shaped

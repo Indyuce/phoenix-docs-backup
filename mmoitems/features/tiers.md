@@ -8,25 +8,27 @@ The default tiers are _Trash, Common, Uncommon, Rare, Very Rare, Legendary, Myth
 
 Items that have a tier (common, rare, legendary...) can be **deconstructed**. Deconstructing an item transforms the item into another item, usually a material players can then use at the advanced workbench to craft other items. The item players get from deconstructing another item entirely depends on the item tier. Players might drop other weapons, or even materials they can use to craft other weapons.
 
+![](uploads/item_deconstruction.png)
+
 This feature actually allows players to get rid of the items they can't use because they don't meet the requirements while using another resource (since deconstructing an item requires a consumable).
 
 This drop table behaves exactly like a monster/block drop table, please refer to [**this wiki page**](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Item%20Drop%20Tables) to learn how to setup them.
 
 ```yml
 RARE:
-    name: '&6&lRARE'
-    # ...
-    deconstruct-item:
-        success:
-            coef: 1
-            items:
-                MATERIAL:
-                    RARE_WEAPON_ESSENCE: 100,1-1,0
-        lose:
-            coef: 3
-            items:
-                MATERIAL:
-                    WEAPON_POWDER: 100,1-1,0
+  name: '&6&lRARE'
+  # ...
+  deconstruct-item:
+    success:
+      coef: 1
+      items:
+        MATERIAL:
+          RARE_WEAPON_ESSENCE: 100,1-1,0
+    lose:
+      coef: 3
+      items:
+        MATERIAL:
+          WEAPON_POWDER: 100,1-1,0
 ```
 
 ### How to deconstruct an item
