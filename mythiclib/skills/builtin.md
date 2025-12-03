@@ -13,6 +13,7 @@ Use CTRL+F to look for an ability with certain keywords.
 :::
 
 ## Skills cast onto a location
+
 | Ability           | Ability Description                                     | Ability Modifiers                   |
 | ----------------- | ------------------------------------------------------- | ----------------------------------- |
 | Arcane Hail       | Arcane projectiles shower target area, dealing damage over time          | damage, duration, radius                      |

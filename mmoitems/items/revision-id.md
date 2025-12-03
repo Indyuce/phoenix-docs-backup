@@ -1,14 +1,32 @@
-## Keep your items up-to-date using the RevID stat
+---
+order: 8
+---
 
-When you increase this number in the editor, all the copies of this item in the world will update to match the template:![image](uploads/a22041c8f8ae7bdfb4851b0e8ef25750/image.png)
+# 🔄 Item Updates (Revision)
 
-When 'updating' an item, the goal is essentially to regenerate it, as if it was freshly obtained with the `/mi give` command, having the latest lore format and the same stats as the template:![image](uploads/dc4c308365f5bdd62857204d8e3b455a/image.png)
+When items are generated through loot tables or commands, their stat data is written into NBT tags. 90% of their stat data is now independent from what is written in the config, such that if you later modify an item, it will not _automatically_ update the instances of this item that have already been generated.
+
+The _Revision ID_ system, or _RevID_, allows to update generated items to match their configs again. When updating an item, MMOItems "regenerates" it, as if it was freshly obtained through the `/mi give` command, having the latest lore format and the same stats as the template:
+
+![image](uploads/item_update.png)
+
+## The RevID stat
+
+When you increase this number in the editor, all the copies of this item in the world will update to match the template:
+
+![image](uploads/rev_id_in_ui.png)
+
+Once the item revision ID is incremented, every generated instance of that item is now considered _outdated_ and will be updated. You can increment multiple times the revision ID.
+
+### Note
+
+MMOItems updates every item in the player's inventory on login. Any item click (in a non creative inventory) triggers an item update check.
 
 ## Advanced Configuration
 
-There are a lot of options for this revision system, which you can tweak in the `item-revision` section of the config.
+There are a lot of options for this revision system, which you can tweak in the `item-revision` section of the main MMOItems config file.
 
-```
+```yml
 item-revision:
   keep-data:
     display-name: true
@@ -104,7 +122,7 @@ If the old item has a tier, this tier will be preserved, even if the template ha
 The RevID system supports updating gemstones while they are inserted in items. This does not happen automatically when increasing the RevID of the gemstone template, you must increase the parent item's RevID and have the _keep gemstones_ option enabled.
 
 You can use the `item-revision.keep-gem-data` field to specify the RevID options of gemstones updated this way:
-```
+```yml
 item-revision:
   keep-gem-data:
     display-name: true
@@ -122,32 +140,11 @@ All of the advanced enchantments in the item will be kept.
 
 PhatLoots does not have special support for MMOItems, such that after a few months, your MMOItem loot drops can become quite unupdated! Specify in MMOItems' config.yml in the section `item-revision.phat-loots` the revision options to update these items as they are generated:
 
-```
+```yml
 item-revision:
   phat-loots:
     display-name: true
     enchantments: true
-    ...
+    #...
 ```
 
-
-----
-
-
-TODO include info about item updater
-
-- - -
-Once items are generated using drop tables or the give command, they become independant of the /item config. Therefore the only way to directly update items in the player's inventories is to use the **Item Updater**. You can either directly update the item you are holding using **/updateitem**, or enable the item updater for a specific item using `/updateitem <type> <id>`.
-
-### Updating physical items
-Once the item updater is enabled for a specific item, every physical instance of that item is considered _outdated_ and will be updated. An outdated item can only be updated **once** (performance save) when enabling the item updater, unless you apply further changes to the item. Every change you apply in the item edition GUI will make physical item instances _outdated_ again till they are updated.
-
-MMOItems updates every item in the players inventories whenever they log in. Furthermore any item clicked in a non-creative inventory undergoes an update check.
-
-### Enabling the updater for every item
-If you do not want to worry about players having outdated items here and there on your server, you might want to enable the item updater for every item in the plugin. **This is possible however strongly not recommended.**\
-The item updater was designed to hot-nerf items in players' inventories once they have been generated. It is not designed to mass-update every item on your server. The more items you have, the higher the performance the plugin will need in order to keep them updated.
-
-The item updater is **100% useless** for items which have not been changed after they are generated. In order to save performance, MI first checks if a physical item has some non-applied item change, and then updates the item if it is considered outdated. Enabling the item updater for all of your items generates useless update checks.
-
-You can manually enable the item updater for every item in your server using the following command: `/mi update apply 2 2`. This loops through every item in your config files and registers them in the item updater list.

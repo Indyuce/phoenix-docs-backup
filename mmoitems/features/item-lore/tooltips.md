@@ -1,16 +1,21 @@
+
+# 🖼️ Item Tooltips
+
 Tooltips are what players see when hovering an item inside any inventory. While vanilla Minecraft does feature an option to modify the tooltip texture of any item, this functionality is very limited (color only). Although it is also possible to manually setup custom tooltips without using the dedicated MMOItems feature, MMOItems makes it more systematic and very much easier.
 
 Specific tooltips can be bound to items, tiers, item types or even item modifiers. Specific tooltips bound directly to items and modifiers have precedence over tooltips granted by item tiers, and item tiers also have tooltip precedence over item type tooltips.
 
-# General Principle & Examples
+## General Principle & Examples
 
 Tooltips are entirely based on custom fonts as well as the [negative space font pack](https://github.com/AmberWat/NegativeSpaceFont). MMOItems injects custom fonts inside the item display name and lore to give the impression of a tooltip background texture.
 
-![image.png](/uploads/693bc77cd539d2e69c08679854f8324c/image.png)![image.png](/uploads/c99e936dd82f05db2147ce9d107becab/image.png)![image.png](/uploads/017320ba5fd7682616018f6f62a869f2/image.png)
+<!-- ![image.png](uploads/693bc77cd539d2e69c08679854f8324c/image.png)
+![image.png](uploads/c99e936dd82f05db2147ce9d107becab/image.png)
+![image.png](uploads/017320ba5fd7682616018f6f62a869f2/image.png) -->
 
 MMOItems provide three examples tooltip configs (see above). These tooltips utilize textures from the [MMOItems Default Resource Pack](https://gitlab.com/phoenix-dvpmt/mmoitems-default-resource-pack), so make sure you download it and install it on your server beforehand. After installing this resource pack, give yourself the following items (these are all swords): `TOOLTIP_COPPER_SWORD`, `TOOLTIP_SILVER_SWORD` and `TOOLTIP_GOLD_SWORD`.
 
-# How to create custom tooltips
+## How to create custom tooltips
 
 Head to the `/tooltips` folder in your main MMOItems folder. All tooltip configs should be placed inside this folder. One YAML file may contain multiple tooltip configs, and you can group configs inside subfolders to have an organized folder hierarchy.
 
@@ -41,9 +46,9 @@ GOLD_SWORD:
 
 The first step to creating custom tooltips is drawing the tooltip textures. Tooltip textures are split into three different textures:
 
-* The `top` texture, which generally includes the item display name and optionally item type and tier,
-* The `middle` texture, a very simple pattern that gets copy-n-pasted once for every extra line in the item lore,
-* The `bottom` texture, which is the bottom of the tooltip texture.
+- The `top` texture, which generally includes the item display name and optionally item type and tier,
+- The `middle` texture, a very simple pattern that gets copy-n-pasted once for every extra line in the item lore,
+- The `bottom` texture, which is the bottom of the tooltip texture.
 
 You can find below the tooltip textures of the default `gold` tooltip. **Make sure that your textures are at most 255 pixels wide!** This is the only major constraint when working with custom fonts.
 
@@ -209,7 +214,7 @@ Set `display_name` to true if you want to center the item display name. Otherwis
 
 Before moving to the other options, you need to understand how MMOItems manages to have centered texts. This is not possible in vanilla Minecraft, however it can be achieved by offseting any text by the right amount of pixels, using positive-space fonts. Let's say your tooltip is `tooltip_width` pixels wide, and that you want to center a text of length `text_length`. You can do that by offseting your text to the right by the following amount:
 
-```
+```txt
 offset_to_center = (tooltip_width - text_length) / 2
 ```
 
@@ -219,15 +224,17 @@ The length of text is harder to compute. One could wish it is as easy as multipl
 
 MMOItems need to evaluate the length, in pixels, of any string. For that, it needs to know the font size, which is the width of any character. It turns out that, using the default resource pack, the width of most characters is 5, which is why `default_char_size` is set to 5. However, there are a few exceptions, which are indicated in the `char_size` array. Here are a few examples:
 
-* lowercase `f` is only 4px wide
-* lowercase `i` is 1px wide, whereas uppercase `I` is 3px
-* space character ` `happens to be 3px
+- lowercase `f` is only 4px wide
+- lowercase `i` is 1px wide, whereas uppercase `I` is 3px
+- space character ` `happens to be 3px
 
 If you plan on using the default Minecraft font, you don't need to bother about these as we have already measured most of them for you. If you plan on using a different font for your server resource pack, you will have to open an image editing software, and count the pixels of any character that you plan on using inside your item names.
 
 Finally, the `regex` is the regex expression for characters that should be taken into account when counting the width of a given line. If a character is found inside a lore line and does not match this regex, it will simply be ignored. **This is typically used to avoid counting unicode characters used in custom fonts and color codes.** Doing a regex tutorial here would be very much out-of-scope, so please look it up online if you don't know about it. The default value is set to include _lowercase and uppercase roman litterals, commas, +'s and brackets (used when upgrading items) and spaces_.
 
-> _This option is subject to change in the future if we find a better way/less confusing way to implement this_
+::: info
+This option is subject to change in the future if we find a better way/less confusing way to implement this
+:::
 
 Here's what our item looks like so far! We have successfully centered our display name and first lore line.
 

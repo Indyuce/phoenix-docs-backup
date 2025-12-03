@@ -9,8 +9,10 @@ Elements are a big part of a RPG server. Using MythicLib custom elements, you ca
 The config file you'll be editing is `/MythicLib/elements.yml`
 
 ## Elemental attacks
+
 Skills can be used to deal **elemental damage** using the following MythicMobs mechanic where you can replace `FIRE` with any element identifier.
-```
+
+```txt
 mmodamage{amount="10";types=PHYSICAL,WEAPON;element=FIRE}
 ```
 
@@ -18,7 +20,8 @@ Elemental attacks also trigger when performing weapon (melee or ranged) attacks.
 
 ## Damage Calculation
 
-### Incoming damage
+### Incoming Damage
+
 There are two different stats for increasing a player's elemental damage. You can either give a **flat amount** of elemental damage like this item. The following item deals an extra 10 damage on hit. The corresponding stat is `<ELEMENT_NAME>_DAMAGE`, for instance `FIRE_DAMAGE`.\
 ![image](uploads/fire_damage.png)
 
@@ -26,22 +29,27 @@ You can also use `<ELEMENT_NAME>_DAMAGE_PERCENT` which will increase your elemen
 ![image](uploads/fire_damage_percent.png)
 
 ### Defense
+
 Elemental defense reduces incoming elemental damage. The stat `<ELEMENT_NAME>_DEFENSE` provides flat defense while `<ELEMENT_NAME>_DEFENSE_PERCENT` provides X% extra elemental defense points.\
 ![image](uploads/fire_defense.png)
 
 ### Weakness
+
 Elemental weakness increases elemental damage taken by a certain factor. For instance, 10% Fire Weakness will increase incoming fire damage by 10%. The corresponding player stat is `<ELEMENT_NAME>_WEAKNESS`.\
 ![image](uploads/fire_weakness.png)
 
-### Final formula
+### Final Formula
+
 Here are the formulas that summerizes all the previous explanations. The last formula uses the default MythicLib defense formula.
-```
+
+```txt
 Effective Damage  = <Flat damage> * (1 + <Extra damage>) * (1 + <Opponent weakness>)
 Effective Defense = <Flat opponent defense> * (1 + <Extra opponent defense>)
 Damage Mitigation = <Defense> / (<Defense> + 5 * <Damage>)
 ```
 
-## Element Config example
+## Element Config Example
+
 ```yml
 FIRE:
     
@@ -67,8 +75,10 @@ There's one config section per element and you are free to add, edit and remove 
 The `name`, `icon`, `lore-icon` and `color` options are all cosmetic. The most importants are `regular-attack` which is the skill that is cast by the attacker when performing an elemental attack, and `crit-strike` which is the skill cast when performing an elemental critical strike. By default, MythicLib uses custom scripts to handle these attack skills yet you can use other plugins like MythicMobs or Fabled.
 
 ### Using other skill plugins
+
 Just change `mythiclib-skill-id` to `mythicmobs-skill-id` (and indicate the right MM skill identifier) if you'd like to use a MythicMobs skill. You can also use `fabled-skill-id` if you're using Fabled. This is the same config section but with that small config key change:
-```
+
+```yml
 FIRE:
     name: Fire
     icon: BLAZE_POWDER
