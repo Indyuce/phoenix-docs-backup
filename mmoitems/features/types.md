@@ -1,3 +1,5 @@
+# 🛠️ Item Types
+
 In MMOItems, all items are split up into categories which are called _item types_. Items may have different behaviours according to their types. They are broad categories indicating if your item is meant to be used as a weapon, as an item that the player can consume, as an item that can be applied onto another item, an accessory...
 
 By default, the type of an item is indicated at the very top of the item tooltip.
@@ -24,7 +26,7 @@ Any hard-coded item type can be disabled hidden from the item browser by togglin
 
 ```yaml
 SOME_ITEM_TYPE:
-    hide-in-game: true
+  hide-in-game: true
 ```
 
 ## Custom Item Types
@@ -35,29 +37,29 @@ Here is the general syntax:
 
 ```yaml
 LONG_SWORD:
-    display: 'IRON_SWORD:0'
-    name: 'Long Sword'
-    parent: 'SWORD'
-    unident-item:
-        model: 0 # (Optional) 1.14 Custom Model Data
-        material: WOODEN_SWORD # (Optional) Change the item material
-        item-model: # (Optional) 1.20.2+ Item Model name-spaced key
+  display: 'IRON_SWORD:0'
+  name: 'Long Sword'
+  parent: 'SWORD'
+  unident-item:
+    model: 0 # (Optional) 1.14 Custom Model Data
+    material: WOODEN_SWORD # (Optional) Change the item material
+    item-model: # (Optional) 1.20.2+ Item Model name-spaced key
 
-        name: '&f#prefix#Unidentified Long Sword'
-        lore:
-        - '&7This item is unidentified. I must'
-        - '&7find a way to identify it!'
-        - '{tier}'
-        - '{tier}&8Item Info:'
-        - '{range}&8- &7Lvl Range: &e#range#'
-        - '{tier}&8- &7Item Tier: #prefix##tier#'
-    
-    disable-melee-attacks: false # Are melee attacks allowed with your type // is it ranged or melee?
-    attack-cooldown-key: "staff"
-    on-left-click: slashing_weapon_attack_effect               
-    on-right-click: slashing_weapon_attack_effect_right_click  
-    on-attack: slashing_weapon_on_hit_effect                   # Called when damaging entities
-    on-entity-interact: slashing_weapon_special_attack         # Called when right-clicking entities
+    name: '&f#prefix#Unidentified Long Sword'
+    lore:
+    - '&7This item is unidentified. I must'
+    - '&7find a way to identify it!'
+    - '{tier}'
+    - '{tier}&8Item Info:'
+    - '{range}&8- &7Lvl Range: &e#range#'
+    - '{tier}&8- &7Item Tier: #prefix##tier#'
+  
+  disable-melee-attacks: false # Are melee attacks allowed with your type // is it ranged or melee?
+  attack-cooldown-key: "staff"
+  on-left-click: slashing_weapon_attack_effect               
+  on-right-click: slashing_weapon_attack_effect_right_click  
+  on-attack: slashing_weapon_on_hit_effect                   # Called when damaging entities
+  on-entity-interact: slashing_weapon_special_attack         # Called when right-clicking entities
 ```
 
 ### ID/Name/Display
@@ -76,7 +78,7 @@ The `unident-item` config section determines how an unidentified item from that 
 
 Lines starting with `{tier}` only display if the unidentified item has a tier. Similarly, lines starting with `{range}` only display if the item has some data associated to the _Required Level_ stat.
 
-![](https://i.imgur.com/4IuCQ72.png)
+![](uploads/unidentified_item.png)
 
 ### Actions
 
@@ -99,18 +101,18 @@ The following will cast a MythicMobs script called `FireBolt` when attacking an 
 
 ```yaml
 on-attack:
-    mythicmobs-skill-id: FireBolt
+  mythicmobs-skill-id: FireBolt
 
-    extra-skills:
-        FireBolt:
-            Skills:
-            - 'projectile{onTick=FireBolt-Tick;onHit=FireBolt-Hit;v=8;i=1;hR=1;vR=1;hnp=true} @targetLocation'
-        FireBolt-Tick:
-            Skills:
-            - 'effect:particles{p=flame;amount=20;speed=0;hS=0.2;vS=0.2} @origin'
-        FireBolt-Hit:
-            Skills:
-            - 'damage{a=10}'
+  extra-skills:
+    FireBolt:
+      Skills:
+      - 'projectile{onTick=FireBolt-Tick;onHit=FireBolt-Hit;v=8;i=1;hR=1;vR=1;hnp=true} @targetLocation'
+    FireBolt-Tick:
+      Skills:
+      - 'effect:particles{p=flame;amount=20;speed=0;hS=0.2;vS=0.2} @origin'
+    FireBolt-Hit:
+      Skills:
+      - 'damage{a=10}'
 ```
 
 You can cast any skill registered in MythicLib using this option, including builtin skills, skills created using MythicLibs, MythicMobs... You can find information on how to create/register a custom skill [over the MythicLib wiki](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Skills).
@@ -131,15 +133,19 @@ Two items with the same type have the same item cooldown. If you cast a ranged a
 
 Two types with the same attack cooldown key share item cooldowns. If types `WAND` and `STAFF` both have `MAGIC` as attack cooldown key, items will have shared cooldowns. This might be an important tool for balancing the gameplay of your items.
 
-## Builtin Item Types
+## Built-in Item Types
 
 The following wiki section shows the default item types that come bundled with MMOItems. You are not required to use these item types; in fact you can even delete them if you don't want them to show in the item browser.
+
+Blunt, Pierce and Slash weapons are built-in melee weapon types. Such items have an on-hit effect which typically propagates a fraction of the damage dealt to nearby enemies. These behaviours are **NOT** hardcoded into MMOItems, they are implemented using MythicLibs/MythicMobs skills/scripts. This means that you can fully finetune them to your liking by editing the scripts located in the `MythicLib/script/mmoitems_types.yml` config file. This config file contains all built-in softcoded on-hit attack effects that correspond to item types.
+
+Staffs, muskets, wands... are built-in ranged weapon types. Their right/left click attack effects are also implemented using MythicLibs/MythicMobs scripts, which you can edit in the same config file.
 
 <details>
 <summary>Slashing Weapons</summary>
 Slashing weapons perform AoE damage, in a cone behind the initial target. Slashing weapons include swords, greatswords, katanas, axes, greataxes, halberds.
 
-![](https://i.imgur.com/zr2Z5ff.gif)
+![](uploads/slash_weapons.gif)
 
 </details>
 
@@ -147,15 +153,15 @@ Slashing weapons perform AoE damage, in a cone behind the initial target. Slashi
 <summary>Piercing Weapons</summary>
 Similarily to slashing weapons, piercing weapons perform AoE damage on melee attacks in a cone behind the initial target. The angle of the cone is sharper, but the damage propagation ratio higher. Piercing weapons include thrusting swords, daggers, spears, lances.
 
-![](https://i.imgur.com/YdAhVGI.gif)
+![](uploads/piercing_weapons.gif)
 
 </details>
 
 <details>
-<summary>Piercing Weapons</summary>
-Similarily to \\\_Sweeping Edge\\\_, blunt weapons deal AoE damage and knockback on melee attacks. Blunt weapons include hammers, greathammers, gauntlets, lutes, staves, greatstaffes.Gauntlets also come with a default right-click ability which applies a knockback onto the target entity.
+<summary>Blunt Weapons</summary>
+Similarily to Sweeping Edge, blunt weapons deal AoE damage and knockback on melee attacks. Blunt weapons include hammers, greathammers, gauntlets, lutes, staves, greatstaffes.Gauntlets also come with a default right-click ability which applies a knockback onto the target entity.
 
-![](https://i.imgur.com/qQMuvxV.gif)
+![](uploads/blunt_weapons.gif)
 
 </details>
 
@@ -175,10 +181,4 @@ The `CROSSBOW` item type is an item type that was added before Crossbows were im
 <summary>Wands & Staffs</summary>
 Wands and staffs are weapons for mages/wizards. They are usually ranged weapons with a special "smoky" attack effect. There are a few builtin attacks effects for wands and staffs, here is the exhaustive list:
 
-| header | header |
-|--------|--------|
-|  |  |
-|  |  |
-
 </details>
-

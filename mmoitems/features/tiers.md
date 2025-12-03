@@ -1,3 +1,5 @@
+# 💍 Item Tiers
+
 Item tiers are used to define item rarity (common, rare, legendary...). They define the modifier capacity of an item when being generated, which directly impacts how many modifiers an item can have. They also define the loot dropped when deconstructing an item, as well as a few display options such as item glow and item hints.
 
 The default tiers are _Trash, Common, Uncommon, Rare, Very Rare, Legendary, Mythical, Epic, Magical and Unique_. You can edit the tiers in the `tiers.yml` config file located in the main plugin folder.
