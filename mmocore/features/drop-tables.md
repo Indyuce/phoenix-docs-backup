@@ -51,7 +51,7 @@ You don't have to specify any of the three last parameters (drop chance/amount/w
 | gentemplate | `gentemplate{id=TEMPLATE_ID;tier=TIER_NAME;level=<int>;match-level=<true/false>} <chance> <min-max>` |
 | miloot | `miloot{type=ITEM_TYPE_ID;class="Class Name";match-class=<true/false>;tier=TIER_ID;level=<int>;match-level=<true/false>} <chance> <min-max>` |
 
-`mmoitem`, `gentemplate` and `miloot` are only available when using MMOItems. For the `gentemplate` and `miloot` drop table items, please refer to [this page](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Obtaining%20an%20item)
+`mmoitem`, `gentemplate` and `miloot` are only available when using MMOItems. For the `gentemplate` and `miloot` drop table items, please refer to [this MMOItems wiki page](../../mmoitems/items/obtain-item.md).
 
 ## Table Capacity & Items Weights
 

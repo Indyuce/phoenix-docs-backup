@@ -83,7 +83,9 @@ The level range gives an extra info to the player and lets him know approximatel
 
 ## Modifier Capacity (Item Generation)
 
-**Make sure you learn about** [**item generation**](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Item%20Creation#how-items-work-very-important)**,** [**item templates**](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Item%20Templates) **and** [**item modifiers**](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Item%20Modifiers) **first.**
+::: tip
+Make sure you learn about [item templates](../items/templates.md) and [item modifiers](../items/modifiers.md) first.
+:::
 
 This is a sample from the default item-tiers.yml which we'll be breaking down to understand how to setup modifier capacity for your item tiers.
 

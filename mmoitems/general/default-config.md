@@ -61,8 +61,7 @@ item-level-spread: 2
 # not using some of these flags, you can toggle off checks here
 # to increase performance.
 #
-# More information about WorldGuard flags:
-# https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Plugin-Compatibility#flag-plugins
+# More information about WorldGuard flags available in the MythicLib wiki
 enable_flag_checks:
     commands: true
     weapons: true

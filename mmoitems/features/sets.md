@@ -63,7 +63,7 @@ HATRED:
           speed: 1
         #......
 ```
-You can find more information on MMOItems particle effects [here](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Item-Stats-and-Options#item-particles) in the _Item Particles_ subsection.
+You can find more information on MMOItems particle effects [here](stats/stats.md#item-particles).
 
 ## Permissions
 

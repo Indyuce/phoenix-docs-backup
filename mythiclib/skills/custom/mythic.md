@@ -84,7 +84,7 @@ Your skill is now registered in MythicLib. Since both MMOItems and MMOCore use t
 
 **MMOCORE:** Use `/mmocore reload`. A configuration file named `fire-bolt.yml` should appear inside the `MMOCore/skills` folder. Open and edit it to your liking before using `/mmocore reload` again which will load the edited config file into the MMOCore registry. You now have a fully working skill which you can bind to your player class. Since this part is specific to MMOCore, check the [MMOCore wiki](../../../mmocore/skills/config.md) to learn how to edit a MMOCore skill config file.
 
-**MMOITEMS:** Use `/mi reload skills`. A config file named `fire-bolt.yml` should appear inside the `MMOItems/skills` folder. Open and edit it to your liking before using `/mi reload skills` again which will load the edited config file into the MMOCore registry. You now have a fully working skill which you can add to your MI items. This part is specific to MMOItems, so check the [MI wiki](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Abilities#editing-an-ability) to learn how to edit a MI skill config file.
+**MMOITEMS:** Use `/mi reload skills`. A config file named `fire-bolt.yml` should appear inside the `MMOItems/skills` folder. Open and edit it to your liking before using `/mi reload skills` again which will load the edited config file into the MMOCore registry. You now have a fully working skill which you can add to your MI items. This part is specific to MMOItems, so check the [MI wiki](../../../mmoitems/features/skills.md#editing-an-ability) to learn how to edit a MI skill config file.
 
 ## Specifications
 

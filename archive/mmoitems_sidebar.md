@@ -8,8 +8,6 @@
 * [Placeholders](../Placeholders)
 * [Permissions](../Permissions)
 * [Default Config File](../Config.yml)
-* [[Reporting an issue|https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Reporting%20an%20issue]]
-* [[Frequent Issues|https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Frequent%20Issues]]
 
 ### Item Creation
 

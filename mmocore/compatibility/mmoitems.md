@@ -40,7 +40,7 @@ weapons may also use mana or stamina/stellium which is also supported by
 MMOCore.
 
 ### Extra features for MMOItems Crafting
-In MMOItems, some recipes have specific conditions which must be met for the player to be able to use the crafting recipe. MMOCore adds profession level crafting restrictions i.e players must be at least Lvl X in some profession like smithing or mining, in order to use the recipes. More info on MMOItems recipe conditions [here](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Recipe%20Conditions).
+In MMOItems, some recipes have specific conditions which must be met for the player to be able to use the crafting recipe. MMOCore adds profession level crafting restrictions i.e players must be at least Lvl X in some profession like smithing or mining, in order to use the recipes. More info on MMOItems recipe conditions [in the MMOItems wiki](../../mmoitems/stations/conditions.md).
 
 **Recipe example**, where the player must be at least Lvl 5 in
 *Smithing*.
@@ -57,7 +57,7 @@ In MMOItems, some recipes have specific conditions which must be met for the pla
         - 'mmoitem{type=MATERIAL,id=STEEL_INGOT,amount=4}'
 ```
 
-MMOCore also adds a new type of crafting trigger (actions made when a recipe is used), which can be used to give experience to a player (either main experience, or experience in a specific profession). More information on MMOItems recipe triggers [here](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Recipe%20Triggers).
+MMOCore also adds a new type of crafting trigger (actions made when a recipe is used), which can be used to give experience to a player (either main experience, or experience in a specific profession). More information on MMOItems recipe triggers [in the MMOItems wiki](../../mmoitems/stations/triggers.md).
 
 **Same example**, which grants 10 Smithing EXP when used
 

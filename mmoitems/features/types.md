@@ -115,7 +115,7 @@ on-attack:
       - 'damage{a=10}'
 ```
 
-You can cast any skill registered in MythicLib using this option, including builtin skills, skills created using MythicLibs, MythicMobs... You can find information on how to create/register a custom skill [over the MythicLib wiki](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Skills).
+You can cast any skill registered in MythicLib using this option, including builtin skills, skills created using MythicLibs, MythicMobs... You can find information on how to create/register a custom skill [over the MythicLib wiki](../../mythiclib/skills/intro.md).
 
 `on-attack` and `on-entity-interact` are not subject to weapon constraints, these skills/scripts will trigger everytime you damage an entity, or every time you interact with one.
 
