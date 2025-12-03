@@ -18,7 +18,7 @@ Most of MMOItems functionalities like gem stones, item identification, consumabl
 | Tools | Tools have extra hardcoded options for mining and breaking blocks, like _Autosmelt_ (automatically smelts ores) and _Bouncing Crack_ (breaks multiple blocks at once). Since tools are considered melee weapons, stats apply in mainhand only. |
 | Item Skins | Item skins can be applied onto items to change their material, custom model data, skull texture, leather armor color... |
 | Armor | `ARMOR` is the hardcoded item type for any piece of armor. Stats apply when worn in armor slots only. |
-| Gem Stones | [Gem stones](Gem%20Stones) can be applied onto items to grant them extra stats. |
+| Gem Stones | [Gem stones](gem-stones.md) can be applied onto items to grant them extra stats. |
 | Consumables | Consumables can be consumed (eaten) by players to restore health, mana... get temporary buffs, run commands... Stats apply in mainhand only. |
 | Miscellaneous | Anything else. Stats apply in mainhand only. |
 

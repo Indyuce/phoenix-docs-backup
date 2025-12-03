@@ -10,20 +10,20 @@ initialize the placeholders. Keep in mind you can access PAPI
 placeholders from MVdWPlaceholderAPI using
 `{placeholderapi_mmoitems_...}`.
 
-If you're looking for a placeholder and you can't see it here, do check [**MYTHICLIB PLACEHOLDERS**](https://gitlab.com/phoenix-dvpmt/mythiclib/-/wikis/Placeholders) as well!
+If you're looking for a placeholder and you can't see it here, do check [**MYTHICLIB PLACEHOLDERS**](../../mythiclib/general/placeholders.md) as well!
 
 ### Stats
 
 | **Placeholder**                   | **Description**                                |
 |-------------------------------------------------|----------------------------------------------------------|
-| `%mmoitems_stat_<stat name>%` | Returns the formatted player [stat](Item-Stats-and-Options) value |
+| `%mmoitems_stat_<stat name>%` | Returns the formatted player [stat](../features/stats/stats.md) value |
 | `%mmoitems_stat_<element name>_<damage/damage_percent/weakness/defense/defense-percent>%` | Returns the elemental stats |
 
 ### Types
 | **Placeholder**                   | **Description**                                |
 |--------------------------------------------|--------------------------------------|
-| `%mmoitems_type_<item type>_name%`        | Returns the name of the specified [item type](Item-Types).      |
-| `%mmoitems_type_<item type>_total%`       | Returns the total amount of items in the specified [item type](Item-Types).     |
+| `%mmoitems_type_<item type>_name%`        | Returns the name of the specified [item type](../features/types.md).      |
+| `%mmoitems_type_<item type>_total%`       | Returns the total amount of items in the specified [item type](../features/types.md).     |
 
 ### Durability
 

@@ -89,7 +89,7 @@ And then this to your `lore-format.yml`:
 ```
 
 ## MythicMobs
-MMOItems lets your mythic mobs drop items from MI. Please refer to [this wiki page](Item-Drop-Tables).
+MMOItems lets your mythic mobs drop items from MI. Please refer to [this wiki page](../items/drop-tables.md).
 
 ## PlaceholderAPI
 PAPI placeholders let you retrieve player statistics. To get some stat value, use `%mmoitems_stat_[stat_name]%` e.g `%mmoitems_stat_critical_strike_chance%` or `%mmoitems_stat_defense_percent%`.\

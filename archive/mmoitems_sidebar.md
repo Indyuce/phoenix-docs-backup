@@ -1,5 +1,5 @@
 
-
+<!--
 ### General
 
 * [Home](../Home)
@@ -68,3 +68,5 @@
 * [Stat API](../Stat%20API)
 * [Denizen Integration](../Denizen%20Integration)
 * [MythicMobs Integration](../MythicMobs%20Integration)
+
+-->

@@ -35,5 +35,5 @@ YOUR_ITEM_ID:
 ```
 
 4. The list of available materials can be found in the [Spigot javadocs](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html). The item material is the first thing to add since it is the only real option an item needs to be able to be generated.
-5. Add as much item options (Abilities, Attack Damage....) as you want. You can see 'all' of the available item options (and how to configure them) on [this wiki page](Item-Stats-and-Options).
+5. Add as much item options (Abilities, Attack Damage....) as you want. You can see 'all' of the available item options (and how to configure them) on [this wiki page](../features/stats/stats.md).
 6. Save the file and get back on Minecraft. Use /mi reload to let MMOItems load the item you just added to your config file, and use `/mi give <ITEM_TYPE> <YOUR_ITEM_ID>` to get your item!

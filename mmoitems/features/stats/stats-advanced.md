@@ -58,7 +58,7 @@ ability:
  
 ```
 You may notice that the format is the exact same as if you wanted to add an ability to a normal (not randomly generated) mmoitem. The only thing that changes is how you define the ability modifiers, because they are the only values which can really scale on the item level. The formulas used to define an ability modifier are the same as the formulas used with
-[numeric stats](Item-Stats-and-Options#numeric-stats).
+[numeric stats](numerical-stats.md).
 
 In this example, the on-hit burn ability has a 6s cooldown however that values fluctuates +/-10% in average with a maximum relative offset of 10%. The burn lasts for 6 seconds but that duration is increased by 0.2 second for every item level.
 

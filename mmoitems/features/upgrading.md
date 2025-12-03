@@ -6,7 +6,7 @@ When upgraded, items gain one level. The level is displayed next to the item dis
 
 ![](uploads/item_upgrade_nb.png)
 
-There are 3 things to setup in order to have a working item upgrading system: first of all, you need to setup the upgrading template, which dictates what stats are increased (by how much) when successfully upgrading an item. Then you need to setup some extra upgrading options for the item you want to upgrade. The last step is to setup either an upgrading consumable or an [upgrading recipe](Upgrading-Recipes).
+There are 3 things to setup in order to have a working item upgrading system: first of all, you need to setup the upgrading template, which dictates what stats are increased (by how much) when successfully upgrading an item. Then you need to setup some extra upgrading options for the item you want to upgrade. The last step is to setup either an upgrading consumable or an [upgrading recipe](../stations/upgrading-recipes.md).
 
 ## Setting up the upgrading template
 

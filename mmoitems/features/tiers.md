@@ -12,7 +12,7 @@ Items that have a tier (common, rare, legendary...) can be **deconstructed**. De
 
 This feature actually allows players to get rid of the items they can't use because they don't meet the requirements while using another resource (since deconstructing an item requires a consumable).
 
-This drop table behaves exactly like a monster/block drop table, please refer to [**this wiki page**](https://gitlab.com/phoenix-dvpmt/mmoitems/-/wikis/Item%20Drop%20Tables) to learn how to setup them.
+This drop table behaves exactly like a monster/block drop table, please refer to [**this wiki page**](../items/drop-tables.md) to learn how to setup them.
 
 ```yml
 RARE:
@@ -75,7 +75,7 @@ EPIC:
         prefix: '&4'
 ```
 
-The item tier does not define the unidentified item pattern (item types do, see this [wiki section](Item%20Types#how-to-create-new-item-types)). The `name` option corresponds to the tier name displayed in the unidentified item lore. The `range` option corresponds to the unidentified item level range which only displays when the item has the _Required Level_ option.
+The item tier does not define the unidentified item pattern (item types do, see this [wiki section](types.md#custom-item-types)). The `name` option corresponds to the tier name displayed in the unidentified item lore. The `range` option corresponds to the unidentified item level range which only displays when the item has the _Required Level_ option.
 
 The level range gives an extra info to the player and lets him know approximately the level of the weapon. Since he can also see the item tier, he can decide whether or not he would like to identify the item. The `prefix` option is used to add a color prefix to both the unidentified item display name, and the tier name displayed in the item lore.
 
@@ -102,6 +102,6 @@ UNCOMMON:
 
 The `generation.chance` option determines the chance for your item tier to be selected when generating a random item. For instance, if set to 0.15, your item will have a 15% chance to be of tier _Uncommon_ when generated.
 
-The `generation.capacity` config section defines the tier modifier capacity, and it works like a regular [numeric stat formula](Item-Stats-and-Options#numeric-stats). The formula is the following: `capacity = <base> + <item_level> * <scale>` to which you add a +/-`<spread>`% offset which a maximum offset of `<max-spread>`%.
+The `generation.capacity` config section defines the tier modifier capacity, and it works like a regular [numeric stat formula](stats/stats.md). The formula is the following: `capacity = <base> + <item_level> * <scale>` to which you add a +/-`<spread>`% offset which a maximum offset of `<max-spread>`%.
 
 For instance, using the capacity formula in the config sample above, let's say we are generating a level 12 item: `average-capacity = 6 + 0.1 * 12 = 7.2`. Since there's a 30% max spread, the capacity final value will be randomly picked between `70% * 7.2 = 5.04` and `130% * 7.2 = 9.36`, with an average +/- 10% offset (relative to the average value of 7.2).
