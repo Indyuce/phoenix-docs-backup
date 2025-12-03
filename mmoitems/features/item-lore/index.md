@@ -1,3 +1,3 @@
 
-# Item Lore
+# 📜 Item Lore
 
