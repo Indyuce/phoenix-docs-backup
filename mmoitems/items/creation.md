@@ -10,7 +10,7 @@ This wiki page explains the two methods you can use to create items in MMOItems.
 
 The item editor lets you create and edit items directly in-game without having to tamper with config files. This is a powerful and easy-to-understand method although we recommend advanced users to directly go for manual config file edits which is much faster if you know how all the stats are formatted.
 
-![](https://i.imgur.com/GtRzKfH.gif)
+![](uploads/edition_gui.gif)
 
 1. Open the game and create an item using via this command: `/mi create <ITEM_TYPE> <YOUR_ITEM_ID>`
     1. You may use /mi list type to check all the available item types (Sword, Axe, Tool...).

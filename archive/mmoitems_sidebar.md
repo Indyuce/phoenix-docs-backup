@@ -1,4 +1,4 @@
-![](https://i.imgur.com/icss2Ee.png){width=161 height=81}
+
 
 ### General
 

@@ -24,8 +24,8 @@ The item display name. Use '&' for color codes. **Hex color codes following the 
 
 ```yaml
 TEST_ITEM:
-    base:
-        name: '&fSteel Sword'
+  base:
+    name: '&fSteel Sword'
 ```
 
 Placeholders are available for the item display name. For more information, please refer to [this wiki page](../item-lore/name-placeholders.md).
@@ -44,9 +44,9 @@ This parameter is only for leather armor pieces. In RGB (red-green-blue)
 
 ```yaml
 TEST_ITEM:
-    base:
-        material: LEATHER_CHESTPLATE
-        dye-color: 100 100 100
+  base:
+    material: LEATHER_CHESTPLATE
+    dye-color: 100 100 100
 ```
 
 ## Enchantments
@@ -55,14 +55,14 @@ An enchantment is defined by an enchant type and a level. Use this format:
 
 ```yaml
 enchants:
-    efficiency:
-        base: 1
-        # There is no Efficiency 1.3, but that means that every
-        # 10 levels, the item will have an extra efficiency
-        # enchant level! Stats like this are rounded to the nearest integer.
-        scale: .1
-    # That format still works because an enchant level is a numeric value
-    sharpness: 10
+  efficiency:
+    base: 1
+    # There is no Efficiency 1.3, but that means that every
+    # 10 levels, the item will have an extra efficiency
+    # enchant level! Stats like this are rounded to the nearest integer.
+    scale: .1
+  # That format still works because an enchant level is a numeric value
+  sharpness: 10
 ```
 
 ## Item Permissions
@@ -91,10 +91,10 @@ Blunt Power corresponds to the radius of a blunt attack. The bigger the more ene
 
 ```yaml
 BLUNT_ITEM:
-    base:
-        material: IRON_HAMMER
-        blunt-power: 3
-        blunt-rating: 70
+  base:
+    material: IRON_HAMMER
+    blunt-power: 3
+    blunt-rating: 70
 ```
 
 ## Unbreakable
@@ -115,11 +115,11 @@ This stat determines the player's defense value and can be any positive number. 
 
 In case you are curious about the default defense formula, here is a graph showing the damage reduction in percentage as a function of the defense points:
 
-![](https://i.imgur.com/FKdP3A8.png)
+![](uploads/defense_curve.png)
 
 Here's now a table showing the amount of damage taken for a specific amount of incoming damage, and defense points:
 
-![](https://i.imgur.com/J0aexGu.png)
+![](uploads/defense_table.png)
 
 ## Movement Speed
 
@@ -135,11 +135,11 @@ It's literally the same format as with the consumable potion effects (see above)
 
 ```yaml
 perm-effects:
-    speed:
-        base: 1
-        scale: 1
-    # That format works too
-    haste: 3
+  speed:
+    base: 1
+    scale: 1
+  # That format works too
+  haste: 3
 ```
 
 ## Item Cooldown
@@ -154,14 +154,14 @@ The delay players must wait before EITHER using a consumable, or running all the
 
 ```yaml
 element:
-    fire:
-        defense: 
-            base: 10
-            scale: 3
-        # That format still works!
-        damage: 10
-    water:
-        defense: 50
+  fire:
+    defense: 
+      base: 10
+      scale: 3
+    # That format still works!
+    damage: 10
+  water:
+    defense: 50
 ```
 
 ## Item Commands
@@ -170,14 +170,14 @@ The list of commands your item performs when right clicking it. Commands may hav
 
 ```yaml
 TEST_ITEM:
-    base:
-        material: PAPER
-        name: '&rScroll of Cowardness'
-        commands:
-            '1':
-                command: spawn
-                cooldown: 10
-                delay: 1
+  base:
+    material: PAPER
+    name: '&rScroll of Cowardness'
+    commands:
+      '1':
+        command: spawn
+        cooldown: 10
+        delay: 1
 ```
 
 ## Arrow Particles
@@ -186,12 +186,12 @@ This option can be used to display particles around arrows fired by your bow. Pa
 
 ```yaml
 MARKING_BOW:
-    base:
-        material: BOW
-        arrow-particles:
-            particle: SMOKE_NORMAL
-            amount: 3
-            speed: 0.05
+  base:
+    material: BOW
+    arrow-particles:
+      particle: SMOKE_NORMAL
+      amount: 3
+      speed: 0.05
 ```
 
 ## Equip Priority
@@ -223,26 +223,17 @@ The skull texture used for a custom head. For 1.13, use the PLAYER_HEAD material
 
 ```yaml
 SKULL_ITEM:
-    base:
-        skull-texture:
-            value: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTdlMmY0OTQyNDNhY2FkM2Y0ODQ0YmM1YWUyZDVmZDUzZTY5MjczMzA0YzlkYmY1YmQxMzA5NDlmYTEzMjk4ZiJ9fX0=
-            uuid: 62a6ff60-98f3-4769-9dd6-2b5fe5e8046f
+  base:
+    skull-texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTdlMmY0OTQyNDNhY2FkM2Y0ODQ0YmM1YWUyZDVmZDUzZTY5MjczMzA0YzlkYmY1YmQxMzA5NDlmYTEzMjk4ZiJ9fX0='
 ```
 
-You must specific a random UUID (use a [random UUID generator](https://www.uuidgenerator.net/)) because Minecraft needs a (random player) UUID to recognize the head as a textured player head. MMOItems used to use a totally random UUID for every item, but there was an issue with skulls not stacking because they had different UUIDs stored in their NBTTags.
+You can find skull texture values on Minecraft Heads or similar head databases. For example, navigate to the bottom of [this page](https://minecraft-heads.com/custom-heads/food-drinks/49818-hamburger-on-a-plate) to find the skull value which looks something like this:
 
-If you input the skull texture value using the item edition GUI, MMOItems will generate a random UUID for you. You can find skull texture values on Minecraft Heads or similar head databases. For example, navigate to the bottom of [this page](https://minecraft-heads.com/custom-heads/food-drinks/49818-hamburger-on-a-plate) to find the skull value which looks something like this:
-
-![](https://i.imgur.com/3Y6Xf9i.png)
-
-## Staff Spirit
-
-The staff spirit option changes the staff/wand left click basic attack.\
-You may find the list of staff spirits using /mi list staff.
+![](uploads/head_database.png)
 
 ## Gem Sockets
 
-Having gem sockets on your item allows you to place gem stones onto it. Gem stones improve your item stats. Each bound gem stone occupies one gem socket. More info on [this wiki page](Gem-Stones).
+Having gem sockets on your item allows you to place gem stones onto it. Gem stones improve your item stats. Each bound gem stone occupies one gem socket. More info on [this wiki page](../../features/gem-stones.md).
 
 ## Disable Interactions
 
@@ -263,14 +254,14 @@ Some particles are **colorable** e.g the redstone particle. This means you can e
 
 ```yaml
 FIRE_GREATLANCE:
-    base:
-        material: BLAZE_ROD
-        item-particles:
-            type: DOUBLE_RINGS
-            particle: FLAME
-            radius: 1.3
-            rotation-speed: 0.4
-// this displays two flame rings that slowly swirl around the player
+  base:
+    material: BLAZE_ROD
+    # this displays two flame rings that slowly swirl around the player
+    item-particles:
+      type: DOUBLE_RINGS
+      particle: FLAME
+      radius: 1.3
+      rotation-speed: 0.4
 ```
 
 Here is the list of the available particle types: OFFSET, FIREFLIES, VORTEX, GALAXY, DOUBLE_RINGS, HELIX, AURA.
@@ -287,5 +278,6 @@ Lutes are ranged weapons which emit a music projectile when right clicked. Lutes
 
 Custom item sounds are sounds played when performing specific actions with your items like attacking entities, right clicking your item, picking up your item... **Warning**, these sounds do not correspond to the Spigot javadocs sound names, they correspond to the vanilla sound names like `entity.zombie.attack_iron_door` (instead of `ENTITY_ZOMBIE_ATTACK_IRON_DOOR`).
 
-You may also use sounds from your server resource pack. You can find the **default** sound list online, like on this [pastebin](https://pastebin.com/gLMhUyis) or even using the `/sound` auto command completer.\
-![image](uploads/aed18f65bb1d3cd17317f681adfa4727/image.png)
+You may also use sounds from your server resource pack. You can find the **default** sound list online, like on this [pastebin](https://pastebin.com/gLMhUyis) or even using the `/sound` auto command completer.
+
+![image](uploads/mc_sounds.png)

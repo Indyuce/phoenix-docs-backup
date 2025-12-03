@@ -24,15 +24,15 @@ This cannot be used in the item lore! These are placeholders that can be used in
 
 * **%mmoitems_durability%** returns the amount of uses left of the item the player is holding.
 * **%mmoitems_durability_max%** returns the item max durability.\
-  ![](https://i.imgur.com/TaumARR.png)
+  ![](uploads/custom_dur_plain.png)
 * **%mmoitems_durability_ratio%** returns the item's durability ratio (from 0% to 100%).\
-  ![](https://i.imgur.com/90KnpS2.png)
+  ![](uploads/custom_dur_ratio.png)
 * **%mmoitems_durability_bar_square%** returns the item durability as a progress bar.\
-  ![](https://i.imgur.com/HmS1wFR.png)
+  ![](uploads/custom_dur_bar_sq.png)
 * **%mmoitems_durability_bar_diamond%** returns the durability bar, but the char used is a diamond.\
-  ![](https://i.imgur.com/QPrLKtj.png)
+  ![](uploads/custom_dur_bar_diam.png)
 * **%mmoitems_durability_bar_thin%** returns a much thiner durability bar.\
-  ![](https://i.imgur.com/MJvhd6S.png)
+  ![](uploads/custom_dur_bar_thin.png)
 
 ## Durability in item lore
 
@@ -49,4 +49,4 @@ The following line in `stats.yml` can be edited to change how custom durability 
 durability: '&7Durability: {current} / {max}'
 ```
 
-![](https://i.imgur.com/InWJLD4.png)
+![](uploads/custom_dur_in_lore.png)

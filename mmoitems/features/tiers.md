@@ -31,13 +31,11 @@ RARE:
 
 ### How to deconstruct an item
 
-Players can deconstruct an item by drag & dropping a specific consumable onto their item. This consumable must have the _Can Deconstruct_ option toggled on. They will hear a level up sound and receive a message saying their item was successfully deconstructed.
-
- 
+Players can deconstruct an item by drag & dropping a specific consumable onto their item. This consumable must have the _Can Deconstruct_ option toggled on. They will hear a level up sound and receive a message saying their item was successfully deconstructed. 
 
 As seen on the GIF, deconstructing an item can actually give different drops from time to time which means that you can have, for instance, items harder to get than other items when deconstructing a tiered item.
 
-![](https://i.imgur.com/zH6OKO9.gif)
+![](uploads/deconstruct_item.gif)
 
 ## Item Glow & Hints
 
@@ -54,9 +52,7 @@ RARE:
 
 Since these options depend on the item tier, you can have different glow colors and hint options for each tier! We recommend you to use the item hint and glow features for high tier items only, so that players can easily spot rare loot on the ground. Item hints allow the player to see the item name without having to pick it up, and item glow makes the item easier to spot in dark areas.
 
-<div align="center">
-    <img src="https://i.imgur.com/aNIW7av.png" width="500">
-</div>
+![](uploads/item_glow_hint.png)
 
 You can enable the item hints by toggling on the `item-glow.hint` option in the tier config file. Remove this config section or leave it to `false` to disable it.
 
@@ -81,7 +77,7 @@ The item tier does not define the unidentified item pattern (item types do, see 
 
 The level range gives an extra info to the player and lets him know approximately the level of the weapon. Since he can also see the item tier, he can decide whether or not he would like to identify the item. The `prefix` option is used to add a color prefix to both the unidentified item display name, and the tier name displayed in the item lore.
 
-![](https://i.imgur.com/4IuCQ72.png)
+![](uploads/unidentified_item.png)
 
 ## Modifier Capacity (Item Generation)
 
@@ -91,15 +87,15 @@ This is a sample from the default item-tiers.yml which we'll be breaking down to
 
 ```yml
 UNCOMMON:
-    name: '&a&lUNCOMMON'
-    # ...
-    generation:
-        chance: 0.15       # 15% chance to be of this tier when generating a random item
-        capacity:
-            base: 6        # Base capacity
-            scale: 1       # Scales on the item level, +1 per level
-            spread: .1     # Adds randomness, +/- 10%
-            max-spread: .3 # Limits randomness to max +/- 30%
+  name: '&a&lUNCOMMON'
+  # ...
+  generation:
+    chance: 0.15       # 15% chance to be of this tier when generating a random item
+    capacity:
+      base: 6        # Base capacity
+      scale: 1       # Scales on the item level, +1 per level
+      spread: .1     # Adds randomness, +/- 10%
+      max-spread: .3 # Limits randomness to max +/- 30%
 ```
 
 The `generation.chance` option determines the chance for your item tier to be selected when generating a random item. For instance, if set to 0.15, your item will have a 15% chance to be of tier _Uncommon_ when generated.
