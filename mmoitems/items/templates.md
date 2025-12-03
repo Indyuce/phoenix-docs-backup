@@ -50,24 +50,24 @@ This is how an item template looks in the MMOItems config files.
 
 ```yaml
 LONG_SWORD:
-    base:
-        material: IRON_SWORD
-        attack-damage:
-            base: 10
-            scale: 1
-        critical-strike-chance: 30
+  base:
+    material: IRON_SWORD
+    attack-damage:
+      base: 10
+      scale: 1
+    critical-strike-chance: 30
+    # More item stats here...
+  modifiers:
+    first-modifier:
+      prefix: 'Modifier Prefix'
+      stats:
+        attack-damage: 3
         # More item stats here...
-    modifiers:
-        first-modifier:
-            prefix: 'Modifier Prefix'
-            stats:
-                attack-damage: 3
-                # More item stats here...
-        second-modifier:
-            suffix: 'Modifier Suffix'
-            stats:
-                pvp-damage: 20
-                # More item stats here...
+    second-modifier:
+      suffix: 'Modifier Suffix'
+      stats:
+        pvp-damage: 20
+        # More item stats here...
 ```
 
 ## Item Templates
@@ -77,36 +77,36 @@ Item templates are the most fundamental tool to generate random items. They are 
 ```yml
 LONG_SWORD:
     
-    # Basic template options
-    option:
-        tiered: true
-        level-item: true
-        roll-modifier-check-order: false
-        capacity:
-            base: 10
-            scale: 3
+  # Basic template options
+  option:
+    tiered: true
+    level-item: true
+    roll-modifier-check-order: false
+    capacity:
+      base: 10
+      scale: 3
 
-    # Base item data
-    base:
-        material: IRON_SWORD
-        name: '&fLong Sword'
-        attack-speed: 1.6
-        attack-damage:
-            base: 6
-            scale: 1.2
-        required-level:
-            base: 0
-            scale: 1
+  # Base item data
+  base:
+    material: IRON_SWORD
+    name: '&fLong Sword'
+    attack-speed: 1.6
+    attack-damage:
+      base: 6
+      scale: 1.2
+    required-level:
+      base: 0
+      scale: 1
 
-    # Template modifiers
-    modifiers: 
-        sharp:
-            chance: 0.3
-            prefix: '&fSharp'
-            stats:
-                attack-damage: 3
-                lore:
-                - '&7Much sharper!'
+  # Template modifiers
+  modifiers: 
+    sharp:
+      chance: 0.3
+      prefix: '&fSharp'
+      stats:
+        attack-damage: 3
+        lore:
+        - '&7Much sharper!'
 ```
 
 Some comments on the config snippet above:

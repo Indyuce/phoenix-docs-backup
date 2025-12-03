@@ -14,11 +14,11 @@ Item modifiers are the **MVP's of the MMOItems random loot generation system**. 
 
 ```yaml
 LONG_SWORD:
-    base:
-        material: IRON_SWORD
-        name: '&fLong Sword'
-        attack-damage: 10
-        attack-speed: 1.6
+  base:
+    material: IRON_SWORD
+    name: '&fLong Sword'
+    attack-damage: 10
+    attack-speed: 1.6
 ```
 
 ![](uploads/long_sword_no_mod.png)
@@ -27,11 +27,11 @@ Now imagine that 20% of the time, the following `Sharp` modifier now applies whe
 
 ```yaml
 sharp_modifier:
-    chance: 0.2 # 20% chance to be selected
-    stats: # additional stats provided
-        attack-damage: 5
-        lore:
-        - 'Very sharp!'
+  chance: 0.2 # 20% chance to be selected
+  stats: # additional stats provided
+    attack-damage: 5
+    lore:
+    - 'Very sharp!'
 ```
 
 ![](uploads/long_sword_sharp.png)
@@ -47,32 +47,32 @@ The following config snippet can be placed inside the `/MMOItems/items/sword.yml
 ```yaml
 LONG_SWORD:
 
-    # Base item stats
-    base:
-        material: IRON_SWORD
-        name: '&fLong Sword'
-        attack-damage: 10
-        attack-speed: 1.6
+  # Base item stats
+  base:
+    material: IRON_SWORD
+    name: '&fLong Sword'
+    attack-damage: 10
+    attack-speed: 1.6
 
-    # Modifiers which have a chance to be rolled
-    modifiers:
+  # Modifiers which have a chance to be rolled
+  modifiers:
 
-        # First modifier, Sharp
-        sharp:
-            chance: 0.1 # 10% chance to apply
-            stats:
-                attack-damage: 3
-                lore:
-                - '&7Much sharper!'
+    # First modifier, Sharp
+    sharp:
+      chance: 0.1 # 10% chance to apply
+      stats:
+        attack-damage: 3
+        lore:
+        - '&7Much sharper!'
 
-        # Second modifier, Fiery
-        fiery:
-            chance: 0.05 # 5% chance to apply
-            stats:
-               ability:
-                   on-hit:
-                       type: burn
-                       mode: on_hit
+    # Second modifier, Fiery
+    fiery:
+      chance: 0.05 # 5% chance to apply
+      stats:
+        ability:
+          on-hit:
+            type: burn
+            mode: on_hit
 ```
 
 Let's break this config snippet down. We still have the base item stats under the `base` config section. These are the stats that the generated item will have if no modifier is applied.
@@ -87,12 +87,12 @@ This is by far the easiest and most straightforward way to implement randomness 
 
 ```yml
 LONG_SWORD:
+  # ...
+  modifiers:
     # ...
-    modifiers:
-        # ...
-        sharp:
-            # ...
-            chance: 0.1 # 10% chance to apply
+    sharp:
+      # ...
+      chance: 0.1 # 10% chance to apply
 ```
 
 ## List of item stats
@@ -101,22 +101,22 @@ These are the stats that will be added to the item if the modifier is applied. T
 
 ```yml
 LONG_SWORD:
+  # ...
+  modifiers:
     # ...
-    modifiers:
-        # ...
-        sharp:
-            # ...
-            stats:
-                attack-damage: 10
-                ability:
-                    on-hit:
-                        type: poison
-                        type: on-hit
-                attack-speed: -0.1
-                lore:
-                - 'Lore line 1'
-                - 'Lore line 2'
-                custom-model-data: 10
+    sharp:
+      # ...
+      stats:
+        attack-damage: 10
+        ability:
+          on-hit:
+            type: poison
+            type: on-hit
+        attack-speed: -0.1
+        lore:
+        - 'Lore line 1'
+        - 'Lore line 2'
+        custom-model-data: 10
 ```
 
 ## Prefixes & Suffixes
@@ -127,13 +127,13 @@ Prefixes and suffixes are entirely optional, you can have modifiers with no pref
 
 ```yml
 LONG_SWORD:
+  # ...
+  modifiers:
     # ...
-    modifiers:
-        # ...
-        sharp:
-            # ...
-            prefix: '&fSharp'       # Optional
-            suffix: '&7of the Bear' # Optional
+    sharp:
+      # ...
+      prefix: '&fSharp'       # Optional
+      suffix: '&7of the Bear' # Optional
 ```
 
 The following syntax allows to limit the number of prefixes/suffixes shown on the item name, by setting a priority for each prefix/suffix. **Only the prefixes/suffixes with the highest priority will show.**
@@ -145,14 +145,14 @@ The default priority is 0, so 1 would hide all prefixes/suffixes with priority 0
 
 ```yml
 LONG_SWORD:
+  # ...
+  modifiers:
     # ...
-    modifiers:
-        # ...
-        sharp:
-            # ...
-            prefix:
-                format: '&fSharp'
-                priority: 3 # integer expected
+    sharp:
+      # ...
+      prefix:
+        format: '&fSharp'
+        priority: 3 # integer expected
 ```
 
 ## Modifier Weight & Capacity
@@ -176,14 +176,14 @@ In the following example, the _Long Sword_ has two modifiers, _Sharp_ with a wei
 
 ```yml
 LONG_SWORD:
-    # ...
-    modifiers:
-        sharp:
-            # ...
-            weight: 3.0
-        fiery:
-            # ...
-            weight: 2.0
+  # ...
+  modifiers:
+    sharp:
+      # ...
+      weight: 3.0
+    fiery:
+      # ...
+      weight: 2.0
 ```
 
 This modifier weight system adds up to the roll chance system! If the item has a modifier capacity of 5, **it can receive both modifiers, but it does not mean that it will always receive both**. Each modifier still has its own roll chance, so the item may receive either one of the two, both of them or none at all.
@@ -211,51 +211,51 @@ Here is an example of a public modifier config file:
 ```yml
 # Gives on-hit poison to target
 toxic:
-    prefix: '&2Toxic'
-    stats:
-        ability:
-            on-hit:
-                type: poison
-                type: on-hit
-        lore:
-        - 'Ouch-- so hot!!'
+  prefix: '&2Toxic'
+  stats:
+    ability:
+      on-hit:
+        type: poison
+        type: on-hit
+    lore:
+    - 'Ouch-- so hot!!'
 
 # Gives max mana
 arcane:
-    suffix: 'of the Arcane'
-    stats:
-        max-mana:
-            base: 6
-            scale: 1
-            spread: .1
-            max-spread: .3
+  suffix: 'of the Arcane'
+  stats:
+    max-mana:
+      base: 6
+      scale: 1
+      spread: .1
+      max-spread: .3
 
 of_accuracy:
-    #prefix: '&bAccurate'
-    suffix: 'of Accuracy'
-    stats:
-        critical-strike-chance:
-            base: 9
-            spread: .1
-            max-spread: .3
-        weapon-damage:
-            base: 12
-            spread: .1
-            max-spread: .3
+  #prefix: '&bAccurate'
+  suffix: 'of Accuracy'
+  stats:
+    critical-strike-chance:
+      base: 9
+      spread: .1
+      max-spread: .3
+    weapon-damage:
+      base: 12
+      spread: .1
+      max-spread: .3
 ```
 
 You can then reference these public modifiers in your item config files like this:
 
 ```yml
 KATANA:
-    base: # ...
-    modifiers:
-        toxic:
-            weight: 2.5 # Can still be edited
-            chance: .1  # Can still be edited
-            # No need to provide anything else!
-        of_accuracy:
-            # ...
+  base: # ...
+  modifiers:
+    toxic:
+      weight: 2.5 # Can still be edited
+      chance: .1  # Can still be edited
+      # No need to provide anything else!
+    of_accuracy:
+      # ...
 ```
 
 As you can see, you can still edit the roll chance and modifier weight to have it fine-tuned to the item you are working on, but you **no longer need to redefine the stats, prefix and suffix**.
@@ -280,17 +280,17 @@ The following syntax snippet defines a public modifier group and can be pasted i
 
 ```yml
 sword_modifiers:
-    min: 1    # Optional
-    max: 3    # Optional
-    chance: 1 # Default 1.0
-    weight: 1 # Default 0.0
+  min: 1    # Optional
+  max: 3    # Optional
+  chance: 1 # Default 1.0
+  weight: 1 # Default 0.0
 
-    modifiers:
-        sharp: 0.8     # 80% chance to be applied
-        toxic: 0.05    # 5% chance to be applied
-        fiery: 0.05    # 5% chance to be applied
-        accurate: 0.05 # 5% chance to be applied
-        arcane: 0.05   # 5% chance to be applied
+  modifiers:
+    sharp: 0.8     # 80% chance to be applied
+    toxic: 0.05    # 5% chance to be applied
+    fiery: 0.05    # 5% chance to be applied
+    accurate: 0.05 # 5% chance to be applied
+    arcane: 0.05   # 5% chance to be applied
 ```
 
 This modifier group contains three "sub-modifiers" : `toxic`, `sharp` and `fiery`.
@@ -302,15 +302,15 @@ You can then reference this modifier group inside item configs, like in the foll
 ```yml
 # items/sword.yml
 KATANA:
-    base: # ...
-    modifiers:
-        some_modifier: # ...
-        another_modifier: # ...
-        sword_modifiers:
-            chance: 0.3 # Default 1.0
-            weight: 1   # Default 0.0
-            min: 1              # Optional, overrides original value
-            max: 2              # Optional, overrides original value
+  base: # ...
+  modifiers:
+    some_modifier: # ...
+    another_modifier: # ...
+    sword_modifiers:
+      chance: 0.3 # Default 1.0
+      weight: 1   # Default 0.0
+      min: 1              # Optional, overrides original value
+      max: 2              # Optional, overrides original value
 ```
 
 ### Note
@@ -334,24 +334,24 @@ While this is possible with classic modifier rules, using modifier groups makes 
 
 ```yml
 critical_strike_group:
-    min: 1
-    max: 1
-    modifiers:
-        mod_common:
-            chance: 0.8
-            stats:
-                tier: COMMON
-                critical-strike-chance: 5
-        mod_uncommon:
-            chance: 0.16
-            stats:
-                tier: UNCOMMON
-                critical-strike-chance: 10
-        mod_rare:
-            chance: 0.04
-            stats:
-                tier: RARE
-                critical-strike-chance: 15
+  min: 1
+  max: 1
+  modifiers:
+    mod_common:
+      chance: 0.8
+      stats:
+        tier: COMMON
+        critical-strike-chance: 5
+    mod_uncommon:
+      chance: 0.16
+      stats:
+        tier: UNCOMMON
+        critical-strike-chance: 10
+    mod_rare:
+      chance: 0.04
+      stats:
+        tier: RARE
+        critical-strike-chance: 15
 ```
 
 Using a modifier group with min and max set to 1 guarantees that exactly one of these modifiers will be applied to the item. The chance values ensure that the _Common_ modifier is rolled 80% of the time, the _Uncommon_ modifier 16% of the time and the _Rare_ modifier 4% of the time.
@@ -376,45 +376,45 @@ Here is a syntax snippet that illustrates the previous points.
 LONG_SWORD:
     base: ...
     modifiers:
-        first_modifier:                # Private definition of modifier, inside of template definition.
-            weight: 2.5
-            prefix: '&fSharp'
+      first_modifier:            # Private definition of modifier, inside of template definition.
+        weight: 2.5
+        prefix: '&fSharp'
+        stats:
+          attack-damage: 3
+          lore:
+          - '&7Much sharper!'
+      example_modifier_group:    # Private definition of group, inside of template definition.
+        min: 1                   # Optional
+        max: 3                   # Optional
+        chance: 1                # Default 1
+        weight: 1                # Default 0
+        stats:                   # Extra stats provided by the group itself
+          attack-speed: 1
+          lore:
+          - 'This is getting confusing'
+        modifiers:
+          bleed: 1               # Reference to public modifier
+          blunt: 10              # Reference to public modifier
+          fiery:                 # Private definition of modifier, inside of private
+            weight: 5            # group definition, inside of template definition.
+            prefix:
+              format: '&cFiery'
+              priority: 1
             stats:
-                attack-damage: 3
-                lore:
-                - '&7Much sharper!'
-        example_modifier_group:        # Private definition of group, inside of template definition.
-            min: 1                     # Optional
-            max: 3                     # Optional
-            chance: 1                  # Default 1
-            weight: 1                  # Default 0
-            stats:                     # Extra stats provided by the group itself
-                attack-speed: 1
-                lore:
-                - 'This is getting confusing'
+              ability:
+                on-hit:
+                  type: burn
+                  mode: on_hit
+          modifier_group:        # Using a group inside of a group.
+            min: 1
+            max: 2
             modifiers:
-                bleed: 1               # Reference to public modifier
-                blunt: 10              # Reference to public modifier
-                fiery:                 # Private definition of modifier, inside of private
-                    weight: 5          # group definition, inside of template definition.
-                    prefix:
-                        format: '&cFiery'
-                        priority: 1
-                    stats:
-                        ability:
-                            on-hit:
-                                type: burn
-                                mode: on_hit
-                modifier_group:        # Using a group inside of a group.
-                    min: 1
-                    max: 2
-                    modifiers:
-                        water: 1
-                        fire: 1
-                        earth: 1
+              water: 1
+              fire: 1
+              earth: 1
 
 KATANA:
-    base: ...
-    modifiers:
-        public_modifier_group: {}       # Simplest reference to public modifier group
+  base: ...
+  modifiers:
+    public_modifier_group: {}    # Simplest reference to public modifier group
 ```
