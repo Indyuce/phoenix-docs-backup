@@ -9,9 +9,9 @@ Specific tooltips can be bound to items, tiers, item types or even item modifier
 
 Tooltips are entirely based on custom fonts as well as the [negative space font pack](https://github.com/AmberWat/NegativeSpaceFont). MMOItems injects custom fonts inside the item display name and lore to give the impression of a tooltip background texture.
 
-<!-- ![image.png](uploads/693bc77cd539d2e69c08679854f8324c/image.png)
-![image.png](uploads/c99e936dd82f05db2147ce9d107becab/image.png)
-![image.png](uploads/017320ba5fd7682616018f6f62a869f2/image.png) -->
+![image.png](uploads/tt_ex_1.png)
+![image.png](uploads/tt_ex_2.png)
+![image.png](uploads/tt_ex_3.png)
 
 MMOItems provide three examples tooltip configs (see above). These tooltips utilize textures from the [MMOItems Default Resource Pack](https://gitlab.com/phoenix-dvpmt/mmoitems-default-resource-pack), so make sure you download it and install it on your server beforehand. After installing this resource pack, give yourself the following items (these are all swords): `TOOLTIP_COPPER_SWORD`, `TOOLTIP_SILVER_SWORD` and `TOOLTIP_GOLD_SWORD`.
 
@@ -52,11 +52,11 @@ The first step to creating custom tooltips is drawing the tooltip textures. Tool
 
 You can find below the tooltip textures of the default `gold` tooltip. **Make sure that your textures are at most 255 pixels wide!** This is the only major constraint when working with custom fonts.
 
-![top.png](uploads/fa84d0b1ab850b74eb77a659615a676b/top.png)
+![](uploads/tt_sprite_top.png)
 
-![middle.png](uploads/5f659d33a93df4f97e8af5d86432acf9/middle.png)
+![](uploads/tt_sprite_mid.png)
 
-![bottom.png](uploads/57cfde471609a017dadaac7e38dd6912/bottom.png)
+![](uploads/tt_sprite_bottom.png)
 
 When an item is being generated, MMOItems injects the `top` texture at the beginning of the item display name. It then injects the `middle` texture at the beginning of every lore line (except the last one). The last lore line instead receives the `bottom` texture. Negative space fonts are crucial here, as MMOItems use them to align text and textures.
 
@@ -142,7 +142,7 @@ gold:
   bottom: "\u4072"
 ```
 
-![image.png](uploads/af504c90a59fa9fe967d312c3a6dba27/image.png)
+![](uploads/tt_align_1.png)
 
 The first step is to align the leftsides of your tooltip to the left of the vanilla tooltip. I measured that there are 41px in between the two tooltip leftsides. This can be corrected by adding negative space fonts of value -41 **BEFORE** the tooltip texture unicode. In my case, the three textures happen to naturally align, but you might need to use different alignment values for your three textures.
 
@@ -154,7 +154,7 @@ gold:
   bottom: "{-41sp}\u4072"
 ```
 
-![image.png](uploads/22981371206b2a81a79133a600ceb356/image.png)
+![](uploads/tt_align_2.png)
 
 Now the vanilla and custom tooltip leftsides are perfectly aligned. We now need to align the lore text with the leftmost pixel of the debug bar `| <= Vanilla Text Aligns Here`. You can do that by measuring the number of pixels in between the debug bar and the leftmost pixel of the lore text. Again, alignment values might differ for the 3 tooltip textures, but mine happen to coincide. I measured 166 pixels. Again, this can be corrected by adding negative fonts **AFTER** the tooltip texture unicode.
 
@@ -167,7 +167,7 @@ gold:
 
 Boom! Here's how your item looks in-game, after toggling off the `debug` option.
 
-![image.png](uploads/2b1927b96d89ac4a4d207e192df29f8b/image.png)
+![image.png](uploads/tt_align_3.png)
 
 </details>
 
@@ -188,7 +188,7 @@ gold:
 
 This has the effect of inserting a set amount of lines at the very beginning of the item lore, during item generation. `{tier}` returns the item tier, and `{type}` returns the item type. `{tier}` will always return a non-empty value: if the item has no tier, this placeholder will return the value specified in the `default-tier-name` option, in the main MMOItems config file. By default, this value is set to `Common`, which explains what you see on the following screenshot.
 
-![image.png](uploads/aa87d3ce6f82524e0ec9933b79efdc12/image.png)
+![image.png](uploads/tt_display_tier_type.png)
 
 ### Centering the tooltip header
 
@@ -238,13 +238,13 @@ This option is subject to change in the future if we find a better way/less conf
 
 Here's what our item looks like so far! We have successfully centered our display name and first lore line.
 
-![image.png](uploads/32274aa0124f88464d006d1c7d9e0a96/image.png)
+![image.png](uploads/tt_center_top.png)
 
 ### Making the tooltip top larger
 
 Our tooltip looks pretty good so far, but there might one thing you still want to do. As of right now, you might want to increase the size of the tooltip header. The first thing that you want to do is draw a new texture for your tooltip. Here's the new texture, that will occupy the item name level, as well as the first lore line. Our new texture is now 42px high.
 
-![top.large.png](uploads/7a06d6718e2f8d20332d5a10419b45ff/top.large.png)
+![top.large.png](uploads/tt_sprite_top_large.png)
 
 Make sure you update the resource pack config to account for the height of your new tooltip `top` texture. I had to increase `height` from 21 to 42, and `ascent` from 17 to 18 for a very minor 1px adjustment.
 
@@ -267,13 +267,13 @@ Now use the following syntax for your tooltip config. The `ignore_first` option 
 
 ```yaml
 gold:
-    # ...
-    ignore_first: 2
+  # ...
+  ignore_first: 2
 ```
 
 Here's the final look of our item. Pretty nice!
 
-![image.png](uploads/0d68ecc95560370a197eb76ca56e4b31/image.png)
+![](uploads/tt_use_big_top.png)
 
 ## Binding tooltips to items, modifiers, tiers, types
 

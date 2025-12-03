@@ -12,7 +12,7 @@ Using MMOItems 5+ you may implement blocks with a custom texture. You can even t
 You can browse current custom blocks using `/mi browse blocks`. When using the item browser, you may use the small item indicator at the bottom right of the GUI to switch to the Block Browser. Just like with the item browser, you can right click your custom blocks to edit them.
 
 Here is a config template from `blocks.yml`
-```
+```yml
 '1':
   base:
     name: '&aMy First Custom Block'
@@ -40,19 +40,19 @@ This section will explain how to upgrade custom blocks to MMOItems 5.5.5 correct
 
 You will first have to add the new type to item-types.yml. You can either paste this anywhere inside the file or just regenerate it.
 **If you do not do this the plugin will not enable and throw a NullPointerException.**
-```
+```yml
 BLOCK:
-    display: STONE:0
-    name: 'Block'
-    unident-item:
-        name: '&f#prefix#Unidentified Block'
-        lore:
-            - '&7This item is unidentified. I must'
-            - '&7find a way to identify it!'
-            - '{tier}'
-            - '{tier}&8Item Info:'
-            - '{range}&8- &7Lvl Range: &e#range#'
-            - '{tier}&8- &7Item Tier: #prefix##tier#'
+  display: STONE:0
+  name: 'Block'
+  unident-item:
+    name: '&f#prefix#Unidentified Block'
+    lore:
+      - '&7This item is unidentified. I must'
+      - '&7find a way to identify it!'
+      - '{tier}'
+      - '{tier}&8Item Info:'
+      - '{range}&8- &7Lvl Range: &e#range#'
+      - '{tier}&8- &7Item Tier: #prefix##tier#'
 ```
 
 ### Custom Block Conversion
