@@ -1,8 +1,18 @@
-### Send a message to a player
+---
+order: 8
+---
+
+# 🎨 Visual
+
+::: warning
+Under construction
+:::
+
+## Send a message to a player
 
 This supports PAPI placeholders and color codes.
 
-```plaintext
+```yml
 example_mechanic:
     type: tell
     format: 'Hello world!'
@@ -10,11 +20,11 @@ example_mechanic:
         type: caster
 ```
 
-### Play a sound at target location
+## Play a sound at target location
 
 Sound list [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html). Pitch ranges from 0.5 (low) to 2 (high).
 
-```plaintext
+```yml
 example_mechanic:
     type: sound
     sound: ENTITY_ENDER_DRAGON_FLAP
@@ -26,7 +36,7 @@ example_mechanic:
 
 This mechanics also supports custom sound.
 
-```plaintext
+```yml
 #Custom Sound
 example_mechanic:
     type: sound
@@ -37,11 +47,11 @@ example_mechanic:
         type: target_location
 ```
 
-### Spawn a particle
+## Spawn a particle
 
 Particle list [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Particle.html).
 
-```plaintext
+```yml
 example_mechanic:
     type: particle
     target:
@@ -95,7 +105,7 @@ example_mechanic:
     block: PACKED_ICE
 ```
 
-### Send an action bar message
+## Send an action bar message
 
 This supports PAPI placeholders and color codes. For message priority and duration, please refer to the [Messages](../../features/player-messages.md#send-to-action-bar) wiki page.
 

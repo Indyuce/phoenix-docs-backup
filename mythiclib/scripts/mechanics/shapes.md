@@ -1,15 +1,26 @@
-To get used to these mechanics which can get really complex but are really fun to configurate use a simple tick script to see what shape the mechanic draws!
-```
+---
+order: 6
+---
+
+# 📐 Shapes
+
+::: warning
+Under construction
+:::
+
+To get used to these mechanics, which can get really complex, but are really fun to configure, use a simple tick script to see what shape the mechanic draws!
+
+```yml
 simple_tick:
-    mechanics:
-        display_particle:
-            type: particle
-            particle: FLAME
+  mechanics:
+  - 'display_particle{particle=FLAME}'
 ```
 
-### Helix
+## Helix
+
 The script indicated by the `end` config option is called when the helix is fully drawn.
-```
+
+```yml
 example_mechanic:
     type: helix
     source: # Optional. Location targeter required
@@ -33,10 +44,10 @@ example_mechanic:
     helixes: 4 # Amount of spirals, 1 by default
 ```
 
-### Parabola
+## Parabola
 A parabola displayed between two locations. You can configure the height of the parabola and the speed at which it is displayed.
 
-```
+```yml
 example_mechanic:
     type: parabola
     source: # Location targeter required. Starting point of parabola
@@ -52,10 +63,10 @@ example_mechanic:
     speed: 3 # Horizontal speed
 ```
 
-### Projectile
+## Projectile
 A projectile that stops onto the first hit block/entity. You have to specify the type of interaction that your projectile corresponds to (offensive skill, support skill etc. - learn more about it [here](../conditions/misc.md#if-script-caster-can-damagetarget-entity)).
 
-```
+```yml
 example_mechanic:
     type: projectile
     
@@ -78,10 +89,34 @@ example_mechanic:
     life_span: 60 # In ticks
 ```
 
-### Slash
+## Raycast
+
+Raycasts are invisible rays that are shot from the player's eye location. They stop on first block or entity hit.
+
+| Parameter | Alias  | Description | Default |
+|-----------|--------|-------------|---------|
+| range   | rng, length, len, distance, dist | Length of the raycast | 50 |
+| size    | width, wide     | Width of the raycast | 0.2 |
+| step_size    | step, st, ss | Distance between two calls of the tick script | 0.4 |
+| ignore_passable | ip | Whether passable blocks should be ignored | false |
+| neutral | - | Whether the raycast is neutral (does not check for friendly fire) | false |
+| offense | - | Whether the raycast is offensive (checks for friendly fire) | true |
+| tick | - | Script called every step of the raycast | none |
+| hit_entity | - | Script called when hitting an entity | none |
+| hit_block | - | Script called when hitting a block | none |
+
+
+
+```yml
+example_script:
+  mechanics:
+  - 'raytrace{tick=simple_tick;hit_entity=some_other_script_name;range=50;size=0.2;step=0.4;ignore_passable=false}'
+```
+
+## Slash
 Performs what looks like a weapon slash in front of the script caster
 
-```
+```yml
 example_mechanic:
     type: slash
 
@@ -97,3 +132,9 @@ example_mechanic:
     time_interval: 1
     points_per_tick: 3
 ```
+
+## Sphere
+
+::: warning
+Under construction
+:::

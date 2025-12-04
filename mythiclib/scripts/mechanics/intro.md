@@ -12,7 +12,6 @@ A script is a list of mechanics and conditions. If all of the script conditions 
 | [Miscellaneous](misc.md) | Commands, cooldowns, delay, entity effects... |
 | [Movement](movement.md) | Give velocity and teleport |
 | [Offense](offense.md) | Deal damage, apply potion effects... |
-| [Raytraces](raytraces.md)     | Cast invisible rays that stop on blocks and/or entities |
 | [Shapes](shapes.md)        | Helixes, slashes, parabolas... |
 | [Variables](variables.md)     | Edit/create numbers, vectors etc. |
 | [Visual](visual.md) |  Messages, sounds and particles |
