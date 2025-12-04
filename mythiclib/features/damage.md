@@ -59,105 +59,11 @@ The most important math functions are supported by the formula interpreter. For 
 
 ## Critical Strikes
 
-Weapons may deal **critical strikes** which by default multiply damage dealt by 2 (configurable using config.yml) and display firework particles around the target. Skills may deal **skill critical strikes** which displays totem particles around the target while multiplying damage dealt by 1.5 (configurable as well).
-
-By default, critical strikes for both skills and weapons are on a 3sec cooldown, although this value can be edited.
-
-Here is the default configuration for critical strikes (`MythicLib/config.yml`):
-
-```yml
-critical-strikes:
-  weapon:
-    coefficient: 2 # Default = 2 meaning crits deal 200% of the initial damage
-    cooldown: 3
-  skill:
-    coefficient: 1.5 # Default = 1.5 meaning crits deal 150% of the initial damage
-    cooldown: 3
-```
+Weapons and skills can deal critical strikes, increasing the damage dealt. Please refer to the [On-Hit Effects](on-hit-effects.md) page for more information about critical strikes.
 
 ## Damage Mitigation
 
-Damage mitigation contains separated in three mechanics: **Blocking, Dodging and Parrying**. Any numeric value in that page can be edited in the main **MythicLib** plugin config file (`mitigation` config section).
-
-Whenever an attack damage is being lowered by mitigation, a particle effect plays in front of the player, and he is sent a message on the action bar (or via chat).
-
-### Blocking
-
-When blocking a melee or projectile attack, a player reduces damage taken by a significant amount. Both the block chance and block power (percentage of damage you are blocking) can be increased by items. Blocking power has a default value and a cap, meaning that if a player has no item giving him extra block power, he will block at least 20% of the damage taken. Blocking power can't exceed 75%.
-The chance of blocking an attack is determined by the _Block Rating_ stat.
-
-
-```yml
-STEEL_BREASTPLATE:
-  material: IRON_CHESTPLATE
-  block-power: 10
-  block-rating: 5
-```
-
-### Dodging
-
-When dodging a melee or projectile attack, a player entirely **negates** damage taken and performs a quick dash backwards, allowing him to escape from the fight. The chance of dodging an attack is capped at 80%.
-
-```yml
-SWIFT_LEATHER_BOOTS:
-  material: LEATHER_BOOTS
-  dodge-rating: 10
-```
-
-### Parrying
-
-Just like dodging, parrying entirely negates attack damage and knocks the attacker back.\
-The knockback force can be edited in the main MythicLib config file.
-```yml
-DWARVEN_SHIELD:
-  material: SHIELD
-  parry-rating: 10
-```
-
-### Mitigation Cooldown Reduction
-
-Every mitigation stat also features a cooldown reduction stat. By default, a player cannot dodge, parry or block more than one attack every few seconds. These cooldown stats lower that delay, which can be really useful if the player is running low on health.
-
-```yml
-ROGUE_AMULET:
-  material: RED_DYE
-  dodge-cooldown-reduction: 40
-```
-
-### Config File
-
-Some of the options for damage mitigation can be edited in the main MythicLib config file. For base/min/max values of damage mitigation-based stats, you should also check the `MythicLib/stats.yml` config file.
-
-::: details Default Config
-
-```yml
-# Default and max. values of armor stats. These systems
-# all have a cooldown which can be reduced using the
-# '*** Cooldown Reduction' item stat.
-mitigation:
-
-  # Edit mitigation messages here. Leave to blank for no message.
-  message:
-
-    # Whether or not they should display on action bar instead of chat
-    action-bar: true
-
-    parry: '&cYou just parried #damage# damage.'
-    block: '&cYou just blocked #damage# damage.' # Use #power# to display block power.
-    dodge: '&cYou just dodged #damage# damage.'
-
-  block:
-    cooldown: 5.0
-
-  dodge:
-    knockback: 1.0
-    cooldown: 5
-
-  parry:
-    knockback: 1.0
-    cooldown: 8.0
-```
-:::
+Please refer to the [Damage Mitigation](mitigation-types.md) page for more information about damage mitigation.
 
 ## Damage Indicators
 
