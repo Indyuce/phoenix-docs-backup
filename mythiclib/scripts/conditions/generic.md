@@ -36,3 +36,15 @@ condition_string:
   mechanics:
   - 'message{format="You are in the spawn world!"}'
 ```
+
+## String contain
+Use this condition to check if some string contains another string.
+
+This checks if the target entity is either a Zobmie or a Skeleton.
+```yml
+condition_string_contain:
+  conditions:
+  - 'string_contains{first="ZOMBIE,SKELETON";second="<target.type>"}'
+  mechanics:
+  - 'message{format="Target is either a Zombie or a Skeleton!"}'
+```
