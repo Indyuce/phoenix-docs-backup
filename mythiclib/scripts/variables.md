@@ -53,6 +53,7 @@ Here is the list of all the currently supported variable types, as well as their
 | Subvariable | Type | Description |
 |-------------|------|-------------|
 | `damage` | double | Amount of damage being dealt |
+| `damage_<type>` | double | Amount of damage of given damage type being dealt |
 
 ### AttributeMap
 
