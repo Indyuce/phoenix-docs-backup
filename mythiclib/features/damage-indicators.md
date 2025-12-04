@@ -6,6 +6,8 @@ order: 4
 
 You can edit damage and regen indicators in the config file `indicators.yml`. MythicLib can use a wide range of popular holograms plugins to display regen/attack indicators around the target entity.
 
+## Basic Config
+
 ::: details Default Config
 
 ```yml
