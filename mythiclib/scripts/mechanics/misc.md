@@ -8,7 +8,7 @@ order: 2
 Under construction
 :::
 
-### Apply cooldown
+## Apply cooldown
 
 
 In MMOItems/MMOCore, any object that has a cooldown (an item, parrying, dodging, a skill etc.) has a cooldown key associated to it (see [here](../variables.md#cooldownmap)). As long as it's not being used in MMOItems/MMOCore, you can claim any string key for your plugin and use it for anything.
@@ -22,7 +22,7 @@ example_mechanic:
   - 'apply_cooldown{path=myplugin_someskill;value=10}'
 ```
 
-### Reduce cooldown of target
+## Reduce cooldown of target
 
 ::: tip 
 First learn above the mechanic above.
@@ -40,7 +40,7 @@ example_mechanic:
   - 'reduce_cooldown{path=myplugin_someskill;value=5;reduction=FLAT}'
 ```
 
-### Adding delay to your script
+## Adding delay to your script
 
 Delay is in **ticks**. ML will wait a certain number of ticks before executing the next mechanic. Make sure the delay parameter is above zero.
 
@@ -50,7 +50,7 @@ example_mechanic:
   - 'delay{amount=10}'
 ```
 
-### Dispatch a command
+## Dispatch a command
 
 Set `from_console` to `true` to have the command dispatched by console instead, otherwise ML takes the script target entity. Set `op` to true to have the command ran as op. `target` is optional.
 
@@ -60,7 +60,7 @@ example_mechanic:
   - 'dispatch_command{from_console=true;op=false;format="mmocore admin skill-points add <caster.name> 10";target=caster}'
 ```
 
-### Play an entity effect
+## Play an entity effect
 
 Entity effects available [on the Spigot javadocs](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/EntityEffect.html). For instance, `HURT` is very useful, it just simulates a 0-damage attack - perfect for improving skills with non-damaging effects -. `target` is the entity on which the effect will be played. If not provided, it defaults to the script target entity, or script caster.
 
@@ -70,7 +70,7 @@ example_script:
   - 'entity_effect{effect=HURT;target=target}'
 ```
 
-### Trigger a lightning strike
+## Trigger a lightning strike
 
 Setting `effect` to ``false`` makes the lightning deal no damage.
 
@@ -80,7 +80,7 @@ example_script:
   - 'lightning_strike{effect=false;target_location=target}'
 ```
 
-### Cast another script
+## Cast another script
 
 This mechanic is pretty special. It can be used to cast another script will specific target entities and locations. It can also be used to modify the source location of a script.
 
@@ -110,7 +110,7 @@ iterated_script:
 
 ```
 
-### Give an item
+## Give an item
 Give a vanilla item to a player.
 
 ```yml
@@ -119,7 +119,7 @@ example_script:
   - 'give_item{amount=<modifier.amount>;material=DIAMOND;target=caster}'
 ```
 
-### Shoot an arrow
+## Shoot an arrow
 
 Have the player shoot an arrow. `from_item` is used by MMOItems for weapon types. `player_attack_damage` makes the arrow use the player's attack damage attribute as base damage. `velocity` is a multiplier for the arrow's speed. Default is 1.0 (normal speed). 
 
@@ -145,7 +145,7 @@ on_tick_script:
   - 'particle{effect=FLAME}'
 ```
 
-### Cancel event
+## Cancel event
 
 If the script was triggered by an event (like EntityDamageByEntityEvent, PlayerInteractEvent, etc.), this mechanic will cancel that event. Otherwise, it will print out an error.
 

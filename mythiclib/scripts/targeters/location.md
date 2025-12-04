@@ -1,5 +1,9 @@
 # Location Targeters
 
+::: warning
+Under Construction
+:::
+
 Location targeters are used to specify locations where you want to execute a mechanic or script. Location targeters may return multiple locations, in which case the mechanic/script will be executed multiple times, once for each location.
 
 ## Caster

@@ -4,6 +4,10 @@ order: 11
 
 # Rainbow Skill
 
+::: warning
+Under Construction
+:::
+
 ```yml
 rainbow:
     public: true

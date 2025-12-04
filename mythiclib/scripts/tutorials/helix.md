@@ -4,6 +4,10 @@ order: 12
 
 # Healing, Helix Particles
 
+::: warning
+Under Construction
+:::
+
 ```yml
 healing_aura:
     public: true

@@ -3,6 +3,11 @@ order: 14
 ---
 
 # Basic Projectile
+
+::: warning
+Under Construction
+:::
+
 ```yml
 Bullet: # This is a script name, this can be whatever you'd like. This is also the skill ID and can be cast with the command */ml cast BULLET*
     public: true # This allows for the script to be used by MMOCore and casted with /ml cast

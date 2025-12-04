@@ -4,6 +4,10 @@ order: 13
 
 # Sword Slash
 
+::: warning
+Under Construction
+:::
+
 ```yml
 sword_slash:
     public: true
