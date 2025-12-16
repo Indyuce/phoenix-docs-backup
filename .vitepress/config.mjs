@@ -74,6 +74,10 @@ const vitePressConfigs = {
       }
     ],
 
+    search: {
+     provider: 'local'
+    },
+
     // edit link
     editLink: {
       pattern: 'https://gitlab.com/phoenix-dvpmt/phoenix-docs/-/tree/master/:path'
