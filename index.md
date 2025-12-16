@@ -17,7 +17,7 @@ hero:
       link: 'https://phoenixdevt.fr'
     - theme: alt
       text: Discord
-      link: 'phoenixdevt.fr/discord'
+      link: 'https://phoenixdevt.fr/discord'
     - theme: alt
       text: SpigotMC
       link: 'https://www.spigotmc.org/members/indyuce.253965/'
