@@ -195,9 +195,8 @@ Rainbow_tick:
                 relative: true
 ```
 
-
-
 ## A potion splash using parabolas
+
 ```yml
 potion_throw:
     public: true
@@ -288,7 +287,5 @@ throw_tick:
                 green: 94
                 blue: 12
 ```
-
-
 
 Now we know how to use use the right script lay out and how to colour certain particles, so we'll move on to the next shape mechanic. In this next example we will be covering how to set up the helix mechanic and how to use the healing mechanic.

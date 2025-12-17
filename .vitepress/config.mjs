@@ -1,11 +1,10 @@
-import { defineConfig } from "vitepress";
-import { withSidebar } from "vitepress-sidebar";
+import { generatedSidebars } from "./sidebars.js";
 
 // Must pass array arguments!!!!
 // Option: when true, use the page's markdown title (frontmatter `title` or inferred)
 // as the sidebar item text instead of the raw filename.
 
-const vitePressConfigs = {
+export default {
   /* ... */
   title: "Phoenix Wiki",
   description: "Documentation for Phoenix Devt plugins",
@@ -28,6 +27,9 @@ const vitePressConfigs = {
       message: 'Powered by <a href="https://vitepress.dev/" target="_blank" rel="noopener noreferrer">VitePress</a>',
       copyright: `Copyright © ${new Date().getFullYear()} Phoenix Development`,
     },
+
+    // Custom sidebars
+    sidebar: generatedSidebars,
 
     // social links
     socialLinks: [
@@ -72,64 +74,3 @@ const vitePressConfigs = {
     ],
   },
 };
-
-export default defineConfig(
-  withSidebar(vitePressConfigs, [
-    {
-      documentRootPath: "/",
-      scanStartPath: "mythiclib",
-      basePath: "/mythiclib/",
-      resolvePath: "/mythiclib/",
-      sortMenusByFrontmatterOrder: true,
-      useTitleFromFileHeading: true,
-      useFolderTitleFromIndexFile: true,
-      includeRootIndexFile: true,
-    },
-    {
-      documentRootPath: "/",
-      scanStartPath: "mmoprofiles",
-      basePath: "/mmoprofiles/",
-      resolvePath: "/mmoprofiles/",
-      sortMenusByFrontmatterOrder: true,
-      useTitleFromFileHeading: true,
-      useFolderTitleFromIndexFile: true,
-      includeRootIndexFile: true,
-    },
-    {
-      documentRootPath: "/",
-      scanStartPath: "mmoinventory",
-      resolvePath: "/mmoinventory/",
-      sortMenusByFrontmatterOrder: true,
-      useTitleFromFileHeading: true,
-      useFolderTitleFromIndexFile: true,
-      includeRootIndexFile: true,
-    },
-    {
-      documentRootPath: "/",
-      scanStartPath: "mmocore",
-      resolvePath: "/mmocore/",
-      sortMenusByFrontmatterOrder: true,
-      useTitleFromFileHeading: true,
-      useFolderTitleFromIndexFile: true,
-      includeRootIndexFile: true,
-    },
-    {
-      documentRootPath: "/",
-      scanStartPath: "bounty-hunters",
-      resolvePath: "/bounty-hunters/",
-      sortMenusByFrontmatterOrder: true,
-      useTitleFromFileHeading: true,
-      useFolderTitleFromIndexFile: true,
-      includeRootIndexFile: true,
-    },
-    {
-      documentRootPath: "/",
-      scanStartPath: "mmoitems",
-      resolvePath: "/mmoitems/",
-      sortMenusByFrontmatterOrder: true,
-      useTitleFromFileHeading: true,
-      useFolderTitleFromIndexFile: true,
-      includeRootIndexFile: true,
-    },
-  ])
-);

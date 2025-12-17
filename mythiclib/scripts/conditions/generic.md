@@ -1,5 +1,5 @@
 ---
-title: 'Conditions: Generic'
+title: 'Generic'
 ---
 
 # Generic
@@ -55,6 +55,7 @@ Use this condition to check if some string contains another string.
 | ignore_case | ic      | Whether to ignore case when comparing the strings. | false |
 
 This example script checks if the target entity is either a Zombie or a Skeleton.
+
 ```yml
 condition_string_contain:
   conditions:
@@ -74,6 +75,7 @@ Use this condition to check if two strings match exactly.
 | ignore_case | ic      | Whether to ignore case when comparing the strings. | false |
 
 This checks if the player is in a certain world:
+
 ```yml
 condition_string_eq:
   conditions:
@@ -81,4 +83,3 @@ condition_string_eq:
   mechanics:
   - 'message{format="You are in the spawn world!"}'
 ```
-
