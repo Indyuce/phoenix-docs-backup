@@ -1,4 +1,4 @@
-# 🔧 Conditions
+# ✅ Conditions
 
 ::: warning
 
@@ -24,7 +24,8 @@ test-condition-2:
   - 'level{profession=mining;amount=3}'
 ```
 
-## All the conditions
+## Available Conditions
+
 | Condition | Format |
 |-----------|--------|
 | From | `from{source=condition-id}` |

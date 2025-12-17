@@ -94,7 +94,7 @@ export const generatedSidebars = {
           "link": "/mythiclib/skills/delay-timer"
         },
         {
-          "text": "Creating Custom Skills",
+          "text": "💫 Creating Custom Skills",
           "items": [
             {
               "text": "Using MythicMobs",
@@ -128,7 +128,7 @@ export const generatedSidebars = {
           "link": "/mythiclib/scripts/variables"
         },
         {
-          "text": "Mechanics",
+          "text": "🔧 Mechanics",
           "items": [
             {
               "text": "Introduction",
@@ -174,7 +174,7 @@ export const generatedSidebars = {
           "collapsed": true
         },
         {
-          "text": "Conditions",
+          "text": "✅ Conditions",
           "items": [
             {
               "text": "Introduction",
@@ -196,7 +196,7 @@ export const generatedSidebars = {
           "collapsed": true
         },
         {
-          "text": "Targeters",
+          "text": "🧟 Targeters",
           "items": [
             {
               "text": "Introduction",
@@ -214,7 +214,7 @@ export const generatedSidebars = {
           "collapsed": true
         },
         {
-          "text": "Tutorials",
+          "text": "🤓 Tutorials",
           "items": [
             {
               "text": "Introduction",
@@ -429,7 +429,7 @@ export const generatedSidebars = {
           "link": "/mmoitems/stations/ingredients"
         },
         {
-          "text": "⚙️ Triggers",
+          "text": "🔧 Triggers",
           "link": "/mmoitems/stations/triggers"
         },
         {
@@ -643,6 +643,10 @@ export const generatedSidebars = {
           "link": "/mmocore/misc/tool-restrictions"
         },
         {
+          "text": "✅ Conditions",
+          "link": "/mmocore/misc/conditions"
+        },
+        {
           "text": "🌟 Vanilla Exp",
           "link": "/mmocore/misc/vanilla-exp"
         },
@@ -657,10 +661,6 @@ export const generatedSidebars = {
         {
           "text": "📦 Block Types",
           "link": "/mmocore/misc/block-types"
-        },
-        {
-          "text": "🔧 Conditions",
-          "link": "/mmocore/misc/conditions"
         },
         {
           "text": "🔧 Triggers",
