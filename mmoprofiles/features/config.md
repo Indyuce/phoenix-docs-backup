@@ -206,7 +206,7 @@ You can specify as many ranks as you'd like (the `vip` or `vip_plus` keys do not
 
 You can specify certain scripts that are ran when specific actions get done. These scripts have to be in the [MythicLib format](../../mythiclib/scripts/intro.md). The `login` script is performed right after player login, when his MMOProfiles player data is successfully loaded (it might take a few ticks). The `profile-select` script is ran after the player chooses a profile, when all of the data from supported plugins is loaded (it might take a few ticks as well).
 
-```myl
+```yml
 script:
 
   # MythicLib script ran when the player creates a new profile.
