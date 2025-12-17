@@ -104,7 +104,7 @@ def generate_sidebar_for_folder(folder_path, base_path):
     Returns:
         Liste de sections de sidebar
     """
-    sections = []
+    entries = []
     
     # Lister tous les éléments dans le dossier
     items = sorted(os.listdir(folder_path))
@@ -126,13 +126,14 @@ def generate_sidebar_for_folder(folder_path, base_path):
         if root_items_data:
             # Trier par order puis par titre
             root_items_data.sort(key=lambda x: (x['_order'], x['text']))
-            root_items = [{'text': x['text'], 'link': x['link']} for x in root_items_data]
-            # Garder la section racine en tête
-            sections.append({
-                'text': 'Getting Started',
-                'items': root_items,
-                '_order': -1
-            })
+            # Injecter les liens racine directement au niveau top, sans section
+            for it in root_items_data:
+                entries.append({
+                    'type': 'link',
+                    'text': it['text'],
+                    'link': it['link'],
+                    '_order': it['_order']
+                })
     
     # Générer récursivement chaque sous-dossier comme une catégorie potentiellement imbriquée
     for folder in folders:
@@ -194,16 +195,27 @@ def generate_sidebar_for_folder(folder_path, base_path):
             return section_result
 
         top_section = generate_category_section(folder_path_full, f"{base_path}{folder}/")
-        sections.append(top_section)
+        section_entry = {
+            'type': 'section',
+            'text': top_section['text'],
+            'items': top_section['items'],
+            '_order': top_section.get('_order', 9999)
+        }
+        if top_section.get('collapsed') is True:
+            section_entry['collapsed'] = True
+        entries.append(section_entry)
     
-    # Trier les sections par order puis titre, et produire la sidebar finale
-    sections.sort(key=lambda s: (s.get('_order', 9999), s['text']))
+    # Trier tous les éléments top-level par order puis titre, et produire la sidebar finale
+    entries.sort(key=lambda e: (e.get('_order', 9999), e['text']))
     sidebar = []
-    for s in sections:
-        entry = {'text': s['text'], 'items': s['items']}
-        if s.get('collapsed') is True:
-            entry['collapsed'] = True
-        sidebar.append(entry)
+    for e in entries:
+        if e['type'] == 'link':
+            sidebar.append({'text': e['text'], 'link': e['link']})
+        else:
+            sect = {'text': e['text'], 'items': e['items']}
+            if e.get('collapsed') is True:
+                sect['collapsed'] = True
+            sidebar.append(sect)
     return sidebar
 
 def generate_sidebar_js(output_path: str, sidebars_config: dict):

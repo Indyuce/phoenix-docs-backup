@@ -1,25 +1,20 @@
 export const generatedSidebars = {
   "/mythiclib/": [
     {
-      "text": "Getting Started",
-      "items": [
-        {
-          "text": "🏠 Home",
-          "link": "/mythiclib/"
-        },
-        {
-          "text": "🤔 What is MythicLib?",
-          "link": "/mythiclib/wth"
-        },
-        {
-          "text": "🪲 Frequent Issues",
-          "link": "/mythiclib/faq"
-        },
-        {
-          "text": "🐜 Reporting a bug",
-          "link": "/mythiclib/report"
-        }
-      ]
+      "text": "🏠 Home",
+      "link": "/mythiclib/"
+    },
+    {
+      "text": "🤔 What is MythicLib?",
+      "link": "/mythiclib/wth"
+    },
+    {
+      "text": "🪲 Frequent Issues",
+      "link": "/mythiclib/faq"
+    },
+    {
+      "text": "🐜 Reporting a bug",
+      "link": "/mythiclib/report"
     },
     {
       "text": "General",
@@ -262,17 +257,12 @@ export const generatedSidebars = {
   ],
   "/mmoitems/": [
     {
-      "text": "Getting Started",
-      "items": [
-        {
-          "text": "🏠 Home",
-          "link": "/mmoitems/"
-        },
-        {
-          "text": "🔌 Installation Guide",
-          "link": "/mmoitems/install"
-        }
-      ]
+      "text": "🏠 Home",
+      "link": "/mmoitems/"
+    },
+    {
+      "text": "🔌 Installation Guide",
+      "link": "/mmoitems/install"
     },
     {
       "text": "General",
@@ -489,17 +479,12 @@ export const generatedSidebars = {
   ],
   "/mmocore/": [
     {
-      "text": "Getting Started",
-      "items": [
-        {
-          "text": "🏠 Home",
-          "link": "/mmocore/"
-        },
-        {
-          "text": "🔌 Installation Guide",
-          "link": "/mmocore/install"
-        }
-      ]
+      "text": "🏠 Home",
+      "link": "/mmocore/"
+    },
+    {
+      "text": "🔌 Installation Guide",
+      "link": "/mmocore/install"
     },
     {
       "text": "General",
@@ -716,37 +701,16 @@ export const generatedSidebars = {
   ],
   "/mmoinventory/": [
     {
-      "text": "Getting Started",
-      "items": [
-        {
-          "text": "🏠 Home",
-          "link": "/mmoinventory/"
-        },
-        {
-          "text": "🔌 Installation Guide",
-          "link": "/mmoinventory/install"
-        },
-        {
-          "text": "🤔 FAQ",
-          "link": "/mmoinventory/faq"
-        },
-        {
-          "text": "🎒 Custom Inventories",
-          "link": "/mmoinventory/custom-inventory"
-        },
-        {
-          "text": "🎒 Vanilla Inventory",
-          "link": "/mmoinventory/vanilla-inventory"
-        },
-        {
-          "text": "🎨 Inventory Textures",
-          "link": "/mmoinventory/custom-inventory-texture"
-        },
-        {
-          "text": "🪽 Elytra Slot",
-          "link": "/mmoinventory/elytra-slot"
-        }
-      ]
+      "text": "🏠 Home",
+      "link": "/mmoinventory/"
+    },
+    {
+      "text": "🔌 Installation Guide",
+      "link": "/mmoinventory/install"
+    },
+    {
+      "text": "🤔 FAQ",
+      "link": "/mmoinventory/faq"
     },
     {
       "text": "General",
@@ -768,6 +732,22 @@ export const generatedSidebars = {
           "link": "/mmoinventory/general/default-config"
         }
       ]
+    },
+    {
+      "text": "🎒 Custom Inventories",
+      "link": "/mmoinventory/custom-inventory"
+    },
+    {
+      "text": "🎒 Vanilla Inventory",
+      "link": "/mmoinventory/vanilla-inventory"
+    },
+    {
+      "text": "🎨 Inventory Textures",
+      "link": "/mmoinventory/custom-inventory-texture"
+    },
+    {
+      "text": "🪽 Elytra Slot",
+      "link": "/mmoinventory/elytra-slot"
     },
     {
       "text": "Compatibility",
@@ -793,17 +773,12 @@ export const generatedSidebars = {
   ],
   "/mmoprofiles/": [
     {
-      "text": "Getting Started",
-      "items": [
-        {
-          "text": "🏠 Home",
-          "link": "/mmoprofiles/"
-        },
-        {
-          "text": "🔌 Installation Guide",
-          "link": "/mmoprofiles/install"
-        }
-      ]
+      "text": "🏠 Home",
+      "link": "/mmoprofiles/"
+    },
+    {
+      "text": "🔌 Installation Guide",
+      "link": "/mmoprofiles/install"
     },
     {
       "text": "General",
@@ -875,13 +850,8 @@ export const generatedSidebars = {
   ],
   "/bounty-hunters/": [
     {
-      "text": "Getting Started",
-      "items": [
-        {
-          "text": "🏠 Home",
-          "link": "/bounty-hunters/"
-        }
-      ]
+      "text": "🏠 Home",
+      "link": "/bounty-hunters/"
     },
     {
       "text": "General",
@@ -961,13 +931,8 @@ export const generatedSidebars = {
   ],
   "/contracts/": [
     {
-      "text": "Getting Started",
-      "items": [
-        {
-          "text": "Index",
-          "link": "/contracts/"
-        }
-      ]
+      "text": "Index",
+      "link": "/contracts/"
     }
   ]
 };
