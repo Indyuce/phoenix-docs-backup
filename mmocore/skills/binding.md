@@ -4,13 +4,17 @@ order: 3
 
 # 🔗 Binding Skills
 
-In order to be cast, skills need to be bound to specific skill slots. There can be at most one skill bound to one skill slot. Each skill slot corresponds to a different keybind, or key combo.
+In order to be cast, skills need to be bound to specific skill slots. There can be at most one skill bound to one skill slot. Each skill slot corresponds to a different keybind, or key combo. There are multiple ways to bind skills:
+- you can either let the players choose their keybinds through the `/skills` GUI,
+- enable/disable the editing of keybinds and hard-code the keybinds (like on Wynncraft, for instance),
+- enable/disable the binding of specific passive skills altogether,
+- or use commands to bind skills to skill slots.
 
-For example, a skill bound to skill slot n1 could be cast by pressing the [1] key (or combo _Left-Right_), while the skill bound to skill slot n2 could be cast by pressing [2] (or by performing combo _Left-Right_). In principle, players choose what skill they want to bind to each skill slot/keybind.
+For example, a skill bound to skill slot n1 could be cast by pressing the [1] key (or combo _Left-Right_), while the skill bound to skill slot n2 could be cast by pressing [2] (or by performing combo _Left-Right_).
 
 ## Skill Slots
 
-Skill slots are class-specific, which means that classes can have a varying number of skill slots, as well as different skill slot properties. Magic-oriented classes like Mages, Wizards, Paladins could have more skill slots than weapon-oriented classes like Warriors or Brutes.
+Skill slots are class-specific, which means that classes can have a varying number of skill slots, as well as different skill slot properties. For instance, magic-oriented classes like Mages, Wizards or Paladins could have more skill slots than melee<-oriented classes like Warriors or Brutes.
 
 To edit the skill slots of a class, open up the class config file and look for/create the `skill-slots` section. Each entry under this config section corresponds to a single skill slot.
 ```yaml
@@ -51,7 +55,7 @@ Let's go over each parameter one by one.
 
 ### Name and lore
 
-These are the name and lore of your skill slot. They will be used to show your skill slot in the skill viewer GUI, which can be opened using `/skills`.
+Options `name` and `lore` are used to define the item name and lore of your skill slot as seen in the `/skills` menu.
 
 ### Other Options
 
@@ -87,9 +91,30 @@ Skill buffs can also be granted to skill slots. A skill buff is a specific buff 
 
 This feature can be used to create, for instance, _Fire slots_ or _Water slots_ which provide additional damage to lower cooldowns to a specific set of skills (which can be specified using skill formulas, see above).
 
+## Hardcoded Keybinds
+
+If you plan on having a small set of skills per class, you might not need to give your players the option to choose their keybinds.
+
+In this case, go to your class config file and edit its skill slots:
+```yaml
+# classes/mage/mage.yml
+
+skill-slots:
+  '1':
+    name: "Skill Slot I"
+    lore: []
+    #...
+    hardset: FIREBALL # <========================
+  
+  # other skill slots....
+
+```
+
+By setting the `hardset` parameter to a skill ID, like `FIREBALL` (or whatever skill you have [configured](config.md) for the class), you forcefully bind that skill to this skill slot for all players.
+
 ## Unlocking Skill Slots
 
-All skill slots are unlocked by default (see above). When they are not, they can be unlocked using the following command, where `<slot_number>` starts at 1 (not 0). 
+By default, all skill slots are unlocked. If not, they can be unlocked using the following command, where `<slot_number>` starts at 1 (not 0). 
 ```
 /mmocore admin slot lock <player> <slot_number>
 /mmocore admin slot unlock <player> <slot_number>
