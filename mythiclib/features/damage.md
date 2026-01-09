@@ -68,3 +68,33 @@ Please refer to the [Damage Mitigation](mitigation-types.md) page for more infor
 ## Damage Indicators
 
 Please refer to [this page](damage-indicators.md) for more information about damage indicators.
+
+## MythicMobs Compatibility
+
+You can have mobs and skills from MythicMobs deal damage marked with MythicLib damage types. This way, player stats like _Magic Damage Reduction_ or _Fire Defense_ will apply to the damage dealt by MythicMobs.
+
+To have a MythicMobs skill deal damage with MMO damage types, use the [mmodamage mechanic](../skills/custom/mythic.html#dealing-damage). This mechanics works whether the skill caster is a player or a mob.
+
+To have MythicMobs deal MMO-typed damage with their melee attacks, use the `setmmodamagesplits` mechanic. The following mob deals 10 Magic-Projectile damage on each melee hit:
+```yml
+ZombieWarrior:
+  Type: ZOMBIE
+  Damage: 10
+  Skills:
+    - 'setmmodamagesplits{splits=MAGIC,PROJECTILE} @self ~onSpawn'
+```
+
+:::  info
+The mob above casts `setmmodamagesplits` when it spawns. However, you can use this mechanic at any time! You can replace a mob's damage splits mid-fight, during a specific skill, etc. For instance, you can have a boss deal Physical damage during its first phase, then switch to Magic damage during its second phase.
+:::
+
+In the following example, a third of the damage is dealt as Physical/Weapon, while the remaining two thirds are dealt as Skill-Magic damage.
+```yml
+ZombieWarrior:
+  Type: ZOMBIE
+  Damage: 10
+  Skills:
+    - 'setmmodamagesplits{splits=[PHYSICAL,WEAPON]:1,[SKILL,MAGIC]:2} @self ~onSpawn'
+```
+
+The format for `splits` is `[TYPE1,TYPE2,...]:amount1,[TYPE3,TYPE4,...]:amount2` where each split is separated by a comma. The amount is optional and defaults to 1.

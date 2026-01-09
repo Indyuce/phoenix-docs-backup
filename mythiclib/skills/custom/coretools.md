@@ -28,8 +28,6 @@ After reloading both plugins, you can now use the skill `MY_SKILL_3` in MMOItems
 
 There is currently no way to retrieve skill modifiers when using CoreTools skills, unlike when using MythicMobs.
 
-## Specifications
-
-### Support for conditions
+## Skill conditions
 
 Just like MythicMobs, skills registered in MythicLib using CoreTools can have conditions. If any of the CoreTools conditions is not met, the skill will not be cast, no mana will be consumed, no cooldown will be applied, etc.

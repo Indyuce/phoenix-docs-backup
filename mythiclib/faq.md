@@ -139,8 +139,8 @@ Minecraft 1.20.5 changes how NBT tags are stored within items. While vanilla Min
 If you are updating your server from \<1.20.4 to any version above, you have to convert your items stored in your MMOProfiles/MMOInventory databases to a format that does not depend on server version, upgrade your server, and convert the items back. Fortunately, MMOLib has a tool to have this done automatically. This tool comprises of one command and requires NBTAPI to be installed.
 
 1. Download [NBTAPI](https://www.spigotmc.org/resources/nbt-api.7939/) from here and install it on your server.
-2. Close your server and **backup your MMOProfiles/MMOInventory user databases** in case anything goes wrong**.**
-3. Start your server in \<1.20.4 and **make sure no players log in** while performing the following steps. Do NOT upgrade your server just yet!
+2. Close your server and **backup your MMOProfiles/MMOInventory user data**.
+3. Start your server in **1.20.4 or lower** and **make sure no players log in** while performing the following steps.
    1. Run the commands `mmoprofiles convert-item-nbts` and `mmoinventory convert-item-nbts` from the server console and wait for completion. Your items are now in a version-safe data format.
    2. Close your server. You can now safely upgrade to 1.20.5+
    3. Start your updated server, run the following commands from the server console: `mmoprofiles convert-item-nbts from` and `mmoinventory convert-item-nbts from` (notice the second "from" parameter) and wait for completion.
