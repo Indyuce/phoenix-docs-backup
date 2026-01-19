@@ -2,6 +2,8 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
+
+
 hero:
   name: "Phoenix Wiki"
   #text: 'Official Plugin Documentation'
