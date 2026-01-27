@@ -65,10 +65,3 @@ Below is a list of all available commands in MMOCore. You can also explore these
 | ``/mmocore booster create <profession/main> (player)`` | Creates an [EXP booster](../level/boosters.md) with specified power and length. |
 | ``/mmocore booster list`` | Displays active EXP boosters. |
 | ``/mmocore booster remove`` | Removes a booster with specified ID. |
-
-### Debug
-| Command | Usage |
-|--|--|
-| ``/mmocore refreshpd`` | Refreshes player data of a specific player. **Must be used after editing any skill, although a restart is recommended, use it at your own risk.** |
-| ``/mmocore debug statmods`` | View stat |
-
