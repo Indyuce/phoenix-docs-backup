@@ -9,11 +9,15 @@ Skill trees are a combination of nodes which can be unlocked/levelled-up using s
 id: 'custom_combat'    # Unique Identifier for the Skill Tree
 name: 'Combat'         # Name of the skill tree that will be displayed in the GUI
 type: custom           # See below for explanations
-item: GOLDEN_AXE       # The item representing the skill tree in the GUI.
-custom-model-data: 0
 max-points-spent: 20   # Maximum amount of points spent in that skill tree
 lore:
    - '&6This skill tree is used for combat abilities!'
+icon:                  # The item representing the skill tree in the GUI.
+  material: GOLDEN_AXE 
+  item_flags: [HIDE_ATTRIBUTES]
+  #custom_model_data: 10
+  #custom_model_data_string: 'test'
+  #item_model: 'minecraft:dirt'
 
 nodes:
   a1:
@@ -49,13 +53,14 @@ nodes:
 
 ## Linking a skill tree to a class
 
-Skill trees are class based which means that the skill trees you can see and your progress for them depends on your current [class](../features/classes.md). Each player can only progress in the skill trees linked to its current class. You can link skill trees to a class like this:
+Skill trees are class-based, which means that the skill trees you can see and your progress for them depends on your current [class](../features/classes.md). Each player can spend points in trees linked to its current class. You can link skill trees using the following syntax, inside any class configuration file:
 
 ```yaml
-# In the class config
+# MMOCore/classes/mages.yml
+
 skill-trees:
-   - 'skill-tree-id1'
-   - 'skill-tree-id2'
+  - 'skill-tree-id1'
+  - 'skill-tree-id2'
 ```
 
 ## Skill Tree Points
@@ -67,8 +72,10 @@ You can use the following command to give skill tree points to players. The `id`
 
 One of the main ways you will be giving players skill tree points is through command triggers in experience tables. In the following example, a player will receive 1 skill tree point useable for the skill tree with ID `archerSkillTree` every time they level up.
 ```yaml
-Archer_Exp_Table:
-  Skill_trees:
+# MMOCore/exp-tables/default_exp_tables.yml
+
+example_archer_exp_table:
+  give_one_skill_tree_point:
     period: 1
     triggers:
     - 'command{format="mmocore admin skill-tree-points give %player% archerSkillTree"}'
@@ -79,21 +86,24 @@ You can also use the following command to give skill tree reallocation points to
 /mmocore admin skill-tree-realloc-points give <player> <number>
 ```
 
-## Max Points spent
+### Max Points Spent
 
-This field corresponds to the maximum amount of points that you can spend in a skill tree. If you reach this amount, you won't be able to unlock / upgrade any node within that skill tree even if you still have some skill tree points left. If it isn't filled it will be set to infinity.
+This field corresponds to the maximum amount of points that a player can spend in a skill tree. If unspecified, there will be no limit to the amount of points a player can spend in the skill tree.
 
-# Skill Tree Nodes
+## Skill Tree Nodes
 
 Skill tree nodes are what players unlock/level up with their skill tree points. A skill tree is comprised of multiple nodes that can be linked together or completely independent. The skill tree nodes are all listed in `nodes` in the yml.
 
 ### Node states
 
-At any instant in time, any node in a skill tree is in one of the four following states:
-- Unlocked (The node is at least at level 1 and is already unlocked)
-- Locked (The node is not accessible to the player yet, but might be in the future)
-- Fully Locked (The player made a branching choice, rendering this node inaccessible until a full skill tree reset)
-- Unlockable (The node can be unlocked for X skill tree points)
+At any instant in time, any node in a skill tree is in one of the four following states.
+
+| State        | Description                                                                                     |
+|--------------|-------------------------------------------------------------------------------------------------|
+| Unlocked     | The node is at least at level 1 and is already unlocked                                         |
+| Locked       | The node is not accessible to the player yet, but might be in the future                        |
+| Fully Locked | The player made a branching choice, rendering this node inaccessible unless a respec is performed |
+| Unlockable   | The node can be unlocked for X skill tree points                                                |
 
 You can modifiy the display name of each state in the `node-status` section in the `gui/skill-tree.yml` config file.
 
