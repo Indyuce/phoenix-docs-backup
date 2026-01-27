@@ -241,7 +241,9 @@ Choosing some function for your GUI item unlocks a specific set of placeholders 
 - `{buff_<stat_name>}` - a specific buff that is granted for each point spent in that attribute
 - `{total_<stat_name>}` - the total buff granted by all the points spent in that attribute
 
-If you try to use a placeholder which MMOCore cannot find, it will display `PHE` (PlaceHolderError)
+::: warning
+The `{buff_xxx}` and `{total_xxx}` are only defined for the stats that are actually granted by that attribute. For instance, if the Strength attribute only grants `weapon_damage` and `max_health`, the placeholders `{buff_physical_damage}` and `{total_physical_damage}` won't be defined for the Strength attribute item in the GUI.
+:::
 
 Last thing: adding new buffs to your custom attribute does NOT automatically update the GUI item lore (which is being used to display the attribute buffs). Make sure you update this manually as well. For instance, the following configs match:
 
