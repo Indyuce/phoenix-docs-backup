@@ -8,19 +8,19 @@ When provided mechanics do not provide enough configurability you can always use
 
 ## Internal & Custom Variables
 
-There are two types of variables. First, **internal variables** or **reserved variables** have names which are reserved by MythicLib. They are used all of the time by MythicLib, and you cannot create custom variables with reserved variables names. You can access these variables using `<caster>` or `<targetLocation>` for instance.
+There are two types of variables. First, **internal variables** or **reserved variables** have names which are reserved by MythicLib. They are used all of the time by MythicLib, and you cannot create custom variables with reserved variables names. You can access these variables using `<caster>` or `<target_location>` for instance.
 
 | Variable | Type | Usage |
 |----------|------|-------|
 | `source` | position | Location where the script was cast |
-| `targetLocation` | position | The target location **if it exists** |
+| `target_location` | position | The target location **if it exists** |
 | `caster` | player | Player who cast the script |
 | `attack` | attackMetadata | The attack which triggered the skill **if it exists** |
 | `stat` | statMap | The stat map of the caster BY THE TIME he cast the script |
 | `target` | entity | The skill target **if it exists** |
 | `random` | random | An extra module to generate random numbers. See below |
 
-On the other hand, **custom variables** are initialized and can be manipulated by the user. You can access them using `<var.your_variable_name>`, use them in numeric formulas or just like PAPI placeholders in any mechanic or condition. MythicLib comes with many mechanics that let you initialize and edit your custom variables. The full list is available [here](mechanics/intro.md).
+On the other hand, **custom variables** are initialized and can be manipulated by the user. You can access them using `<your_variable_name>`, use them in numeric formulas or just like PAPI placeholders in any mechanic or condition. MythicLib comes with many mechanics that let you initialize and edit your custom variables. The full list is available [here](mechanics/intro.md).
 
 You cannot use a 
 
@@ -53,7 +53,7 @@ Here is the list of all the currently supported variable types, as well as their
 | Subvariable | Type | Description |
 |-------------|------|-------------|
 | `damage` | double | Amount of damage being dealt |
-| `damage_<type>` | double | Amount of damage of given damage type being dealt |
+| `damage_<type>` | double | Amount of damage being dealt, with given damage type |
 
 ### AttributeMap
 
@@ -80,11 +80,13 @@ Vanilla attributes shall not be mistaken for player stats which are added by the
 
 Cooldown maps are used to store a player's cooldown values. Cooldowns are used by MythicLib for damage mitigation (block, parrying, dodging) and for skill cooldowns, and by MMOItems for item cooldowns. You can access the cooldown map of the player casting the script using `<caster.cooldown>`.
 
-Cooldown maps have an infinite amount of subvariables. Using subvariable `some_key` will return a double corresponding to the remaining cooldown for the given cooldown key. For instance, `<caster.cooldown.mmoitem_small_mana_pot>` will return the remaining cooldown for the MMOItem with ID `SMALL_MANA_POT`.
+Using subvariable `some_key` will return a double corresponding to the remaining cooldown for the given cooldown key. For instance, `<caster.cooldown.mmoitem_small_mana_pot>` returns the remaining cooldown for the MMOItem with ID `SMALL_MANA_POT`, `<caster.cooldown.hello>` returns the remaining cooldown for the skill/item/etc. with cooldown key `hello`.
 
-The following table lists all the keys used by MMOCore and MMOItems (don't use the same otherwise they'll interfere!), if you're a developer working against MythicLib you can literally use any.
+The following table lists all the keys used by MMOCore and MMOItems. You can use virtually any cooldown key inside your scripts or plugins, you can also mess/interfere with the cooldown keys used internally by MMOItems and MMOCore if you want to.
 
+::: info
 You can also use `%mythiclib_cooldown_<cooldown_key>%` to retrieve the player's current cooldown using placeholders from PlaceholderAPI. Example: `%mythiclib_cooldown_skill_fireball%`
+:::
 
 | Subvariable | Type | Description |
 |-------------|------|-------------|
@@ -104,6 +106,7 @@ Numeric value.
 | Subvariable | Type | Description |
 |-------------|------|-------------|
 | `int` | integer | The whole part of that number |
+| `round.xxx` | string | Round the double up to N decimal places |
 
 ### Entity
 
