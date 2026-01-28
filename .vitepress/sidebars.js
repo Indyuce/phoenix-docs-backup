@@ -139,6 +139,10 @@ export const generatedSidebars = {
               "link": "/mythiclib/scripts/mechanics/buffs"
             },
             {
+              "text": "🏹 Projectiles",
+              "link": "/mythiclib/scripts/mechanics/projectiles"
+            },
+            {
               "text": "🔧 Miscellaneous",
               "link": "/mythiclib/scripts/mechanics/misc"
             },

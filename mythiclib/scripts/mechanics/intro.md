@@ -9,6 +9,7 @@ A script is a list of mechanics and conditions. If all of the script conditions 
 | Mechanic Type | Description |
 |---------------|-------------|
 | [Buffs](buffs.md)     | Give temporary stats; restore health, food... |
+| [Projectiles](projectiles.md)     | Throw physical projectiles |
 | [Miscellaneous](misc.md) | Commands, cooldowns, delay, entity effects... |
 | [Movement](movement.md) | Give velocity and teleport |
 | [Offense](offense.md) | Deal damage, apply potion effects... |
