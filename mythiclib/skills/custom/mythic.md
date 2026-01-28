@@ -8,7 +8,7 @@ This page will help you register custom skills in MythicLib/MMOItems/MMOCore usi
 
 1. Code a Mythic script
 2. Register that script as a custom MythicLib skill,
-3. Configure that same skill (in MMOItems/MMOCore).
+3. Reload the plugins.
 
 ## 1/ Code a MythicMobs skill
 
@@ -29,7 +29,7 @@ FireBolt-Hit:
 
 ## 2/ Declare it as a MythicLib skill
 
-Go to the `MythicLib/skill` folder and create a YAML configuration file, which name can be whatever your want. Let's say it's `tutorial.yml`. Just like in Mythic, you can:
+Go to the `MythicLib/skill` folder and create a YAML configuration file, which name can be whatever you want. Let's say it's `tutorial.yml`. Just like in MythicMobs, you can:
 
 - have multiple skills within the same config file
 - organize your files into folders
@@ -37,13 +37,29 @@ Go to the `MythicLib/skill` folder and create a YAML configuration file, which n
 
 ```yaml
 FIRE_BOLT:
-  # Internal name of the MythicMobs script
-  mythicmobs-skill-id: FireBolt
+  source: mythicmobs:FireBolt
 
-  # Choose the ability modifiers
-  modifiers:
-  - damage
-  - duration
+  name: Firebolt
+  lore:
+    - 'You conjure a flaming ball and'
+    - 'ball and hurl it at your target.'
+    - ''
+    - '&e{cooldown}s Cooldown'
+    - '&9Costs {mana} {mana_name}'
+  icon: BLAZE_POWDER
+
+  # Edit default values of the ability parameters
+  parameters:
+    damage:
+      name: Damage
+      player:
+        base: 2
+        per-level: 1
+      item: 5.0
+    duration:
+      name: Duration
+      player: '2 + {level} * 1'
+      item: 5.0
   
   extra-skills:
     FireBolt: # The main skill
@@ -57,45 +73,108 @@ FIRE_BOLT:
       - 'damage{a=10}'
       - 'potion{type=SLOW;duration=40;lvl=2}'
 
-# You can have multiple skills in one config.
-ANOTHER_SKILL:
+# You can have multiple skills in one config file
+#ANOTHER_SKILL:
+  #source: ...
+  #....
+```
+
+### Config Options
+
+#### Skill Identifier
+
+Let's go through the `FIRE_BOLT` configuration section. First, nicely format the config section name so that it matches that `UPPERCASE_ID_FORMAT` because it's the one used for skills in MMOItems/MMOCore.
+
+#### Skill Source
+
+Then, provide the "source" of your skill. Since we are implementing a MythicLib skill using MythicMobs, the source must be `mythicmobs:FireBolt`, where `FireBolt` is the name of the MythicMobs skill that we defined earlier. The table below indicates all skill sources that you can actually use with MythicLib:
+
+| Source | Format |
+|--------|--------|
+| [MythicMobs](https://www.spigotmc.org/resources/5702/) | `mythicmobs:<MythicMobsSkillname>` |
+| [MythicLib](https://www.spigotmc.org/resources/90306/) | `mythiclib:<mythiclib_script_name>` |
+| [Fabled](https://www.spigotmc.org/resources/91913/) | `fabled:<FabledAbilityName>` |
+| [CoreTools](https://www.spigotmc.org/resources/125126/) | `coretools:<CoreToolsScriptName>` |
+
+#### Skill Icon, Name and Lore
+
+The `icon` options lets you modify the item that MMOCore will use inside the skill UI to display that skill. You can use any valid Minecraft material name.
+
+In order to add custom model data, item model... use the following syntax. Note that all of these parameters are optional.
+```yml
+FIRE_BOLT:
+  #...
+  icon:
+    item: DIAMOND_SWORD
+    custom_model_data: 1234
+    item_model: 'minecraft:dirt'
+    item_flags: [HIDE_ATTRIBUTES, HIDE_ENCHANTS]
   #...
 ```
+
+The `lore` option lets you customize the skill description that players will see in the MMOCore skill UI. Note the use of placeholders such as `{cooldown}`, `{mana}`, `{mana_name}` that will be dynamically replaced when the skill is displayed.
+
+The `name` option lets you customize the skill name. Note that this is the only field used by MMOItems, as the icon and lore are only being used by MMOCore.
+
+#### Skill Parameters
+
+The `parameters` section lets you define the skill modifiers that your skill will use. In our example, we defined two skill modifiers: `damage` and `duration`. Each modifier has a `name` (displayed in the skill UI), a `player` section (which defines how the modifier scales with player level) and an `item` section (which defines how the modifier scales with item level).
+
+The `player` section dictates the scaling of the skill modifier when the skill is cast through MMOCore classes. The `item` section dictates the default skill parameter value when the skill is placed onto an MMOItems item. The `name` field is used by both MMOCore UIs and MMOItems for the item lore.
+
+Note that you have two possibilities to provide the `player` section. You can either provide a `base` and `per-level` value, which will result in a linear scaling:
+```yml
+FIRE_BOLT:
+  #...
+  parameters:
+  #...
+    damage:
+      name: Damage
+      player:
+        base: 2
+        per-level: 1
+      item: 5.0
+```
+
+You can also provide a fully custom formula using the `{level}` placeholder, which represents the player skill level:
+```yml
+FIRE_BOLT:
+  #...
+  parameters:
+  #...
+    duration:
+      name: Duration
+      player: '2 + {level} * 1'
+      item: 5.0
+```
+
+The `item` field, however, is always a flat decimal number.
+
+### `extra-skills`
 
 As you can see, you can put Mythic scripts inside of the MythicLib config file. That is what the `extra-skills` config section is all about - any Mythic script that you place inside this configuration section will be passed to Mythic. In order to register MythicLib custom skills, you can either put your Mythic scripts inside of the ML config file, or simply pass a reference (the script name i.e `FireBolt`) to an existing Mythic script. Either way, the Mythic script names must match:
 ```yaml
 FIRE_BOLT:
-  mythicmobs-skill-id: FireBolt # These two must match
   #...
+
   extra-skills:
     FireBolt: # These two must match
       #...
 ```
 
-Let's go through the `FIRE_BOLT` configuration section. First, nicely format the config section name so that it matches that `UPPERCASE_ID_FORMAT` because it's the one used for skills in MMOItems/MMOCore. Then, input the internal name of your MM skill using the `mythicmobs-skill-id` config option: in our case, it is `FireBolt`.
+## 3/ Reload the plugins
 
-The second option you need to input is the list of your **skill modifiers**. We will go over this feature later on, just keep in mind that this is the list of all the possible **numeric parameters** of your skill (how much damage it deals, how long slowness lasts...)
+1) Reload MythicMobs using `/mm reload`. By now, you should be able to use `/mm debug cast FireBolt` to test your MythicMobs skill.
+2) Reload MythicLib using `/ml reload`. By now, your skill should be registered in MythicLib, and you should be able to use `/ml debug cast FIRE_BOLT` to test your MMO skill.
 
-At this point, you can use `/ml reload` and test your new skill using the following command:
-```sh
-/ml debug cast FIRE_BOLT
-```
+That's it! You do not need additional config files for MMOItems or MMOCore, as both of these plugins directly use the MythicLib skill registry.
 
-## 3/ Configuring your skill in MMOItems/MMOCore
-
-Your skill is now registered in MythicLib. Since both MMOItems and MMOCore use the MythicLib skill registry, it is now also registered in MMOItems and MMOCore, but it is not fully configured, which is what we're going to do now.
-
-**MMOCORE:** Use `/mmocore reload`. A configuration file named `fire-bolt.yml` should appear inside the `MMOCore/skills` folder. Open and edit it to your liking before using `/mmocore reload` again which will load the edited config file into the MMOCore registry. You now have a fully working skill which you can bind to your player class. Since this part is specific to MMOCore, check the [MMOCore wiki](../../../mmocore/skills/config.md) to learn how to edit a MMOCore skill config file.
-
-**MMOITEMS:** Use `/mi reload skills`. A config file named `fire-bolt.yml` should appear inside the `MMOItems/skills` folder. Open and edit it to your liking before using `/mi reload skills` again which will load the edited config file into the MMOCore registry. You now have a fully working skill which you can add to your MI items. This part is specific to MMOItems, so check the [MI wiki](../../../mmoitems/features/skills.md#editing-an-ability) to learn how to edit a MI skill config file.
-
----
 
 ## Skill Conditions
 
 Custom MM skills also support skill conditions. If any of the skill conditions is not met, the skill won't cast and no mana will be consumed.
 
-## Retrieving MythicLib skill modifiers inside MM custom skills
+## Retrieving MMO skill modifiers inside MythicMobs skills
 
 ::: warning
 Some of the features described below are not available in the free version of MythicMobs.
@@ -103,12 +182,7 @@ Some of the features described below are not available in the free version of My
 
 Let's consider the `Fire-Bolt` skill again.
 
-As explained before, the skill currently deals 10 damage whatever modifier you might have setup. However, we want that skill to deal the amount of damage dictated by MMOItems or MMOCore.
-
-- In MMOItems, this allows you to have skills with different parameters on your MI items
-- In MMOCore, skills can scale up with the player class level.
-
-The following skill deal a static amount of 10 damage.
+As seen before, the following skill currently deals a flat 10 damage. We would like this value to scale with the MMOCore skill level or MMOItems item power.
 
 ```yaml
 SomeSkill:
@@ -116,7 +190,7 @@ SomeSkill:
   - damage{a=10}
 ```
 
-The following skill deals damage equivalent to the `damage` skill modifier, forwarded from MythicLib to MythicMobs.
+The following skill deals damage equivalent to the `damage` MythicLib skill modifier. The `<modifier.xxx>` allows to forward MythicLib skill parameter values to MythicMobs math formulas used inside mechanics, conditions...
 
 ```yaml
 SomeSkill:
@@ -145,6 +219,10 @@ Here is the full list of placeholders implemented by MythicLib, available inside
 | `<stellium>`                | The player's current stellium (MMOCore)                             |
 
 ## Dealing Damage
+
+::: info
+This is subject to change for better support of the MythicLib damage system in the future.
+:::
 
 Use the `mmodamage` mechanic instead of the native `damage` mechanic to deal damage with MMO damage types.
 

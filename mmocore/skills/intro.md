@@ -14,7 +14,7 @@ Skills are class-specific. When changing class, the player will "lose" the progr
 
 While MMOCore comes with more than 90 built-in skills, you can create as many custom skills as you want using the most popular skill/scripting languages available, including MythicMobs, MythicLib or Fabled.
 
-Note that skills are registered in MythicLib. Any skill you register in MythicLib will be usable in both MMOCore and MMOItems. Please read [this wiki page](../../mythiclib/skills/intro.md) to learn how to create and register custom skills.
+Note that custom skills are registered in MythicLib. Any skill you register in MythicLib will be automatically forwarded to both MMOCore and MMOItems. Please read [this wiki page](../../mythiclib/skills/intro.md) to learn how to create and register custom skills.
 
 ## Overview
 
@@ -32,7 +32,7 @@ Fortunately, the MMOCore skill system is really permissive:
 
 ## Skill GUI
 
-Players can open up the skills GUI by using `skills`. This UI allows players to visualize their available skills and their effects, upgrade their available skills, and bind their skills to skill slots.
+Players can open up the skills GUI by using `/skills`. This UI allows players to visualize their available skills and their effects, upgrade their available skills, and bind their skills to skill slots.
 
 ## Upgrading a skill
 
@@ -46,18 +46,20 @@ In the GUI, select the skill you'd like to upgrade by clicking it (the UI name s
 
 
 
-**Examples slot config for class file.** For more details check [Skill Slots](binding.md#skill-slots)
+#### Examples slot config for class file
 
-```
+For more details, check out the [Skill Slots](binding.md#skill-slots) wiki page
+
+```yml
 # The valid format for 
 formula: "<FIRE_STORM>" #Will only target fire storm
 formula: "!<PASSIVE>&&<FIRE>" #Will target active skills with the fire category
 #This is the same as <ACTIVE>&&<FIRE> 
 ```
 
-**Example categories add to the skill file in the skills folder**
+#### Example categories add to the skill file in the skills folder
 
-```
+```yml
 categories:
 - "CATEGORY_1" #Referened with <CATEGORY_1> in a formula
 - "CATEGORY_2"

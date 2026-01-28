@@ -6,10 +6,6 @@ order: 2
 
 MythicLib [scripts](../../scripts/intro.md) can easily be turned into custom skills that can be used in MMOItems or MMOCore. We first need to write a MythicLib script, then declare it as a skill. A script basically says "what happens", while a skill provides more metadata including its mana cost, cooldown, damage, GUI lore, icon....
 
-::: info
-This page will be subject to changes in the near future
-:::
-
 ## 1/ Code a MythicLib script
 
 First, navigate to the `MythicLib/script` folder and open an existing/create a new YML config file to start writing your MythicLib script.
@@ -47,17 +43,32 @@ STAFF_ATTACK:
 
   # This points to the MythicLib script you want to use
   # located in the MythicLib/scripts folder
-  mythiclib-skill-id: staff_attack
+  source: 'mythiclib:staff_attack'
+
+  name: 'Staff Attack' # The skill name shown in the GUI
+  icon: 'BLAZE_ROD' # The skill icon shown in the GUI
+  lore:
+    - '§7Shoot a magic projectile'
+    - '§7that deals damage to'
+    - '§7the first entity it hits.'
 
   # This is optional. These are the skill parameters/modifiers
   # that will be passed to MMOItems/MMOCore when the skill is executed.
   # You can add as many as you need.
-  modifiers:
-  - damage
-  - slow_duration
+  parameters:
+    damage:
+      name: Damage
+      player: 10
+      item: 10
+    slow_duration:
+      name: Effect Duration
+      player: 5
+      item: 5
 ```
 
-You can test this skill in-game by using the following command:
-```sh
+## 3/ Reload MythicLib
+
+Use `/ml reload` to both reload MythicLib scripts and skills. You can test your new skill with the following command:
+```
 /ml debug cast staff_attack
 ```

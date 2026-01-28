@@ -19,7 +19,7 @@ script3:
 Then, open up any YML config file inside the `MythicLib/skill` folder and paste the following:
 ```yml
 MY_SKILL_3:
-  coretools-skill-id: script3
+  source: 'coretools:script3'
 ```
 
 After reloading both plugins, you can now use the skill `MY_SKILL_3` in MMOItems and MMOCore. You can try to cast it using `/ml debug cast MY_SKILL_3`, and you should see the message appear in the player chat.
