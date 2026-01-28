@@ -4,13 +4,15 @@ order: 4
 
 # 🫅 Proxy-Based Profiles
 
-This feature was introduced in MMOProfiles 1.1 snapshots and allows for profile-specific progress for any type of player data, for any plugin. Modern proxies like Velocity or BungeeCord allow you to switch the player's UUID when switching servers, effectively tricking all plugins into thinking that another player joined the server.
+This feature allows for profile-specific progress for any type of player data, of any plugin. Some proxy-level workarounds allow you to switch the player's UUID when switching servers, effectively tricking all plugins into thinking that another player joined the server.
 
-This feature has a huge advantage: **this makes literally any plugin storing player data compatible with MMOProfiles without the need of having plugin-specific code**, which is known to be a very tedious task. More on that later.
+This feature has a huge advantage: **this makes literally any plugin storing player data compatible with MMOProfiles without the need of having profile-specific code**, which is known to be a very tedious task. More on that later.
 
-_UUID switching_ has already been implemented in some plugins in the past, most of them being outdated now. MMOProfiles provides an up-to-date solution, packed with all of the other most important MMOProfiles features, namely configurable GUI-based profile selection, and extra compatibility with the MMO plugin suite. Our implementations are also very stable, since they do not rely on version-dependent code.
+::: info
+_UUID Spoofing_ has already been implemented in some plugins in the past, most of them being outdated now. MMOProfiles provides an up-to-date solution, packed with all of the other most important MMOProfiles features, namely configurable GUI-based profile selection and compatibility with the MMO plugin suite.
+:::
 
-**You'll need at least one proxy and two servers in order to use this feature.**
+**You'll need at least one proxy and two backend servers in order to use this feature.**
 
 ## Why such a feature?
 
@@ -22,14 +24,24 @@ This is quite hard to do for plugins outside of the MMO plugin suite. Although w
 
 The following tutorial works on the assumption that you already know about proxies and MySQL databases. If that's not the case, you won't be able to understand it.
 
-1. On every backend server where you'll be using MMOProfiles:
-   - Install the [latest version of ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997/). This is the most important hard dependency for the proxy-based profile selection feature.
-   - Install the latest version of MMOProfiles. If you have other MMO plugins installed (including MythicLib), make sure they're up to date.
-   - Make sure you toggled on MySQL usage in your MMOProfiles config file, otherwise player data will not be synchronized between servers.
-   - If you're running 1.19+ spigot builds, you will also need the [NoEncryption](https://github.com/Doclic/NoEncryption) or [FreedomChat](https://modrinth.com/plugin/freedomchat) plugin which fixes an issue with signed chat packets. Otherwise, they will be instantly kicked when trying to talk through the in-game chat. This plugin unsigns in-game chat, you can learn more about it on their project GitHub if you're still unsure.
-   - Set `enforce-secure-profile` to `false` in server.properties.
-2. Install the same MMOProfiles JAR file on your proxy server. The main JAR file contains the code of both a Spigot plugin and a BungeeCord/Velocity plugin.
-3. If you are using Velocity, make sure the `force-key-authentication` is set to `false`.
+#### On your Velocity proxy server
+
+- Install the latest version of [MMOProfiles](https://www.spigotmc.org/resources/mmoprofiles.109942/). The main JAR file contains both a Spigot plugin and a Velocity plugin.
+- Install the latest version of [PacketEvents](https://modrinth.com/plugin/packetevents). It is a hard dependency for proxy-based profile selection.
+- In your Velocity config, set the `force-key-authentication` option to `false`.
+
+#### On your backend servers
+
+Follow these steps on all of your backend servers where you want to enable proxy-based profile selection.
+
+- Install the latest version of MMOProfiles and [MythicLib](https://www.spigotmc.org/resources/mmolib-mythiclib.90306/). If you have other MMO plugins installed, make sure they're up to date.
+- Make sure SQL data storage is enabled in your MMOProfiles config, and that all of your backend servers point to the same SQL database.
+- On 1.19+, you will also need to install [FreedomChat](https://modrinth.com/plugin/freedomchat). These plugins fix an issue with signed chat, preventing players from being kicked the moment their send a message in the chat.
+- Set `enforce-secure-profile` to `false` in `server.properties`.
+
+::: info
+You do not need MythicLib installed on your proxy server. You do not need PacketEvents installed on any of your backend servers.
+:::
 
 This **currently only works on Velocity** (BungeeCord support is planned) and the only supported backend server version is 1.20.2+ (1.16-1.19 support is also planned but requires adapting the code to older versions of the Minecraft protocol).
 
@@ -40,7 +52,7 @@ MMOProfiles needs to be installed on the following backend servers:
 * lobby servers where players shall be asked to pick a profile
 * "play" servers where players can play with their selected profile
 
-Other servers, like minigame servers, servers implementing a gamemode fully uncorelated to profiles (or even temporary servers used to switch player UUIDs) do not need MMOProfiles installed.
+Other servers, like minigame servers, servers implementing a gamemode fully uncorrelated to profiles (or even temporary servers used to switch player UUIDs) do not need MMOProfiles installed.
 
 ### Play server VS lobby servers
 
@@ -67,11 +79,6 @@ In most proxy configs, you'll have lobby servers, where players connect when joi
 
 The spawn point for new profiles is specified using the `new-profile-spawn-point` option. Notice that while this option is to be specified in the MMOProfiles config file of the lobby server, this location has to have meaning in the play server. It is the location where players with a new profile will be teleported to.
 
-## Known and unfixable issues
-- Due to the PacketEvents API returning a null player object when a player re-joins the same server, you cannot use this plugin on versions `1.20.5–1.21.6`. Using a `1.21.8+` server is recommended. (If you really need versions 1.20.5–1.21.6, you can request the custom PacketEvents build we run for these versions on our Discord server.)
-- Since your UUID has changed, Spectator mode will no longer work even if you are OP. If you really need it, replace the profile UUID in your player data with your real UUID.
-- If you left `default-profile` set to `true` and connect an existing server in proxy mode, the first profiles of players whose data exists in the `world\playerdata` folder will automatically created with their real UUIDs. In proxy mode, if you use the proxy in `offline mode`, once your players select a profile with a real UUID, their UUID will not change even if they choose another profile. Turn off `default-profile` and start from scratch, or use your proxy server in online mode.
-
 ## Supported/Tested Plugins
 
 ### Permissions
@@ -94,7 +101,7 @@ Official UUID group permission always apply to all Profile UUID. All profile per
 
 #### Problematic plugins
 
-- **GroupManager:** If deleted permission exists in another profile, it is added again when the server is restarted. **Not recommended use with MMOProfiles**.
+- **GroupManager:** If deleted permission exists in another profile, it is added again when the server is restarted. **We do not recommend using GroupManager**.
 
 ### Money (Vault)
 
