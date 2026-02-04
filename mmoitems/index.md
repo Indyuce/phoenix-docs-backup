@@ -6,7 +6,7 @@ order: 1
 
 ![](uploads/banner.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+MMOItems is the last RPG item plugin you will ever need. Create custom weapons, items, armors, consumables... with unique stats, display options and abilities. It is fully compatible with the most popupar resource pack management plugins such as ItemsAdder, Nexo or Oraxen. MMOItems can use skills from MythicMobs and features RPG functionalities like item identification, item tiers, item sets, reforging, crafting stations, Soulbound, and many many more.
 
 ::: tip
 Get MMOItems from [Polymart](https://polymart.org/product/3413/mmoitems) or [Spigot](https://www.spigotmc.org/resources/39267/)
