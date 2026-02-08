@@ -47,7 +47,7 @@ Clicking a recipe/item in the crafting queue which is not completed yet will _ca
 ```yaml
 recipes:
     steel-sword:
-        output: 'mmoitems{type=SWORD,id=STEEL_SWORD,amount=1}
+        output: 'mmoitems{type=SWORD,id=STEEL_SWORD,amount=1}'
         crafting-time: 10 # time in seconds
 ```
 
@@ -89,8 +89,8 @@ recipes:
         options:
             output-item: false
             hide-when-locked: false
+            hide-when-no-ingredients: false
             silent-craft: true
-            output-item
 ```
 
 | Option | Config Key | Description |
