@@ -40,7 +40,7 @@ Below is a list of all available commands in MMOCore. You can also explore these
 | `/mmocore admin attribute <give/take>` | Increases a player's attribute |
 | `/mmocore admin force-class` | Sets a player's class by force. This means their level, skills, etc. won't update as well. Make sure your classes have the same skills/skill-trees if you plan on using this command. |
 | `/mmocore admin class-points` | Gives [class points](../features/classes.md#class-points) to a player. |
-| `/mmocore admin exp give <player> <profession/main> <value>` | Gives profession/class experience to a player. |
+| `/mmocore admin exp give <player> <profession/main> <value> <split>` | Gives profession/class experience to a player. |
 | `/mmocore admin exp set <player> <profession/main> <value>` | Sets the profession/class exp of a player. |
 | `/mmocore admin exp take <player> <profession/main> <value>` | Take off class/profesion exp from a player. |
 | `/mmocore admin hideab <player> <ticks>` | Hides the action bar for a player for X ticks. |
