@@ -85,8 +85,8 @@ inventory_button:
     lore:
       - ''
       - '&eClick to open.'
-    # custom-model-data: 1
-    # skull-texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjg5Yjk4ZjA0YzMyMjdkMzdkMzE5YmJjZmZjNTFmNTJlNzhkOTZhMDViMTI4NTJkMWI0NjRiYjc0MDhhNzgxMCJ9fX0=
+    # custom_model_data: 1
+    # skull_texture: eyJ0ZXh0dXJlcyI6e...
 ```
 
 ## Inventory Slots
@@ -180,7 +180,36 @@ The most important slot restriction is `mitype`, as it is the one you should use
 
 ## Inventory Items
 
-This new features allows to add items which call [MythicLib scripts](../mythiclib/scripts/intro.md) when clicked. These items do not correspond to any slot, players can't drag and drop any item onto them.
+This new features allows to add items which execute [MythicLib scripts](../mythiclib/scripts/intro.md) when clicked. These items do not correspond to any slot, players can't drag and drop any item onto them.
+
+```yml
+items:
+
+  INFO:
+    material: SPRUCE_HANGING_SIGN
+    name: "&6Information"
+    slot: 5
+    lore:
+      - ''
+      - '&f ⌛ &7Level &f%mmocore_level%'
+      - '&f %mythiclib_space_1%❣%mythiclib_space_1% &7Class: &f%mmocore_class%'
+      - '&f ☄ &7Gold: &f%vault_eco_balance%'
+      - ''
+      - '&7Health: &f%mythiclib_stat_max_health%'
+      - '&7Defense: &f%mythiclib_stat_defense%'
+      - '&7Attack: &f%mythiclib_stat_attack_damage%'
+    on_click:
+      - 'command{format="p";from_console=false}'
+  
+  CLOSE:
+    item: BARRIER
+    name: "&cClose"
+    slot: 35
+    lore:
+      - "&7Click to close this inventory."
+    on_click:
+      - 'close_inventory{}'
+```
 
 ### Player Info Item
 
