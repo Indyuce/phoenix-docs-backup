@@ -29,15 +29,16 @@ FireBolt-Hit:
 
 ## 2/ Declare it as a MythicLib skill
 
-Go to the `MythicLib/skill` folder and create a YAML configuration file, which name can be whatever you want. Let's say it's `tutorial.yml`. Just like in MythicMobs, you can:
+Go to the `MythicLib/skill` folder and create a YAML configuration file, which name can be whatever you want - let's say you name it `tutorial.yml`. Just like in MythicMobs, you can:
 
 - have multiple skills within the same config file
-- organize your files into folders
-- the file and folder names do not matter
+- organize your files into subfolders
+- file and folder names can be whatever you want
 
 ```yaml
 FIRE_BOLT:
   source: mythicmobs:FireBolt
+  # trigger: RIGHT_CLICK # Not needed here as we are making an active skill
 
   name: Firebolt
   lore:
@@ -115,6 +116,25 @@ FIRE_BOLT:
 The `lore` option lets you customize the skill description that players will see in the MMOCore skill UI. Note the use of placeholders such as `{cooldown}`, `{mana}`, `{mana_name}` that will be dynamically replaced when the skill is displayed.
 
 The `name` option lets you customize the skill name. Note that this is the only field used by MMOItems, as the icon and lore are only being used by MMOCore.
+
+#### Trigger
+
+The `trigger` option defines the default trigger type/casting method for that skill. Unless specified again in a MMOCore skill config, that skill will inherit this trigger. The list of available trigger types is available on [this wiki page](../triggers.md).
+
+::: tip
+Recall that skills that have a trigger are considered "passive skills" as they trigger automatically. Skills with no triggers are considered "active skills" as they need to be manually [cast by players](../../../mmocore/skills/casting.md).
+:::
+
+#### Skill Categories
+
+Each skill can be assigned to a list of categories through the field `categories`. By default, each skill is associated to two categories: its skill ID (`FIREBALL` for instance, not to be mistaken with the skill name), and either `ACTIVE` or `PASSIVE` depending on if it is an active or passive skill. These categories can be used inside [skill slot formulas](binding.md#skill-slots).
+
+The following code snippet sets the categories of the _Firebolt_ skill:
+```yml
+FIREBOLT:
+  # ...
+  categories: [ fire, projectile ]
+```
 
 #### Skill Parameters
 
