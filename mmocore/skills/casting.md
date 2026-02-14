@@ -15,7 +15,7 @@ Make sure you restart your server when editing your skill casting configuration.
 
 ## Key Combos
 
-Key combos like Left-Right-Left can be used to cast skills. Players can start a combo by pressing the first key of any of the configured combos, which will temporarily alter the player's action bar, and display their current key combo there. As soon as MMOCore recognizes a valid key combo that is bound to some skill slot, it will cast the corresponding skill.
+Key combos like _Left-Right-Left_ can be used to cast skills. Players can start a combo by pressing the first key of any of the configured combos, which will temporarily alter the player's action bar, and display their current key combo there. As soon as MMOCore recognizes a valid key combo that is bound to some skill slot, it will cast the corresponding skill.
 
 ![](uploads/combos.gif)
 
@@ -44,7 +44,7 @@ These are the different keybinds that you can use inside of a combo. For instanc
 
 Head to `MMOCore/config.yml` and replace the `skill-casting` config section for the following code snippet:
 
-::: details Place inside `config.yml`
+::: details Copy and paste inside `config.yml`
 
 ```yaml
 skill-casting:
@@ -124,11 +124,10 @@ Similarily, the `quit-key` is optional. This key will cancel the current combo w
 
 ### Class-Specific Key Combos
 
-Every class can have different combo-to-slot mappings. Class mappings take precedence over mappings defined in the plugin main config (see above). In order to setup class-specific combo mappings, paste the following code snippet into your `MMOCore/class/<...>.yml` config file and edit it to your liking.
+Every class can have different combo-to-slot mappings. Class mappings take precedence over mappings defined in the plugin main config (see above). In order to setup class-specific combo mappings, paste the following code snippet into your class config file under the `MMOCore/classes` folder, and edit it to your liking:
 
-```yaml
-# Inside your class config file.
-
+```yml
+# MMOCore/classes/<class_name>.yml
 key-combos:
   '1':
     - RIGHT_CLICK 
@@ -151,6 +150,10 @@ key-combos:
     - RIGHT_CLICK
 ```
 
+### Action Bar
+
+Key combos use the player's action bar to display the current combo. To fully disable the casting action bar, delete or uncomment the `action-bar` section altogether. In this section, you can edit the prefix and suffix of the action bar as well as other formatting options.
+
 ## Skill Bar
 
 This way of casting skills utilizes the action bar. Players must press some key ([F] by default) which will have them enter _casting mode_. While in casting mode, the player's bound skills are displayed onto the action bar, along with their respective cooldown if they happen to be on cooldown. Skills that are castable appear green, skills on cooldown appear red, and skills which you cannot cast due to low mana appear blue.
@@ -165,7 +168,7 @@ Players can leave casting mode by pressing the same key again. They can't enter 
 
 Head to `MMOCore/config.yml` and replace the `skill-casting` config section for the following code snippet:
 
-::: details Place inside `config.yml`
+::: details Copy and paste inside `config.yml`
 
 ```yaml
 skill-casting:
@@ -209,6 +212,10 @@ skill-casting:
 You may notice the keys you need to press on the screenshot are not exactly all the keys from [1] to [6]. Since the player's held item slot is currently the 4th slot of his hotbar, he cannot press [4] (Minecraft does not register useless slot swaps) and therefore he cannot cast the skill he bound to his 4th skill slot. This is why all the skill slots after the 4th slot have been offset by 1.\
 _If the player holds his item in the 7th, 8th or 9th slot of his hotbar, there will be no offset_.
 
+### Action Bar
+
+This casting mode uses the action bar too. To fully disable the casting action bar, delete or uncomment the `action-bar` section altogether. In this section, you can edit formatting options of the player's action bar while in casting mode.
+
 ## Skill Scroller
 
 The player first presses a specific key (set to [F] by default) to enter casting mode. From there, they use the mouse scroller to navigate through their skill list. The skill currently selected appears on the player's action bar. They then press another key (set to [R] by default) to cast the selected skill.
@@ -217,7 +224,7 @@ The player first presses a specific key (set to [F] by default) to enter casting
 
 Head to `MMOCore/config.yml` and replace the `skill-casting` config section for the following code snippet:
 
-::: details Place inside `config.yml`
+::: details Copy and paste inside `config.yml`
 
 ```yaml
 skill-casting:
@@ -268,6 +275,10 @@ skill-casting:
 | `quit-on-cast` | Yes | When enabled, players quit casting mode when casting the selected skill. |
 | `quit-on-switch-empty-hand` | Yes | When enabled, players quit casting mode when scrolling to an empty hotbar slot. |
 | `ignore-sneak` | Yes | When enabled, keys pressed while crouching are ignored. |
+
+### Action Bar
+
+This casting mode uses the action bar too. To fully disable the casting action bar, delete or uncomment the `action-bar` section altogether. In this section, you can edit formatting options of the player's action bar while in casting mode.
 
 ## Using commands
 
