@@ -14,17 +14,17 @@ The full MMO plugin suite ([MMOCore](../../mmocore/), [MMOInventory](../../mmoin
 
 MMOProfiles saves the player's Vault balance. This way, any Vault-based economy plugin is supported by MMOProfiles.
 
-## CoreTools <Badge type="tip" text="new" />
+## CoreTools
 
 CoreTools ([SpigotMC](https://www.spigotmc.org/resources/coretools.125126) - [Wiki](https://gitlab.com/Tanerx/CoreTools/-/wikis/home)) fully supports profile-based data storage. 
 
 ## BeautyQuests <Badge type="tip" text="new" />
 
-[BeautyQuests](https://www.spigotmc.org/resources/beautyquests.39255) is known to support MMOProfiles profiles, enabling for profile-specific quest progression. To enable compatibility with BeautyQuests, download the following plugins.
-- [AccountsHook](https://www.spigotmc.org/resources/accountshook.59491/) which exposes the BeautyQuests profile API to other plugins.
-- [AccountsHook-MMOProfiles](https://github.com/SkytAsul/AccountsHook-MMOProfiles/releases) which implements support for MMOProfiles in AccountsHook.
+[BeautyQuests](https://www.spigotmc.org/resources/beautyquests.39255) supports MMOProfiles, enabling for profile-specific quest progression. To enable compatibility with BeautyQuests, download and install [AccountsHook](https://www.spigotmc.org/resources/accountshook.59491/), which exposes the MMOProfiles profile API to BeautyQuests.
 
-In the future we will shade the AccountsHook-MMOProfiles plugin hook directly into MMOProfiles to make it easier to install and use.
+::: info
+You no longer need to install the addon called _AccountsHook-MMOProfiles_.
+:::
 
 ## BetonQuest
 
