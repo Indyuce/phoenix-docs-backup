@@ -45,30 +45,132 @@ You do not need MythicLib installed on your proxy server. You do not need Packet
 
 This **currently only works on Velocity** (BungeeCord support is planned) and the only supported backend server version is 1.20.2+ (1.16-1.19 support is also planned but requires adapting the code to older versions of the Minecraft protocol).
 
+## Config Files
+
+The MMOProfiles JAR file contains the source codes of two different plugins: one for the Velocity proxy server and one for the Spigot/Paper backend servers. Therefore, there are now two types of config to setup: one for the proxy servers, and one per backend server.
+
+### Proxy Server Config
+
+This config file is located under `<velocity_root>\plugins\mmoprofiles_velocity`.
+
+::: details Full config snippet
+```yml
+# Players will be kicked (from the server, NOT the network) when
+# trying to join these backend servers with no profile selected.
+#
+# If the player is already connected to the proxy, they will not
+# be kicked from the proxy, and will be redirected to another server.
+kick_if_no_profile:
+
+  # Backend servers where this option is active
+  # !! Server names from the Velocity config.toml !!
+  servers:
+    - play
+
+  # Message displayed to players
+  kick_message: 'Please first select a profile.'
+
+# This option is for lobby servers. Players will have their
+# profile unselected when joining these backend servers.
+# !! Server names from the Velocity config.toml !!
+unselect_profile_on_login:
+  - lobby
+```
+:::
+
+`kick_if_no_profile` is useful to prevent players from joining a server without selecting a profile. It is a list of server IDs.
+
+`unselect_profile_on_login` is useful to have players return to their official UUID when joining a lobby server. This way, they are forced to unselect their profile and temporarily not use their inventory, profile-specific progress, etc...
+
+### Backend Server Config
+
+This config file is located under `<spigot_root>\plugins\MMOProfiles`.
+
+::: details Full config snippet
+```yml
+# When enabled, MMOProfiles switches to a proxy-based behaviour, enabling
+# players to switch UUIDs. This tricks other plugins into thinking another
+# player is joining the server, enabling profile-specific progress with
+# literally ANY plugin.
+#
+# !! WARNING risk of data loss !!
+# Please check the documentation before enabling this option to understand
+# exactly what you are doing. If misconfigured, you can damage your player data.
+# !! WARNING !!
+proxy_based_profiles:
+
+  # This option MUST be enabled on every Spigot server.
+  enabled: false
+
+  # Servers to where players will be sent to when choosing their profile.
+  # When using this option, make sure you force profile selection.
+  #
+  # When option 'back_to_initial_server' is toggled on, this becomes
+  # the list for temporary servers where players will be teleported
+  # to have their UUID switched.
+  #
+  # Leave empty to NOT teleport the player automatically on profile selection.
+  # This will leave the player the option to choose the server they would like
+  # to play on. As soon as they switch servers (as long as the connection does
+  # not fail), the selected profile will be applied.
+  target_servers:
+    - 'play'
+
+  # When enabled, on profile selection, the player will be sent to the target
+  # server before being sent back to the server they came from. Use this option
+  # if you want players to BOTH choose their profile AND play in the same server.
+  #
+  # You need at least two backend servers to run MMOProfiles proxy-based profiles.
+  # The player UUID switch can only happen when switching servers, this is why
+  # using such a "temporary" server is necessary.
+  back_to_initial_server:
+    enabled: false
+    delay: 10
+
+  # This ONLY WORKS IF proxy-based profiles are enabled.
+  #
+  # Make sure you toggle on 'synced-data.permissions' otherwise this option is useless.
+  # Make sure you have also installed a permission plugin as well as Vault, and that
+  # your permission plugin supports Vault.
+  #
+  # This option dictates how permissions are shared between profiles.
+  # Usually, you'll want to share at least admin/rank permissions in case
+  # they want to create switch profiles, otherwise these will be lost.
+  shared_permissions:
+
+    # By default, you need to provide a list of all the permissions that should
+    # be shared between all the different profiles (whitelist behaviour).
+    # When toggling on this option, it turns into a blacklist, which means all
+    # permissions are shared by default, EXCEPT for the permissions which are
+    # present in the following list.
+    blacklist_instead: false
+
+    # Whitelist/blacklist of shared permissions.
+    list:
+      - 'mmocore.admin'
+      - 'rank.vip'
+      - 'rank.vip_plus'
+      - 'rank.mvp'
+      - 'rank.mvp_plus'
+      - 'group.test'
+```
+:::
+
+We will go over this config file in the following section.
+
 ## Specifications
-
-MMOProfiles needs to be installed on the following backend servers:
-
-* lobby servers where players shall be asked to pick a profile
-* "play" servers where players can play with their selected profile
-
-Other servers, like minigame servers, servers implementing a gamemode fully uncorrelated to profiles (or even temporary servers used to switch player UUIDs) do not need MMOProfiles installed.
-
-### Play server VS lobby servers
 
 In most proxy configs, you'll have lobby servers, where players connect when joining your Minecraft proxy, and "play" servers where players will play once they choose their profile.
 
-### Options for play servers
+### For play servers
 
-* Toggle on the `kick_if_no_profile` option to prevent players from joining a server if they haven't chosen a profile.
-  * This should be used on full RPG servers where players are required to select a profile before playing.
-  * This option should be disabled on lobby servers and enabled on all of your play servers (it's up to you).
+- Make sure to include the ID of the server in the `kick_if_no_profile` list. This way, if a player tries to join this server without selecting a profile, they will be kicked from the server and redirected to the lobby.
+  - This should be used on full RPG servers where players are required to select a profile before playing.
+  - This option should be disabled on lobby servers and enabled on all of your play servers (it's up to you).
 
-### Options for lobby servers
+### For lobby servers
 
-* Toggle on the `unselect_profile_on_login` option to have players automatically unselect their profile when joining the server.
-  * This is great for lobby servers which players should join with no profile selected.
-  * This means that players connecting to this server will be switched back to their official UUID.
+* Include the ID of the server in the `unselect_profile_on_login` list. This way, players will return to their official UUID every time they enter this server. This is great for lobby servers which players should join with no profile selected.
 * You may specify your play servers using the config option `target_servers`. These are the servers the players will be teleported to, from the lobby server, right after profile selection.
   * This is also the option you need to use if you want to toggle on `back_to_initial_server` (see below), in which case it will be the list of the temporary servers MMOProfiles will be using to perform that in-and-out UUID switch.
 * By switching on `back_to_initial_server`, players will stay on the profile selection server.
@@ -164,7 +266,7 @@ Make sure that all servers are connected to the same MySQL server.
 
 ## Recommendations
 
-* Always enable `unselect_profile_on_login` on your lobby server. In this way, players return to the official UUID every time they enter this server. The permissions or money you add while the player is not online will be updated when the player is online.
+* Make sure your lobby server is in `unselect_profile_on_login`. In this way, players return to the official UUID every time they enter this server. The permissions or money you add while the player is not online will be updated when the player is online.
   * If you want players to select profiles on the lobby server but turn off teleporting automatically, simply set `target_servers: []`
   * If you want to not show the character selection in your lobby server, you can activate `no-gui-on-login`
   * Since the player official UUID has returned, sharing the money and permissions you sell in in-game stores with other profiles will be seamless.
@@ -178,12 +280,12 @@ Make sure that all servers are connected to the same MySQL server.
 **Lobby:**
 
 * Set target servers to `target_servers: []` (Cancels the player from auto-teleporting after profile select)
-* Set true `unselect_profile_on_login` (It forces the player to use real UUID every time they enter this server.)
+* Include lobby server ID in `unselect_profile_on_login` (It forces the player to use real UUID every time they enter this server.)
 
 **All other servers:**
 
-* Set true `kick_if_no_profile` (If the player is teleported to this server without selecting a profile due to an error, it will not allow entry.)
-* Set false `unselect_profile_on_login` (It should remain false to not change the player's UUID to the official UUID.)
+* Include this server ID in `kick_if_no_profile` (If the player is teleported to this server without selecting a profile due to an error, it will not allow entry.)
+* Do not include server ID in `unselect_profile_on_login`.
 * Set target servers to your lobby in all other servers. ![mmoprofile_proxy_setup-04](uploads/proxy_setup_a1.png)
 
 **B)** Force profile all or selected servers. `back_to_initial_server` set to `true` for every profile except lobby.
@@ -203,7 +305,7 @@ Make sure that all servers are connected to the same MySQL server.
 
 **D)** Forcing a profile on the whole network when player enter the server.
 
-* `kick_if_no_profile` set to `true` make sure player have profile all the time.
+* Include server ID in `kick_if_no_profile` to make sure players always have a profile.
 * It is mandatory to install MMOProfiles on all servers.
 
 ![mmoprofile_proxy_setup-03](uploads/proxy_setup_d1.png)
