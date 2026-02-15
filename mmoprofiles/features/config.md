@@ -112,7 +112,7 @@ permanent-worlds:
 
 ## Blacklist for inventory slot
 
-This option can be used to prevent MMOProfiles to interact with specific slots used as buttons for other plugins like MMOInventory or ItemJoin. Leave to [] to disable. Example: [ 9, 10, 11, 12 ]
+This option can be used to prevent MMOProfiles to interact with specific slots used as buttons for other plugins like MMOInventory or ItemJoin. Leave to [] to disable. Example: `[ 9, 10, 11, 12 ]`
 ```yml
 inventory-slot-blacklist: [ ]
 ```
@@ -123,19 +123,13 @@ Amount of ticks MMOProfiles will wait before opening the profile selection GUI a
 ```yml
 gui-close-timeout: 40
 ```
-## Force stats
+## Force gamemode
 
 When enabled, sets the player's game mode on profile selection.
 ```yml
 force-game-mode:
   enabled: false
   game-mode: SURVIVAL
-```
-When enabled, sets the player's invulnerability state on profile selection.
-```yml
-force-invulnerability:
-  enabled: true
-  state: false
 ```
 
 ## Unique Profile
