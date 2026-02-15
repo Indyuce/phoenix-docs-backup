@@ -16,7 +16,7 @@ MMOProfiles saves the player's Vault balance. This way, any Vault-based economy 
 
 ## CoreTools
 
-CoreTools ([SpigotMC](https://www.spigotmc.org/resources/coretools.125126) - [Wiki](https://gitlab.com/Tanerx/CoreTools/-/wikis/home)) fully supports profile-based data storage. 
+CoreTools ([SpigotMC](https://www.spigotmc.org/resources/coretools.125126) - [Polymart](https://polymart.org/product/7372/coretools) - [Wiki](https://gitlab.com/ranetdev/CoreTools/-/wikis/home)) fully supports profile-based data storage. 
 
 ## BeautyQuests <Badge type="tip" text="new" />
 

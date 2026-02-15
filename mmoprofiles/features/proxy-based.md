@@ -187,7 +187,7 @@ The spawn point for new profiles is specified using the `new-profile-spawn-point
 
 We tested LuckPerms, GroupManager, CorePerms.
 
-#### [CorePerms](https://gitlab.com/Tanerx/CoreTools/-/wikis/features/coreperms) <Badge type="tip" text="recommended" />
+#### [CorePerms](https://gitlab.com/ranetdev/CoreTools/-/wikis/features/coreperms) <Badge type="tip" text="recommended" />
 
 CorePerms natively supports MMOProfiles and is the recommended plugin.** Without any additional setup, you can add permissions and groups that will be active both on the selected profile or across all of the player's profiles.
 
@@ -213,7 +213,7 @@ Vault has to be installed in order to support most economy plugins. We tested Co
 `synced-data.balance` must be set to `false` if you want all profiles to have only one shared balance, leaving it to `true` will make each profile have its own balance.
 :::
 
-#### [CoreTools](https://gitlab.com/Tanerx/CoreTools/-/wikis/features/economy) <Badge type="tip" text="recommended" />
+#### [CoreTools](https://gitlab.com/ranetdev/CoreTools/-/wikis/features/economy) <Badge type="tip" text="recommended" />
 
 CoreTools does not require any special configuration and **supports MMOProfiles natively**.
 
@@ -248,7 +248,7 @@ Below you can see the list of quest plugins that we have tested and confirmed to
 Make sure that all servers are connected to the same MySQL server.
 
 - [MMOInventory](https://www.spigotmc.org/resources/99445/) <Badge type="tip" text="recommended" />
-- [CoreTools PlayerVaults](https://gitlab.com/Tanerx/CoreTools/-/wikis/features/playervaults) <Badge type="tip" text="recommended" /> CoreTools does not require any special configuration and supports **MMOProfiles natively**.
+- [CoreTools PlayerVaults](https://gitlab.com/ranetdev/CoreTools/-/wikis/features/playervaults) <Badge type="tip" text="recommended" /> CoreTools does not require any special configuration and supports **MMOProfiles natively**.
 - [Minepacks](https://www.spigotmc.org/resources/minepacks-backpack-plugin-mc-1-7-1-20.19286/)
 - [EPIC BackPacks](https://www.spigotmc.org/resources/%E2%9C%85-epic-backpacks.28981/)
 - [Bank](https://www.spigotmc.org/resources/bank-1-20-sale-20-off.3556/)
