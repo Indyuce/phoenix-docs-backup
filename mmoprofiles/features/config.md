@@ -231,4 +231,4 @@ script:
 
 ## Proxy-Based Profiles
 
-When enabled, MMOProfiles switches to a proxy-based behaviour, enabling players to switch/spoof UUIDs. This tricks other plugins into thinking another player is joining the server, enabling profile-specific progress with literally ANY plugin. Prox-basedy profiles have their own dedicated [wiki page](proxy-based).
+When enabled, MMOProfiles switches to a proxy-based behaviour, enabling players to switch/spoof UUIDs. This tricks other plugins into thinking another player is joining the server, enabling profile-specific progress with literally ANY plugin. Prox-based profiles have their own dedicated [wiki page](proxy-based).
