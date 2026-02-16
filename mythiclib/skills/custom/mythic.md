@@ -127,7 +127,7 @@ Recall that skills that have a trigger are considered "passive skills" as they t
 
 #### Skill Categories
 
-Each skill can be assigned to a list of categories through the field `categories`. By default, each skill is associated to two categories: its skill ID (`FIREBALL` for instance, not to be mistaken with the skill name), and either `ACTIVE` or `PASSIVE` depending on if it is an active or passive skill. These categories can be used inside [skill slot formulas](binding.md#skill-slots).
+Each skill can be assigned to a list of categories through the field `categories`. By default, each skill is associated to two categories: its skill ID (`FIREBALL` for instance, not to be mistaken with the skill name), and either `ACTIVE` or `PASSIVE` depending on if it is an active or passive skill. These categories can be used inside [skill slot formulas](../../../mmocore/skills/binding.md#skill-slots).
 
 The following code snippet sets the categories of the _Firebolt_ skill:
 ```yml
