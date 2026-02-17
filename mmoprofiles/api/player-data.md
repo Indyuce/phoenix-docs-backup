@@ -45,6 +45,3 @@ server-identifier: 'default'
 
 Two servers with the same identifier are in the same group.
 
-::: warning
-
-:::

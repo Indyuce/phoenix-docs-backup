@@ -24,3 +24,9 @@ Add ProfileAPI as a dependency:
     <optional>true</optional>
 </dependency>
 ```
+
+Access the main API class using Bukkit's service manager:
+
+```java
+ProfileProvider provider = Bukkit.getServicesManager().getRegistration(ProfileProvider.class).getProvider();
+```

@@ -15,7 +15,7 @@ The `PlaceholderProcessor` interface has two methods:
 - `#getDataModule()` which should return your profile data module.
 - `#processPlaceholderRequest(PlaceholderRequest)` which is the most important method of the interface. This should asynchronously fetch profile data, extract information from it and register its placeholders, and eventually call the `#validate()` method on the `PlaceholderRequest` instance.
 
-For information purposes, here is the MMOCore implementation of the `processPlaceholderRequest(PlaceholderRequest)` interface method.
+For example, here is the MMOCore implementation of the `#processPlaceholderRequest` method.
 
 ```java
 void processPlaceholderRequest(PlaceholderRequest placeholderRequest) {
@@ -32,7 +32,7 @@ void processPlaceholderRequest(PlaceholderRequest placeholderRequest) {
 }
 ```
 
-Here is how your `#processPlaceholderRequest(PlaceholderRequest)` should look like:
+Here is how your `#processPlaceholderRequest` should look like:
 
 - Use `phRequest.getProfile().getUniqueId()` to access the UUID of the profile,
 - Load your profile data asynchronously (using async Bukkit tasks!),
@@ -44,7 +44,7 @@ Here is how your `#processPlaceholderRequest(PlaceholderRequest)` should look li
 Use the following code snippet to register your placeholder processor, this must be done when registering your profile data module.
 
 ```java
-ProfileProvider provider = /* TODO */;
+ProfileProvider provider = Bukkit.getServicesManager().getRegistration(ProfileProvider.class).getProvider();
 PlaceholderProcessor yourPlaceholderProcessor = /* TODO */;
 provider.registerPlaceholders(yourPlaceholderProcessor);
 ```
