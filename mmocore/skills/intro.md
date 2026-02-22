@@ -84,142 +84,22 @@ triggers:
 
 The skill GUI can be edited by modifying the `gui/skill-view.yml` config file.
 
-```yml
-# GUI display name
-name: 'Selected Skill: &6{skill}'
+::: tip
+We recommend opening this file with a text editor on the side while reading the rest of this section.
+:::
 
-# Number of slots in your inventory. Must be
-# between 9 and 54 and must be a multiple of 9.
-slots: 54
-
-items:
-  skill:
-    slots: [ 10,11,12,19,20,21,28,29,30,37,38,39]
-
-    function: skill
-    name: '&a{skill} &6[{level}]'
-    lore:
-      - ''
-      - '{unlocked}&a✔ Requires Level {unlock}'
-      - '{locked}&c✖ Requires Level {unlock}'
-      - '{max_level}&e✔ Maximum Level Hit!'
-      - ''
-      - '{lore}'
-  next:
-    slots: [ 47 ]
-    function: next
-    item: PLAYER_HEAD
-    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19
-    name: '&aNext'
-    lore: { }
-  previous:
-    slots: [ 2 ]
-    function: previous
-    item: PLAYER_HEAD
-    texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ==
-    name: '&aPrevious'
-    lore: { }
-
-  reallocate:
-    slots: [45]
-    function: reallocation
-    item: CAULDRON
-    name: '&aReallocate Skill Points'
-    lore:
-      - ''
-      - 'You have spent a total of &6{total}&7 skill points.'
-      - '&7Right click to reallocate them.'
-      - ''
-      - '&eCosts 1 skill reallocation point.'
-      - '&e◆ Skill Reallocation Points: &6{points}'
-
-  slot:
-    slots: [ 8,17,26,35,44,53 ]
-    function: slot
-    item: GRAY_DYE
-
-    name: '&aSkill Slot {slot}'
-    no-skill: '&cNone'
-    lore:
-      - '&7Current Skill: &6{skill}'
-      - ''
-      - '{slot-lore}'
-      - ''
-      - '&7&oCast this spell by pressing [F] followed'
-      - '&7&oby the keybind displayed on the action bar.'
-      - ''
-      - '&e► Left click to bind {selected}.'
-      - '&e► Right click to unbind.'
-      - '&e► Shift left click to select.'
-  skill-level:
-    slots: [ 6,15,24,33,42,51 ]
-    function: level
-
-    # Skill level offset, should be changed
-    # according to the amount of inventory
-    # slots the skill-level item occupies.
-    offset: 2
-
-    # Item displayed if the skill level is
-    # too low to display a level item in the GUI
-    too-low:
-      item: AIR
-
-    item: LIME_DYE
-    name: '&a{skill} Level {roman}'
-    lore:
-      - ''
-      - '{lore}'
-  upgrade:
-    slots: [ 15 ]
-    function: upgrade
-    item: GREEN_STAINED_GLASS_PANE
-    name: '&a&lUPGRADE {skill_caps}'
-    lore:
-      - '&7Costs 1 skill point.'
-      - ''
-      - '&eCurrent Skill Points: {skill_points}'
-```
-
-First of all you can edit the general GUI settings like its name and slots.
-
-```yml
-name: Your Skills
-slots: 45
-```
-
-Notice how the config sections that fall under the `items` section share very similar properties: `name` (the item display name), `lore` (the item description/lore), `item` (the item material), `slots` (where the item is placed in the inventory, it can be a list) and `function` (what the item does). These can (and should) all be edited to your needs.
-
-### Editing Item Slots
-
-If you want to have your item displayed on multiple slots, use something like
-
-```yml
-slots: [1, 2, 3, 4]
-```
-
-The following syntaxes do NOT work
-
-```yml
-slots: 1
-```
-
-```yml
-slot: 1
-```
+First, please refer to [this wiki page](../../mythiclib/misc/ui-syntax.md) to learn about the general MMOCore UI syntax.
 
 ### Item Functions
 
-`function` is the most confusing option when editing MMOCore custom GUIs. This option dictates how the item behaves when clicked, and what placeholders to parse in the item lore. Let's go over all the items in the GUI specifically.
+The `next` and `previous` functions are used for pagination.
 
-`next` and `previous` are the easiest ones, these are the items used for pagination.
+`skill` is the item displayed for every skill available to the player. Its lore is a bit complicated:
 
-`skill` is the item displayed for every skill available to the player. Its lore is a bit complicated
-
-- The line starting with {unlocked} only displays if the player has unlocked the skill
-- The line starting with {locked} only displays if the player has NOT unlocked the skill yet
-- The line starting with {max_level} displays when the player has reached the max skill level
-- `{lore}` pastes the entire skill description
+- The line starting with `{unlocked}` only displays if the player has unlocked the skill
+- The line starting with `{locked}` only displays if the player has NOT unlocked the skill yet
+- The line starting with `{max_level}` displays when the player has reached the max skill level
+- `{lore}` just copies and pastes the entire skill description
 
 ![image](uploads/ui/item_skill.png)
 

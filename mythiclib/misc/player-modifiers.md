@@ -5,7 +5,7 @@ order: 7
 # 📌 Player Modifiers
 
 ::: warning
-This feature is not available yet.
+This feature is not available yet. It will be used in the future for MMOCore/profession exp tables, MMOItems set bonuses, MMOCore skill trees, etc.
 :::
 
 ## Overview

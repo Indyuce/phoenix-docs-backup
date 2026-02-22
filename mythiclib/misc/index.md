@@ -1,5 +1,5 @@
 ---
-order: 70
+order: 25
 ---
 
-# Miscellaneous
+# Other

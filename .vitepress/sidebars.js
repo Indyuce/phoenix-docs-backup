@@ -67,6 +67,23 @@ export const generatedSidebars = {
       ]
     },
     {
+      "text": "Other",
+      "items": [
+        {
+          "text": "🎨 GUI Syntax",
+          "link": "/mythiclib/misc/ui-syntax"
+        },
+        {
+          "text": "📌 Player Modifiers",
+          "link": "/mythiclib/misc/player-modifiers"
+        },
+        {
+          "text": "💬 Player Messages",
+          "link": "/mythiclib/misc/player-messages"
+        }
+      ]
+    },
+    {
       "text": "Skills",
       "items": [
         {
@@ -234,19 +251,6 @@ export const generatedSidebars = {
             }
           ],
           "collapsed": true
-        }
-      ]
-    },
-    {
-      "text": "Miscellaneous",
-      "items": [
-        {
-          "text": "📌 Player Modifiers",
-          "link": "/mythiclib/misc/player-modifiers"
-        },
-        {
-          "text": "💬 Player Messages",
-          "link": "/mythiclib/misc/player-messages"
         }
       ]
     },

@@ -21,33 +21,33 @@ These buffs are configurable in the main MMOCore ``config.yml`` config file.
 ```yml
 party:
 
-    # Edit party buffs here. You may
-    # add as many stats as you want.
-    buff:
-        health-regeneration: 3
-        additional-experience: 5
-    
-    # Prefix you need to put in the chat
-    # to talk in the party chat.
-    chat-prefix: '@'
+  # Edit party buffs here. You may
+  # add as many stats as you want.
+  buff:
+    health-regeneration: 3
+    additional-experience: 5
+  
+  # Prefix you need to put in the chat
+  # to talk in the party chat.
+  chat-prefix: '@'
 ```
 
 These buffs are displayed on a cake icon when opening the player stats menu, that you can configure under the `/gui/player-stats.yml` config file:
 
 ![CX0lIKA](uploads/party_morale.png)
-```
-    party:
-        slots: [16]
-        function: party
-        item: CAKE
-        name: '&aParty Morale'
-        lore:
-        - '&7&oPlaying with your friends'
-        - '&7&ogreatly encourages you!'
-        - ''
-        - '&7Party Bonuses ({count}):'
-        - '&8- +{buff_additional_experience}% Experience Earned!'
-        - '&8- +{buff_health_regeneration}% Health Regeneration'
+```yml
+  party:
+    slots: [16]
+    function: party
+    item: CAKE
+    name: '&aParty Morale'
+    lore:
+      - '&7&oPlaying with your friends'
+      - '&7&ogreatly encourages you!'
+      - ''
+      - '&7Party Bonuses ({count}):'
+      - '&8- +{buff_additional_experience}% Experience Earned!'
+      - '&8- +{buff_health_regeneration}% Health Regeneration'
 ```
 
 ## Exp splitting
@@ -68,7 +68,7 @@ If you'd like to use a more advanced party plugin, you can take advantage of the
 - [OBTeam](https://www.spigotmc.org/resources/obteam.108269/) ([DungeonMMO](https://www.spigotmc.org/resources/%E2%AD%90-dungeonmmo-%E2%AD%90-dungeon-world-generator-%E2%9C%85-create-your-dungeons-%E2%AD%95-endless-possibilities.106150/))
 
 Just go in your main MMOCore config file and change this option to whatever plugin you have installed:
-```
+```yml
 # Edit the plugin handling parties here.
 # Supported values (just copy and paste):
 # - mmocore

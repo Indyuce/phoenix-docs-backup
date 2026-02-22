@@ -46,32 +46,32 @@ The default config file is named `default_attributes.yml` and is located in the 
 # Attribute ID
 strength:
 
-    name: Strength
-    
-    # Maximum amount of points players 
-    # may spend in this attribute.
-    max-points: 40
-    
-    # Buffs given every 1 attribute point spent
-    # in this specific attribute.
-    buff:
-        weapon_damage: 2
-        max_health: 1%
+  name: Strength
+
+  # Maximum amount of points players 
+  # may spend in this attribute.
+  max-points: 40
+
+  # Buffs given every 1 attribute point spent
+  # in this specific attribute.
+  buff:
+    weapon_damage: 2
+    max_health: 1%
 
 dexterity:
-    name: Dexterity
-    max-points: 40
-    buff:
-        physical_damage: 1.5
-        projectile_damage: 1
-        attack_speed: 0.5%
+  name: Dexterity
+  max-points: 40
+  buff:
+    physical_damage: 1.5
+    projectile_damage: 1
+    attack_speed: 0.5%
 
 intelligence:
-    name: Intelligence
-    max-points: 40
-    buff:
-        magical_damage: 2
-        cooldown_reduction: 1
+  name: Intelligence
+  max-points: 40
+  buff:
+    magical_damage: 2
+    cooldown_reduction: 1
 ```
 
 Every config section corresponds to a player attribute. Remember, you can add as many as you want (one config section per attribute), and you may also remove the default ones.
@@ -84,231 +84,131 @@ There is one last use case for attributes. You might want to create attributes t
 
 ```yml
 health:
-    name: Health
-    save-to-player-data: false
-    # (Not needed) max-points: 40
-    buff:
-        max_health: 1%
+  name: Health
+  save-to-player-data: false
+  # (Not needed) max-points: 40
+  buff:
+    max_health: 1%
 ```
 
 ## **Disabling attributes**
 
 If you do not plan on using the MMOCore attribute system, you can disable it, and it's super easy to do so.
 
-* Empty the `MMOCore/attributes` folder (don't delete it, otherwise it will regenerate with default config files)
+* Empty the `MMOCore/attributes` folder (don't delete it, or it will regenerate)
 * Comment out/delete the `/attributes` command inside the `commands.yml` file
 
 ## Editing the Attributes GUI
 
-What you have done so far is registering the player attributes in MMOCore. Yet your players won't be able to interact with them if you don't add them to the attributes menu that players can access using `/attributes` (see above). To do that, you may open the `gui/attribute-view.yml` file.
+The `/attributes` folder is for defining the attributes and their buffs. However, you also need to edit the `/gui/attribute-view.yml` config file to make sure players can see and interact with the attributes you have defined in the previous config file.
 
-```yml
-
-# GUI display name
-name: Player Attributes
-
-# Number of slots in your inventory. Must be
-# between 9 and 54 and must be a multiple of 9.
-slots: 27
-
-items:
-    reallocate:
-        slots: [26]
-        function: reallocation
-        item: CAULDRON
-        name: '&aReallocate Skill Points'
-        lore:
-        - ''
-        - 'You have spent a total of &6{total}&7 skill points.'
-        - '&7Right click to reallocate them.'
-        - ''
-        - '&eCosts 1 attribute reallocation point.'
-        - '&e◆ Attribute Reallocation Points: &6{points}'
-    str:
-        slots: [11]
-        function: attribute_strength
-        name: '&a{name}'
-        item: GOLDEN_APPLE
-        lore: # {buffs} returns amount of buffs
-        - ''
-        - '&7Points Spent: &6{spent}&7/&6{max}'
-        - '&7Current {name}: &6&l{current}'
-        - ''
-        - '&8When Leveled Up:'
-        - '&7  +{buff_weapon_damage}% Weapon Damage (&a+{total_weapon_damage}%&7)'
-        - '&7  +{buff_max_health} Max Health (&a+{total_max_health}&7)'
-        - ''
-        - '&eClick to level up for 1 attribute point.'
-        - '&e◆ Current Attribute Points: {attribute_points}'
-    dex:
-        slots: [13]
-        function: attribute_dexterity
-        name: '&a{name}'
-        item: LEATHER_BOOTS
-        hide-flags: true
-        lore:
-        - ''
-        - '&7Points Spent: &6{spent}&7/&6{max}'
-        - '&7Current {name}: &6&l{current}'
-        - ''
-        - '&8When Leveled Up:'
-        - '&7  +{buff_physical_damage}% Physical Damage (&a+{total_physical_damage}%&7)'
-        - '&7  +{buff_projectile_damage}% Projectile Damage (&a+{total_projectile_damage}%&7)'
-        - '&7  +{buff_attack_speed} Attack Speed (&a+{total_attack_speed}&7)'
-        - ''
-        - '&eClick to level up for 1 attribute point.'
-        - '&e◆ Current Attribute Points: {attribute_points}'
-    int:
-        slots: [15]
-        function: attribute_intelligence
-        name: '&a{name}'
-        item: BOOK
-        lore:
-        - ''
-        - '&7Points Spent: &6{spent}&7/&6{max}'
-        - '&7Current {name}: &6&l{current}'
-        - ''
-        - '&8When Leveled Up:'
-        - '&7  +{buff_magic_damage}% Magic Damage (&a+{total_magic_damage}%&7)'
-        - '&7  +{buff_cooldown_reduction}% Cooldown Reduction (&a+{total_cooldown_reduction}%&7)'
-        - ''
-        - '&eClick to level up for 1 attribute point.'
-        - '&e◆ Current Attribute Points: {attribute_points}'
-```
-
-The first few things to notice are these configuration sections called `dex`, `str` and `int` which all correspond to one specific attribute. These are the items you can click in the GUI as seen in the GIF above. If you modify one attribute in the `MMOCore/attributes.yml` config, you might have to update that config file as well. Let's now go through everything you can modify in this config file.
-
-You can edit the general GUI settings like its name and slots.
-
-```
-name: Player Attributes
-slots: 27
-```
-
-Notice how the config sections that fall under the `items` section share very similar properties: `name` (the item display name), `lore` (the item description/lore), `item` (the item material), `slots` (where the item is placed in the inventory, it can be a list) and `function` (what the item does). These can (and should) all be edited to your needs.
-
-### Editing Item Slots
-
-If you want to have your item displayed on multiple slots, use something like
-
-```
-slots: [1, 2, 3, 4]
-```
-
-The following formats won't work
-
-```
-slots: 1
-```
-
-```
-slot: 1
-```
-
-### Item Functions
-
-`function` might be the most confusing config option. It's used by MMOCore to understand how the item should behave when clicked, and what placeholders to apply in the item lore. A general rule when editing MMOCore GUIs is to **never touch them**. You can add items with no function to change the appearance of your GUI, you may edit already existing items without editing their function, but you can't randomly edit them as this will mess with MMOCore functionalities.
-
-Editing item functions is required tho when adding or changing existing attributes. Notice how the function for the item which corresponds to the Strength attribute is `attribute_strength`. If you are adding an attribute which id is `some_attribute_id`, the corresponding item function is `attribute_some_attribute_id`. Here is an example of a working `attributes.yml` setup + item setup pair.
-
-```
-vigour:
-    name: Vigour
-    max-points: 30
-    buff:
-        max_health: 2
-```
-
-```
-items:
-    vigour_item:
-        slots: [15]
-        function: attribute_vigour
-        name: '&a{name}'
-        item: BOOK
-        lore:
-        ....
-```
-
-### Lore placeholders
-
-Choosing some function for your GUI item unlocks a specific set of placeholders that you can use in the item lore. For instance, using the `attribute_<attribute_name>` function unlocks these placeholders
-
-- `{spent}` - Amount of attr. pts spent by the player in that attribute
-- `{max}` - Maximum amount of attr. pts you may spend in that attribute
-- `{name}` - Attribute name
-- `{current}` - The current attribute of the player. It differs from `{spent}` because it takes into account attribute modifiers which can be granted by items or external plugins
-- `{buff_<stat_name>}` - a specific buff that is granted for each point spent in that attribute
-- `{total_<stat_name>}` - the total buff granted by all the points spent in that attribute
-
-::: warning
-The `{buff_xxx}` and `{total_xxx}` are only defined for the stats that are actually granted by that attribute. For instance, if the Strength attribute only grants `weapon_damage` and `max_health`, the placeholders `{buff_physical_damage}` and `{total_physical_damage}` won't be defined for the Strength attribute item in the GUI.
+::: tip
+We recommend opening this file with a text editor on the side while reading the rest of this section.
 :::
 
-Last thing: adding new buffs to your custom attribute does NOT automatically update the GUI item lore (which is being used to display the attribute buffs). Make sure you update this manually as well. For instance, the following configs match:
+First, please refer to this [wiki page](../../mythiclib/misc/ui-syntax.md) to learn about the general MMOCore UI syntax.
 
-```
+Under the `items` config section, there should be one config section per attribute. By default, their names are `dex`, `str` and `int` for _Dexterity_, _Strength_ and _Intelligence_ respectively. Each correspond to the clickable items inside the GUI, as seen on the GIF above.
+
+### Adding a new attribute
+
+In order to add a new attribute:
+
+1. Add a new config section in of the config files inside the `/attributes` folder as described in the previous sections,
+2. Add a new config section in the `attribute-view.yml` GUI config, and make sure to set the item function to `attribute_<attribute_id>` (for instance, `attribute_vigour` for an attribute with id `vigour`) so that MMOCore can apply the correct placeholders in the item lore and make the item behave correctly when clicked.
+
+::: warning
+If you forget the second step, your attribute will exist but players won't be able to see, or interact with it in the attribute menu.
+:::
+
+### Adding a buff to an attribute
+
+In order to add a buff to an existing attribute:
+
+1. Add the buff to the attribute config section in the `/attributes` folder,
+2. Optionally, update the lore of the item corresponding to that attribute in the `attribute-view.yml` file to display the new buff. If you don't do that, players will get the buff but won't be aware of it. You can somehow display it elsewhere, but most users would want to display it here.
+
+### Common issue with lore placeholders
+
+The lore placeholders `{buff_xxx}` and `{total_xxx}` are only defined for the set of stats provided by the attribute. If these placeholders seem to not be parsing correctly, double check that your attribute does provide a buff for that stat.
+
+For instance, the following configs match:
+
+::: details Example 1
+
+```yml
+# attributes/default_attributes.yml
 intelligence:
-    ...
-    buff:
-        magical_damage: 2
-        cooldown_reduction: 1
+  #...
+  buff:
+    magical_damage: 2
+    cooldown_reduction: 1
 ```
 
-```
+```yml
+# gui/attribute-view.yml
 items:
+  #...
+  int:
+    #...
+    lore:
     ...
-    int:
-        ...
-        lore:
-        ...
-        - '&8When Leveled Up:'
-        - '&7  +{buff_magic_damage}% Magic Damage (&a+{total_magic_damage}%&7)'
-        - '&7  +{buff_cooldown_reduction}% Cooldown Reduction (&a+{total_cooldown_reduction}%&7)'
+    - '&8When Leveled Up:'
+    - '&7  +{buff_magic_damage}% Magic Damage (&a+{total_magic_damage}%&7)'
+    - '&7  +{buff_cooldown_reduction}% Cooldown Reduction (&a+{total_cooldown_reduction}%&7)'
 ```
+:::
 
-But these two don't match, a projectile damage buff was registered in the attributes.yml config, but it was not added to the item lore, so there is no way for the player to know that this attribute grants extra projectile damage.
+But these two don't match, a projectile damage buff was registered in the `attributes.yml` config, but it was not added to the item lore, so there is no way for the player to know that this attribute grants extra projectile damage. The plugin will not fail, but players will be confused.
 
-```
+::: details Example 2
+```yml
+# attributes/default_attributes.yml
 dexterity:
-    ...
-    buff:
-        physical_damage: 1.5
-        projectile_damage: 1
-        attack_speed: 0.5%
+  # [...]
+  buff:
+    physical_damage: 1.5
+    projectile_damage: 1
+    attack_speed: 0.5%
 ```
 
-```
+```yml
+# gui/attribute-view.yml
 items:
+  # [...]
+  int:
+    # [...]
+    lore:
     ...
-    int:
-        ...
-        lore:
-        ...
-        - '&8When Leveled Up:'
-        - '&7  +{buff_physical_damage}% Physical Damage (&a+{total_physical_damage}%&7)'
-        - '&7  +{buff_attack_speed} Attack Speed (&a+{total_attack_speed}&7)'
+    - '&8When Leveled Up:'
+    - '&7  +{buff_physical_damage}% Physical Damage (&a+{total_physical_damage}%&7)'
+    - '&7  +{buff_attack_speed} Attack Speed (&a+{total_attack_speed}&7)'
 ```
+:::
 
-These two don't match either. The `{buff_projectile_damage}` placeholder doesn't exist because projectile damage was not defined as a buff from the dexterity attribute.
+These two don't match either. The `{buff_projectile_damage}` placeholder doesn't exist because projectile damage was not defined as a buff from the _Dexterity_ attribute. The plugin will fail at parsing placeholders.
 
-```
+::: details Example 3
+
+```yml
+# attributes/default_attributes.yml
 dexterity:
-    ...
-    buff:
-        physical_damage: 1.5
-        attack_speed: 0.5%
+  #...
+  buff:
+    physical_damage: 1.5
+    attack_speed: 0.5%
 ```
 
-```
+```yml
+# gui/attribute-view.yml
 items:
-    ...
-    int:
-        ...
-        lore:
-        ...
-        - '&8When Leveled Up:'
-        - '&7  +{buff_physical_damage}% Physical Damage (&a+{total_physical_damage}%&7)'
-        - '&7  +{buff_projectile_damage}% Projectile Damage (&a+{total_projectile_damage}%&7)'
-        - '&7  +{buff_attack_speed} Attack Speed (&a+{total_attack_speed}&7)'
+  #...
+  int:
+    #...
+    lore:
+      #...
+      - '&8When Leveled Up:'
+      - '&7  +{buff_physical_damage}% Physical Damage (&a+{total_physical_damage}%&7)'
+      - '&7  +{buff_projectile_damage}% Projectile Damage (&a+{total_projectile_damage}%&7)'
+      - '&7  +{buff_attack_speed} Attack Speed (&a+{total_attack_speed}&7)'
 ```

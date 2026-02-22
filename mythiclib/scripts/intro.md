@@ -26,7 +26,6 @@ Since scripts are used in MMOCore and MMOItems, they are heavily oriented toward
 
 ```yml
 teststaff: # The name of your script/the skill ID for MMOCore usage, this should be in full caps for MMOCore. (also called up with /ml cast *skill ID*)
-    public: true  # Makes the skill usable by MMOCore and /ml cast *skill ID*.
     mechanics:
         raycast: # This is a mechanic name. (this name can be whatever you want as long as it isn't the same as any other mechanic name in the file.)
             type: raytrace # This tells the script what mechanic to use, a list of mechanics can be found in the mechanics tab.
@@ -93,7 +92,6 @@ The two following formats for a skill are totally equivalent and both will work 
 
 ```yml
 staff_attack:
-    public: true
     mechanics:
         raycast:
             type: raytrace
@@ -106,7 +104,6 @@ staff_attack:
 The second format uses a string list to store the script mechanics and conditions instead of configuration sections. This format is more compact but readability can be a little harder.
 ```yml
 staff_attack:
-    public: true
     mechanics:
     - 'raytrace{type=raytrace;hit_entity=staff_attack_hit_entity;tick=staff_attack_tick;size=1}'
     conditions: []
