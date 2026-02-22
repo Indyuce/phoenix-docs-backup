@@ -6,7 +6,7 @@ order: 90
 
 MythicLib provides unified syntax for messages sent to players by all MMO plugins.
 
-Most MMO plugins have a `messages.yml` config file where you can edit messages sent by the plugin. Below is part of the `MMOCore/messages.yml` config file
+Most MMO plugins have a `messages.yml` config file where you can edit messages sent by the plugin. Below is part of the `MMOCore/messages.yml` config file.
 
 ```yml
 level-up:
@@ -52,27 +52,41 @@ level-up:
     - '&eUse &6/p &eto see your new statistics!'
 ```
 
+## Disable a message
+
+If you want to disable a message, say `level-up`, so that nothing is sent to the player when they level up, use the following syntax:
+
+```yml
+level-up: ''
+#level-up: [] # This works too
+#level-up: {} # This works too
+```
+
 ## Send to action bar
 
 If you want to send the message to the player's action bar instead, set `action-bar` to `true`.
 
 ```yml
 level-up:
-  format:  #........
+  format:
+    - '&eCongratulations, you reached level &6{level}&e!'
+    - '&eUse &6/p &eto see your new statistics!'
   action-bar: true
 ```
 
 ### Extra options
-In MythicLib, the action bar is shared by all MMO plugins. To avoid action bar messages messing with other features from other plugins utilizing the action bar, we implemented a _message priority & timeout_ system. This priority system is not needed for chat messages because messages don't "hide" or collide with one another.
 
-Every message has a priority and a duration, which are both positive integers. One-time messages (such as level-up or waypoint use messages) usually have high priority, and passive messages like MMOCore player info action bars usually have low priorities.
+In MythicLib, the action bar is shared by all MMO plugins. To avoid action bar messages colliding with each other, we implemented a basic _message priority & timeout_ system.
+
+Every message has a priority and a duration, which are both positive integers. One-time messages (such as level-up or waypoint use messages) usually have high priority, and passive messages like MMOCore player info and action bars usually have low priorities.
 
 When multiple messages are sent simultaneously to the same player, only the message with highest priority will show on the player's action bar. The high-priority message will temporarily "hide" the message with low priority, for a set period of time (the message duration).
 
 The message priority and duration can be edited using the following syntax
+
 ```yml
 level-up:
-  format:  #........
+  format: 'My message'
   action-bar: true # Has to be on
   priority: 30     # Message priority
   duration: 50     # In ticks, 2.5 seconds 
@@ -82,7 +96,12 @@ The MMOCore player information action bar runs on priority `LOW`, set to `20`. T
 
 ## Play a sound
 
-Sounds can be played when the message is sent to the player. The basic syntax is `<SOUND_NAME>,<pitch>,<volume>`. `<SOUND_NAME>` can either be a Bukkit sound name, the list of which you can find in the [Spigot javadocs](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html), or the name of a custom sound (provided by a resource pack for instance), like `itemsadder:sound_id`. If you want to use a pitch and volume of 1, `<SOUND_NAME>` works just as well.
+Sounds can be played when the message is sent to the player. The basic syntax is `<sound_name>,<pitch>,<volume>`. The sound name can be one of the following:
+- a [Bukkit sound](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html),
+- a custom sound provided by a resource pack, like `itemsadder:sound_id`,
+- a Minecraft [vanilla sound](https://minecraft.fandom.com/wiki/Sounds.json/Java_Edition_values) like `minecraft:entity.zombie.ambient`.
+
+If you want to set the pitch and volume to 1, you can simply use `<sound_name>`. Pitch ranges from 0.5 (low pitch) to 2 (high pitch) and defaults to 1. Volume defaults to 1.
 
 ```yml
 level-up:
@@ -90,7 +109,7 @@ level-up:
   sound: 'ENTITY_PLAYER_LEVELUP,1,1' # Or simply 'ENTITY_PLAYER_LEVELUP'
 ```
 
-The following syntax does the same thing
+If you prefer YML syntax over comma-separated values, you can also use the following syntax:
 
 ```yml
 level-up:
