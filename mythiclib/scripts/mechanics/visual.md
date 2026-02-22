@@ -22,7 +22,7 @@ example_mechanic:
 
 ## Play a sound at target location
 
-Sound list [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html). Pitch ranges from 0.5 (low) to 2 (high).
+For sound names, you can either use Bukkit/Paper sound names from the [Bukkit javadocs](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html) or use the Minecraft [vanilla sound names](https://minecraft.wiki/w/Sounds.json/Java_Edition_values). Pitch ranges from 0.5 (low) to 2 (high).
 
 ```yml
 example_mechanic:
@@ -68,7 +68,7 @@ example_mechanic:
 
 Particles can be summoned with initial velocity by setting amount to 0. You can also use this to summon colored particles (`REDSTONE` particles notably). Integers provided in the `color` config section are in RGB format, from 0 to 255.
 
-```plaintext
+```yml
 example_mechanic:
     type: particle
     target:
@@ -89,7 +89,7 @@ example_mechanic:
 
 Or particles requiring block data (`BLOCK_CRACK`, `BLOCK_DUST` and `BLOCK_MARKER notably)`. You can find the list of materials that you can use in the `block` option [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html).
 
-```plaintext
+```yml
 example_mechanic:
     type: particle
     target:
@@ -107,7 +107,7 @@ example_mechanic:
 
 ## Send an action bar message
 
-This supports PAPI placeholders and color codes. For message priority and duration, please refer to the [Messages](../../features/player-messages.md#send-to-action-bar) wiki page.
+This supports PAPI placeholders and color codes. For message priority and duration, please refer to the [Messages](../../misc/player-messages.md#send-to-action-bar) wiki page.
 
 ```yml
 example_script:
