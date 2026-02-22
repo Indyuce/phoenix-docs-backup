@@ -22,10 +22,10 @@ A player modifier can be any type of passive behaviour that modifies your player
 When configurating MMOItems or MMOCore you will sometimes be asked to define player modifiers in specific scenarii, like when creating item sets in MMOItems and defining what modifiers to give the player when wearing 3 items from the same set.
 
 ## Stat Modifiers
+
 When applied onto a player, a stat modifier increases the value of a player stat by a certain amount. It can be either a flat stat modifier (+10 Atk Dmg) or a multiplicative modifier (+10% Atk Dmg) which scales on the initial player's stat value.
 
-### Example
-```
+```yml
 modifierId:
     type: stat # This indicates the modifier is a stat modifier
     stat: ATTACK_DAMAGE
@@ -35,10 +35,10 @@ modifierId:
 ```
 
 ## Skills
+
 Skills are a special type of player modifiers. Check [this page](Custom Skills) out for more info about MythicLib skills.
 
-### Example
-```
+```yml
 modifierId:
     type: item_skill # This indicates the modifier is an item skill
     skill: FIREBOLT

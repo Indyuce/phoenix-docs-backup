@@ -57,16 +57,8 @@ export const generatedSidebars = {
           "link": "/mythiclib/features/stats"
         },
         {
-          "text": "📌 Player Modifiers",
-          "link": "/mythiclib/features/player-modifiers"
-        },
-        {
           "text": "🦾 Plugin Compatibility",
           "link": "/mythiclib/features/compatibility"
-        },
-        {
-          "text": "💬 Player Messages",
-          "link": "/mythiclib/features/player-messages"
         },
         {
           "text": "🌱 Elements",
@@ -242,6 +234,19 @@ export const generatedSidebars = {
             }
           ],
           "collapsed": true
+        }
+      ]
+    },
+    {
+      "text": "Miscellaneous",
+      "items": [
+        {
+          "text": "📌 Player Modifiers",
+          "link": "/mythiclib/misc/player-modifiers"
+        },
+        {
+          "text": "💬 Player Messages",
+          "link": "/mythiclib/misc/player-messages"
         }
       ]
     },
