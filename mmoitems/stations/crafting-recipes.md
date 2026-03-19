@@ -22,10 +22,10 @@ This is where you define what item the player will be given when using the recip
 
 recipes:
     steel-sword:
-        output: 'mmoitems{type=SWORD,id=STEEL_SWORD,amount=1} # Recipe output
+        output: 'mmoitems{type=SWORD,id=STEEL_SWORD,amount=1;display="Very Long Steel Sword!!"} # Recipe output
 ```
 
-The `amount` field is optional, MMOItems will use 1 if you do not provide any.
+The `amount` field is optional, MMOItems will use 1 if you do not provide any. `display` is optional as well - if provided, it replaces the item display name.
 
 Here is a table indicating all the possible recipe outputs that you can use.
 
