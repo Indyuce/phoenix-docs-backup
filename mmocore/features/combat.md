@@ -1,44 +1,42 @@
 # ⚔️ Combat
 
 ## Combat Logging
-Combat logging is a useful feature which lets players know when they enter or quit combat. Combat log is handled via chat messages. It is a very bare-bones feature in itself, but **it ties in so nicely with other mechanics like skills**: for instance there is a skill that makes players deal significantly increased damage when performing a melee attack that gets him into combat. You may also imagine a skill where the player gets increased damage for each second they spend in combat.
+
+Combat logging is a useful feature that lets players know when they enter or quit combat. Combat log is handled via chat messages. It is a very simple feature in itself, but **it ties in so nicely with other mechanics like skills**.
 
 ![image](uploads/combat_enter.png)
 
+For instance, there is a built-in MMOCore skill that makes players deal increased melee damage when entering combat. Using the `%mmocore_since_enter_combat%` placeholder, you could also imagine a skill that increases damage dealt based on how long the player has been in combat.
+
 ## Resource Regeneration
-Combat log also dictates when the player should be able to regen their resources i.e health, mana and stamina. For instance, you can setup a Warrior class which has a base flat health regeneration rate, and which additionally regens 10% of his missing health every second **when out of combat**. This can be applied to any class, any resource, the off combat option can be disabled, the % can scale on the player's level, and you can make it so the regenerated amount also scales on the player's **missing** health instead. More information [over this page](Player Resources).
 
-## PvP/PvE Interaction Rules
-These rules basically determine in which contexts any given player can "interact" with another player. An "interaction" may refer to a skill or an attack. This obviously depends on the location of the two players (is the PvP flag on?), the relationship between the players (are they in the same party/guild?) as well as the interaction type (is it a damaging skill, or a buff?).
+Combat log also dictates when the player should be able to regen their [resources](../misc/resources.md) (health, mana and stamina).
 
-Player interactions include anything from healing/buff skills, to MMOItems staff/whip/musket attacks or even simple melee or projectile vanilla attacks. There are some interactions that we want to disable>: for instance, being able to damage or cast damaging skills onto party/guild members. Interaction rules are mainly designed to disable friendly fire.
+For instance, you can set up a _Warrior_ class with a base flat health regeneration rate, and with an additional 10% missing health regeneration per second **when out of combat**. This can be applied to any class, any resource, the off combat option can be disabled, the % can scale on the player's level, and you can make it so the regenerated amount also scales on the player's **missing** health instead.
 
-Two players can have two different _relationships_ (as defined above) at the same time. They can be in the same party while being in different guilds (although it is quite rare) - in that case, PvP is disabled as long as one of the two relationships prevent PvP.
+## Placeholders
 
-### Supported Group plugins
-_By groups we are refering to factions, guilds, clans, kindgoms, etc. MMOCore handles these groups in the same way._
-- [UltimateClans V6](https://polymart.org/resource/ultimate-clans-v6.1162)
-- [Guilds](https://www.spigotmc.org/resources/guilds-30-sale.66176/)
-- [KingdomsX](https://www.spigotmc.org/resources/kingdomsx.77670/)
-- **MMOCore (not recommended)**
-- Any Factions plugin (make sure you install [FactionsBridge](https://www.spigotmc.org/resources/factionsbridge.89716/)!)
+MMOCore features multiple [PlaceholderAPI placeholders](../general/placeholders.md#combat) that you can use to check if a player is in combat, in PvP Mode (see below), the time since the last hit...
 
-### Supported Party plugins
-- MMOCore
-- [DungeonsXL](https://www.spigotmc.org/resources/dungeonsxl.9488/)
-- [mcMMO](https://www.spigotmc.org/resources/official-mcmmo-original-author-returns.64348/)
-- PartyAndFriends ([Spigot](https://www.spigotmc.org/resources/party-and-friends-extended-for-spigot-supports-1-7-1-19.11633/) & [Proxy](https://www.spigotmc.org/resources/party-and-friends-for-bungeecord-supports-1-7-x-to-1-19-x.9531/))
-- [Parties](https://www.spigotmc.org/resources/parties-an-advanced-parties-manager.3709/)
-- [Mythic Dungeons](https://mythiccraft.io/index.php?resources/mythic-dungeons.869/) ([DungeonParties](https://www.spigotmc.org/resources/mythicdungeons.102699/))
-- [OBTeam](https://www.spigotmc.org/resources/obteam.108269/) ([DungeonMMO](https://www.spigotmc.org/resources/%E2%AD%90-dungeonmmo-%E2%AD%90-dungeon-world-generator-%E2%9C%85-create-your-dungeons-%E2%AD%95-endless-possibilities.106150/))
+## Friendly Fire
 
-### What you can configure
-MythicLib lets you configure a sort of three-dimensional array where you can choose to enable OR disable any combination of these three parameters:
+Everyone knows the concept of friendly fire: the ability to accidentally or intentionally harm allies with attacks. In MMOCore, this concept is extended to all player interactions, not just offensive skills.
+
+These rules are referred to as "interaction rules". They define when and how a player can "interact" with another player, whether through a skill or a weapon attack. For example, you might want to prevent players from using offensive skills on members of the same guild, faction, or party, while still allowing them to cast healing or buffing skills on each other. Simply disabling all skills would not work, since support interactions are also essential.
+
+::: tip
+In short, interaction rules in MMOCore define _Friendly Fire_ for any skill or attack, offensive or supportive.
+:::
+
+### Configuration
+
+MythicLib lets you configure a three-dimensional array where you can choose to enable OR disable interactions for any combination of these three parameters:
 - if PvP is enabled (`on` or `off`)
-- the type of interaction (`support` or `offense`)
-- the players relationship (`party_member`, `guild_enemy` etc.)
+- the interaction type (`support` or `offense`)
+- the players' relationship (`party_member`, `guild_enemy` etc.)
 
-**This is located in the main MythicLib config file!**
+This code snippet is located in the MythicLib `config.yml`.
+
 ```yaml
 interaction_rules:
 
@@ -79,30 +77,56 @@ interaction_rules:
       guild_neutral: true
 ```
 
-The `support_skills_on_mobs` determines if you can cast support skills/heals/buffs onto monsters. Only for default skills.
+The `support_skills_on_mobs` determines if you can cast support skills/heals/buffs onto monsters. This applies to all built-in MythicLib skills. To have this option apply to custom skills as well, you need to use the `mmoCanTarget` MythicMob custom condition (see [below](#using-mythicmobs-skills)).
 
-## Custom skills from MythicMobs
-Interaction rules can be used in custom skills added from MythicMobs. The user manual is available [here](../../mythiclib/skills/custom/mythic.md#checking-if-the-skill-caster-can-target-another-entity).
+### Supported Plugins
+
+Please refer to [this wiki page](parties.md) to see the list of party plugins supported by MMOCore. MMOCore will take into account party members during friendly fire checks.
+
+Please refer to [this wiki page](guilds.md) to see the list of group plugins supported by MMOCore (_by "groups", we mean factions, guilds, clans, kingdoms, etc_). MMOCore will take into account group members during friendly fire checks.
+
+### Where do these rules apply?
+
+These rules apply to:
+
+- all PvP/PvE melee attacks,
+- damage dealt by vanilla projectiles,
+- all skill damage dealt by MythicMobs custom skills,
+- damage or buffs inflicted by [built-in MythicLib skills](../../mythiclib/skills/builtin.md)...
+
+### Inside MythicMobs Skills
+
+You can check if a player can interact with a given entity, from inside a MythicMob custom skill, using the `mmoCanTarget` condition. Please refer to [this wiki page](../../mythiclib/skills/custom/mythic.md#checking-if-the-skill-caster-can-target-another-entity) for more information.
+
+This condition has a very interesting side effect. Without this condition, offensive projectiles stop on the target entity, even if this entity cannot be damaged. The `damage` mechanic calls a Bukkit damage event, which MMOCore then cancels as it notices that the two players are in the same party/guild...
+
+Then, no damage is dealt, but MythicMobs still kills the projectile. Had the `mmoCanTarget` condition been used, the skill would have checked ahead of time that the entity was damageable, and the entity would have been ignored by the projectile.
 
 ## PvP Mode
-This feature is specially designed for PvE servers which still want to leave some options for players to fight. In specific WorldGuard regions where PvP is disabled by default, players can use `/pvpmode` to toggle on PvP back and fight other players! **Only players with PvP enabled can fight and attack each other.** Furthermore, this feature is fully compatible with the PvP interaction rules defined above.
 
-This suits well RPG or even profession/job-oriented survival servers and is a quite unique RPG feature!
+This feature is specially designed for PvE-focused servers which still want to leave some options for players to fight. In specific WorldGuard regions where PvP is disabled by default, players can use `/pvpmode` to toggle on PvP back and fight other players! **Only players with PvP enabled can fight and attack each other.** Furthermore, this feature is fully compatible with the PvP interaction rules defined above.
 
-_PvP Mode only works with WorldGuard! It won't work with other flag plugins like Residence._
+This works well for RPG or even profession/job-oriented survival servers.
 
-How to setup PvP Mode:
-- first setup PvP interaction rules as explained above.
+::: warning
+PvP Mode only works with WorldGuard! It won't work with other flag plugins like Residence.
+:::
+
+### How to setup PvP Mode
+
+- first setup PvP interaction rules as explained above
 - select an existing/create a new WorldGuard region
 - toggle **ON** server PvP, world PvP as well as the PvP flag
-- toggle on the `pvp-mode` flag (toggled off by default)
+- toggle on the `pvp-mode` WorldGuard flag. It is toggled off by default
 
 You are now good to go! When the `pvp-mode` flag is on, players have access to the `/pvpmode` command and MMOCore will take care of the rest.
 
 ### Configuration
-In order to prevent abuse, you can configure Pvp Mode so that players can't exit it while they are still in combat. Moreover, you can setup cooldowns for that command.
 
-**This is located in the main MMOCore config file.**
+In order to prevent abuse, you can configure PvP Mode so that players can't exit it while they are still in combat. Moreover, you can setup cooldowns for that command.
+
+The following code snippet is located in the MMOCore config `config.yml`.
+
 ```yaml
 pvp_mode:
 
@@ -122,7 +146,7 @@ pvp_mode:
   combat_timeout: 30
 
   # Invulnerability triggered when:
-  # - entering a PvP region with PvP mode turned on.
+  # - entering a PvP region with PvP Mode turned on.
   # - using the /pvpmode command inside of a PvP region.
   invulnerability:
     time:
@@ -141,22 +165,26 @@ pvp_mode:
   cooldown:
 
     # Cooldown before being able to use the /pvpmode
-    # command when entering a PvP mode region.
+    # command when entering a PvP Mode region.
     region_enter: 20
 
     # Cooldown before being able to use the /pvpmode
-    # command when entering a PvP mode region.
+    # command when entering a PvP Mode region.
     region_leave: 20
 
     # Delay before being able to use /pvpmode after being in combat (seconds).
     # Has to be greater than the 'combat_timeout'
     combat: 45
 
-    # Cooldown when toggling on PvP mode, before being able to toggle it off (seconds)
+    # Cooldown when toggling on PvP Mode, before being able to toggle it off (seconds)
     toggle_on: 5
 
-    # Cooldown when toggling off PvP mode (seconds)
+    # Cooldown when toggling off PvP Mode (seconds)
     toggle_off: 3
 ```
 
-If you want to disable PvP mode, remove the `pvp-mode` config section from `commands.yml` and set `pvp_mode.enabled` to `false` in `MMOCore/plugin.yml`. This will fully disable the functionnality.
+### Disabling PvP Mode
+
+In order to disable PvP Mode:
+- remove the `pvp-mode` config section from `commands.yml`
+- set `pvp_mode.enabled` to `false` inside `MMOCore/config.yml`
