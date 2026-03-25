@@ -2,11 +2,11 @@
 
 Lootable chests are a great way to reward RPG players for exploring your world. They spawn around players in specific regions with randomly generated loot. Loot chests can have tiers; the higher the tier, the better the loot.
 
-The following config samples can be found under MMOCore/loot-chests.yml
+The following code snippets can be found under the `/loot-chests` folder.
 
 ## General options
 
-These options can be found under the main plugin config file.
+These options can be found inside the MMOCore `config.yml`.
 ```yml
 loot-chests:
 
@@ -19,7 +19,8 @@ loot-chests:
     player-cooldown: 600
 ```
 
-## Loot chest regions
+## Loot Chest Regions
+
 MMOCore lets you setup regions where chests can spawn. The first thing you will need to define is the region boundaries just like with WorldGuard regions:
 ```yml
 loot-chest-region-id:
@@ -81,13 +82,15 @@ Available particle types are HELIX, OFFSET and GALAXY. Available particle names 
 `chance` is the probability for the tier to be chosen when a loot chest is spawned. All of the tier chances should add up to 1 (10% chance is 0.1).
 
 `drops` is the drop table used to fill the loot chest inventory, along with `capacity` which is the chest capacity. For more information about how loot table _capacity_ works, please refer to this [wiki section](Drop Tables#capacity-and-drop-item-weight). You can either directly specify a number using `capacity: 10` or use a scaling formula instead like this:
-```
+
+```yml
 capacity:
     base: 10 # Base value of 10 capacity
     scale: 3 # 3 extra capacity for every player level
     spread: 0.1 # +/-10% spread in average
     max-spread: 0.3 # Relative offset due to the 'spread' option cannot be greater than 30%
 ```
+
 The `spread` and `max-spread` options are optional if you're using a scaling formula for the loot capacity.
 
 For the `drops` option, do note that you can either specify a drop table ID if your drop table is already setup in your drop tables config folder, or an entire config section if you want to define a new drop table specifically for the chest tier.

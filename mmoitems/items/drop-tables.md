@@ -4,7 +4,7 @@ order: 10
 
 # 👛 Drop Tables
 
-Data is stored in the ``drops.yml`` config file, located in the main plugin folder. Here is a config sample:
+Data is stored in the ``drops.yml`` config file, located in the main plugin folder. Here is a config snippet:
 
 ```yml
 monsters:

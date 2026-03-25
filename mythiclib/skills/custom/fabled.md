@@ -26,7 +26,7 @@ FIREBOLT:
 
 ## Skill Modifiers
 
-There is currently no way to retrieve skill modifiers when using Fabled skills, unlike when using MythicMobs. The `parameters` section in the config sample above can therefore be omitted.
+There is currently no way to retrieve skill modifiers when using Fabled skills, unlike when using MythicMobs. The `parameters` section in the config snippet above can therefore be omitted.
 
 ## Skill Level
 

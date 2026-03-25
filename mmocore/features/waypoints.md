@@ -14,15 +14,17 @@ Players may open the waypoints menu by using `/waypoints` This menu displays eve
 
 There is a **cool animation** for unlocking and teleporting to an existing waypoint as well, with sound effects.
 
-## Waypoints Config File
+## Disabling Waypoints
 
- Waypoints are a 100% optional feature, if you don't want to utilize this feature, just empty your config folder and disable the `/waypoints` command.
+MMOCore waypoints are an optional feature. If you don't want to use it, follow these steps:
+- empty the `/waypoints` folder (do not delete it or it will regenerate),
+- comment out the `/waypoints` command section inside `MMOCore/commands.yml` to disable the waypoint UI command.
 
 ## Waypoint Config Example
 
-`/waypoints/*` is the folder where you can place as many YML files/subfolders as you want.
+The `/waypoints` folder is where you can place as many YML files/subfolders as you want to register new waypoints.
 
-::: details Full Config
+::: details Full Config Example
 ```yaml
 # Waypoint identifier, used as reference for admin commands.
 # Make sure all the waypoints have different identifiers.
@@ -80,25 +82,32 @@ spawn:
 | Location | This is where you define where the waypoint block is. Your options are WORLD, X, Y, Z, PITCH, YAW. Yaw and pitch define the player's camera orientation. |
 | Radius | This defines how close a player has to be to the source waypoint block to shift and unlock it. Radius is in blocks, and 5 blocks means that if a player shifts anywhere within 5 blocks of the waypoint, they will unlock it. It should somewhere near half the diameter of the monument/shrine/.. which serves as physical waypoint. |
 | Default | Whether or not this waypoint is unlocked by default. |
-| Dynamic | Dynamic waypoints can be used anywhere on the map when opening the waypoints menu. This means that any player can teleport at a dynamic waypoint even though he is not standing on any waypoint. The transitivity of waypoints implies that you can dynamically connect to waypoints that are not dynamic using an other dynamic waypoint as an intermediary. |
+| Dynamic | See [below](#dynamic-waypoints). |
 | Enable Menu | When set to ``true``, sneaking on the waypoint will open up the waypoint teleportation menu. |
 | Unlockable | When set to ``true``, players will unlock that waypoint by crouching on the waypoint location. |
 | Destinations | The list of other waypoints you can jump to when standing on your waypoint. Each neighbor waypoint is associated to the cost (in stellium) of the A -\> B waypoint travel. |
 
+### Dynamic Waypoints
+
+Dynamic waypoints can be used anywhere on the map when opening the waypoints menu. Any player can teleport to a dynamic waypoint at any time, they don't need to be standing on any waypoint.
+
 ### Waypoint Link Reciprocity
 
-By default, Waypoint A being linked to waypoint B does not mean B is linked to A. In other words, links between waypoints are not reciprocal unless you toggle on the following option inside `config.yml`:
+By default, Waypoint A being linked to waypoint B does not mean B is linked to A. In other words, waypoint connections are not reciprocal, unless you toggle on the following option inside the MMOCore `config.yml`:
+
 ```yaml
 waypoints:
-    # ...
-    link_reciprocity: true
+  # ...
+  link_reciprocity: true
 ```
+
+This option applies to all waypoints.
 
 ## Waypoint Books
 
 Waypoint books can be given to players using the following command. 
 
-```bash
+```
 /mmocore waypoints item <waypointId> <playerName>
 ```
 
@@ -113,17 +122,21 @@ WAYPOINT_BOOK:
 ```
 
 ## Waypoint Path Calculation
-When enabling this option in the main MMOCore plugin config file, MMOCore will perform aumatic path calculation across the waypoints that the player has collected.
+
+When enabling this option in the main MMOCore plugin config file, MMOCore will perform automatic path calculation across the waypoints that the player has collected.
 ```yaml
 waypoints:
   # ...
   auto_path_calculation: false
 ```
+
 Let's take the following scenario:
-- Player is staning at waypoint A. They would like to teleport to waypoint C
+
+- Player is standing at waypoint A. They would like to teleport to waypoint C
+- Waypoint A is not directly connected to waypoint C
 - Waypoint A is connected to an intermediate waypoint B, and B is connected to C
 
-Even if waypoint A is not directly linked to waypoint C, MMOCore will look through the entire waypoint map and isolate the path A -> B -> C, marking waypoint C as accessible to the player. MMOCore always finds the shortest paths between waypoints, taking into account dynamic waypoints.
+Even if waypoint A is not directly linked to waypoint C, MMOCore will look through the entire waypoint map and find the path A -> B -> C, rendering waypoint C accessible. MMOCore always finds the shortest paths between waypoints, and takes into account dynamic waypoints.
 
 ## Disabling waypoints
 

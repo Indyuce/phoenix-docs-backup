@@ -106,4 +106,4 @@ The `generation.chance` option determines the chance for your item tier to be se
 
 The `generation.capacity` config section defines the tier modifier capacity, and it works like a regular [numeric stat formula](stats/stats.md). The formula is the following: `capacity = <base> + <item_level> * <scale>` to which you add a +/-`<spread>`% offset which a maximum offset of `<max-spread>`%.
 
-For instance, using the capacity formula in the config sample above, let's say we are generating a level 12 item: `average-capacity = 6 + 0.1 * 12 = 7.2`. Since there's a 30% max spread, the capacity final value will be randomly picked between `70% * 7.2 = 5.04` and `130% * 7.2 = 9.36`, with an average +/- 10% offset (relative to the average value of 7.2).
+For instance, using the capacity formula in the config snippet above, let's say we are generating a level 12 item: `average-capacity = 6 + 0.1 * 12 = 7.2`. Since there's a 30% max spread, the capacity final value will be randomly picked between `70% * 7.2 = 5.04` and `130% * 7.2 = 9.36`, with an average +/- 10% offset (relative to the average value of 7.2).
