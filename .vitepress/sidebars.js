@@ -568,6 +568,10 @@ export const generatedSidebars = {
           "link": "/mmocore/features/quests"
         },
         {
+          "text": "🛡️ Guilds",
+          "link": "/mmocore/features/guilds"
+        },
+        {
           "text": "🧙‍♂️ Classes",
           "link": "/mmocore/features/classes"
         }
