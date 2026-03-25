@@ -1,15 +1,61 @@
 # 👯 Parties
 
-Parties are a basic system built into MMOCore where you and up to 7 friends can party up for extra boosts and information! This system is a great groundwork for party integration into other plugins such as DungeonsXL.
+Parties are an essential part of any RPG server. They usually provide teleportation perks or buffs to members within the same party.
 
-## How to use
-To begin, you can type the /party command. If you are not already in a party, it will ask you if you want to create one.\
-After that, you will be brought into the main party GUI. Inside the GUI is where you will invite your friends, and see the information on the party. By default, parties give a slight regeneration and experience boost. The more players in your party, the greater the buff (see below).
+While MMOCore does provide a decent built-in party system, it is fully compatible with the following plugins:
+
+- [MythicDungeons](https://mythiccraft.io/index.php?resources/mythic-dungeons.869/) <Badge type="info" text="recommended" />
+- [mcMMO](https://www.spigotmc.org/resources/official-mcmmo-original-author-returns.64348/)
+- [Parties](https://www.spigotmc.org/resources/parties-an-advanced-parties-manager.3709/) <Badge type="info" text="recommended" />
+- PartyAndFriends ([Spigot](https://www.spigotmc.org/resources/party-and-friends-extended-for-spigot-supports-1-7-1-19.11633/) & [Proxy](https://www.spigotmc.org/resources/party-and-friends-for-bungeecord-supports-1-7-x-to-1-19-x.9531/))
+- [DungeonsXL](https://www.spigotmc.org/resources/dungeonsxl.9488/)
+- [Heroes](https://www.spigotmc.org/resources/⚔-heroes-premium-⚔-best-minecraft-spigot-rpg-plugin-ever.24734/)
+- [OBTeam](https://www.spigotmc.org/resources/obteam.108269/) ([DungeonMMO](https://www.spigotmc.org/resources/%E2%AD%90-dungeonmmo-%E2%AD%90-dungeon-world-generator-%E2%9C%85-create-your-dungeons-%E2%AD%95-endless-possibilities.106150/))
+
+
+## Choosing your party plugin
+
+Go to `MMOCore/config.yml` and set `party-plugin` to whatever plugin you want to use. Make sure you restart your server when editing this option.
+
+```yml
+# Choose the plugin handling parties here.
+# Supported values (just copy and paste):
+# - MMOCORE (Default built-in party system)
+# - NONE (Used to fully disable parties)
+# - DUNGEONSXL
+# - HEROES
+# - MCMMO
+# - MYTHICDUNGEONS (Make sure `PartyPlugin` is set to `Default` in MythicDungeons)
+# - MYTHICDUNGEONS_INJECT (Make sure `PartyPlugin` is set to `MMOCore` in MythicDungeons)
+# - OBTEAM (Addon for DungeonMMO)
+# - PARTY_AND_FRIENDS (When using Party and Friends (Extended) for Spigot)
+# - PARTY_AND_FRIENDS_BUNGEECORD_VELOCITY ([When using Party and Friends (Extended) Edition for BungeeCord/Velocity. Requires https://www.spigotmc.org/resources/spigot-party-api-for-party-and-friends.39751/ to be installed])
+# - PARTIES
+party-plugin: MMOCORE
+```
+
+Using any party plugin that is not MMOCore will disable all party features from MMOCore (mostly the `/party` command).
+
+#### MythicDungeons
+
+You can either inject the MythicDungeons party system into MMOCore using `MYTHICDUNGEONS`, or inject the MMOCore party system into MythicDungeons using `MYTHICDUNGEONS_INJECT`.
+
+## MMOCore Quests
+
+MMOCore features a basic built-in party system where you and up to 7 friends can party up for extra boosts and perks!
+
+::: info
+The following wiki sections describe the built-in MMOCore party module.
+:::
+
+To begin, enter the `/party` command. If you are not already in a party, it will ask you if you want to create one.
+
+After that, you will be shown the main party GUI, where you can see current party members and invite new people. By default, parties give a slight regeneration and experience boost. The more players in your party, the higher the buff (see below).
 
 ![7Vx1Ld2](uploads/party_ui.png)
 
 ## Party Chat
-Players can talk via party chat using @ at the beginning of their message:
+Players can talk via party chat using `@` at the beginning of their message. This chat prefix can be edited in the main MMOCore config file (`party.chat-prefix`):
 
 ![3zFCOei](uploads/party_chat.png)
 
@@ -58,14 +104,7 @@ This feature creates an issue where low level players can join the party of high
 That feature stays operational even if you are using another party plugin. It also supports profession experience.
 
 ## Using other party plugins
-If you'd like to use a more advanced party plugin, you can take advantage of the modularity of MMOCore and use any of the following plugins:
-- MMOCore
-- [DungeonsXL](https://www.spigotmc.org/resources/dungeonsxl.9488/)
-- [mcMMO](https://www.spigotmc.org/resources/official-mcmmo-original-author-returns.64348/)
-- PartyAndFriends ([Spigot](https://www.spigotmc.org/resources/party-and-friends-extended-for-spigot-supports-1-7-1-19.11633/) & [Proxy](https://www.spigotmc.org/resources/party-and-friends-for-bungeecord-supports-1-7-x-to-1-19-x.9531/))
-- [Parties](https://www.spigotmc.org/resources/parties-an-advanced-parties-manager.3709/)
-- [Mythic Dungeons](https://mythiccraft.io/index.php?resources/mythic-dungeons.869/) ([DungeonParties](https://www.spigotmc.org/resources/mythicdungeons.102699/))
-- [OBTeam](https://www.spigotmc.org/resources/obteam.108269/) ([DungeonMMO](https://www.spigotmc.org/resources/%E2%AD%90-dungeonmmo-%E2%AD%90-dungeon-world-generator-%E2%9C%85-create-your-dungeons-%E2%AD%95-endless-possibilities.106150/))
+
 
 Just go in your main MMOCore config file and change this option to whatever plugin you have installed:
 ```yml
