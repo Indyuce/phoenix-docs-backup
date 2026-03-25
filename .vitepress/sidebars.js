@@ -524,56 +524,56 @@ export const generatedSidebars = {
       "text": "Features",
       "items": [
         {
-          "text": "⚔️ Combat",
-          "link": "/mmocore/features/combat"
-        },
-        {
-          "text": "⛏️ Custom Mining",
-          "link": "/mmocore/features/mining"
-        },
-        {
-          "text": "🌱 Skill Trees",
-          "link": "/mmocore/features/skill-trees"
-        },
-        {
-          "text": "🎁 Loot Chests",
-          "link": "/mmocore/features/loot-chests"
-        },
-        {
-          "text": "👯 Parties",
-          "link": "/mmocore/features/parties"
-        },
-        {
-          "text": "👯‍♀️ Friends",
-          "link": "/mmocore/features/friends"
+          "text": "🧙‍♂️ Classes",
+          "link": "/mmocore/features/classes"
         },
         {
           "text": "💪 Attributes",
           "link": "/mmocore/features/attributes"
         },
         {
-          "text": "💪 Player Stats",
-          "link": "/mmocore/features/stats"
+          "text": "🌱 Skill Trees",
+          "link": "/mmocore/features/skill-trees"
         },
         {
-          "text": "💰 Drop Tables",
-          "link": "/mmocore/features/drop-tables"
+          "text": "💪 Player Stats",
+          "link": "/mmocore/features/stats"
         },
         {
           "text": "📌 Waypoints",
           "link": "/mmocore/features/waypoints"
         },
         {
+          "text": "⛏️ Custom Mining",
+          "link": "/mmocore/features/mining"
+        },
+        {
+          "text": "⚔️ Combat",
+          "link": "/mmocore/features/combat"
+        },
+        {
+          "text": "💰 Drop Tables",
+          "link": "/mmocore/features/drop-tables"
+        },
+        {
+          "text": "🎁 Loot Chests",
+          "link": "/mmocore/features/loot-chests"
+        },
+        {
           "text": "📖 Quests",
           "link": "/mmocore/features/quests"
+        },
+        {
+          "text": "👯 Parties",
+          "link": "/mmocore/features/parties"
         },
         {
           "text": "🛡️ Guilds",
           "link": "/mmocore/features/guilds"
         },
         {
-          "text": "🧙‍♂️ Classes",
-          "link": "/mmocore/features/classes"
+          "text": "👯‍♀️ Friends",
+          "link": "/mmocore/features/friends"
         }
       ]
     },

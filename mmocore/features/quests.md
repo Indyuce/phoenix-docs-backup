@@ -1,3 +1,7 @@
+---
+order: 20
+---
+
 # 📖 Quests
 
 Quests are an essential part of any RPG. They give players goals, challenges, and rewards, while guiding them through the world. MMOCore includes a basic quest module, but it’s not as complete as popular Spigot quest plugins.

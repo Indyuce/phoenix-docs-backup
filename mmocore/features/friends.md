@@ -1,3 +1,9 @@
+---
+order: 23
+---
+
+
+
 # 👯‍♀️ Friends
 
 The friends system built into MMOCore is a simple yet effective system. When using the `/friends` command, it will pull up a GUI that shows all your current friends and options to add more. 

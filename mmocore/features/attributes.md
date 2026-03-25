@@ -1,3 +1,7 @@
+---
+order: 2
+---
+
 # 💪 Attributes
 
 Attributes are super classic RPG "stats" which players can level up to unlock new perks. These perks includes additional stats (max health, damage, cooldown reduction...) and the ability to use certain items. This very classic RPG feature adds more theory crafting material to your server.

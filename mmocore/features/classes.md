@@ -1,3 +1,7 @@
+---
+order: 1
+---
+
 # 🧙‍♂️ Classes
 
 Due to popular demand, one of MMOCores trademark features is its customizable class system! This paragraph goes over the important features of classes as well as how to configure them.

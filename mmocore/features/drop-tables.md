@@ -1,3 +1,7 @@
+---
+order: 8
+---
+
 # 💰 Drop Tables
 
 The `/drop-tables` folder is where you setup all of your custom drop tables for [blocks](mining.md) and [loot chests](loot-chests.md). Since their use is not limited to block drops, we decided to give them a separate folder so that you can setup them there and only use their reference in other configs to make them lighter/easier to read and setup.

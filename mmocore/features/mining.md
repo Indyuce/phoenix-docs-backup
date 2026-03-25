@@ -1,3 +1,8 @@
+---
+order: 6
+---
+
+
 # ⛏️ Custom Mining
 
 MMOCore features a custom mining system finetuned for RPG servers. Using this system, you can:

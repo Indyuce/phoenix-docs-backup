@@ -1,3 +1,7 @@
+---
+order: 21
+---
+
 # 👯 Parties
 
 Parties are an essential part of any RPG server. They usually provide teleportation perks or buffs to members within the same party.

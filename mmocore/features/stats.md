@@ -1,3 +1,8 @@
+---
+order: 4
+---
+
+
 # 💪 Player Stats
 
 Player statistics are essential in MMOCore. They can be granted by classes, attributes, party buffs, temporary skills, items... For better compatibility, MMOItems shares its stat system with MMOCore, so any stat that can be found in MMOItems can be used inside of MMOCore.

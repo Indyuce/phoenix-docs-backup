@@ -1,3 +1,9 @@
+---
+order: 22
+---
+
+
+
 # 🛡️ Guilds
 
 Guilds (also called factions, kingdoms...) are a common feature for RPG servers. They allow players to team up, share resources, and work together toward common goals.

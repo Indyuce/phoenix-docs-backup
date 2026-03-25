@@ -1,3 +1,8 @@
+---
+order: 5
+---
+
+
 # 📌 Waypoints
 
 Waypoints are a way for players to save their world exploration progression. Waypoints are configurable spots in your worlds that can link together as a player unlocks them to create a form of fast travel system. They can be unlocked by pressing \[sneak\] while standing on them. Each waypoint is linked to others waypoints with a cost corresponding to it. You can travel between 2 waypoints if they are linked and if you unlocked them.
