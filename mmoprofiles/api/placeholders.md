@@ -41,10 +41,10 @@ Here is how your `#processPlaceholderRequest` should look like:
 
 ## Register your instance of `PlaceholderProcessor`
 
-Use the following code snippet to register your placeholder processor, this must be done when registering your profile data module.
+Use the following method to register your placeholder processor, this must be done when registering your profile data module.
 
 ```java
-ProfileProvider provider = Bukkit.getServicesManager().getRegistration(ProfileProvider.class).getProvider();
+ProfileProvider provider = /* profile provider */;
 PlaceholderProcessor yourPlaceholderProcessor = /* TODO */;
 provider.registerPlaceholders(yourPlaceholderProcessor);
 ```

@@ -480,6 +480,10 @@ export const generatedSidebars = {
       "text": "API",
       "items": [
         {
+          "text": "📦 Maven",
+          "link": "/mmoitems/api/maven"
+        },
+        {
           "text": "💗 New Stats",
           "link": "/mmoitems/api/new-stats"
         },
@@ -710,6 +714,10 @@ export const generatedSidebars = {
       "text": "API",
       "items": [
         {
+          "text": "📦 Maven",
+          "link": "/mmocore/api/maven"
+        },
+        {
           "text": "🔧 Plugin API",
           "link": "/mmocore/api/api"
         }
@@ -786,6 +794,10 @@ export const generatedSidebars = {
           "link": "/mmoinventory/compatibility/other"
         }
       ]
+    },
+    {
+      "text": "Api",
+      "items": []
     }
   ],
   "/mmoprofiles/": [
@@ -843,7 +855,11 @@ export const generatedSidebars = {
       "text": "API",
       "items": [
         {
-          "text": "🔧 API Usage",
+          "text": "📦 Maven",
+          "link": "/mmoprofiles/api/maven"
+        },
+        {
+          "text": "🪣 API Usage",
           "link": "/mmoprofiles/api/usage"
         },
         {

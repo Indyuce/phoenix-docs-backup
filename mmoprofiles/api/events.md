@@ -25,13 +25,3 @@ When proxy-mode profiles are enabled, `PlayerIdDispatchEvent` is called at least
 ::: info
 When the player joins the server, the player already has its spoofed UUID, as spoofing happens at the proxy-level. Therefore, the player's official UUID (as well as other generic player information) need to be forwarded from the proxy to the backend server, via plugin messages. `PlayerIdDispatchEvent` is called when the backend server receives this information from the proxy.
 :::
-
-## Check if Proxy-mode profiles is on
-
-The following code snippet can be used to check if MMOProfiles is currently running proxy-mode profiles.
-
-```java
-// possible values: PROXY, LEGACY, NONE
-// are proxy-mode profiles enabled?
-boolean proxyMode = MythicLib.plugin.getProfileMode() == ProfileMode.PROXY;
-```

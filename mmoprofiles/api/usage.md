@@ -1,32 +1,27 @@
 ---
-order: 1
+order: 2
 ---
 
-# 🔧 API Usage
+# 🪣 API Usage
 
-We provide a Maven repository with API builds for all MMO plugins. Add our repository to your repository list:
-
-```xml
-<repository>
-    <id>phoenix</id>
-    <url>https://nexus.phoenixdevt.fr/repository/maven-public/</url>
-</repository>
-```
-
-Add ProfileAPI as a dependency:
-
-```xml
-<dependency>
-    <groupId>fr.phoenixdevt</groupId>
-    <artifactId>Profile-API</artifactId>
-    <version>1.1</version>
-    <scope>provided</scope>
-    <optional>true</optional>
-</dependency>
-```
-
-Access the main API class using Bukkit's service manager:
+The main API class is `ProfileProvider`. You can access the MMOProfiles implementation of this interface using Bukkit's service provider.
 
 ```java
 ProfileProvider provider = Bukkit.getServicesManager().getRegistration(ProfileProvider.class).getProvider();
+```
+
+This service is provided by MMOProfiles when the plugin enables. If you want to access this service from inside your plugin's `onEnable`, you need to declare MMOProfiles as a soft (or hard) dependency in your plugin `plugin.yml`.
+
+```yml
+softdepend: [ ..., MMOProfiles ]
+```
+
+## Check if Proxy-mode profiles is on
+
+The following code snippet can be used to check if MMOProfiles is currently running proxy-mode profiles.
+
+```java
+// possible values: PROXY, LEGACY, NONE
+// are proxy-mode profiles enabled?
+boolean proxyMode = MythicLib.plugin.getProfileMode() == ProfileMode.PROXY;
 ```
