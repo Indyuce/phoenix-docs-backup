@@ -258,12 +258,16 @@ export const generatedSidebars = {
       "text": "API",
       "items": [
         {
-          "text": "📊 Player Stats",
-          "link": "/mythiclib/api/stats"
+          "text": "📦 Maven",
+          "link": "/mythiclib/api/maven"
         },
         {
           "text": "⚔️ Damage",
           "link": "/mythiclib/api/damage"
+        },
+        {
+          "text": "📊 Player Stats",
+          "link": "/mythiclib/api/stats"
         }
       ]
     }
@@ -796,8 +800,13 @@ export const generatedSidebars = {
       ]
     },
     {
-      "text": "Api",
-      "items": []
+      "text": "API",
+      "items": [
+        {
+          "text": "📦 Maven",
+          "link": "/mmoinventory/api/maven"
+        }
+      ]
     }
   ],
   "/mmoprofiles/": [
