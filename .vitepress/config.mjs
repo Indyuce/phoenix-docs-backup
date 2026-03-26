@@ -9,6 +9,10 @@ export default {
   title: "Phoenix Wiki",
   description: "Documentation for Phoenix Devt plugins",
 
+  // [GITHUB PAGES PATCH BEGIN]
+  base: '/phoenix-docs-backup/',
+  // [GITHUB PAGES PATCH END]
+
   // Browser tab logo
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
