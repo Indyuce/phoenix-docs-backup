@@ -13,6 +13,7 @@ export default {
   base: '/phoenix-docs-backup/',
   // [GITHUB PAGES PATCH END]
 
+
   // Browser tab logo
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
